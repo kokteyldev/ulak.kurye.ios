@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1098996117688-obp9gtd85qvren36ns4o6fvrvodaumf2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1098996117688-obp9gtd85qvren36ns4o6fvrvodaumf2</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1098996117688-4i0mko3i70cjfgb1qj5k1crk8ocp8mp4.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBa2-fRghCvB2VlhcVXwK37nyPC20RqsTQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1098996117688</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ulak.kurye</string>
+	<key>PROJECT_ID</key>
+	<string>mobile-ulak-kurye</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mobile-ulak-kurye.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1098996117688:ios:b777a3af192860c32bc44d</string>
+	<key>DATABASE_URL</key>
+	<string>https://mobile-ulak-kurye.firebaseio.com</string>
+</dict>
+</plist>
