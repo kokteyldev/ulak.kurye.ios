@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ConfigModel: Codable {
+struct Config: Codable {
     var latestVersion: String
     var kvvkURL: ServerURL?
     
@@ -18,6 +18,11 @@ struct ConfigModel: Codable {
         case courier = "courier"
         case appVersion = "app_version"
         case policyDict = "static_pages"
+    }
+    
+    init() {
+        self.latestVersion = "0"
+        self.policies = []
     }
     
     init(from decoder: Decoder) throws {

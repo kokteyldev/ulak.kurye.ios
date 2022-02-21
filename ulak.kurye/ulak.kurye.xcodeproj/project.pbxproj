@@ -42,6 +42,7 @@
 		9ECAAAD927C3D23E00F583C4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECAAAD827C3D23E00F583C4 /* Logger.swift */; };
 		9ECAAADB27C3D3DD00F583C4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECAAADA27C3D3DD00F583C4 /* User.swift */; };
 		9ECAAAE027C3DB0D00F583C4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */; };
+		9ECAAAEA27C3E1FC00F583C4 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		9ECAAAD827C3D23E00F583C4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		9ECAAADA27C3D3DD00F583C4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				9ECAAA7227C393B200F583C4 /* Assets */,
 				9ECAAA7127C3938000F583C4 /* Config */,
 				9ECAAA8C27C3B98600F583C4 /* Controllers */,
+				9ECAAAE827C3E1E100F583C4 /* Extensions */,
 				9ECAAAD127C3D06100F583C4 /* Helpers */,
 				9ECAAA8B27C3B97600F583C4 /* Managers */,
 				9ECAAACC27C3CE8100F583C4 /* Models */,
@@ -278,6 +281,14 @@
 				9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9ECAAAE827C3E1E100F583C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ECAAAEA27C3E1FC00F583C4 /* ToastView.swift in Sources */,
 				9ECAAA9C27C3C41900F583C4 /* APIRouter.swift in Sources */,
 				9ECAAA9B27C3C41900F583C4 /* APILogger.swift in Sources */,
 				9E3E2D0427BE8F1600A17025 /* AppDelegate.swift in Sources */,

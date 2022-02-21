@@ -9,6 +9,10 @@ import Foundation
 import KokteylUtils
 
 struct Constants {
+    struct App {
+        static let appURL = "itms-apps://apple.com/app/id1610547130"
+    }
+    
     struct API {
         static let apiURL = "API_URL".configValue!
         static let baseURL = Session.shared.baseURL()

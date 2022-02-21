@@ -11,8 +11,8 @@ import Alamofire
 struct API {
     static let baseURL: String = Session.shared.baseURL()
     
-    static func config(completion:@escaping (Result<ConfigModel, Error>) -> Void) {
-        performRequest(route: APIRouter.config) { (result:(Result<Response<ConfigModel?>, Error>)) in
+    static func config(completion:@escaping (Result<Config, Error>) -> Void) {
+        performRequest(route: APIRouter.config) { (result:(Result<Response<Config?>, Error>)) in
             switch result {
             case Result.success(let response):
                 if let config = response.data {

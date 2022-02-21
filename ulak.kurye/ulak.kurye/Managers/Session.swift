@@ -23,17 +23,22 @@ final class Session {
     }
     
     //TODO: doldur
-//    var user: UserModel?
-//    var config: Config?
+    var user: User?
+    var config: Config
     
     var isUserLoggedIn: Bool {
         return token != nil
     }
 
     // MARK: - Initializer
+    func start(_ config: Config) {
+        self.config = config
+    }
+    
     init() {
         token = UserDefaults.standard.string(forKey: Constants.DefaultsKeys.token)
         isOnboardingSeen = UserDefaults.standard.bool(forKey: Constants.DefaultsKeys.isOnboardingSeen)
+        config = Config()
     }
     
     // MARK: - Auth
