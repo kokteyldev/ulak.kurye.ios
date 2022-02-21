@@ -1,0 +1,17 @@
+//
+//  Dev.xcconfig
+//  ulak.consumer
+//
+//  Created by Mehmet Karagöz on 8.06.2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// App Settings
+ULK_APP_NAME = ULAK Dev
+
+//API
+ULK_API_URL = https:/$()/dev-api.ulakapp.com/api/v1
+
+

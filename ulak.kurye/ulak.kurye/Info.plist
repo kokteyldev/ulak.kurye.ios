@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Poppins-SemiBold</string>
+		<string>Poppins-Bold</string>
+		<string>Poppins-Light</string>
+		<string>Poppins-Medium</string>
+		<string>Poppins-Regular</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>CFBundleDisplayName</key>
+	<string>$(ULK_APP_NAME)</string>
+	<key>API_URL</key>
+	<string>$(ULK_API_URL)</string>
+</dict>
 </plist>

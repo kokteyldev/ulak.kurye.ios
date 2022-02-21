@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9E3E2D0427BE8F1600A17025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3E2D0327BE8F1600A17025 /* AppDelegate.swift */; };
-		9E3E2D0827BE8F1600A17025 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3E2D0727BE8F1600A17025 /* ViewController.swift */; };
 		9E3E2D0B27BE8F1600A17025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E3E2D0927BE8F1600A17025 /* Main.storyboard */; };
 		9E3E2D0D27BE8F1700A17025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E3E2D0C27BE8F1700A17025 /* Assets.xcassets */; };
 		9E3E2D1027BE8F1700A17025 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E3E2D0E27BE8F1700A17025 /* LaunchScreen.storyboard */; };
@@ -19,6 +18,14 @@
 		9E3E2D3727BE927200A17025 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9E3E2D3627BE927200A17025 /* FirebaseAnalytics */; };
 		9E3E2D3927BE927200A17025 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9E3E2D3827BE927200A17025 /* FirebaseCrashlytics */; };
 		9E3E2D3B27BE927200A17025 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 9E3E2D3A27BE927200A17025 /* FirebasePerformance */; };
+		9E93C2F827C3895E0011B095 /* KokteylUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 9E93C2F727C3895E0011B095 /* KokteylUtils */; };
+		9ECAAA7927C393DD00F583C4 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9ECAAA7427C393DC00F583C4 /* Poppins-Medium.ttf */; };
+		9ECAAA7A27C393DD00F583C4 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9ECAAA7527C393DC00F583C4 /* Poppins-SemiBold.ttf */; };
+		9ECAAA7B27C393DD00F583C4 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9ECAAA7627C393DC00F583C4 /* Poppins-Light.ttf */; };
+		9ECAAA7C27C393DD00F583C4 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9ECAAA7727C393DD00F583C4 /* Poppins-Bold.ttf */; };
+		9ECAAA7D27C393DD00F583C4 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9ECAAA7827C393DD00F583C4 /* Poppins-Regular.ttf */; };
+		9ECAAA8027C395F600F583C4 /* Dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9ECAAA7E27C395F600F583C4 /* Dev.xcconfig */; };
+		9ECAAA8127C395F600F583C4 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9ECAAA7F27C395F600F583C4 /* Release.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +48,6 @@
 /* Begin PBXFileReference section */
 		9E3E2D0027BE8F1600A17025 /* ulak.kurye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ulak.kurye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E3E2D0327BE8F1600A17025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9E3E2D0727BE8F1600A17025 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9E3E2D0A27BE8F1600A17025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E3E2D0C27BE8F1700A17025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E3E2D0F27BE8F1700A17025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +58,13 @@
 		9E3E2D2427BE8F1700A17025 /* ulak_kuryeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ulak_kuryeUITests.swift; sourceTree = "<group>"; };
 		9E3E2D2627BE8F1700A17025 /* ulak_kuryeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ulak_kuryeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9E3E2D3327BE901200A17025 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9ECAAA7427C393DC00F583C4 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		9ECAAA7527C393DC00F583C4 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		9ECAAA7627C393DC00F583C4 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		9ECAAA7727C393DD00F583C4 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		9ECAAA7827C393DD00F583C4 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		9ECAAA7E27C395F600F583C4 /* Dev.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
+		9ECAAA7F27C395F600F583C4 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E93C2F827C3895E0011B095 /* KokteylUtils in Frameworks */,
 				9E3E2D3727BE927200A17025 /* FirebaseAnalytics in Frameworks */,
 				9E3E2D3927BE927200A17025 /* FirebaseCrashlytics in Frameworks */,
 				9E3E2D3B27BE927200A17025 /* FirebasePerformance in Frameworks */,
@@ -105,13 +119,10 @@
 		9E3E2D0227BE8F1600A17025 /* ulak.kurye */ = {
 			isa = PBXGroup;
 			children = (
-				9E3E2D3327BE901200A17025 /* GoogleService-Info.plist */,
 				9E3E2D0327BE8F1600A17025 /* AppDelegate.swift */,
-				9E3E2D0727BE8F1600A17025 /* ViewController.swift */,
-				9E3E2D0927BE8F1600A17025 /* Main.storyboard */,
-				9E3E2D0C27BE8F1700A17025 /* Assets.xcassets */,
-				9E3E2D0E27BE8F1700A17025 /* LaunchScreen.storyboard */,
-				9E3E2D1127BE8F1700A17025 /* Info.plist */,
+				9ECAAA7227C393B200F583C4 /* Assets */,
+				9ECAAA7127C3938000F583C4 /* Config */,
+				9ECAAA8227C3960800F583C4 /* Storyboards */,
 			);
 			path = ulak.kurye;
 			sourceTree = "<group>";
@@ -131,6 +142,47 @@
 				9E3E2D2627BE8F1700A17025 /* ulak_kuryeUITestsLaunchTests.swift */,
 			);
 			path = ulak.kuryeUITests;
+			sourceTree = "<group>";
+		};
+		9ECAAA7127C3938000F583C4 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9ECAAA7E27C395F600F583C4 /* Dev.xcconfig */,
+				9ECAAA7F27C395F600F583C4 /* Release.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		9ECAAA7227C393B200F583C4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9ECAAA7327C393C800F583C4 /* Fonts */,
+				9E3E2D0C27BE8F1700A17025 /* Assets.xcassets */,
+				9E3E2D3327BE901200A17025 /* GoogleService-Info.plist */,
+				9E3E2D1127BE8F1700A17025 /* Info.plist */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		9ECAAA7327C393C800F583C4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9ECAAA7727C393DD00F583C4 /* Poppins-Bold.ttf */,
+				9ECAAA7627C393DC00F583C4 /* Poppins-Light.ttf */,
+				9ECAAA7427C393DC00F583C4 /* Poppins-Medium.ttf */,
+				9ECAAA7827C393DD00F583C4 /* Poppins-Regular.ttf */,
+				9ECAAA7527C393DC00F583C4 /* Poppins-SemiBold.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		9ECAAA8227C3960800F583C4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9E3E2D0927BE8F1600A17025 /* Main.storyboard */,
+				9E3E2D0E27BE8F1700A17025 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +206,7 @@
 				9E3E2D3627BE927200A17025 /* FirebaseAnalytics */,
 				9E3E2D3827BE927200A17025 /* FirebaseCrashlytics */,
 				9E3E2D3A27BE927200A17025 /* FirebasePerformance */,
+				9E93C2F727C3895E0011B095 /* KokteylUtils */,
 			);
 			productName = ulak.kurye;
 			productReference = 9E3E2D0027BE8F1600A17025 /* ulak.kurye.app */;
@@ -229,6 +282,7 @@
 			mainGroup = 9E3E2CF727BE8F1600A17025;
 			packageReferences = (
 				9E3E2D3527BE927200A17025 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9E93C2F627C3895E0011B095 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift" */,
 			);
 			productRefGroup = 9E3E2D0127BE8F1600A17025 /* Products */;
 			projectDirPath = "";
@@ -246,10 +300,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ECAAA7B27C393DD00F583C4 /* Poppins-Light.ttf in Resources */,
 				9E3E2D1027BE8F1700A17025 /* LaunchScreen.storyboard in Resources */,
+				9ECAAA8027C395F600F583C4 /* Dev.xcconfig in Resources */,
 				9E3E2D3427BE901200A17025 /* GoogleService-Info.plist in Resources */,
+				9ECAAA7D27C393DD00F583C4 /* Poppins-Regular.ttf in Resources */,
+				9ECAAA8127C395F600F583C4 /* Release.xcconfig in Resources */,
+				9ECAAA7C27C393DD00F583C4 /* Poppins-Bold.ttf in Resources */,
 				9E3E2D0D27BE8F1700A17025 /* Assets.xcassets in Resources */,
+				9ECAAA7A27C393DD00F583C4 /* Poppins-SemiBold.ttf in Resources */,
 				9E3E2D0B27BE8F1600A17025 /* Main.storyboard in Resources */,
+				9ECAAA7927C393DD00F583C4 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +357,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E3E2D0827BE8F1600A17025 /* ViewController.swift in Sources */,
 				9E3E2D0427BE8F1600A17025 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,6 +718,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		9E93C2F627C3895E0011B095 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kokteyldev/kokteyl.utils.swift.ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -675,6 +743,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9E3E2D3527BE927200A17025 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
+		};
+		9E93C2F727C3895E0011B095 /* KokteylUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E93C2F627C3895E0011B095 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift" */;
+			productName = KokteylUtils;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
