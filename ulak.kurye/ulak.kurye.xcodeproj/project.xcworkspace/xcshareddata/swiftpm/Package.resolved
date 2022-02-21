@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": "master",
+          "revision": "4e1103600bef06bd26e42564063e8fe8c25ef3d2",
+          "version": null
+        }
+      },
+      {
         "package": "BoringSSL-GRPC",
         "repositoryURL": "https://github.com/firebase/boringssl-SwiftPM.git",
         "state": {
@@ -78,8 +87,8 @@
         "repositoryURL": "https://github.com/kokteyldev/kokteyl.utils.swift.ios",
         "state": {
           "branch": null,
-          "revision": "4897a4e4f907d11133d8a097d19f730fa081a183",
-          "version": "1.0.4"
+          "revision": "d6b0527d3218d05faecf766191fefa2a882cb41d",
+          "version": "1.0.11"
         }
       },
       {

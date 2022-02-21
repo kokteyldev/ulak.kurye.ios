@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="blk-dE-je5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,23 +9,80 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--SplashVC-->
+        <scene sceneID="8xK-Bz-gHv">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="blk-dE-je5" customClass="SplashVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O3W-fH-wlj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash-back" translatesAutoresizingMaskIntoConstraints="NO" id="Ijk-iZ-mm2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="1Zw-DH-eI3">
+                                <rect key="frame" x="116" y="329.5" width="182" height="129"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1Zw-DH-eI3" secondAttribute="height" multiplier="181:128" id="XHj-gb-Zjn"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-text" translatesAutoresizingMaskIntoConstraints="NO" id="I11-xd-7M2">
+                                <rect key="frame" x="100" y="474.5" width="214" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="I11-xd-7M2" secondAttribute="height" multiplier="212:91" id="y32-eZ-kil"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cl4-PS-s0o">
+                                <rect key="frame" x="192" y="816" width="30" height="30"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-loading" translatesAutoresizingMaskIntoConstraints="NO" id="e3V-Xr-86J">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="2p1-kK-U9F"/>
+                                    <constraint firstAttribute="trailing" secondItem="e3V-Xr-86J" secondAttribute="trailing" id="QGD-Z2-oTY"/>
+                                    <constraint firstItem="e3V-Xr-86J" firstAttribute="leading" secondItem="cl4-PS-s0o" secondAttribute="leading" id="hAe-hk-cRQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="lTZ-dt-ZD1"/>
+                                    <constraint firstItem="e3V-Xr-86J" firstAttribute="top" secondItem="cl4-PS-s0o" secondAttribute="top" id="rTF-3L-HNV"/>
+                                    <constraint firstAttribute="bottom" secondItem="e3V-Xr-86J" secondAttribute="bottom" id="ylV-IB-jYd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lke-ib-yrd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Zw-DH-eI3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lke-ib-yrd" secondAttribute="leading" constant="64" id="3Vs-CM-LiN"/>
+                            <constraint firstItem="Ijk-iZ-mm2" firstAttribute="leading" secondItem="lke-ib-yrd" secondAttribute="leading" id="3Wt-XY-f3e"/>
+                            <constraint firstItem="1Zw-DH-eI3" firstAttribute="centerY" secondItem="O3W-fH-wlj" secondAttribute="centerY" multiplier="0.88" id="4pX-tl-bdB"/>
+                            <constraint firstAttribute="bottom" secondItem="Ijk-iZ-mm2" secondAttribute="bottom" id="5gN-oS-tcv"/>
+                            <constraint firstItem="I11-xd-7M2" firstAttribute="centerX" secondItem="O3W-fH-wlj" secondAttribute="centerX" id="76z-Cp-QKj"/>
+                            <constraint firstItem="1Zw-DH-eI3" firstAttribute="centerX" secondItem="O3W-fH-wlj" secondAttribute="centerX" id="M6f-1X-7IU"/>
+                            <constraint firstItem="Ijk-iZ-mm2" firstAttribute="top" secondItem="O3W-fH-wlj" secondAttribute="top" id="Mr9-Uw-qyi"/>
+                            <constraint firstItem="I11-xd-7M2" firstAttribute="top" secondItem="1Zw-DH-eI3" secondAttribute="bottom" constant="16" id="R3q-pm-OTZ"/>
+                            <constraint firstItem="lke-ib-yrd" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Zw-DH-eI3" secondAttribute="trailing" constant="64" id="XOh-zt-Sur"/>
+                            <constraint firstItem="lke-ib-yrd" firstAttribute="bottom" secondItem="cl4-PS-s0o" secondAttribute="bottom" constant="16" id="ZLm-Nz-AvS"/>
+                            <constraint firstItem="cl4-PS-s0o" firstAttribute="centerX" secondItem="O3W-fH-wlj" secondAttribute="centerX" id="bSa-Nb-wH9"/>
+                            <constraint firstItem="I11-xd-7M2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lke-ib-yrd" secondAttribute="leading" constant="64" id="fOt-5T-hQ3"/>
+                            <constraint firstItem="lke-ib-yrd" firstAttribute="trailing" secondItem="Ijk-iZ-mm2" secondAttribute="trailing" id="lNA-8K-Qd3"/>
+                            <constraint firstItem="lke-ib-yrd" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I11-xd-7M2" secondAttribute="trailing" constant="64" id="u1D-fn-6ox"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loadingView" destination="cl4-PS-s0o" id="Svh-sl-Tad"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iah-YR-aIm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="110"/>
+            <point key="canvasLocation" x="268" y="46"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic-loading" width="30" height="30"/>
+        <image name="logo" width="182" height="129"/>
+        <image name="logo-text" width="212" height="92"/>
+        <image name="splash-back" width="414" height="896"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
