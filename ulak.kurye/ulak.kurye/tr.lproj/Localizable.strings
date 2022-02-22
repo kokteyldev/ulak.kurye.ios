@@ -37,7 +37,7 @@
 "preLogin_policy_read_accept" = "Okudum ve Kabul Ediyorum";
 "login_title" = "Doğrulama kodunu gir";
 "login_title_desc" = "Telefonuna SMS olarak gelen 4 haneli kodu gir.";
-"login_code" = "Kody girin";
+"login_code" = "Kodu girin";
 "login_mising_info" = "Geçersiz kod veya telefon numarası!";
 
 // Tabbar
