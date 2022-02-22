@@ -16,3 +16,13 @@
 "force_update_message" = "To continue using the application, you must update.";
 "force_update_button_title" = "Update";
 
+// Onboarding
+"onboarding_pass" = "Pass";
+"onboarding_1_title" = "Welcome!";
+"onboarding_1_desc" = "Ulak Kurye uygulamasına hoş geldin. Dilediğin zaman çalış, para kazan.";
+"onboarding_2_title" = "Çoklu Teslimat";
+"onboarding_2_desc" = "Bölgesel çoklu teslimat avantjı ile maksimum gelir imkanı.";
+"onboarding_3_title" = "Anında Kazanç";
+"onboarding_3_desc" = "Günlük, haftalık değil anlık ödeme; teslimatı tamamladığın gibi hak edişin hesabında.";
+"onboarding_4_title" = "Sürprizler";
+"onboarding_4_desc" = "Bonuslar, sürpriz hediyeler ve primler ile ayrıcaklıklı bir dünya...";

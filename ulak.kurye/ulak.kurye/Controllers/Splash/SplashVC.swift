@@ -65,8 +65,7 @@ final class SplashVC: BaseVC {
                 //TODO: doldur
 //                LoginVC.presentAsRoot()
             } else {
-                //TODO: doldur
-//                OnboardingVC.presentAsRoot()
+                OnboardingVC.presentAsRoot()
             }
         }
     }
