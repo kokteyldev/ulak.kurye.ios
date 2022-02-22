@@ -22,7 +22,6 @@ final class Session {
         }
     }
     
-    //TODO: doldur
     var user: User?
     var config: Config
     

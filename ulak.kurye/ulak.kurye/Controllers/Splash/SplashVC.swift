@@ -74,8 +74,7 @@ final class SplashVC: BaseVC {
             switch result {
             case .success(let user):
                 Session.shared.user = user
-                //TODO: doldur
-//                HomeTabbarTC.presentAsRoot()
+                MainTabbarTC.presentAsRoot()
             case .failure(_):
                 Session.shared.logout()
                 PreLoginVC.presentAsRoot()

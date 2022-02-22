@@ -87,8 +87,7 @@ class LoginVC: BaseVC {
                 
                 if loginResponse.user != nil {
                     Session.shared.user = loginResponse.user
-                    //TODO: doldur
-    //                HomeTabbarTC.presentAsRoot()
+                    MainTabbarTC.presentAsRoot()
                 } else {
                     SplashVC.checkProfile()
                 }

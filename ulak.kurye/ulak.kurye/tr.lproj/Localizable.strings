@@ -39,3 +39,9 @@
 "login_title_desc" = "Telefonuna SMS olarak gelen 4 haneli kodu gir.";
 "login_code" = "Kody girin";
 "login_mising_info" = "Geçersiz kod veya telefon numarası!";
+
+// Tabbar
+"tabbar_home" = "Ana Sayfa";
+"tabbar_notification" = "Bildirimler";
+"tabbar_wallet" = "Cüzdan";
+"tabbar_settings" = "Ayarlar";
