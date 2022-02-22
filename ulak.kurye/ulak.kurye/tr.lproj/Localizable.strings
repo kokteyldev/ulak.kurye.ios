@@ -26,3 +26,16 @@
 "onboarding_3_desc" = "Günlük, haftalık değil anlık ödeme; teslimatı tamamladığın gibi hak edişin hesabında.";
 "onboarding_4_title" = "Sürprizler";
 "onboarding_4_desc" = "Bonuslar, sürpriz hediyeler ve primler ile ayrıcaklıklı bir dünya...";
+
+// Auth
+"preLogin_title" = "Telefon numaran ile giriş yap";
+"preLogin_title_desc" = "Girdiğin telefon numarasına doğrulama kodu gönderilecektir.";
+"preLogin_phone_number" = "Telefon No.";
+"preLogin_mising_info" = "Geçersiz telefon numarası!";
+"preLogin_kvkk_title" = "KVVK metnini okudum ve kabul ediyorum.";
+"preLogin_kvvk_title" = "KVVK Metni";
+"preLogin_policy_read_accept" = "Okudum ve Kabul Ediyorum";
+"login_title" = "Doğrulama kodunu gir";
+"login_title_desc" = "Telefonuna SMS olarak gelen 4 haneli kodu gir.";
+"login_code" = "Kody girin";
+"login_mising_info" = "Geçersiz kod veya telefon numarası!";

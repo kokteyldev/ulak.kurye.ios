@@ -62,8 +62,7 @@ final class SplashVC: BaseVC {
             SplashVC.checkProfile()
         } else {
             if Session.shared.isOnboardingSeen {
-                //TODO: doldur
-//                LoginVC.presentAsRoot()
+                PreLoginVC.presentAsRoot()
             } else {
                 OnboardingVC.presentAsRoot()
             }
@@ -79,8 +78,7 @@ final class SplashVC: BaseVC {
 //                HomeTabbarTC.presentAsRoot()
             case .failure(_):
                 Session.shared.logout()
-                //TODO: doldur
-//                LoginVC.presentAsRoot()
+                PreLoginVC.presentAsRoot()
             }
         }
     }

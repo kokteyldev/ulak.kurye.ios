@@ -18,7 +18,7 @@ final class Session {
     
     var isOnboardingSeen: Bool = false {
         didSet {
-            UserDefaults.standard.setValue(token, forKey: Constants.DefaultsKeys.isOnboardingSeen)
+            UserDefaults.standard.setValue(isOnboardingSeen, forKey: Constants.DefaultsKeys.isOnboardingSeen)
         }
     }
     

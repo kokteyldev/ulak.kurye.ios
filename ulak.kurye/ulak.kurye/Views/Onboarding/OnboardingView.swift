@@ -45,7 +45,7 @@ final class OnboardingView: UIView {
     
     // MARK: - Action
     @IBAction func continueTapped(_ sender: Any) {
-        //TODO: doldur
-//        LoginVC.presentAsRoot()
+        Session.shared.isOnboardingSeen = true
+        PreLoginVC.presentAsRoot()
     }
 }

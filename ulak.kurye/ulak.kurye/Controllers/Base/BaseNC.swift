@@ -1,13 +1,14 @@
 //
-//  BaseVC.swift
+//  BaseNC.swift
 //  ulak.kurye
 //
-//  Created by Mehmet Karagöz on 21.02.2022.
+//  Created by Mehmet Karagöz on 22.02.2022.
 //
 
 import UIKit
 
-class BaseVC: UIViewController {
+class BaseNC: UINavigationController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

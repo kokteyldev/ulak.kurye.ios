@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sCc-ul-TlR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--BaseNC-->
+        <scene sceneID="xC9-zI-zwZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sCc-ul-TlR" customClass="BaseNC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lUa-jY-Mjb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="ulk-orange"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5f4-lf-SJ2" kind="relationship" relationship="rootViewController" id="I0s-27-ERN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N7q-bN-wMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84" y="116"/>
+        </scene>
+        <!--Pre LoginVC-->
+        <scene sceneID="jKy-qh-KqQ">
+            <objects>
+                <viewController id="5f4-lf-SJ2" customClass="PreLoginVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BYX-Rb-qT9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-orange" translatesAutoresizingMaskIntoConstraints="NO" id="2tB-Ab-r0i">
+                                <rect key="frame" x="177" y="104" width="60" height="43"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merhaba!" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jAS-mF-9gP">
+                                <rect key="frame" x="24" y="179" width="366" height="45"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="32"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="preLogin_title"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giriş yapmak için e-posta adresini ve şifreni girmelisin." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UDh-CD-CnJ">
+                                <rect key="frame" x="24" y="232" width="366" height="45"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                <color key="textColor" name="ulk-subtitle"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="preLogin_title_desc"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qwd-v3-DsC" customClass="KKOutlinedTextField" customModule="ulak_consumer" customModuleProvider="target">
+                                <rect key="frame" x="24" y="293" width="366" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6Pd-se-vyc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Telefon No."/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedTitleKey" value="preLogin_phone_number"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="textfieldDidChange:" destination="5f4-lf-SJ2" eventType="editingChanged" id="G2M-Am-xea"/>
+                                    <outlet property="delegate" destination="5f4-lf-SJ2" id="iPP-Th-Uvb"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Af5-Ez-TzM" userLabel="Aggrement">
+                                <rect key="frame" x="24" y="369" width="366" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pv0-Nt-d2X">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="40"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="KVVK metnini okudum ve kabul ediyorum." image="ic-checkmark">
+                                            <color key="titleColor" name="ulk-subtitle"/>
+                                        </state>
+                                        <state key="selected" image="ic-checkmark-checked"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="preLogin_kvkk_title"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="kvkkPolicyTapped:" destination="5f4-lf-SJ2" eventType="touchUpInside" id="Hhi-qm-MA1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Pv0-Nt-d2X" firstAttribute="top" secondItem="Af5-Ez-TzM" secondAttribute="top" id="32I-Qu-eRx"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pv0-Nt-d2X" secondAttribute="bottom" id="avh-6W-o60"/>
+                                    <constraint firstItem="Pv0-Nt-d2X" firstAttribute="leading" secondItem="Af5-Ez-TzM" secondAttribute="leading" id="dDx-sq-M7j"/>
+                                    <constraint firstAttribute="height" constant="40" id="khG-kP-zCP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pv0-Nt-d2X" secondAttribute="trailing" id="sBr-vq-amM"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8q-Jv-E2V" customClass="KKLodingButton" customModule="ulak_kurye" customModuleProvider="target">
+                                <rect key="frame" x="224.5" y="425" width="165.5" height="63.5"/>
+                                <color key="backgroundColor" name="ulk-orange"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="u8q-Jv-E2V" secondAttribute="height" multiplier="157:60" id="N6H-8E-8xq"/>
+                                </constraints>
+                                <state key="normal" image="ic.arrow.right"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginTapped:" destination="5f4-lf-SJ2" eventType="touchUpInside" id="T4g-Bx-ZDc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3cn-9J-a0s"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Af5-Ez-TzM" firstAttribute="leading" secondItem="3cn-9J-a0s" secondAttribute="leading" constant="24" id="505-Ic-nOD"/>
+                            <constraint firstItem="3cn-9J-a0s" firstAttribute="trailing" secondItem="UDh-CD-CnJ" secondAttribute="trailing" constant="24" id="6Ps-zV-dzy"/>
+                            <constraint firstItem="3cn-9J-a0s" firstAttribute="trailing" secondItem="jAS-mF-9gP" secondAttribute="trailing" constant="24" id="E8f-xd-5Fx"/>
+                            <constraint firstItem="jAS-mF-9gP" firstAttribute="leading" secondItem="3cn-9J-a0s" secondAttribute="leading" constant="24" id="HBy-HL-46h"/>
+                            <constraint firstItem="UDh-CD-CnJ" firstAttribute="leading" secondItem="3cn-9J-a0s" secondAttribute="leading" constant="24" id="I2C-hB-XfJ"/>
+                            <constraint firstItem="2tB-Ab-r0i" firstAttribute="centerX" secondItem="BYX-Rb-qT9" secondAttribute="centerX" id="Npz-On-b7T"/>
+                            <constraint firstItem="Af5-Ez-TzM" firstAttribute="top" secondItem="qwd-v3-DsC" secondAttribute="bottom" constant="16" id="Re6-bV-1DY"/>
+                            <constraint firstItem="3cn-9J-a0s" firstAttribute="trailing" secondItem="qwd-v3-DsC" secondAttribute="trailing" constant="24" id="W4B-1P-nbi"/>
+                            <constraint firstItem="qwd-v3-DsC" firstAttribute="top" secondItem="UDh-CD-CnJ" secondAttribute="bottom" constant="16" id="YWO-dL-jwk"/>
+                            <constraint firstItem="qwd-v3-DsC" firstAttribute="leading" secondItem="3cn-9J-a0s" secondAttribute="leading" constant="24" id="Z7m-wU-JYJ"/>
+                            <constraint firstItem="jAS-mF-9gP" firstAttribute="top" secondItem="2tB-Ab-r0i" secondAttribute="bottom" constant="32" id="aMD-wp-rYN"/>
+                            <constraint firstItem="u8q-Jv-E2V" firstAttribute="top" secondItem="Af5-Ez-TzM" secondAttribute="bottom" constant="16" id="az4-UQ-lm6"/>
+                            <constraint firstAttribute="trailing" secondItem="Af5-Ez-TzM" secondAttribute="trailing" constant="24" id="g2H-d0-Hbe"/>
+                            <constraint firstItem="3cn-9J-a0s" firstAttribute="trailing" secondItem="u8q-Jv-E2V" secondAttribute="trailing" constant="24" id="r24-po-RO2"/>
+                            <constraint firstItem="2tB-Ab-r0i" firstAttribute="top" secondItem="3cn-9J-a0s" secondAttribute="top" constant="16" id="s0Q-1Z-JvY"/>
+                            <constraint firstItem="UDh-CD-CnJ" firstAttribute="top" secondItem="jAS-mF-9gP" secondAttribute="bottom" constant="8" id="tpJ-Ld-fdZ"/>
+                            <constraint firstItem="u8q-Jv-E2V" firstAttribute="width" secondItem="BYX-Rb-qT9" secondAttribute="width" multiplier="0.4" id="vtW-nV-nsc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dEP-6a-6Zy"/>
+                    <connections>
+                        <outlet property="kvvkPolicyButton" destination="Pv0-Nt-d2X" id="XuJ-ls-COv"/>
+                        <outlet property="loginButton" destination="u8q-Jv-E2V" id="LHq-aY-RTb"/>
+                        <outlet property="phoneNumberTextField" destination="qwd-v3-DsC" id="g0a-3J-bxj"/>
+                        <segue destination="6Ew-1L-Otk" kind="show" identifier="login" id="Hl0-Iv-aDK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MmR-wU-B1h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="614.49275362318849" y="115.84821428571428"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="d4z-d6-UWl">
+            <objects>
+                <viewController id="6Ew-1L-Otk" customClass="LoginVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="214-QG-HO0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-orange" translatesAutoresizingMaskIntoConstraints="NO" id="Ri8-hw-tqH">
+                                <rect key="frame" x="177" y="104" width="60" height="43"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doğrulama kodunu gir" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xN5-1e-W9e">
+                                <rect key="frame" x="24" y="179" width="366" height="90"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="32"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="login_title"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefonuna SMS olarak gelen 4 haneli kodu gir." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Xv-ht-2GH">
+                                <rect key="frame" x="24" y="277" width="366" height="45"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                <color key="textColor" name="ulk-subtitle"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="login_title_desc"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A5s-TN-tup" customClass="KKOutlinedTextField" customModule="ulak_consumer" customModuleProvider="target">
+                                <rect key="frame" x="24" y="338" width="366" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ejX-fi-LKH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Kodu girin"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedTitleKey" value="login_code"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="textfieldDidChange:" destination="6Ew-1L-Otk" eventType="editingChanged" id="Wc2-sT-Bom"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbb-VW-e4F" customClass="KKLodingButton" customModule="ulak_kurye" customModuleProvider="target">
+                                <rect key="frame" x="224.5" y="414" width="165.5" height="63.5"/>
+                                <color key="backgroundColor" name="ulk-orange"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Gbb-VW-e4F" secondAttribute="height" multiplier="157:60" id="EI1-uz-Ueq"/>
+                                </constraints>
+                                <state key="normal" image="ic.arrow.right"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginTapped:" destination="6Ew-1L-Otk" eventType="touchUpInside" id="1EY-7d-pZg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FYx-Bb-RCu"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="Gbb-VW-e4F" secondAttribute="trailing" constant="24" id="23B-gv-zYO"/>
+                            <constraint firstItem="xN5-1e-W9e" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" constant="24" id="6PU-Fl-dQH"/>
+                            <constraint firstItem="xN5-1e-W9e" firstAttribute="top" secondItem="Ri8-hw-tqH" secondAttribute="bottom" constant="32" id="7Wz-pr-PQ1"/>
+                            <constraint firstItem="4Xv-ht-2GH" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" constant="24" id="E8u-N9-qwm"/>
+                            <constraint firstItem="A5s-TN-tup" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" constant="24" id="Gjk-gv-2dX"/>
+                            <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="xN5-1e-W9e" secondAttribute="trailing" constant="24" id="HZT-RZ-Yph"/>
+                            <constraint firstItem="Gbb-VW-e4F" firstAttribute="top" secondItem="A5s-TN-tup" secondAttribute="bottom" constant="16" id="Ipl-J7-3i0"/>
+                            <constraint firstItem="Gbb-VW-e4F" firstAttribute="width" secondItem="214-QG-HO0" secondAttribute="width" multiplier="0.4" id="UIH-fH-hF4"/>
+                            <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="4Xv-ht-2GH" secondAttribute="trailing" constant="24" id="UYP-x1-7Yy"/>
+                            <constraint firstItem="Ri8-hw-tqH" firstAttribute="centerX" secondItem="214-QG-HO0" secondAttribute="centerX" id="cih-dG-sva"/>
+                            <constraint firstItem="A5s-TN-tup" firstAttribute="top" secondItem="4Xv-ht-2GH" secondAttribute="bottom" constant="16" id="f3S-Yc-t4U"/>
+                            <constraint firstItem="Ri8-hw-tqH" firstAttribute="top" secondItem="FYx-Bb-RCu" secondAttribute="top" constant="16" id="kOm-Lb-yme"/>
+                            <constraint firstItem="4Xv-ht-2GH" firstAttribute="top" secondItem="xN5-1e-W9e" secondAttribute="bottom" constant="8" id="oPt-51-MHS"/>
+                            <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="A5s-TN-tup" secondAttribute="trailing" constant="24" id="uKk-oo-UjY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vvL-ql-cqn"/>
+                    <connections>
+                        <outlet property="codeTextField" destination="A5s-TN-tup" id="hZr-al-2gv"/>
+                        <outlet property="loginButton" destination="Gbb-VW-e4F" id="ulk-6a-V8D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0IC-2D-BWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="116"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic-checkmark" width="30" height="30"/>
+        <image name="ic-checkmark-checked" width="30" height="30"/>
+        <image name="ic.arrow.right" width="33" height="18"/>
+        <image name="logo-orange" width="60" height="43"/>
+        <namedColor name="ulk-orange">
+            <color red="1" green="0.62352941176470589" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ulk-subtitle">
+            <color red="0.52941176470588236" green="0.54509803921568623" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

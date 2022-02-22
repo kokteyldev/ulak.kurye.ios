@@ -12,6 +12,15 @@
 		9E3D434027C4DEF600B6D5C5 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3D433F27C4DEF600B6D5C5 /* OnboardingVC.swift */; };
 		9E3D434427C4DFAA00B6D5C5 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E3D434227C4DFAA00B6D5C5 /* OnboardingView.xib */; };
 		9E3D434527C4DFAA00B6D5C5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3D434327C4DFAA00B6D5C5 /* OnboardingView.swift */; };
+		9E3D434727C4E27200B6D5C5 /* PreLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3D434627C4E27200B6D5C5 /* PreLoginVC.swift */; };
+		9E3D434927C4E28E00B6D5C5 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E3D434827C4E28E00B6D5C5 /* Auth.storyboard */; };
+		9E3D434C27C4E2D800B6D5C5 /* BaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3D434B27C4E2D800B6D5C5 /* BaseNC.swift */; };
+		9E3D434F27C4E66E00B6D5C5 /* KKOutlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3D434E27C4E66E00B6D5C5 /* KKOutlinedTextField.swift */; };
+		9E3D435127C508E900B6D5C5 /* KKUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3D435027C508E900B6D5C5 /* KKUIButton.swift */; };
+		9E3D435327C5115D00B6D5C5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3D435227C5115D00B6D5C5 /* LoginVC.swift */; };
+		9E3D435527C5186200B6D5C5 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3D435427C5186200B6D5C5 /* LoginResponse.swift */; };
+		9E3D435927C520B800B6D5C5 /* PolicyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E3D435727C520B800B6D5C5 /* PolicyVC.xib */; };
+		9E3D435A27C520B800B6D5C5 /* PolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3D435827C520B800B6D5C5 /* PolicyVC.swift */; };
 		9E3E2D0427BE8F1600A17025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3E2D0327BE8F1600A17025 /* AppDelegate.swift */; };
 		9E3E2D0B27BE8F1600A17025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E3E2D0927BE8F1600A17025 /* Main.storyboard */; };
 		9E3E2D0D27BE8F1700A17025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E3E2D0C27BE8F1700A17025 /* Assets.xcassets */; };
@@ -74,6 +83,15 @@
 		9E3D433F27C4DEF600B6D5C5 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		9E3D434227C4DFAA00B6D5C5 /* OnboardingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		9E3D434327C4DFAA00B6D5C5 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		9E3D434627C4E27200B6D5C5 /* PreLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoginVC.swift; sourceTree = "<group>"; };
+		9E3D434827C4E28E00B6D5C5 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		9E3D434B27C4E2D800B6D5C5 /* BaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNC.swift; sourceTree = "<group>"; };
+		9E3D434E27C4E66E00B6D5C5 /* KKOutlinedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KKOutlinedTextField.swift; sourceTree = "<group>"; };
+		9E3D435027C508E900B6D5C5 /* KKUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKUIButton.swift; sourceTree = "<group>"; };
+		9E3D435227C5115D00B6D5C5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		9E3D435427C5186200B6D5C5 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		9E3D435727C520B800B6D5C5 /* PolicyVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PolicyVC.xib; sourceTree = "<group>"; };
+		9E3D435827C520B800B6D5C5 /* PolicyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolicyVC.swift; sourceTree = "<group>"; };
 		9E3E2D0027BE8F1600A17025 /* ulak.kurye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ulak.kurye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E3E2D0327BE8F1600A17025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E3E2D0A27BE8F1600A17025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,6 +162,8 @@
 		9E3D433327C4CA2500B6D5C5 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				9E3D434627C4E27200B6D5C5 /* PreLoginVC.swift */,
+				9E3D435227C5115D00B6D5C5 /* LoginVC.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -185,6 +205,24 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		9E3D434D27C4E2DD00B6D5C5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9ECAAA8D27C3B99D00F583C4 /* BaseVC.swift */,
+				9E3D434B27C4E2D800B6D5C5 /* BaseNC.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9E3D435627C520B100B6D5C5 /* Policy */ = {
+			isa = PBXGroup;
+			children = (
+				9E3D435827C520B800B6D5C5 /* PolicyVC.swift */,
+				9E3D435727C520B800B6D5C5 /* PolicyVC.xib */,
+			);
+			path = Policy;
+			sourceTree = "<group>";
+		};
 		9E3E2CF727BE8F1600A17025 = {
 			isa = PBXGroup;
 			children = (
@@ -213,7 +251,6 @@
 				9ECAAA7227C393B200F583C4 /* Assets */,
 				9ECAAA7127C3938000F583C4 /* Config */,
 				9ECAAA8C27C3B98600F583C4 /* Controllers */,
-				9ECAAAE827C3E1E100F583C4 /* Extensions */,
 				9ECAAAD127C3D06100F583C4 /* Helpers */,
 				9ECAAA8B27C3B97600F583C4 /* Managers */,
 				9ECAAACC27C3CE8100F583C4 /* Models */,
@@ -268,6 +305,7 @@
 				9E3E2D0E27BE8F1700A17025 /* LaunchScreen.storyboard */,
 				9E3E2D0927BE8F1600A17025 /* Main.storyboard */,
 				9E3D433C27C4DEAC00B6D5C5 /* Onboarding.storyboard */,
+				9E3D434827C4E28E00B6D5C5 /* Auth.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -283,7 +321,7 @@
 		9ECAAA8C27C3B98600F583C4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9ECAAA8D27C3B99D00F583C4 /* BaseVC.swift */,
+				9E3D434D27C4E2DD00B6D5C5 /* Base */,
 				9E3D433427C4CA3300B6D5C5 /* Splash */,
 				9E3D433327C4CA2500B6D5C5 /* Auth */,
 				9E3D433E27C4DEE100B6D5C5 /* Onboarding */,
@@ -309,6 +347,7 @@
 				9ECAAACF27C3CF9A00F583C4 /* ServerURL.swift */,
 				9ECAAAD627C3D16500F583C4 /* Token.swift */,
 				9ECAAADA27C3D3DD00F583C4 /* User.swift */,
+				9E3D435427C5186200B6D5C5 /* LoginResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,18 +364,14 @@
 		9ECAAADE27C3DAFC00F583C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */,
+				9E3D435627C520B100B6D5C5 /* Policy */,
 				9E3D434127C4DF9800B6D5C5 /* Onboarding */,
+				9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */,
+				9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */,
+				9E3D434E27C4E66E00B6D5C5 /* KKOutlinedTextField.swift */,
+				9E3D435027C508E900B6D5C5 /* KKUIButton.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		9ECAAAE827C3E1E100F583C4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,12 +498,14 @@
 				9E3D434427C4DFAA00B6D5C5 /* OnboardingView.xib in Resources */,
 				9E3D433D27C4DEAC00B6D5C5 /* Onboarding.storyboard in Resources */,
 				9ECAAA8027C395F600F583C4 /* Dev.xcconfig in Resources */,
+				9E3D435927C520B800B6D5C5 /* PolicyVC.xib in Resources */,
 				9E3E2D3427BE901200A17025 /* GoogleService-Info.plist in Resources */,
 				9ECAAA7D27C393DD00F583C4 /* Poppins-Regular.ttf in Resources */,
 				9ECAAA8127C395F600F583C4 /* Release.xcconfig in Resources */,
 				9ECAAA7C27C393DD00F583C4 /* Poppins-Bold.ttf in Resources */,
 				9E3E2D0D27BE8F1700A17025 /* Assets.xcassets in Resources */,
 				9ECAAA7A27C393DD00F583C4 /* Poppins-SemiBold.ttf in Resources */,
+				9E3D434927C4E28E00B6D5C5 /* Auth.storyboard in Resources */,
 				9E3E2D0B27BE8F1600A17025 /* Main.storyboard in Resources */,
 				9ECAAA7927C393DD00F583C4 /* Poppins-Medium.ttf in Resources */,
 			);
@@ -518,9 +555,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ECAAAEA27C3E1FC00F583C4 /* ToastView.swift in Sources */,
+				9E3D434F27C4E66E00B6D5C5 /* KKOutlinedTextField.swift in Sources */,
+				9E3D435327C5115D00B6D5C5 /* LoginVC.swift in Sources */,
 				9E3D434027C4DEF600B6D5C5 /* OnboardingVC.swift in Sources */,
 				9ECAAA9C27C3C41900F583C4 /* APIRouter.swift in Sources */,
 				9ECAAA9B27C3C41900F583C4 /* APILogger.swift in Sources */,
+				9E3D435A27C520B800B6D5C5 /* PolicyVC.swift in Sources */,
+				9E3D434727C4E27200B6D5C5 /* PreLoginVC.swift in Sources */,
 				9E3E2D0427BE8F1600A17025 /* AppDelegate.swift in Sources */,
 				9ECAAA8E27C3B99D00F583C4 /* BaseVC.swift in Sources */,
 				9ECAAA9E27C3C42D00F583C4 /* Session.swift in Sources */,
@@ -528,9 +569,12 @@
 				9ECAAAD327C3D07600F583C4 /* CustomError.swift in Sources */,
 				9ECAAA9927C3C41900F583C4 /* API.swift in Sources */,
 				9ECAAA9027C3B9DA00F583C4 /* SplashVC.swift in Sources */,
+				9E3D435527C5186200B6D5C5 /* LoginResponse.swift in Sources */,
+				9E3D434C27C4E2D800B6D5C5 /* BaseNC.swift in Sources */,
 				9E3D434527C4DFAA00B6D5C5 /* OnboardingView.swift in Sources */,
 				9ECAAADB27C3D3DD00F583C4 /* User.swift in Sources */,
 				9ECAAACE27C3CE9000F583C4 /* Config.swift in Sources */,
+				9E3D435127C508E900B6D5C5 /* KKUIButton.swift in Sources */,
 				9ECAAA9A27C3C41900F583C4 /* Response.swift in Sources */,
 				9ECAAAD027C3CF9A00F583C4 /* ServerURL.swift in Sources */,
 				9ECAAAD927C3D23E00F583C4 /* Logger.swift in Sources */,

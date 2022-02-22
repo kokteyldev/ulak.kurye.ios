@@ -44,12 +44,8 @@ struct API {
     static func preLogin(phoneNumber: String, completion:@escaping (Result<Bool, Error>) -> Void) {
         performRequest(route: APIRouter.preLogin(phoneNumber: phoneNumber)) { (result:(Result<Response<Bool?>, Error>)) in
             switch result {
-            case Result.success(let response):
-                if let userModel = response.data {
-                    completion(.success(userModel!))
-                } else {
-                    completion(.failure(CustomError.noData.error))
-                }
+            case Result.success(_):
+                completion(.success(true))
                 break
             case Result.failure(let error):
                 completion(.failure(error))
@@ -58,13 +54,13 @@ struct API {
         }
     }
     
-    static func login(code: String, phoneNumber: String, completion:@escaping(Result<Token, Error>) -> Void) {
-        performRequest(route: APIRouter.login(code: code, phoneNumber: phoneNumber)) { (result:(Result<Response<Token?>, Error>)) in
+    static func login(code: String, phoneNumber: String, completion:@escaping(Result<LoginResponse, Error>) -> Void) {
+        performRequest(route: APIRouter.login(code: code, phoneNumber: phoneNumber)) { (result:(Result<Response<LoginResponse?>, Error>)) in
             
             switch result {
             case Result.success(let response):
-                if let token = response.data {
-                    completion(.success(token!))
+                if let loginResponse = response.data, loginResponse?.tokenString != nil {
+                    completion(.success(loginResponse!))
                 } else {
                     completion(.failure(CustomError.noData.error))
                 }
@@ -124,8 +120,7 @@ extension API {
                 
                 if response.response?.statusCode == 401 {
                     Session.shared.logout()
-                    //TODO: doldur
-//                    LoginVC.presentAsRoot()
+                    PreLoginVC.presentAsRoot()
                     return
                 }
                 
