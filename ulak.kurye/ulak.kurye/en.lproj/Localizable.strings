@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  ulak.kurye
+
+  Created by Mehmet Karagöz on 22.02.2022.
+  
+*/
+
+// Error codes
+"error_unknown" = "Unknown Error.";
+"error_no_response" = "Unknown Error. (No Response)";
+"error_invalid_data" = "Unknown Error. (Invalid Data)";
+"error_no_data" = "Unknown Error. (No Data)";
+
+// Force update
+"force_update_message" = "To continue using the application, you must update.";
+"force_update_button_title" = "Update";
+

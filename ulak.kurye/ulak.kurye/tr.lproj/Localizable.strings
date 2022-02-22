@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  ulak.kurye
+
+  Created by Mehmet Karagöz on 22.02.2022.
+  
+*/
+
+// Error codes
+"error_unknown" = "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyin.";
+"error_no_response" = "Bilinmeyen bir hata oluştu. (No Response)";
+"error_invalid_data" = "Bilinmeyen bir hata oluştu. (Invalid Data)";
+"error_no_data" = "Bilinmeyen bir hata oluştu. (No Data)";
+
+// Force update
+"force_update_message" = "Uygulamayı kullanmaya devam etmek için güncelleme yapmalısınız.";
+"force_update_button_title" = "Güncelle";
