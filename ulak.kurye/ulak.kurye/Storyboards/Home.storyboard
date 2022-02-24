@@ -9,21 +9,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Ana Sayfa-->
         <scene sceneID="aiP-6k-5Tu">
             <objects>
-                <viewController id="1cG-fb-psJ" sceneMemberID="viewController">
+                <viewController id="1cG-fb-psJ" customClass="HomeVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hdn-xr-tX4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="36W-H1-J58">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1cG-fb-psJ" id="Kvb-aj-r6t"/>
+                                    <outlet property="delegate" destination="1cG-fb-psJ" id="9DO-lJ-bIk"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4xj-nO-6eO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4xj-nO-6eO" firstAttribute="trailing" secondItem="36W-H1-J58" secondAttribute="trailing" id="0tL-6a-FUn"/>
+                            <constraint firstItem="36W-H1-J58" firstAttribute="leading" secondItem="4xj-nO-6eO" secondAttribute="leading" id="0uu-PU-D59"/>
+                            <constraint firstItem="36W-H1-J58" firstAttribute="top" secondItem="4xj-nO-6eO" secondAttribute="top" id="LjK-OT-GUg"/>
+                            <constraint firstAttribute="bottom" secondItem="36W-H1-J58" secondAttribute="bottom" id="f10-x2-LvU"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UnH-hI-iVZ"/>
+                    <navigationItem key="navigationItem" title="Ana Sayfa" id="UnH-hI-iVZ"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="36W-H1-J58" id="hMT-4X-W5d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngp-Y4-CxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="790" y="153"/>
+            <point key="canvasLocation" x="1060.8695652173915" y="16.741071428571427"/>
         </scene>
         <!--BaseNC-->
         <scene sceneID="pxj-HY-KcU">

@@ -88,7 +88,6 @@ enum APIRouter {
         case .me,
              .updateProfile,
              .sendFeedback:
-            
             return [
                 "Authorization": "Bearer \(Session.shared.token ?? "")",
                 "Accept-Language": Constants.languageCode
@@ -101,7 +100,7 @@ enum APIRouter {
 
 extension APIRouter: URLRequestConvertible {
     func asURLRequest() throws -> URLRequest {
-        var endpoint: String = Constants.API.baseURL.appending(path)
+        var endpoint: String = Constants.API.apiURL.appending(path)
         
         if let queryParameters = queryParameters {
             var isFirstParam: Bool = true
@@ -169,10 +168,10 @@ extension APIRouter {
         }
         
         
-        var log: String = "[-------------\n\(Constants.API.baseURL.appending(path))]"
+        var log: String = "[-------------\n\(Constants.API.apiURL.appending(path))]"
         
         if method == .get, let queryParameters = queryParameters {
-            var endpoint: String = Constants.API.baseURL.appending(path)
+            var endpoint: String = Constants.API.apiURL.appending(path)
             
             var isFirstParam: Bool = true
             for queryParameter in queryParameters {

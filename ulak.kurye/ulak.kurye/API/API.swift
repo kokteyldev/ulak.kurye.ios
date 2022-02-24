@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 struct API {
-    static let baseURL: String = Session.shared.baseURL()
+    static let baseURL: String = Constants.API.apiURL
     
     static func config(completion:@escaping (Result<Config, Error>) -> Void) {
         performRequest(route: APIRouter.config) { (result:(Result<Response<Config?>, Error>)) in

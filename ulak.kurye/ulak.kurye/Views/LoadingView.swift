@@ -27,6 +27,7 @@ final class LoadingView: UIView {
         super.init(frame: frame)
         self.message = message
         self.isDark = isDark
+        
         commonInit()
     }
     

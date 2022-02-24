@@ -1,5 +1,5 @@
 //
-//  KKUIButton.swift
+//  KKLodingButton.swift
 //  ulak.kurye
 //
 //  Created by Mehmet Karagöz on 22.02.2022.

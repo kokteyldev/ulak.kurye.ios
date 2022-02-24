@@ -4,6 +4,12 @@
 <dict>
 	<key>API_URL</key>
 	<string>$(ULK_API_URL)</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Sipariş takibi için konum izni vermelisin.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Sipariş takibi için konum izni vermelisin.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Sipariş takibi için konum izni vermelisin.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Poppins-SemiBold</string>
