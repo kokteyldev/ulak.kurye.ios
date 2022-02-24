@@ -39,7 +39,12 @@ final class Session {
         }
     }
     
-    var user: User?
+    var user: User? {
+        didSet {
+            checkUserState()
+        }
+    }
+    
     var config: Config
     
     var isUserLoggedIn: Bool {
@@ -49,7 +54,6 @@ final class Session {
     // MARK: - Initializer
     func start(_ config: Config) {
         self.config = config
-        checkUserState()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
@@ -66,44 +70,36 @@ final class Session {
     
     // MARK: - User
     func checkUserState() {
-        // check location permission
+        guard let user = user else { return }
+
+        var newUserState = UserState.locationPermissionRequired
+        
         if LocationManager.shared.isLocationPermissionRequired {
-            userState = .locationPermissionRequired
-            return
+            newUserState = .locationPermissionRequired
+        } else if user.isVerifiedAccount == false {
+            newUserState = .accountNotVerified
+        } else if isUserActive {
+            newUserState = .working
+        } else {
+            newUserState = .notWorking
         }
         
-        let group = DispatchGroup()
-        //check notification permission
-        group.enter()
         NotificationManager.shared.isLocationPermissionRequired { isRequired in
             if isRequired {
-                self.userState = .notificationPermissionRequired
-            }
-            group.leave()
-        }
-        
-        group.notify(queue: .main) {
-            if self.userState == .notificationPermissionRequired { return }
-            
-            // check account state
-            if self.user?.isVerifiedAccount == false {
-                self.userState = .accountNotVerified
-                return
+                newUserState = .notificationPermissionRequired
             }
             
-            // check working state
-            if self.isUserActive {
-                self.userState = .working
-            } else {
-                self.userState = .notWorking
+            if self.userState != newUserState {
+                NotificationCenter.default.post(name: NSNotification.Name.UserStateChanged, object: nil)
             }
+            
+            self.userState = newUserState
         }
     }
     
     // MARK: - Notifications
     @objc private func didBecomeActive() {
         self.checkUserState()
-        //TODO: check user state and post notification if needed.
     }
     
     // MARK: - Auth

@@ -61,8 +61,8 @@ final class NoDataView: UIView {
         case .accountNotVerified:
             image = .init(named: "logo-orange")
             message = "waiting_for_account_verification".localized
+            buttonTitle = "go_to_application_site".localized
         case .notWorking:
-            message = "waiting_for_account_verification".localized
             buttonTitle = "start_work".localized
         case .working:
             message = "working_message".localized
