@@ -56,3 +56,5 @@
 "start_work" = "Çalışmaya Başla";
 "see_pool" = "Havuzu Görüntüle";
 "go_to_application_site" = "Başvurunu Tamamla";
+"pool" = "Havuz";
+"qr-code" = "QR Kod";

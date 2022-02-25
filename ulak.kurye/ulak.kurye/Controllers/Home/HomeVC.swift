@@ -10,8 +10,12 @@ import UIKit
 final class HomeVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
     
-    private var orders: [Any] = []
+    private var orders: [Any] = ["1", "2", "3", "4"]
     private var noDataView: NoDataView?
+    
+    private var headerView = HomeHeaderView()
+    private let headerAnimation = CABasicAnimation(keyPath: "opacity")
+    
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -19,9 +23,10 @@ final class HomeVC: BaseVC {
         
         NotificationCenter.default.addObserver(self, selector: #selector(userStateChanged), name: .UserStateChanged, object: nil)
         
+        setupHeaderView()
         setupNoDataView()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -37,6 +42,18 @@ final class HomeVC: BaseVC {
     }
     
     // MARK: - Setup
+    func setupHeaderView() {
+        tableView.setAndLayoutTableHeaderView(header: headerView)
+        
+        headerAnimation.toValue = 0.0
+        headerAnimation.fromValue = 1.0
+        headerAnimation.fillMode = CAMediaTimingFillMode.forwards
+        
+        headerView.layer.add(headerAnimation, forKey: "fade")
+        headerView.layer.speed = 0
+        headerView.layer.timeOffset = 0
+    }
+    
     func setupNoDataView() {
         let userState = Session.shared.userState
         noDataView = nil
@@ -72,7 +89,7 @@ extension HomeVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.backgroundView = orders.count == 0 ? noDataView : nil
-        return 0
+        return orders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,4 +100,30 @@ extension HomeVC: UITableViewDataSource {
     }
 }
 
-
+// MARK: UIScrollViewDelegate
+extension HomeVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+        
+        let offset = scrollView.contentOffset.y + scrollView.contentInset.top
+        if  offset >= 30 {
+            
+            let startLoadingThreshold: Double = 130
+            let fractionDragged: Double = Double(offset-30) / startLoadingThreshold
+            
+            self.headerView.layer.timeOffset = Double.minimum(1.0, fractionDragged)
+            
+            if UIApplication.shared.statusBarStyle != preferredStatusBarStyle {
+                self.setNeedsStatusBarAppearanceUpdate()
+            }
+            
+        } else {
+            self.headerView.layer.timeOffset = 0
+            
+            if UIApplication.shared.statusBarStyle != preferredStatusBarStyle {
+                self.setNeedsStatusBarAppearanceUpdate()
+            }
+        }
+    }
+}
+    

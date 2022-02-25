@@ -65,6 +65,7 @@ final class Session {
     init() {
         token = UserDefaults.standard.string(forKey: Constants.DefaultsKeys.token)
         isOnboardingSeen = UserDefaults.standard.bool(forKey: Constants.DefaultsKeys.isOnboardingSeen)
+        isUserActive = UserDefaults.standard.bool(forKey: Constants.DefaultsKeys.isUserActive)
         config = Config()
     }
     

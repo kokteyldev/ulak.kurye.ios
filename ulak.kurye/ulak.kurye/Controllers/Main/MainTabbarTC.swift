@@ -41,9 +41,11 @@ final class MainTabbarTC: UITabBarController {
     }
     
     private func setupTabItems() {
-        tabBar.items?[1].isEnabled = Session.shared.isAccountVerified
-        tabBar.items?[2].isEnabled = Session.shared.isAccountVerified
-        tabBar.items?[3].isEnabled = Session.shared.isAccountVerified
+        DispatchQueue.main.async {
+            self.tabBar.items?[1].isEnabled = Session.shared.isAccountVerified
+            self.tabBar.items?[2].isEnabled = Session.shared.isAccountVerified
+            self.tabBar.items?[3].isEnabled = Session.shared.isAccountVerified
+        }
     }
     
     // MARK: - Notifications
