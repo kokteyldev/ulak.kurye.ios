@@ -74,6 +74,7 @@
 		9ECAAADB27C3D3DD00F583C4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECAAADA27C3D3DD00F583C4 /* User.swift */; };
 		9ECAAAE027C3DB0D00F583C4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */; };
 		9ECAAAEA27C3E1FC00F583C4 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */; };
+		9EE8B45B27C915AA001E8CE6 /* HomeHeaderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE8B45A27C915AA001E8CE6 /* HomeHeaderVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,7 @@
 		9ECAAADA27C3D3DD00F583C4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		9EE8B45A27C915AA001E8CE6 /* HomeHeaderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +329,7 @@
 				9ECAAACC27C3CE8100F583C4 /* Models */,
 				9ECAAA8227C3960800F583C4 /* Storyboards */,
 				9ECAAADE27C3DAFC00F583C4 /* Views */,
+				9EE8B45927C91596001E8CE6 /* ViewModels */,
 			);
 			path = ulak.kurye;
 			sourceTree = "<group>";
@@ -463,6 +466,14 @@
 				9E3D435027C508E900B6D5C5 /* KKLodingButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9EE8B45927C91596001E8CE6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9EE8B45A27C915AA001E8CE6 /* HomeHeaderVM.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -659,6 +670,7 @@
 				9E3D434F27C4E66E00B6D5C5 /* KKOutlinedTextField.swift in Sources */,
 				9E3304AB27C76BBC00AAB135 /* LocationManager.swift in Sources */,
 				9E3D435327C5115D00B6D5C5 /* LoginVC.swift in Sources */,
+				9EE8B45B27C915AA001E8CE6 /* HomeHeaderVM.swift in Sources */,
 				9E3D434027C4DEF600B6D5C5 /* OnboardingVC.swift in Sources */,
 				9E3304A927C686A000AAB135 /* NotificationManager.swift in Sources */,
 				9ECAAA9C27C3C41900F583C4 /* APIRouter.swift in Sources */,

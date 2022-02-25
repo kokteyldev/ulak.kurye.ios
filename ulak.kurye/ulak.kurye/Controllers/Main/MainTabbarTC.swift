@@ -27,17 +27,19 @@ final class MainTabbarTC: UITabBarController {
     
     // MARK: - Setup
     private func setupIcons() {
-        tabBar.items?[0].image = UIImage(named: "tabbar-home")
-        tabBar.items?[0].title = "tabbar_home".localized
-        
-        tabBar.items?[1].image = UIImage(named: "tabbar-notification")
-        tabBar.items?[1].title = "tabbar_notification".localized
-        
-        tabBar.items?[2].image = UIImage(named: "tabbar-wallet")
-        tabBar.items?[2].title = "tabbar_wallet".localized
-        
-        tabBar.items?[3].image = UIImage(named: "tabbar-settings")
-        tabBar.items?[3].title = "tabbar_settings".localized
+        DispatchQueue.main.async {
+            self.tabBar.items?[0].image = UIImage(named: "tabbar-home")
+            self.tabBar.items?[0].title = "tabbar_home".localized
+            
+            self.tabBar.items?[1].image = UIImage(named: "tabbar-notification")
+            self.tabBar.items?[1].title = "tabbar_notification".localized
+            
+            self.tabBar.items?[2].image = UIImage(named: "tabbar-wallet")
+            self.tabBar.items?[2].title = "tabbar_wallet".localized
+            
+            self.tabBar.items?[3].image = UIImage(named: "tabbar-settings")
+            self.tabBar.items?[3].title = "tabbar_settings".localized
+        }
     }
     
     private func setupTabItems() {
@@ -50,7 +52,7 @@ final class MainTabbarTC: UITabBarController {
     
     // MARK: - Notifications
     @objc private func userStateChanged() {
-        self.setupTabItems()
+        self.viewWillLayoutSubviews()
     }
     
     // MARK: - Presentation

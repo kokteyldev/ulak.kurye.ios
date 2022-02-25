@@ -15,7 +15,15 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeHeaderView" customModule="ulak_kurye" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeHeaderView" customModule="ulak_kurye" customModuleProvider="target">
+            <connections>
+                <outlet property="lblTitle" destination="V3s-TM-TKW" id="2eQ-oQ-YOL"/>
+                <outlet property="poolContainerView" destination="hMN-Sm-Ijx" id="9uC-LD-G8U"/>
+                <outlet property="qrCodeContainerView" destination="Be2-bb-dxf" id="Oqi-2E-B5H"/>
+                <outlet property="segmentControl" destination="boO-J3-buO" id="BWa-qj-c73"/>
+                <outlet property="workContainerView" destination="EBX-dm-58m" id="CrA-cz-vwU"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="800" height="300"/>
@@ -28,7 +36,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="303.5" height="182"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çalışıyorum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V3s-TM-TKW">
-                                    <rect key="frame" x="16" y="61.5" width="271.5" height="21"/>
+                                    <rect key="frame" x="16" y="57" width="271.5" height="25.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" name="ulk-green"/>
                                     <nil key="highlightedColor"/>
@@ -51,6 +59,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value=" "/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="workTapped:" destination="-1" eventType="touchUpInside" id="84q-M9-Bej"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" name="ulk-input-border"/>
@@ -85,7 +96,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Havuz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ppU-JV-bpZ">
-                                    <rect key="frame" x="0.0" y="118" width="182" height="19"/>
+                                    <rect key="frame" x="0.0" y="118" width="182" height="22.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -100,6 +111,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value=" "/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="poolTapped:" destination="-1" eventType="touchUpInside" id="rxb-Un-WsT"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" name="ulk-orange"/>
@@ -132,7 +146,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR Kod" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="i7o-Cg-fpa">
-                                    <rect key="frame" x="0.0" y="118" width="182" height="19"/>
+                                    <rect key="frame" x="0.0" y="118" width="182" height="22.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -147,6 +161,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value=" "/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="qrCodeTapped:" destination="-1" eventType="touchUpInside" id="y2m-Sj-yFe"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" name="ulk-orange"/>

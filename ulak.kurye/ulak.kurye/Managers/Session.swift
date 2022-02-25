@@ -32,9 +32,9 @@ final class Session {
         }
     }
     
-    var isUserActive: Bool = false {
+    var isUserWorking: Bool = false {
         didSet {
-            UserDefaults.standard.setValue(isUserActive, forKey: Constants.DefaultsKeys.isUserActive)
+            UserDefaults.standard.setValue(isUserWorking, forKey: Constants.DefaultsKeys.isUserWorking)
             checkUserState()
         }
     }
@@ -65,7 +65,7 @@ final class Session {
     init() {
         token = UserDefaults.standard.string(forKey: Constants.DefaultsKeys.token)
         isOnboardingSeen = UserDefaults.standard.bool(forKey: Constants.DefaultsKeys.isOnboardingSeen)
-        isUserActive = UserDefaults.standard.bool(forKey: Constants.DefaultsKeys.isUserActive)
+        isUserWorking = UserDefaults.standard.bool(forKey: Constants.DefaultsKeys.isUserWorking)
         config = Config()
     }
     
@@ -83,7 +83,7 @@ final class Session {
             newUserState = .locationPermissionRequired
         } else if user.isVerifiedAccount == false {
             newUserState = .accountNotVerified
-        } else if isUserActive {
+        } else if isUserWorking {
             newUserState = .working
         } else {
             newUserState = .notWorking

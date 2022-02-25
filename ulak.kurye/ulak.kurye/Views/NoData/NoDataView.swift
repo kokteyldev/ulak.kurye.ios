@@ -87,7 +87,7 @@ final class NoDataView: UIView {
             let url = URL(string: Constants.App.courierApplicationURL)!
             UIApplication.shared.open(url)
         case .notWorking:
-            Session.shared.isUserActive = true
+            Session.shared.isUserWorking = true
         case .working:
             self.delegate?.goToPool()
         }

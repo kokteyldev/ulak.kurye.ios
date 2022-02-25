@@ -23,7 +23,7 @@ struct Constants {
     struct DefaultsKeys {
         static let token = "com.ulak.kurye.userDefaults.token"
         static let isOnboardingSeen = "com.ulak.kurye.userDefaults.isOnboardingSeen"
-        static let isUserActive = "com.ulak.kurye.userDefaults.isUserActive"
+        static let isUserWorking = "com.ulak.kurye.userDefaults.isUserWorking"
     }
     
     static var languageCode: String {

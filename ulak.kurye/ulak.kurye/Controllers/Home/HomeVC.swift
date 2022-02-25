@@ -56,15 +56,17 @@ final class HomeVC: BaseVC {
     
     func setupNoDataView() {
         let userState = Session.shared.userState
-        noDataView = nil
         
-        if userState != .working || orders.count == 0 {
-            DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            self.noDataView = nil
+            
+            if userState != .working || self.orders.count == 0 {
+                
                 self.noDataView = NoDataView(userState: userState)
                 self.tableView.reloadData()
+            } else {
+                self.tableView.reloadData()
             }
-        } else {
-            tableView.reloadData()
         }
     }
     
@@ -126,4 +128,4 @@ extension HomeVC: UIScrollViewDelegate {
         }
     }
 }
-    
+
