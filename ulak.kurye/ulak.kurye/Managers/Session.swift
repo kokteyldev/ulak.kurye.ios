@@ -35,8 +35,12 @@ final class Session {
     var isUserActive: Bool = false {
         didSet {
             UserDefaults.standard.setValue(isUserActive, forKey: Constants.DefaultsKeys.isUserActive)
-            NotificationCenter.default.post(name: NSNotification.Name.UserStateChanged, object: nil)
+            checkUserState()
         }
+    }
+    
+    var isAccountVerified: Bool {
+        return user?.isVerifiedAccount ?? false
     }
     
     var user: User? {
@@ -90,10 +94,9 @@ final class Session {
             }
             
             if self.userState != newUserState {
+                self.userState = newUserState
                 NotificationCenter.default.post(name: NSNotification.Name.UserStateChanged, object: nil)
             }
-            
-            self.userState = newUserState
         }
     }
     

@@ -13,18 +13,19 @@ final class MainTabbarTC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupIcons()
+        NotificationCenter.default.addObserver(self, selector: #selector(userStateChanged), name: .UserStateChanged, object: nil)
     }
     
     override func viewWillLayoutSubviews() {
         setupIcons()
+        setupTabItems()
     }
     
-    private func setupUI() {
-        tabBar.setTabBarUI()
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .UserStateChanged, object: nil)
     }
     
-    // MARK: - UI
+    // MARK: - Setup
     private func setupIcons() {
         tabBar.items?[0].image = UIImage(named: "tabbar-home")
         tabBar.items?[0].title = "tabbar_home".localized
@@ -37,6 +38,17 @@ final class MainTabbarTC: UITabBarController {
         
         tabBar.items?[3].image = UIImage(named: "tabbar-settings")
         tabBar.items?[3].title = "tabbar_settings".localized
+    }
+    
+    private func setupTabItems() {
+        tabBar.items?[1].isEnabled = Session.shared.isAccountVerified
+        tabBar.items?[2].isEnabled = Session.shared.isAccountVerified
+        tabBar.items?[3].isEnabled = Session.shared.isAccountVerified
+    }
+    
+    // MARK: - Notifications
+    @objc private func userStateChanged() {
+        self.setupTabItems()
     }
     
     // MARK: - Presentation

@@ -22,7 +22,9 @@ final class NotificationManager: NSObject {
     func getNotificationConsent() {
         shouldAskNotificationPermission { shouldAsk in
             if shouldAsk {
-                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in }
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                    Session.shared.checkUserState()
+                }
                 return
             }
             

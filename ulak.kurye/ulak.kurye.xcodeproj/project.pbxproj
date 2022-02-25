@@ -47,6 +47,7 @@
 		9E3E2D3727BE927200A17025 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9E3E2D3627BE927200A17025 /* FirebaseAnalytics */; };
 		9E3E2D3927BE927200A17025 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9E3E2D3827BE927200A17025 /* FirebaseCrashlytics */; };
 		9E3E2D3B27BE927200A17025 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 9E3E2D3A27BE927200A17025 /* FirebasePerformance */; };
+		9E6D2F7127C8C43B00BAA261 /* UIImage+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D2F7027C8C43B00BAA261 /* UIImage+KKUtils.swift */; };
 		9ECAAA7927C393DD00F583C4 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9ECAAA7427C393DC00F583C4 /* Poppins-Medium.ttf */; };
 		9ECAAA7A27C393DD00F583C4 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9ECAAA7527C393DC00F583C4 /* Poppins-SemiBold.ttf */; };
 		9ECAAA7B27C393DD00F583C4 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9ECAAA7627C393DC00F583C4 /* Poppins-Light.ttf */; };
@@ -134,6 +135,7 @@
 		9E3E2D2427BE8F1700A17025 /* ulak_kuryeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ulak_kuryeUITests.swift; sourceTree = "<group>"; };
 		9E3E2D2627BE8F1700A17025 /* ulak_kuryeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ulak_kuryeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9E3E2D3327BE901200A17025 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9E6D2F7027C8C43B00BAA261 /* UIImage+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+KKUtils.swift"; sourceTree = "<group>"; };
 		9ECAAA7427C393DC00F583C4 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		9ECAAA7527C393DC00F583C4 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		9ECAAA7627C393DC00F583C4 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				9ECAAA7227C393B200F583C4 /* Assets */,
 				9ECAAA7127C3938000F583C4 /* Config */,
 				9ECAAA8C27C3B98600F583C4 /* Controllers */,
+				9E6D2F6F27C8C42700BAA261 /* Extensions */,
 				9ECAAAD127C3D06100F583C4 /* Helpers */,
 				9ECAAA8B27C3B97600F583C4 /* Managers */,
 				9ECAAACC27C3CE8100F583C4 /* Models */,
@@ -341,6 +344,14 @@
 				9E3E2D2627BE8F1700A17025 /* ulak_kuryeUITestsLaunchTests.swift */,
 			);
 			path = ulak.kuryeUITests;
+			sourceTree = "<group>";
+		};
+		9E6D2F6F27C8C42700BAA261 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9E6D2F7027C8C43B00BAA261 /* UIImage+KKUtils.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9ECAAA7127C3938000F583C4 /* Config */ = {
@@ -652,6 +663,7 @@
 				9E3D435A27C520B800B6D5C5 /* PolicyVC.swift in Sources */,
 				9E3D434727C4E27200B6D5C5 /* PreLoginVC.swift in Sources */,
 				9E3304A627C6748A00AAB135 /* OrderTVC.swift in Sources */,
+				9E6D2F7127C8C43B00BAA261 /* UIImage+KKUtils.swift in Sources */,
 				9E3E2D0427BE8F1600A17025 /* AppDelegate.swift in Sources */,
 				9ECAAA8E27C3B99D00F583C4 /* BaseVC.swift in Sources */,
 				9ECAAA9E27C3C42D00F583C4 /* Session.swift in Sources */,

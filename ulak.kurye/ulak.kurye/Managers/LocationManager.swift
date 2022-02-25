@@ -60,6 +60,6 @@ extension LocationManager: CLLocationManagerDelegate {
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        NotificationCenter.default.post(name: NSNotification.Name.UserStateChanged, object: nil)
+        Session.shared.checkUserState()
     }
 }
