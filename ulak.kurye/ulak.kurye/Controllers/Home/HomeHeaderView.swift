@@ -56,13 +56,16 @@ final class HomeHeaderView: UIView {
         DispatchQueue.main.async {
             self.lblTitle.text = vm.workTitle
             self.segmentControl.isOn = vm.isSwitchOn
-            self.workContainerView.isUserInteractionEnabled = vm.workAvailable
-            self.poolContainerView.isUserInteractionEnabled = vm.poolAvailable
-            self.qrCodeContainerView.isUserInteractionEnabled = vm.qrCodeAvailable
-            self.poolContainerView.backgroundColor = vm.poolBackgroundColor
-            self.qrCodeContainerView.backgroundColor = vm.qrCodeBackgroundColor
+            self.workContainerView.isUserInteractionEnabled = vm.isWorkEnabled
+            self.workContainerView.alpha = vm.workAlpha
+            
+            self.poolContainerView.isUserInteractionEnabled = vm.poolEnabled
             self.poolContainerView.alpha = vm.poolAlpha
+            self.poolContainerView.backgroundColor = vm.poolBackgroundColor
+            
+            self.qrCodeContainerView.isUserInteractionEnabled = vm.qrCodeEnabled
             self.qrCodeContainerView.alpha = vm.qrCodeAlpha
+            self.qrCodeContainerView.backgroundColor = vm.qrCodeBackgroundColor
         }
     }
     

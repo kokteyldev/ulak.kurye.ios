@@ -10,12 +10,11 @@ import UIKit
 final class HomeVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
     
-    private var orders: [Any] = ["1", "2", "3", "4"]
+    private var orderDataSource = OrderDataSource()
     private var noDataView: NoDataView?
     
     private var headerView = HomeHeaderView()
     private let headerAnimation = CABasicAnimation(keyPath: "opacity")
-    
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -55,18 +54,9 @@ final class HomeVC: BaseVC {
     }
     
     func setupNoDataView() {
-        let userState = Session.shared.userState
-        
         DispatchQueue.main.async {
-            self.noDataView = nil
-            
-            if userState != .working || self.orders.count == 0 {
-                
-                self.noDataView = NoDataView(userState: userState)
-                self.tableView.reloadData()
-            } else {
-                self.tableView.reloadData()
-            }
+            self.noDataView = NoDataView(userState: Session.shared.userState)
+            self.tableView.reloadData()
         }
     }
     
@@ -90,8 +80,8 @@ extension HomeVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tableView.backgroundView = orders.count == 0 ? noDataView : nil
-        return orders.count
+        tableView.backgroundView = orderDataSource.activeOrders.count > 0 ? nil : noDataView
+        return orderDataSource.activeOrders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,6 +89,20 @@ extension HomeVC: UITableViewDataSource {
         cell.textLabel?.text = "\(indexPath.row)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if orderDataSource.activeOrders.count > 0 {
+            let headerView = TableSectionHeaderView(frame: .init(x: 0, y: 0, width: tableView.frame.size.width, height: 32.0))
+            headerView.titleLabel.text = "home_active_orders".localized
+            return headerView
+        }
+        
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 32.0
     }
 }
 
@@ -108,10 +112,9 @@ extension HomeVC: UIScrollViewDelegate {
         view.endEditing(true)
         
         let offset = scrollView.contentOffset.y + scrollView.contentInset.top
-        if  offset >= 30 {
-            
+        if offset >= 10 {
             let startLoadingThreshold: Double = 130
-            let fractionDragged: Double = Double(offset-30) / startLoadingThreshold
+            let fractionDragged: Double = Double(offset-10) / startLoadingThreshold
             
             self.headerView.layer.timeOffset = Double.minimum(1.0, fractionDragged)
             

@@ -42,7 +42,7 @@ struct User: Codable {
         if container.contains(.isVerifiedAccount) {
             self.isVerifiedAccount = try container.decode(Bool.self, forKey: .isVerifiedAccount)
         } else {
-            self.isVerifiedAccount = false
+            self.isVerifiedAccount = true
         }
     }
 }

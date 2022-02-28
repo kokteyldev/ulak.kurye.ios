@@ -46,6 +46,10 @@
 "tabbar_wallet" = "Cüzdan";
 "tabbar_settings" = "Ayarlar";
 
+// Home
+"home_active_orders" = "AKTİF SİPARİŞLERİM";
+"home_past_orders" = "GEÇMİŞ SİPARİŞLERİM";
+
 // General
 "location_permission_message" = "Uygulamayı kullanmaya devam etmek için konum izni vermelisin.";
 "notification_permission_message" = "Uygulamayı kullanmaya devam etmek için bildirim izni vermelisin.";

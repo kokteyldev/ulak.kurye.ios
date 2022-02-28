@@ -9,27 +9,21 @@ import Foundation
 import UIKit
 
 struct HomeHeaderVM {
-    var workTitle: String?
+    // Work settings
+    var workTitle: String
     var isSwitchOn: Bool
-    var workAvailable: Bool
-    var poolAvailable: Bool
-    var qrCodeAvailable: Bool
+    var isWorkEnabled: Bool
+    var workAlpha: Double
     
-    var poolBackgroundColor: UIColor {
-        return poolAvailable ? UIColor(named: "ulk-orange")! : UIColor(named: "ulk-input-border")!
-    }
+    // Pool settings
+    var poolEnabled: Bool
+    var poolAlpha: Double
+    var poolBackgroundColor: UIColor
     
-    var qrCodeBackgroundColor: UIColor {
-        return qrCodeAvailable ? UIColor(named: "ulk-orange")! : UIColor(named: "ulk-input-border")!
-    }
-    
-    var poolAlpha: Double {
-        return poolAvailable ? 1.0 : 0.4
-    }
-    
-    var qrCodeAlpha: Double {
-        return qrCodeAvailable ? 1.0 : 0.4
-    }
+    // QR settings
+    var qrCodeEnabled: Bool
+    var qrCodeAlpha: Double
+    var qrCodeBackgroundColor: UIColor
     
     // MARK: - View Lifecycle
     init() {
@@ -38,9 +32,15 @@ struct HomeHeaderVM {
         
         workTitle = isUserWorking ? "working".localized : "start_work".localized
         isSwitchOn = isUserWorking
+        isWorkEnabled = (userState == .notWorking || userState == .working)
+        workAlpha = isWorkEnabled ? 1.0 : 0.4
         
-        workAvailable = (userState == .notWorking || userState == .working)
-        poolAvailable = (userState == .working)
-        qrCodeAvailable = (userState == .working)
+        poolEnabled = (userState == .working)
+        poolAlpha = poolEnabled ? 1.0 : 0.4
+        poolBackgroundColor = poolEnabled ? UIColor(named: "ulk-orange")! : UIColor(named: "ulk-input-border")!
+        
+        qrCodeEnabled = (userState == .working)
+        qrCodeAlpha = qrCodeEnabled ? 1.0 : 0.4
+        qrCodeBackgroundColor = qrCodeEnabled ? UIColor(named: "ulk-orange")! : UIColor(named: "ulk-input-border")!
     }
 }
