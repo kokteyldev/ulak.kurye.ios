@@ -8,7 +8,7 @@
 import Foundation
 
 final class OrderDataSource {
-    var activeOrders: [OrderVM] {
+    var activeOrderVMs: [OrderVM] {
         if Session.shared.userState == .working {
             return orders
         }
@@ -21,14 +21,14 @@ final class OrderDataSource {
             return false
         }
         
-        return orders.count > 0 || pastOrders.count > 0
+        return activeOrderVMs.count > 0 || pastOrderVMs.count > 0
     }
     
     var shouldRequestMorePast: Bool {
         return pastPaginate.page > 0 && pastPaginate.page < pastPaginate.pagesTotal
     }
     
-    var pastOrders: [OrderVM] = []
+    var pastOrderVMs: [OrderVM] = []
     private var pastPaginate: Paginate = Paginate()
     
     private var orders: [OrderVM] = []
@@ -37,7 +37,7 @@ final class OrderDataSource {
     // MARK: Initializer
     init() {}
     
-    // MARK: - Order
+    // MARK: - New Data
     func addNewOrders(_ newOrders: [Order]) {
         for order in newOrders {
             orders.append(OrderVM(order: order))
@@ -48,7 +48,25 @@ final class OrderDataSource {
         pastPaginate = orderResponse.paginate
         
         for order in orderResponse.orders {
-            pastOrders.append(OrderVM(order: order))
+            pastOrderVMs.append(OrderVM(order: order))
         }
+    }
+    
+    // MARK: - Utils
+    func order(indexPath: IndexPath) -> OrderVM {
+        if indexPath.section == 0 {
+            return activeOrderVMs[indexPath.row]
+        }
+        
+        return pastOrderVMs[indexPath.row]
+    }
+    
+    // MARK: - UITableView
+    func tableView(numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return self.activeOrderVMs.count
+        }
+        
+        return self.pastOrderVMs.count
     }
 }

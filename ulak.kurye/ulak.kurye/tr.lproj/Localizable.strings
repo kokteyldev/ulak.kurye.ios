@@ -55,6 +55,12 @@
 "remaining_hours" = "saat kaldı.";
 "remaining_days" = "gün kaldı.";
 "no_time_remaining" = "Teslimat gecikti.";
+"order_total_price" = "Tahmini Kazanç";
+"order_service_info" = "Servis Bilgileri";
+"order_task_code" = "Görev Kodu";
+
+// Order Detail
+"order_detail_title" = "Görev Detay";
 
 // General
 "location_permission_message" = "Uygulamayı kullanmaya devam etmek için konum izni vermelisin.";

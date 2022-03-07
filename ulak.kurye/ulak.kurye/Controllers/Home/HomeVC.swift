@@ -34,6 +34,10 @@ final class HomeVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -131,7 +135,7 @@ final class HomeVC: BaseVC {
             case Result.success(let orderResponse):
                 self.isNetworkRequestInProgress = false
                 
-                let indexPaths = (self.orderDataSource.pastOrders.count..<(self.orderDataSource.pastOrders.count + orderResponse.orders.count)).map { IndexPath(row: $0, section: 1) }
+                let indexPaths = (self.orderDataSource.pastOrderVMs.count..<(self.orderDataSource.pastOrderVMs.count + orderResponse.orders.count)).map { IndexPath(row: $0, section: 1) }
                 self.orderDataSource.addNewPastOrders(orderResponse)
                 
                 if indexPaths.count != 0 {
@@ -152,12 +156,22 @@ final class HomeVC: BaseVC {
     @objc private func userStateChanged() {
         setupNoDataView()
     }
+    
+    // MARK: - Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "OrderDetailVC" {
+            guard let orderVM = sender as? OrderVM else { return }
+            let orderDetailVC = segue.destination as! OrderDetailVC
+            orderDetailVC.order = orderVM.order
+        }
+    }
 }
 
 // MARK: UITableViewDelegate
 extension HomeVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let order = orderDataSource.order(indexPath: indexPath)
+        performSegue(withIdentifier: "OrderDetailVC", sender: order)
     }
 }
 
@@ -169,16 +183,11 @@ extension HomeVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.backgroundView = orderDataSource.isDataAvailable ? nil : noDataView
-        
-        if section == 0 {
-            return orderDataSource.activeOrders.count
-        }
-        
-        return orderDataSource.pastOrders.count
+        return orderDataSource.tableView(numberOfRowsInSection: section)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 && indexPath.row == orderDataSource.pastOrders.count - 1 {
+        if indexPath.section == 1 && indexPath.row == orderDataSource.pastOrderVMs.count - 1 {
             getMoreOrders()
         }
     }
@@ -186,11 +195,8 @@ extension HomeVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTVC", for: indexPath) as! OrderTVC
         
-        if indexPath.section == 0 {
-            cell.setOrder(orderDataSource.activeOrders[indexPath.row])
-        } else {
-            cell.setOrder(orderDataSource.pastOrders[indexPath.row])
-        }
+        let order = orderDataSource.order(indexPath: indexPath)
+        cell.setOrder(order)
         
         return cell
     }

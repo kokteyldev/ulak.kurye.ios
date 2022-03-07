@@ -56,6 +56,8 @@
 		9E6D2F7127C8C43B00BAA261 /* UIImage+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D2F7027C8C43B00BAA261 /* UIImage+KKUtils.swift */; };
 		9E6D2F7327C8D71600BAA261 /* UITableView+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D2F7227C8D71600BAA261 /* UITableView+KKUtils.swift */; };
 		9E896AB627D64B680041FFBD /* NetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E896AB527D64B680041FFBD /* NetworkRequestable.swift */; };
+		9E896AB827D658BD0041FFBD /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E896AB727D658BD0041FFBD /* OrderDetailVC.swift */; };
+		9E896ABA27D65FFD0041FFBD /* OrderDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E896AB927D65FFD0041FFBD /* OrderDetailVM.swift */; };
 		9EA443C427CCF4E800C4A47B /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA443C327CCF4E800C4A47B /* TableSectionHeaderView.swift */; };
 		9EA443C627CCF4EF00C4A47B /* TableSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EA443C527CCF4EF00C4A47B /* TableSectionHeaderView.xib */; };
 		9EA443C927CD1A4400C4A47B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA443C827CD1A4400C4A47B /* Order.swift */; };
@@ -156,6 +158,8 @@
 		9E6D2F7027C8C43B00BAA261 /* UIImage+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+KKUtils.swift"; sourceTree = "<group>"; };
 		9E6D2F7227C8D71600BAA261 /* UITableView+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+KKUtils.swift"; sourceTree = "<group>"; };
 		9E896AB527D64B680041FFBD /* NetworkRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestable.swift; sourceTree = "<group>"; };
+		9E896AB727D658BD0041FFBD /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
+		9E896AB927D65FFD0041FFBD /* OrderDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVM.swift; sourceTree = "<group>"; };
 		9EA443C327CCF4E800C4A47B /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
 		9EA443C527CCF4EF00C4A47B /* TableSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableSectionHeaderView.xib; sourceTree = "<group>"; };
 		9EA443C827CD1A4400C4A47B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				9E33049627C6546000AAB135 /* HomeVC.swift */,
 				9E33049827C661CB00AAB135 /* HomeHeaderView.swift */,
 				9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */,
+				9E896AB727D658BD0041FFBD /* OrderDetailVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 			children = (
 				9EE8B45A27C915AA001E8CE6 /* HomeHeaderVM.swift */,
 				9E43A1F627CF686300077288 /* OrderVM.swift */,
+				9E896AB927D65FFD0041FFBD /* OrderDetailVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -717,6 +723,7 @@
 				9E33049927C661CB00AAB135 /* HomeHeaderView.swift in Sources */,
 				9E3D434F27C4E66E00B6D5C5 /* KKOutlinedTextField.swift in Sources */,
 				9E3304AB27C76BBC00AAB135 /* LocationManager.swift in Sources */,
+				9E896AB827D658BD0041FFBD /* OrderDetailVC.swift in Sources */,
 				9E3D435327C5115D00B6D5C5 /* LoginVC.swift in Sources */,
 				9EE8B45B27C915AA001E8CE6 /* HomeHeaderVM.swift in Sources */,
 				9E3D434027C4DEF600B6D5C5 /* OnboardingVC.swift in Sources */,
@@ -744,6 +751,7 @@
 				9EA443C427CCF4E800C4A47B /* TableSectionHeaderView.swift in Sources */,
 				9ECAAADB27C3D3DD00F583C4 /* User.swift in Sources */,
 				9ECAAACE27C3CE9000F583C4 /* Config.swift in Sources */,
+				9E896ABA27D65FFD0041FFBD /* OrderDetailVM.swift in Sources */,
 				9E3D435127C508E900B6D5C5 /* KKLodingButton.swift in Sources */,
 				9E6D2F7327C8D71600BAA261 /* UITableView+KKUtils.swift in Sources */,
 				9ECAAA9A27C3C41900F583C4 /* Response.swift in Sources */,

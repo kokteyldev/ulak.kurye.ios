@@ -21,7 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #endif
         
         FirebaseApp.configure()
+        setupUI()
         return true
+    }
+    
+    // MARK: - UI
+    private func setupUI() {
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 18)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "ic-back")
+        UINavigationBar.appearance().tintColor = .init(named: "ulk-orange")
     }
 }
 

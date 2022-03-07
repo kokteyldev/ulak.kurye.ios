@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct OrderVM {
+class OrderVM {
     var backgroundColor: UIColor
     var iconImage: UIImage
     let fromAddress: String
@@ -18,7 +18,7 @@ struct OrderVM {
     let serviceTitle: String
     let alpha: Double
     
-    private var order: Order
+    var order: Order
     
     // MARK: Init
     init(order: Order) {
