@@ -1,11 +1,15 @@
 //
-//  LoginResponse.swift
+//  Auth.swift
 //  ulak.kurye
 //
-//  Created by Mehmet Karagöz on 22.02.2022.
+//  Created by Mehmet Karagöz on 21.02.2022.
 //
 
 import Foundation
+
+struct Token: Codable {
+    var tokenString: String
+}
 
 struct LoginResponse: Codable {
     var tokenString: String?

@@ -30,6 +30,10 @@ struct Constants {
         return Locale.current.languageCode ?? "tr"
     }
     
+    static var serverDateFormat: String {
+        return "dd/MM/yyyy HH:mm:ss"
+    }
+    
     static let errorDomain = "com.ulak.kurye"
 }
 

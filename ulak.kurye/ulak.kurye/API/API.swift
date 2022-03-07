@@ -11,6 +11,7 @@ import Alamofire
 struct API {
     static let baseURL: String = Constants.API.apiURL
     
+    // MARK: - App
     static func config(completion:@escaping (Result<Config, Error>) -> Void) {
         performRequest(route: APIRouter.config) { (result:(Result<Response<Config?>, Error>)) in
             switch result {
@@ -28,19 +29,7 @@ struct API {
         }
     }
     
-    static func sendFeedback(message: String, completion:@escaping (Result<Bool, Error>) -> Void) {
-        performRequest(route: APIRouter.sendFeedback(message: message)) { (result:(Result<Response<Bool?>, Error>)) in
-            switch result {
-            case Result.success(_):
-                completion(.success(true))
-                break
-            case Result.failure(let error):
-                completion(.failure(error))
-                break
-            }
-        }
-    }
-    
+    // MARK: - Auth
     static func preLogin(phoneNumber: String, completion:@escaping (Result<Bool, Error>) -> Void) {
         performRequest(route: APIRouter.preLogin(phoneNumber: phoneNumber)) { (result:(Result<Response<Bool?>, Error>)) in
             switch result {
@@ -91,6 +80,38 @@ struct API {
     
     static func updateProfile(name: String?, surname: String?, completion:@escaping (Result<Bool, Error>) -> Void) {
         performRequest(route: APIRouter.updateProfile(name: name, surname: surname)) { (result:(Result<Response<Bool?>, Error>)) in
+            switch result {
+            case Result.success(_):
+                completion(.success(true))
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
+    // MARK: - Orders
+    static func getOrders(completion:@escaping (Result<GetOrderResponse, Error>) -> Void) {
+        performRequest(route: APIRouter.getOrders) { (result:(Result<Response<GetOrderResponse?>, Error>)) in
+            switch result {
+            case Result.success(let response):
+                if let orderResponse = response.data {
+                    completion(.success(orderResponse!))
+                } else {
+                    completion(.failure(CustomError.noData.error))
+                }
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
+    // MARK: - Utils
+    static func sendFeedback(message: String, completion:@escaping (Result<Bool, Error>) -> Void) {
+        performRequest(route: APIRouter.sendFeedback(message: message)) { (result:(Result<Response<Bool?>, Error>)) in
             switch result {
             case Result.success(_):
                 completion(.success(true))

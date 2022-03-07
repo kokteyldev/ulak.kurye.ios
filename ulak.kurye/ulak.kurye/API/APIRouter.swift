@@ -14,6 +14,7 @@ enum APIRouter {
     case login(code: String, phoneNumber: String)
     case me
     case updateProfile(name: String?, surname: String?)
+    case getOrders
     case sendFeedback(message: String)
     
     private enum Encoding {
@@ -24,7 +25,8 @@ enum APIRouter {
     private var method: HTTPMethod {
         switch self {
         case .config,
-             .me:
+             .me,
+             .getOrders:
             return .get
         case .preLogin,
              .login,
@@ -46,6 +48,8 @@ enum APIRouter {
             return "/user/me"
         case .updateProfile:
             return "/user/update-profile"
+        case .getOrders:
+            return "/courier/orders"
         case .sendFeedback:
             return "/feedback"
         }
@@ -87,6 +91,7 @@ enum APIRouter {
         switch self {
         case .me,
              .updateProfile,
+             .getOrders,
              .sendFeedback:
             return [
                 "Authorization": "Bearer \(Session.shared.token ?? "")",

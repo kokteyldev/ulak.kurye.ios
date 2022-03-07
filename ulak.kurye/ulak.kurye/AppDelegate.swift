@@ -14,6 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+#if DEBUG
+        Log.shared.setLogLevel(logLevel: .d)
+#else
+        Log.shared.setLogLevel(logLevel: .e)
+#endif
+        
         FirebaseApp.configure()
         return true
     }

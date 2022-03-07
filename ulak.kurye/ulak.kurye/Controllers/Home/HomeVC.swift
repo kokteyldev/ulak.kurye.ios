@@ -20,10 +20,13 @@ final class HomeVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //TODO: Aktif sipariş varken çalışmıyoruma tıklarsa uyarı göster
         NotificationCenter.default.addObserver(self, selector: #selector(userStateChanged), name: .UserStateChanged, object: nil)
+        tableView.registerCell(type: OrderTVC.self)
         
         setupHeaderView()
         setupNoDataView()
+        getOrders()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +63,21 @@ final class HomeVC: BaseVC {
         }
     }
     
+    // MARK: - Data
+    func getOrders() {
+        API.getOrders { result in
+            switch result {
+            case Result.success(let orderResponse):
+                self.orderDataSource.addNewOrders(orderResponse.orders)
+                self.tableView.reloadData()
+                break
+            case Result.failure(let error):
+                self.view.showToast(.error, message: error.localizedDescription)
+                break
+            }
+        }
+    }
+    
     // MARK: - Notifications
     @objc private func userStateChanged() {
         setupNoDataView()
@@ -85,9 +103,8 @@ extension HomeVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTVC", for: indexPath) as! OrderTVC
+        cell.setOrder(orderDataSource.activeOrders[indexPath.row])
         return cell
     }
     
