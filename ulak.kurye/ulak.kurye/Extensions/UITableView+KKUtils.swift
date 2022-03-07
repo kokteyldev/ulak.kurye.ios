@@ -22,4 +22,13 @@ extension UITableView {
         header.frame.size =  header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         self.tableHeaderView = header
     }
+    
+    func footerLoadingView() -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: 100))
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.center = footerView.center
+        footerView.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        return footerView
+    }
 }

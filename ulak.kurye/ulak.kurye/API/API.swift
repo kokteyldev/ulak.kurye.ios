@@ -92,8 +92,8 @@ struct API {
     }
     
     // MARK: - Orders
-    static func getOrders(completion:@escaping (Result<GetOrderResponse, Error>) -> Void) {
-        performRequest(route: APIRouter.getOrders) { (result:(Result<Response<GetOrderResponse?>, Error>)) in
+    static func getOrders(status: String, completion:@escaping (Result<GetOrderResponse, Error>) -> Void) {
+        performRequest(route: APIRouter.getOrders(status: status)) { (result:(Result<Response<GetOrderResponse?>, Error>)) in
             switch result {
             case Result.success(let response):
                 if let orderResponse = response.data {

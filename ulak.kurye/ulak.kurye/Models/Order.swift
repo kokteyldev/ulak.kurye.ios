@@ -29,6 +29,11 @@ struct GetOrderResponse: Codable {
         }
 }
 
+enum OrderStatus: String, Codable {
+    case running = "running"
+    case closed = "closed"
+}
+
 struct Order: Codable {
     var id: Int
     var uuid: String
@@ -48,6 +53,7 @@ struct Order: Codable {
     var breakpoints: [OrderBreakpoint]?
     var createdTime: String
     var startTime: String?
+    var status: OrderStatus
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -68,6 +74,7 @@ struct Order: Codable {
         case breakpoints = "breakpointssss"
         case createdTime = "created_at"
         case startTime = "start_time"
+        case status = "app_status"
     }
 }
 

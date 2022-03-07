@@ -16,6 +16,7 @@ struct OrderVM {
     let toAddressDetail: String
     let price: String
     let serviceTitle: String
+    let alpha: Double
     
     private var order: Order
     
@@ -76,5 +77,7 @@ struct OrderVM {
         price = currencyFormatter.string(from: order.cost as NSNumber) ?? "-"
         
         serviceTitle = order.service.title
+        
+        alpha = (order.status == .running) ? 1.0 : 0.4
     }
 }

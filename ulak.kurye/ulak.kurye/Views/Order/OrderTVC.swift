@@ -35,5 +35,12 @@ final class OrderTVC: UITableViewCell {
         self.toDetailLabel.text = orderVM.toAddressDetail
         self.priceLabel.text = orderVM.price
         self.serviceLabel.text = orderVM.serviceTitle
+        
+        self.iconImageView.alpha = orderVM.alpha
+        self.fromAddressLabel.alpha = orderVM.alpha
+        self.toAddressLabel.alpha = orderVM.alpha
+        self.toDetailLabel.alpha = orderVM.alpha
+        self.priceLabel.alpha = orderVM.alpha
+        self.serviceLabel.alpha = orderVM.alpha
     }
 }

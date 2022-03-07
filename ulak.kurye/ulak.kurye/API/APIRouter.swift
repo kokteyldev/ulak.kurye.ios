@@ -14,7 +14,7 @@ enum APIRouter {
     case login(code: String, phoneNumber: String)
     case me
     case updateProfile(name: String?, surname: String?)
-    case getOrders
+    case getOrders(status: String)
     case sendFeedback(message: String)
     
     private enum Encoding {
@@ -63,7 +63,12 @@ enum APIRouter {
     }
     
     private var queryParameters: [String: Any]? {
-        return nil
+        switch self {
+        case .getOrders(let status):
+            return ["app_status": status]
+        default:
+            return nil
+        }
     }
     
     private var parameters: [String: Any?]? {
