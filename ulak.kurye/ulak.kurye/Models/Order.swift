@@ -71,7 +71,7 @@ struct Order: Codable {
         case receiver = "receiver"
         case senderDistance = "sender_distance"
         case receiverDistance = "receiver_distance"
-        case breakpoints = "breakpointssss"
+        case breakpoints = "breakpoints"
         case createdTime = "created_at"
         case startTime = "start_time"
         case status = "app_status"

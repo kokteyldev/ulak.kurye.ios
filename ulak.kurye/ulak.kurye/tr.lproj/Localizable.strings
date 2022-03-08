@@ -61,6 +61,11 @@
 
 // Order Detail
 "order_detail_title" = "Görev Detay";
+"order_detail_pick_point" = "Alım Noktası";
+"order_detail_deliver_point" = "Teslim Noktası";
+"order_detail_package_detail" = "Paket İçeriği";
+"order_detail_courier_note" = "Kuryeye Not";
+"order_detail_breakpoints" = "Hareketlerim";
 
 // General
 "location_permission_message" = "Uygulamayı kullanmaya devam etmek için konum izni vermelisin.";

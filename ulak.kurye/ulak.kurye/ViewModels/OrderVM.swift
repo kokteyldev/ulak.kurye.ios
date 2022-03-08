@@ -10,10 +10,10 @@ import UIKit
 class OrderVM {
     var backgroundColor: UIColor
     var iconImage: UIImage
-    let fromAddress: String
-    let fromAddressDetail: String
-    let toAddress: String
-    let toAddressDetail: String
+    let pickAddress: String
+    let pickAddressDetail: String
+    let deliverAddress: String
+    let deliverAddressDetail: String
     let price: String
     let serviceTitle: String
     let alpha: Double
@@ -24,6 +24,7 @@ class OrderVM {
     init(order: Order) {
         self.order = order
         
+        //TODO: tarihler düzgün çalışmıyor.
         let startDate = order.createdTime.serverDate?.addingTimeInterval(TimeInterval(order.service.expPickingTime * 60)) ?? Date()
         let endDate = order.createdTime.serverDate?.addingTimeInterval(TimeInterval(order.service.expDeliveryTime * 60)) ?? Date()
         
@@ -53,23 +54,22 @@ class OrderVM {
             }
         }
         
-        fromAddress = "\(order.sender.district)/\(order.sender.hometown)"
-        toAddress = "\(order.receiver.district)/\(order.receiver.hometown)"
+        pickAddress = "\(order.sender.district)/\(order.sender.hometown)"
+        deliverAddress = "\(order.receiver.district)/\(order.receiver.hometown)"
         
         let startDateString = startDate.shortDateString
-        
         
         let remainingTimeString = remainingPickMinutes.remainingTimeString
         
         let pickDistance = order.senderDistance.kilometers
         let pickDistanceString = pickDistance.localDistance
         
-        fromAddressDetail = "\(startDateString) (\(remainingTimeString)) (\(pickDistanceString))"
+        pickAddressDetail = "\(startDateString) (\(remainingTimeString)) (\(pickDistanceString))"
         
         let endDateString = endDate.shortDateString
         let remainingDeliverTimeString = remainingDeliverMinutes.remainingTimeString
         
-        toAddressDetail = "\(endDateString) (\(remainingDeliverTimeString))"
+        deliverAddressDetail = "\(endDateString) (\(remainingDeliverTimeString))"
         
         let currencyFormatter = NumberFormatter()
         currencyFormatter.numberStyle = .currency

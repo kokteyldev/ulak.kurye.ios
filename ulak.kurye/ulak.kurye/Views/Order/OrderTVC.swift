@@ -29,10 +29,10 @@ final class OrderTVC: UITableViewCell {
     // MARK: - Data
     func setOrder(_ orderVM: OrderVM) {
         self.iconImageView.image = orderVM.iconImage
-        self.fromAddressLabel.text = orderVM.fromAddress
-        self.fromDetailLabel.text = orderVM.fromAddressDetail
-        self.toAddressLabel.text = orderVM.toAddress
-        self.toDetailLabel.text = orderVM.toAddressDetail
+        self.fromAddressLabel.text = orderVM.pickAddress
+        self.fromDetailLabel.text = orderVM.pickAddressDetail
+        self.toAddressLabel.text = orderVM.deliverAddress
+        self.toDetailLabel.text = orderVM.deliverAddressDetail
         self.priceLabel.text = orderVM.price
         self.serviceLabel.text = orderVM.serviceTitle
         

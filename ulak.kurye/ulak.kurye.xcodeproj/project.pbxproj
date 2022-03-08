@@ -87,6 +87,9 @@
 		9ECAAAE027C3DB0D00F583C4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */; };
 		9ECAAAEA27C3E1FC00F583C4 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */; };
 		9EE8B45B27C915AA001E8CE6 /* HomeHeaderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE8B45A27C915AA001E8CE6 /* HomeHeaderVM.swift */; };
+		9EE8C01827D780950050F37D /* BreakpointTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE8C01627D780950050F37D /* BreakpointTVC.swift */; };
+		9EE8C01927D780950050F37D /* BreakpointTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EE8C01727D780950050F37D /* BreakpointTVC.xib */; };
+		9EE8C01B27D78E600050F37D /* UIStackView+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE8C01A27D78E600050F37D /* UIStackView+KKUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +190,9 @@
 		9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		9EE8B45A27C915AA001E8CE6 /* HomeHeaderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderVM.swift; sourceTree = "<group>"; };
+		9EE8C01627D780950050F37D /* BreakpointTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakpointTVC.swift; sourceTree = "<group>"; };
+		9EE8C01727D780950050F37D /* BreakpointTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreakpointTVC.xib; sourceTree = "<group>"; };
+		9EE8C01A27D78E600050F37D /* UIStackView+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+KKUtils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +250,8 @@
 			children = (
 				9E3304A427C6748A00AAB135 /* OrderTVC.swift */,
 				9E3304A527C6748A00AAB135 /* OrderTVC.xib */,
+				9EE8C01627D780950050F37D /* BreakpointTVC.swift */,
+				9EE8C01727D780950050F37D /* BreakpointTVC.xib */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -388,6 +396,7 @@
 				9E43A1FA27CF8DA000077288 /* Double+KKUtils.swift */,
 				9E43A1FC27CF908800077288 /* Int+KKUtils.swift */,
 				9E43A1FE27CFBA8700077288 /* String+KKUtils.swift */,
+				9EE8C01A27D78E600050F37D /* UIStackView+KKUtils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -664,6 +673,7 @@
 				9E3E2D3427BE901200A17025 /* GoogleService-Info.plist in Resources */,
 				9ECAAA7D27C393DD00F583C4 /* Poppins-Regular.ttf in Resources */,
 				9ECAAA8127C395F600F583C4 /* Release.xcconfig in Resources */,
+				9EE8C01927D780950050F37D /* BreakpointTVC.xib in Resources */,
 				9ECAAA7C27C393DD00F583C4 /* Poppins-Bold.ttf in Resources */,
 				9E3E2D0D27BE8F1700A17025 /* Assets.xcassets in Resources */,
 				9ECAAA7A27C393DD00F583C4 /* Poppins-SemiBold.ttf in Resources */,
@@ -724,6 +734,7 @@
 				9E3D434F27C4E66E00B6D5C5 /* KKOutlinedTextField.swift in Sources */,
 				9E3304AB27C76BBC00AAB135 /* LocationManager.swift in Sources */,
 				9E896AB827D658BD0041FFBD /* OrderDetailVC.swift in Sources */,
+				9EE8C01B27D78E600050F37D /* UIStackView+KKUtils.swift in Sources */,
 				9E3D435327C5115D00B6D5C5 /* LoginVC.swift in Sources */,
 				9EE8B45B27C915AA001E8CE6 /* HomeHeaderVM.swift in Sources */,
 				9E3D434027C4DEF600B6D5C5 /* OnboardingVC.swift in Sources */,
@@ -743,6 +754,7 @@
 				9E3304AF27C7826700AAB135 /* NoDataView.swift in Sources */,
 				9ECAAAE027C3DB0D00F583C4 /* LoadingView.swift in Sources */,
 				9ECAAAD327C3D07600F583C4 /* CustomError.swift in Sources */,
+				9EE8C01827D780950050F37D /* BreakpointTVC.swift in Sources */,
 				9ECAAA9927C3C41900F583C4 /* API.swift in Sources */,
 				9ECAAA9027C3B9DA00F583C4 /* SplashVC.swift in Sources */,
 				9E3D434C27C4E2D800B6D5C5 /* BaseNC.swift in Sources */,
