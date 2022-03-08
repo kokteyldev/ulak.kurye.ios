@@ -1,0 +1,17 @@
+ platform :ios, '12.4'
+
+target 'ulak.kurye' do
+  use_frameworks!
+
+  pod 'GoogleMaps', '6.0.1'
+
+  target 'ulak.kuryeTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'ulak.kuryeUITests' do
+    # Pods for testing
+  end
+
+end

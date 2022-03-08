@@ -11,10 +11,11 @@ import KokteylUtils
 struct Constants {
     struct App {
         static let appURL = "itms-apps://apple.com/app/id1610547130"
+        static let googleMapsKey = "AIzaSyBa2-fRghCvB2VlhcVXwK37nyPC20RqsTQ"
         //TODO: Kurye başvuru adresi nedir?
         static let courierApplicationURL = "https://ulakapp.com/"
     }
-    
+
     struct API {
         static let apiURL = "API_URL".configValue!
         static let apiKey = "2VOtB_Z8OAbQjNdSxgx+YZlEMbtUM1vL-tnSibCJIbIGJBUf"

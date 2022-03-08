@@ -67,7 +67,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Oe-b0-lfQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="641"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="757.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lip-7H-aXP" userLabel="Header Container Viewe">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -141,8 +141,39 @@
                                                     <constraint firstItem="yrm-tf-0Rg" firstAttribute="leading" secondItem="Lip-7H-aXP" secondAttribute="leading" constant="16" id="ywX-Ow-q6m"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3RZ-ja-qFR" userLabel="Map Container View">
+                                                <rect key="frame" x="0.0" y="60" width="414" height="116.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CH-ax-TDw" customClass="GMSMapView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="116.5"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAy-o6-BlA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="116.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value=" "/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="mapTapped:" destination="xY0-xu-mZS" eventType="touchUpInside" id="Bpc-Rf-XyA"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="LAy-o6-BlA" secondAttribute="trailing" id="Bfd-je-BuQ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="LAy-o6-BlA" secondAttribute="bottom" id="UcP-Gu-sdz"/>
+                                                    <constraint firstAttribute="bottom" secondItem="5CH-ax-TDw" secondAttribute="bottom" id="Vut-Nl-0CL"/>
+                                                    <constraint firstItem="LAy-o6-BlA" firstAttribute="leading" secondItem="3RZ-ja-qFR" secondAttribute="leading" id="abQ-AH-XBr"/>
+                                                    <constraint firstItem="LAy-o6-BlA" firstAttribute="top" secondItem="3RZ-ja-qFR" secondAttribute="top" id="ayN-O2-pV2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5CH-ax-TDw" secondAttribute="trailing" id="mYT-P0-KQo"/>
+                                                    <constraint firstItem="5CH-ax-TDw" firstAttribute="leading" secondItem="3RZ-ja-qFR" secondAttribute="leading" id="rVO-ug-5Dh"/>
+                                                    <constraint firstItem="5CH-ax-TDw" firstAttribute="top" secondItem="3RZ-ja-qFR" secondAttribute="top" id="zVZ-H9-3Nv"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QH3-Lq-Hxc" userLabel="Pick Point View">
-                                                <rect key="frame" x="0.0" y="60" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="176.5" width="414" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-pin-white" translatesAutoresizingMaskIntoConstraints="NO" id="S3b-Du-bpa">
                                                         <rect key="frame" x="16" y="13" width="15" height="18"/>
@@ -183,7 +214,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irQ-mP-foO" userLabel="Pick Address View">
-                                                <rect key="frame" x="0.0" y="104" width="414" height="64.5"/>
+                                                <rect key="frame" x="0.0" y="220.5" width="414" height="64.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zühtüpaşa Mah. Şefikbey Sk. Xcode Caddesi İstanbul " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GTS-Qb-uJP">
                                                         <rect key="frame" x="39" y="12" width="315" height="39.5"/>
@@ -239,7 +270,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Fz-oU-VBi" userLabel="Pick Address Name View">
-                                                <rect key="frame" x="0.0" y="168.5" width="414" height="58"/>
+                                                <rect key="frame" x="0.0" y="285" width="414" height="58"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mehmet KARAGÖZ" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qh3-F1-KWd">
                                                         <rect key="frame" x="39" y="12" width="315" height="33"/>
@@ -295,7 +326,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OcG-77-GKb" userLabel="Deliver Point View">
-                                                <rect key="frame" x="0.0" y="226.5" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="343" width="414" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-pin-white" translatesAutoresizingMaskIntoConstraints="NO" id="qK3-cT-Ct3">
                                                         <rect key="frame" x="16" y="13" width="15" height="18"/>
@@ -336,7 +367,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4Z-DS-kJJ" userLabel="Deliver Address View">
-                                                <rect key="frame" x="0.0" y="270.5" width="414" height="64.5"/>
+                                                <rect key="frame" x="0.0" y="387" width="414" height="64.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valide-i Atik Mah. Kartalbaba Cad. Test Apartmanı Üsküdar İstanbul" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iXV-Zg-wkT">
                                                         <rect key="frame" x="39" y="12" width="315" height="39.5"/>
@@ -392,7 +423,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mye-TD-gAU" userLabel="Deliver Address Name View">
-                                                <rect key="frame" x="0.0" y="335" width="414" height="58"/>
+                                                <rect key="frame" x="0.0" y="451.5" width="414" height="58"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duygu Şentürk" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mwB-Vc-MOs">
                                                         <rect key="frame" x="39" y="12" width="315" height="33"/>
@@ -448,7 +479,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2t9-IF-EGd" userLabel="Package Detail Title View">
-                                                <rect key="frame" x="0.0" y="393" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="509.5" width="414" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-file" translatesAutoresizingMaskIntoConstraints="NO" id="l1F-3N-AZx">
                                                         <rect key="frame" x="16" y="13" width="15" height="18"/>
@@ -489,7 +520,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfQ-FB-i46" userLabel="Package Detail View">
-                                                <rect key="frame" x="0.0" y="437" width="414" height="58"/>
+                                                <rect key="frame" x="0.0" y="553.5" width="414" height="58"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İçli köfte ve ayran" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GCE-c3-Mwi">
                                                         <rect key="frame" x="39" y="12" width="359" height="33"/>
@@ -518,7 +549,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnI-b0-biS" userLabel="Courier Note Title View">
-                                                <rect key="frame" x="0.0" y="495" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="611.5" width="414" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-note" translatesAutoresizingMaskIntoConstraints="NO" id="Kcu-j5-RM8">
                                                         <rect key="frame" x="16" y="13" width="15" height="18"/>
@@ -559,7 +590,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnP-3P-OGn" userLabel="Courier Note View">
-                                                <rect key="frame" x="0.0" y="539" width="414" height="58"/>
+                                                <rect key="frame" x="0.0" y="655.5" width="414" height="58"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paket içerisinde sıcak yemek var." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="E2t-dz-t5g">
                                                         <rect key="frame" x="39" y="12" width="359" height="33"/>
@@ -588,7 +619,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ht0-NV-g81" userLabel="Breakpoints Title View">
-                                                <rect key="frame" x="0.0" y="597" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="713.5" width="414" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-time" translatesAutoresizingMaskIntoConstraints="NO" id="Bh0-9p-vNI">
                                                         <rect key="frame" x="16" y="13" width="15" height="18"/>
@@ -629,7 +660,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="We3-ZQ-hHt" userLabel="Breakpoints View">
-                                                <rect key="frame" x="0.0" y="641" width="414" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="757.5" width="414" height="0.0"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4rW-55-nf0">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
@@ -667,6 +698,7 @@
                             <constraint firstAttribute="bottom" secondItem="QMY-ou-9IP" secondAttribute="bottom" id="25l-sn-VpQ"/>
                             <constraint firstItem="QMY-ou-9IP" firstAttribute="leading" secondItem="Acx-xJ-mLU" secondAttribute="leading" id="3vO-Mn-esC"/>
                             <constraint firstItem="QMY-ou-9IP" firstAttribute="trailing" secondItem="Acx-xJ-mLU" secondAttribute="trailing" id="46o-fv-QqP"/>
+                            <constraint firstItem="3RZ-ja-qFR" firstAttribute="height" secondItem="lc0-t9-e7O" secondAttribute="height" multiplier="0.13" id="RDk-o1-4zo"/>
                             <constraint firstItem="QMY-ou-9IP" firstAttribute="top" secondItem="lc0-t9-e7O" secondAttribute="top" id="UWs-2v-qGT"/>
                         </constraints>
                     </view>
@@ -681,6 +713,7 @@
                         <outlet property="courierNoteTitleContainer" destination="CnI-b0-biS" id="942-7G-iPh"/>
                         <outlet property="deliverAddressLabel" destination="iXV-Zg-wkT" id="BZs-vC-Irf"/>
                         <outlet property="deliverDateLabel" destination="mbH-L0-efU" id="8io-Jn-rfr"/>
+                        <outlet property="mapView" destination="5CH-ax-TDw" id="Oww-zc-fh1"/>
                         <outlet property="orderCodeLabel" destination="izl-kS-VvX" id="k30-S9-SZi"/>
                         <outlet property="packageContentContainer" destination="cfQ-FB-i46" id="YxG-vd-afG"/>
                         <outlet property="packageContentLabel" destination="GCE-c3-Mwi" id="y7l-Eb-2JN"/>

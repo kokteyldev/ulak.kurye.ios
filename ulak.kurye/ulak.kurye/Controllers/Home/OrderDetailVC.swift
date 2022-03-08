@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class OrderDetailVC: BaseVC {
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var mapView: GMSMapView!
     
     @IBOutlet weak var orderCodeLabel: UILabel!
     @IBOutlet weak var serviceInfoLabel: UILabel!
@@ -34,13 +36,14 @@ class OrderDetailVC: BaseVC {
     @IBOutlet weak var breakpointsContainer: UIView!
     
     var order: Order?
-    var viewModel: OrderDetailVM?
+    private var viewModel: OrderDetailVM?
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
+        setupMap()
         setupUI()
     }
     
@@ -54,46 +57,78 @@ class OrderDetailVC: BaseVC {
         breakpointTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
     
+    private func setupMap() {
+        mapView.settings.consumesGesturesInView = false
+        mapView.camera = GMSCameraPosition.camera(withLatitude: LocationManager.shared.location.latitude, longitude: LocationManager.shared.location.longitude, zoom: 13.0)
+    }
+    
     func setupUI() {
         //TODO: show no order alert and go back if order is nil
         guard let order = order else { return }
+        
         viewModel = OrderDetailVM(order: order)
+        guard let viewModel = viewModel else { return }
         
-        self.title = viewModel?.pageTitle
-        orderCodeLabel.text = viewModel?.orderCode
-        serviceInfoLabel.text = viewModel?.serviceTitle
+        self.title = viewModel.pageTitle
+        orderCodeLabel.text = viewModel.orderCode
+        serviceInfoLabel.text = viewModel.serviceTitle
         
-        pickDateLabel.text = viewModel?.pickAddressDetail
-        pickAddressLabel.text = viewModel?.pickAddress
-        senderNameLabel.text = viewModel?.senderName
+        pickDateLabel.text = viewModel.pickAddressDetail
+        pickAddressLabel.text = viewModel.pickAddress
+        senderNameLabel.text = viewModel.senderName
         
-        deliverDateLabel.text = viewModel?.deliverAddressDetail
-        deliverAddressLabel.text = viewModel?.deliverAddress
-        receiverNameLabel.text = viewModel?.receiverName
+        deliverDateLabel.text = viewModel.deliverAddressDetail
+        deliverAddressLabel.text = viewModel.deliverAddress
+        receiverNameLabel.text = viewModel.receiverName
         
-        packageContentLabel.text = viewModel?.packageDetail
-        courierNoteLabel.text = viewModel?.courierNote
+        packageContentLabel.text = viewModel.packageDetail
+        courierNoteLabel.text = viewModel.courierNote
         
-        if viewModel?.isPackageDetailHidden == true {
+        if viewModel.isPackageDetailHidden == true {
             stackView.removeFully(view: packageContentTitleContainer)
             stackView.removeFully(view: packageContentContainer)
         }
         
-        if viewModel?.isCourierNoteHidden == true {
+        if viewModel.isCourierNoteHidden == true {
             stackView.removeFully(view: courierNoteTitleContainer)
             stackView.removeFully(view: courierNoteContainer)
         }
         
-        if viewModel?.isBreakpointsHidden == true {
+        if viewModel.isBreakpointsHidden == true {
             stackView.removeFully(view: breakpointsTitleContainer)
             stackView.removeFully(view: breakpointsContainer)
         }
         
+        var bounds = GMSCoordinateBounds()
+        
+        let senderMarker = GMSMarker(position: viewModel.senderLocation)
+        senderMarker.icon = .init(named: "ic-marker-orange")
+        senderMarker.map = mapView
+        bounds = bounds.includingCoordinate(viewModel.senderLocation)
+
+        let receiverMarker = GMSMarker(position: viewModel.receiverLocation)
+        receiverMarker.icon = .init(named: "ic-marker-blue")
+        receiverMarker.map = mapView
+        bounds = bounds.includingCoordinate(viewModel.receiverLocation)
+        
+        mapView.animate(with: GMSCameraUpdate.fit(bounds, with: .init(top: 38, left: 20, bottom: 2, right: 20)))
         breakpointTableView.reloadData()
     }
     
     // MARK: - Actions
+    @IBAction func mapTapped(_ sender: Any) {
+        guard let viewModel = viewModel else { return }
+
+        if viewModel.isPackagePicked {
+            getMapDirections(viewModel.receiverLocation)
+        } else {
+            getMapDirections(viewModel.senderLocation)
+        }
+    }
+    
     @IBAction func senderLocationTapped(_ sender: Any) {
+        guard let sender = viewModel?.senderLocation else { return }
+        getMapDirections(sender)
     }
     
     @IBAction func callSenderTapped(_ sender: Any) {
@@ -101,6 +136,8 @@ class OrderDetailVC: BaseVC {
     }
     
     @IBAction func receiverLocationTapped(_ sender: Any) {
+        guard let receiver = viewModel?.receiverLocation else { return }
+        getMapDirections(receiver)
     }
     
     @IBAction func callReceiverTapped(_ sender: Any) {
@@ -111,6 +148,15 @@ class OrderDetailVC: BaseVC {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if (keyPath == "contentSize") {
             breakpointHeightConst?.constant = breakpointTableView.contentSize.height
+        }
+    }
+    
+    // MARK: - Utils
+    
+    private func getMapDirections(_ location: CLLocationCoordinate2D) {
+        let url = URL(string: "comgooglemaps://?saddr=&daddr=\(location.latitude),\(location.longitude)&directionsmode=driving")
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!)
         }
     }
 }

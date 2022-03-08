@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26BB7F6847CD336D7C3BB6DE /* Pods_ulak_kurye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9464C032556AE790D022802A /* Pods_ulak_kurye.framework */; };
+		402068E0D9A9EC19D18F316E /* Pods_ulak_kuryeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB9DEDCECBF640EEF71AAA8 /* Pods_ulak_kuryeTests.framework */; };
 		9E33049727C6546000AAB135 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33049627C6546000AAB135 /* HomeVC.swift */; };
 		9E33049927C661CB00AAB135 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33049827C661CB00AAB135 /* HomeHeaderView.swift */; };
 		9E33049B27C661DA00AAB135 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */; };
@@ -90,6 +92,7 @@
 		9EE8C01827D780950050F37D /* BreakpointTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE8C01627D780950050F37D /* BreakpointTVC.swift */; };
 		9EE8C01927D780950050F37D /* BreakpointTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EE8C01727D780950050F37D /* BreakpointTVC.xib */; };
 		9EE8C01B27D78E600050F37D /* UIStackView+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE8C01A27D78E600050F37D /* UIStackView+KKUtils.swift */; };
+		C3B5AD88CC0BE645CA10B9A6 /* Pods_ulak_kurye_ulak_kuryeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D056A3DC22B8A343D361EDB /* Pods_ulak_kurye_ulak_kuryeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +113,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01B41E5C1725DFC21B05CE49 /* Pods-ulak.kurye-ulak.kuryeUITests.dev release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye-ulak.kuryeUITests.dev release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests.dev release.xcconfig"; sourceTree = "<group>"; };
+		0E87250874FE5200880938E3 /* Pods-ulak.kurye.dev debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye.dev debug.xcconfig"; path = "Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye.dev debug.xcconfig"; sourceTree = "<group>"; };
+		2822954119D2FB5B60499066 /* Pods-ulak.kuryeTests.dev debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.dev debug.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.dev debug.xcconfig"; sourceTree = "<group>"; };
+		2DB9DEDCECBF640EEF71AAA8 /* Pods_ulak_kuryeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ulak_kuryeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EB3CAA59273794504AA471C /* Pods-ulak.kurye-ulak.kuryeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye-ulak.kuryeUITests.debug.xcconfig"; path = "Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D056A3DC22B8A343D361EDB /* Pods_ulak_kurye_ulak_kuryeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ulak_kurye_ulak_kuryeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9464C032556AE790D022802A /* Pods_ulak_kurye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ulak_kurye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		998B7EE595C176694EAB6DFA /* Pods-ulak.kurye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye.release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye.release.xcconfig"; sourceTree = "<group>"; };
 		9E33049627C6546000AAB135 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		9E33049827C661CB00AAB135 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
@@ -193,6 +204,13 @@
 		9EE8C01627D780950050F37D /* BreakpointTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakpointTVC.swift; sourceTree = "<group>"; };
 		9EE8C01727D780950050F37D /* BreakpointTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreakpointTVC.xib; sourceTree = "<group>"; };
 		9EE8C01A27D78E600050F37D /* UIStackView+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+KKUtils.swift"; sourceTree = "<group>"; };
+		9F2141A96BE78FFC82CF9EC7 /* Pods-ulak.kurye-ulak.kuryeUITests.dev debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye-ulak.kuryeUITests.dev debug.xcconfig"; path = "Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests.dev debug.xcconfig"; sourceTree = "<group>"; };
+		B99ABCBB43B1B85B66CAA4AA /* Pods-ulak.kurye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye.debug.xcconfig"; path = "Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye.debug.xcconfig"; sourceTree = "<group>"; };
+		C1D478E1D7B12095363EB400 /* Pods-ulak.kuryeTests.dev release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.dev release.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.dev release.xcconfig"; sourceTree = "<group>"; };
+		C7EA48B1254F7D274D7337BE /* Pods-ulak.kuryeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.release.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.release.xcconfig"; sourceTree = "<group>"; };
+		E71221419E2EBE301679F7A2 /* Pods-ulak.kuryeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.debug.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F4BD9CB58C1323FCFDC3534B /* Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F70742960D8C2DF30F38CC2A /* Pods-ulak.kurye.dev release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye.dev release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye.dev release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +223,7 @@
 				9ECAAACB27C3CC9200F583C4 /* KokteylUtils in Frameworks */,
 				9E3E2D3927BE927200A17025 /* FirebaseCrashlytics in Frameworks */,
 				9E3E2D3B27BE927200A17025 /* FirebasePerformance in Frameworks */,
+				26BB7F6847CD336D7C3BB6DE /* Pods_ulak_kurye.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402068E0D9A9EC19D18F316E /* Pods_ulak_kuryeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,12 +239,43 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B5AD88CC0BE645CA10B9A6 /* Pods_ulak_kurye_ulak_kuryeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28A504BA3C7088E3B206D0B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9464C032556AE790D022802A /* Pods_ulak_kurye.framework */,
+				5D056A3DC22B8A343D361EDB /* Pods_ulak_kurye_ulak_kuryeUITests.framework */,
+				2DB9DEDCECBF640EEF71AAA8 /* Pods_ulak_kuryeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D03C40658116864066EBA75 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B99ABCBB43B1B85B66CAA4AA /* Pods-ulak.kurye.debug.xcconfig */,
+				0E87250874FE5200880938E3 /* Pods-ulak.kurye.dev debug.xcconfig */,
+				998B7EE595C176694EAB6DFA /* Pods-ulak.kurye.release.xcconfig */,
+				F70742960D8C2DF30F38CC2A /* Pods-ulak.kurye.dev release.xcconfig */,
+				2EB3CAA59273794504AA471C /* Pods-ulak.kurye-ulak.kuryeUITests.debug.xcconfig */,
+				9F2141A96BE78FFC82CF9EC7 /* Pods-ulak.kurye-ulak.kuryeUITests.dev debug.xcconfig */,
+				F4BD9CB58C1323FCFDC3534B /* Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig */,
+				01B41E5C1725DFC21B05CE49 /* Pods-ulak.kurye-ulak.kuryeUITests.dev release.xcconfig */,
+				E71221419E2EBE301679F7A2 /* Pods-ulak.kuryeTests.debug.xcconfig */,
+				2822954119D2FB5B60499066 /* Pods-ulak.kuryeTests.dev debug.xcconfig */,
+				C7EA48B1254F7D274D7337BE /* Pods-ulak.kuryeTests.release.xcconfig */,
+				C1D478E1D7B12095363EB400 /* Pods-ulak.kuryeTests.dev release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9E33049527C6544700AAB135 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +386,8 @@
 				9E3E2D1927BE8F1700A17025 /* ulak.kuryeTests */,
 				9E3E2D2327BE8F1700A17025 /* ulak.kuryeUITests */,
 				9E3E2D0127BE8F1600A17025 /* Products */,
+				5D03C40658116864066EBA75 /* Pods */,
+				28A504BA3C7088E3B206D0B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -544,10 +597,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E3E2D2A27BE8F1700A17025 /* Build configuration list for PBXNativeTarget "ulak.kurye" */;
 			buildPhases = (
+				007C17D3B61CBDF6E35DA6FA /* [CP] Check Pods Manifest.lock */,
 				9E3E2CFC27BE8F1600A17025 /* Sources */,
 				9E3E2CFD27BE8F1600A17025 /* Frameworks */,
 				9E3E2CFE27BE8F1600A17025 /* Resources */,
 				9E3E2D3C27BE92F800A17025 /* ShellScript */,
+				4907CF76E1ED0AECDE8FA714 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -569,6 +624,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E3E2D2D27BE8F1700A17025 /* Build configuration list for PBXNativeTarget "ulak.kuryeTests" */;
 			buildPhases = (
+				0150B26057BAD69F898CA684 /* [CP] Check Pods Manifest.lock */,
 				9E3E2D1227BE8F1700A17025 /* Sources */,
 				9E3E2D1327BE8F1700A17025 /* Frameworks */,
 				9E3E2D1427BE8F1700A17025 /* Resources */,
@@ -587,9 +643,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E3E2D3027BE8F1700A17025 /* Build configuration list for PBXNativeTarget "ulak.kuryeUITests" */;
 			buildPhases = (
+				84C53D6DE7F2A2599DAEF320 /* [CP] Check Pods Manifest.lock */,
 				9E3E2D1C27BE8F1700A17025 /* Sources */,
 				9E3E2D1D27BE8F1700A17025 /* Frameworks */,
 				9E3E2D1E27BE8F1700A17025 /* Resources */,
+				4D13F48A4ED529DC8FFD6D1A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -636,8 +694,8 @@
 			mainGroup = 9E3E2CF727BE8F1600A17025;
 			packageReferences = (
 				9E3E2D3527BE927200A17025 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift" */,
+				9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift.ios" */,
 			);
 			productRefGroup = 9E3E2D0127BE8F1600A17025 /* Products */;
 			projectDirPath = "";
@@ -701,6 +759,106 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		007C17D3B61CBDF6E35DA6FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ulak.kurye-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0150B26057BAD69F898CA684 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ulak.kuryeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4907CF76E1ED0AECDE8FA714 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D13F48A4ED529DC8FFD6D1A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84C53D6DE7F2A2599DAEF320 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ulak.kurye-ulak.kuryeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9E3E2D3C27BE92F800A17025 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -962,6 +1120,7 @@
 		};
 		9E3E2D2B27BE8F1700A17025 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B99ABCBB43B1B85B66CAA4AA /* Pods-ulak.kurye.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -995,6 +1154,7 @@
 		};
 		9E3E2D2C27BE8F1700A17025 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 998B7EE595C176694EAB6DFA /* Pods-ulak.kurye.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1027,6 +1187,7 @@
 		};
 		9E3E2D2E27BE8F1700A17025 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E71221419E2EBE301679F7A2 /* Pods-ulak.kuryeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1047,6 +1208,7 @@
 		};
 		9E3E2D2F27BE8F1700A17025 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7EA48B1254F7D274D7337BE /* Pods-ulak.kuryeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1067,6 +1229,7 @@
 		};
 		9E3E2D3127BE8F1700A17025 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EB3CAA59273794504AA471C /* Pods-ulak.kurye-ulak.kuryeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1085,6 +1248,7 @@
 		};
 		9E3E2D3227BE8F1700A17025 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4BD9CB58C1323FCFDC3534B /* Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1166,6 +1330,7 @@
 		};
 		9ECAAA8427C3B76E00F583C4 /* Dev Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E87250874FE5200880938E3 /* Pods-ulak.kurye.dev debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1199,6 +1364,7 @@
 		};
 		9ECAAA8527C3B76E00F583C4 /* Dev Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2822954119D2FB5B60499066 /* Pods-ulak.kuryeTests.dev debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1219,6 +1385,7 @@
 		};
 		9ECAAA8627C3B76E00F583C4 /* Dev Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F2141A96BE78FFC82CF9EC7 /* Pods-ulak.kurye-ulak.kuryeUITests.dev debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1294,6 +1461,7 @@
 		};
 		9ECAAA8827C3B77B00F583C4 /* Dev Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F70742960D8C2DF30F38CC2A /* Pods-ulak.kurye.dev release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1326,6 +1494,7 @@
 		};
 		9ECAAA8927C3B77B00F583C4 /* Dev Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1D478E1D7B12095363EB400 /* Pods-ulak.kuryeTests.dev release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1346,6 +1515,7 @@
 		};
 		9ECAAA8A27C3B77B00F583C4 /* Dev Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B41E5C1725DFC21B05CE49 /* Pods-ulak.kurye-ulak.kuryeUITests.dev release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1420,7 +1590,7 @@
 				minimumVersion = 8.0.0;
 			};
 		};
-		9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1428,7 +1598,7 @@
 				kind = branch;
 			};
 		};
-		9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift" */ = {
+		9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift.ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kokteyldev/kokteyl.utils.swift.ios";
 			requirement = {
@@ -1456,12 +1626,12 @@
 		};
 		9ECAAA9227C3BD4E00F583C4 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
 			productName = Alamofire;
 		};
 		9ECAAACA27C3CC9200F583C4 /* KokteylUtils */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift" */;
+			package = 9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift.ios" */;
 			productName = KokteylUtils;
 		};
 /* End XCSwiftPackageProductDependency section */
