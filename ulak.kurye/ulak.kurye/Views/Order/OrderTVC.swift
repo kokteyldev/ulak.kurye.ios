@@ -9,10 +9,10 @@ import UIKit
 
 final class OrderTVC: UITableViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var fromAddressLabel: UILabel!
-    @IBOutlet weak var fromDetailLabel: UILabel!
-    @IBOutlet weak var toAddressLabel: UILabel!
-    @IBOutlet weak var toDetailLabel: UILabel!
+    @IBOutlet weak var pickAddressLabel: UILabel!
+    @IBOutlet weak var pickDetailLabel: UILabel!
+    @IBOutlet weak var deliverAddressLabel: UILabel!
+    @IBOutlet weak var deliverDetailLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var serviceLabel: UILabel!
     
@@ -29,18 +29,20 @@ final class OrderTVC: UITableViewCell {
     // MARK: - Data
     func setOrder(_ orderVM: OrderVM) {
         self.iconImageView.image = orderVM.iconImage
-        self.fromAddressLabel.text = orderVM.pickAddress
-        self.fromDetailLabel.text = orderVM.pickAddressDetail
-        self.toAddressLabel.text = orderVM.deliverAddress
-        self.toDetailLabel.text = orderVM.deliverAddressDetail
+        self.pickAddressLabel.text = orderVM.pickAddress
+        self.pickDetailLabel.text = orderVM.pickAddressDetail
+        self.deliverAddressLabel.text = orderVM.deliverAddress
+        self.deliverDetailLabel.text = orderVM.deliverAddressDetail
         self.priceLabel.text = orderVM.price
         self.serviceLabel.text = orderVM.serviceTitle
         
         self.iconImageView.alpha = orderVM.alpha
-        self.fromAddressLabel.alpha = orderVM.alpha
-        self.toAddressLabel.alpha = orderVM.alpha
-        self.toDetailLabel.alpha = orderVM.alpha
+        self.pickAddressLabel.alpha = orderVM.alpha
+        self.pickDetailLabel.alpha = orderVM.alpha
+        self.deliverAddressLabel.alpha = orderVM.alpha
+        self.deliverDetailLabel.alpha = orderVM.alpha
         self.priceLabel.alpha = orderVM.alpha
         self.serviceLabel.alpha = orderVM.alpha
+        self.backgroundColor = orderVM.backgroundColor
     }
 }

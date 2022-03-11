@@ -9,11 +9,13 @@ import Foundation
 
 extension Int {
     var remainingTimeString: String {
-        if self <= 0 {
+        if self <= -60*24 {
             return "no_time_remaining".localized
         }
         
-        if self < 60 {
+        if self < 0 {
+            return "\(abs(self)) " + "order_minutes_late".localized
+        } else if self < 60 {
             return "\(self) " + "remaining_minutes".localized
         } else if self < 60*24 {
             return "\(Int(self/60)) " + "remaining_hours".localized

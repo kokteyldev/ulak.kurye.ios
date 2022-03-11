@@ -17,7 +17,6 @@ final class OrderDetailVM: OrderVM {
     let courierNote: String?
     let senderLocation: CLLocationCoordinate2D
     let receiverLocation: CLLocationCoordinate2D
-    let isPackagePicked: Bool
     
     var breakpoints: [OrderBreakpoint] {
         return order.breakpoints ?? []
@@ -45,7 +44,6 @@ final class OrderDetailVM: OrderVM {
         courierNote = order.note
         senderLocation = .init(latitude: order.sender.latitude, longitude: order.sender.longtitude)
         receiverLocation = .init(latitude: order.receiver.latitude, longitude: order.receiver.longtitude)
-        isPackagePicked = order.takeTime != nil && order.takeTime!.length > 0
         
         super.init(order: order)
     }

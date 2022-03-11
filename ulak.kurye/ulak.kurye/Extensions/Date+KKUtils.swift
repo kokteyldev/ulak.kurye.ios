@@ -14,7 +14,17 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    func addMinutes(_ minutes: Int) -> Date {
+        return self.addingTimeInterval(TimeInterval(minutes * 60))
+    }
+    
     static func minutesBetween(start: Date, end: Date) -> Int {
-        return Int(( Int(start.timeIntervalSince1970) - Int(end.timeIntervalSince1970)) * 3600)
+        let diff = Calendar.current.dateComponents([.minute], from: start, to: end).minute ?? 0
+
+        if start.timeIntervalSince1970 < end.timeIntervalSince1970 {
+            return diff * -1
+        }
+        
+        return diff
     }
 }

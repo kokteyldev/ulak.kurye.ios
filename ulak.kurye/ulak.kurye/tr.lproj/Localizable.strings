@@ -54,6 +54,7 @@
 "remaining_minutes" = "dk kaldı.";
 "remaining_hours" = "saat kaldı.";
 "remaining_days" = "gün kaldı.";
+"order_minutes_late" = "dk gecikti.";
 "no_time_remaining" = "Teslimat gecikti.";
 "order_total_price" = "Tahmini Kazanç";
 "order_service_info" = "Servis Bilgileri";
