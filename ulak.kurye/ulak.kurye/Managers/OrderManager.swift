@@ -37,6 +37,10 @@ final class OrderManager {
         let group = DispatchGroup()
         var apiError: Error?
         
+        activeOrders.removeAll()
+        pastOrders.removeAll()
+        pastPaginate = Paginate()
+        
         group.enter()
         API.getOrders(status: OrderStatus.running.rawValue) { result in
             switch result {
@@ -93,5 +97,11 @@ final class OrderManager {
                 break
             }
         }
+    }
+    
+    // MARK: - Actions
+    func didTakeAction(order: Order) {
+        activeOrders.insert(order, at: 0)
+        NotificationCenter.default.post(name: NSNotification.Name.ReloadOrders, object: nil)
     }
 }

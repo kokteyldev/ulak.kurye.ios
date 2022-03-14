@@ -10,7 +10,7 @@ import Foundation
 final class OrderDataSource {
     var activeOrderVMs: [OrderVM] {
         if Session.shared.userState == .working {
-            return orders
+            return orderVMs
         }
         
         return []
@@ -25,15 +25,20 @@ final class OrderDataSource {
     }
     
     var pastOrderVMs: [OrderVM] = []
-    private var orders: [OrderVM] = []
+    private var orderVMs: [OrderVM] = []
     
     // MARK: Initializer
     init() {}
     
     // MARK: - New Data
+    func resetOrders() {
+        orderVMs.removeAll()
+        pastOrderVMs.removeAll()
+    }
+    
     func addNewOrders(_ newOrders: [Order]) {
         for order in newOrders {
-            orders.append(OrderVM(order: order))
+            orderVMs.append(OrderVM(order: order))
         }
     }
     

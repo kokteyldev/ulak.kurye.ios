@@ -24,6 +24,8 @@ final class HomeVC: BaseVC {
         
         //TODO: Aktif sipariş varken çalışmıyoruma tıklarsa uyarı göster
         NotificationCenter.default.addObserver(self, selector: #selector(userStateChanged), name: .UserStateChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadOrders), name: .ReloadOrders, object: nil)
+        
         tableView.registerCell(type: OrderTVC.self)
         
         setupHeaderView()
@@ -47,6 +49,7 @@ final class HomeVC: BaseVC {
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: .UserStateChanged, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .ReloadOrders, object: nil)
     }
     
     // MARK: - Setup
@@ -77,6 +80,7 @@ final class HomeVC: BaseVC {
         OrderManager.shared.getOrders { result in
             switch result {
             case Result.success(_):
+                self.orderDataSource.resetOrders()
                 self.orderDataSource.addNewOrders(OrderManager.shared.activeOrders)
                 self.orderDataSource.addNewPastOrders(OrderManager.shared.pastOrders)
                 self.resetAfterLoading()
@@ -127,6 +131,10 @@ final class HomeVC: BaseVC {
     // MARK: - Notifications
     @objc private func userStateChanged() {
         setupNoDataView()
+    }
+    
+    @objc private func reloadOrders() {
+        getOrders()
     }
     
     // MARK: - Segue

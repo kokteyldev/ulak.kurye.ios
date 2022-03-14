@@ -16,6 +16,7 @@ final class OrderPoolVC: BaseTBLVC {
         super.viewDidLoad()
         
         setupUI()
+        setupHeaderView()
         getOrders()
     }
     
@@ -28,7 +29,9 @@ final class OrderPoolVC: BaseTBLVC {
         self.title = "pool_page_title".localized
         NotificationCenter.default.addObserver(self, selector: #selector(userStateChanged), name: .UserStateChanged, object: nil)
         tableView.registerCell(type: OrderTVC.self)
-        
+    }
+    
+    func setupHeaderView() {
         headerView = TableSectionHeaderView(frame: .init(x: 0, y: 0, width: tableView.frame.size.width, height: 32.0))
         headerView?.titleLabel.text = "pool_total_order".localized + " - \(OrderManager.shared.activeOrderCount) / \(Session.shared.maxOrderCount)"
     }
@@ -57,6 +60,8 @@ final class OrderPoolVC: BaseTBLVC {
     
     // MARK: - Data - Order
     func getOrderFromPool(_ orderTVC: OrderTVC, order: Order) {
+        prepareForLoading()
+        
         let group = DispatchGroup()
         var agreement: Agreement?
         
@@ -68,6 +73,7 @@ final class OrderPoolVC: BaseTBLVC {
                 group.leave()
                 break
             case Result.failure(let error):
+                self.resetAfterLoading()
                 orderTVC.stopLoading()
                 self.view.showToast(.error, message: error.localizedDescription)
                 break
@@ -76,6 +82,7 @@ final class OrderPoolVC: BaseTBLVC {
         
         group.notify(queue: .main) {
             guard let agreement = agreement else {
+                self.resetAfterLoading()
                 orderTVC.stopLoading()
                 self.view.showToast(.error, message: CustomError.noAgreement.error.localizedDescription)
                 return
@@ -84,11 +91,20 @@ final class OrderPoolVC: BaseTBLVC {
             API.runTakeAction(orderUUID: order.uuid, agreementUUID: agreement.uuid) { result in
                 switch result {
                 case Result.success(_):
-                    //TODO: success
-                    //TODO: delete order from list
-                    //TOO: update max order count
+                    self.resetAfterLoading()
+                    OrderManager.shared.didTakeAction(order: order)
+                    self.setupHeaderView()
+                    self.tableView.reloadData()
+                    
+                    if let index = self.orderVMs.firstIndex(where: { $0.order.uuid == order.uuid }) {
+                        self.orderVMs.remove(at: index)
+                        
+                        let indexPath = IndexPath(row: index, section: 0)
+                        self.tableView.deleteRows(at: [indexPath], with: .left)
+                    }
                     break
                 case Result.failure(let error):
+                    self.resetAfterLoading()
                     orderTVC.stopLoading()
                     self.view.showToast(.error, message: error.localizedDescription)
                     break

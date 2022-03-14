@@ -59,7 +59,7 @@ enum APIRouter {
         case .getPoolOrders:
             return "/courier/order-pool"
         case .getOrderAggrements:
-            return "/courier/aggrements"
+            return "/actions/agreements"
         case .runTakeAction:
             return "/actions/run"
         case .sendFeedback:
