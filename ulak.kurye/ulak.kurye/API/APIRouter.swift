@@ -17,6 +17,7 @@ enum APIRouter {
     case getOrders(status: String)
     case getPoolOrders(latitude: Double, longtitude: Double)
     case getOrderAggrements(orderUUID: String)
+    case getOrderActions(orderUUID: String)
     case runTakeAction(orderUUID: String, agreementUUID: String)
     case sendFeedback(message: String)
     
@@ -31,6 +32,7 @@ enum APIRouter {
              .me,
              .getOrders,
              .getOrderAggrements,
+             .getOrderActions,
              .getPoolOrders,
              .runTakeAction:
             return .get
@@ -60,6 +62,8 @@ enum APIRouter {
             return "/courier/order-pool"
         case .getOrderAggrements:
             return "/actions/agreements"
+        case .getOrderActions:
+            return "/actions/available"
         case .runTakeAction:
             return "/actions/run"
         case .sendFeedback:
@@ -81,6 +85,8 @@ enum APIRouter {
         case .getPoolOrders(let latitude, let longtitude):
             return ["lat": latitude, "lng": longtitude]
         case .getOrderAggrements(let orderUUID):
+            return ["order_uuid": orderUUID]
+        case .getOrderActions(let orderUUID):
             return ["order_uuid": orderUUID]
         case .runTakeAction(let orderUUID, let agreementUUID):
             return ["action_name": "take", "order_uuid": orderUUID, "agreement_uuid": agreementUUID]
@@ -117,6 +123,7 @@ enum APIRouter {
              .getOrders,
              .getPoolOrders,
              .getOrderAggrements,
+             .getOrderActions,
              .runTakeAction,
              .sendFeedback:
             return [

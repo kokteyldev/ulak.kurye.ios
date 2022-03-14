@@ -13,6 +13,12 @@
 		9E246A7C27DF275100F10D77 /* GetOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A7B27DF275100F10D77 /* GetOrderResponse.swift */; };
 		9E246A7E27DF277500F10D77 /* GetAggrementsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A7D27DF277500F10D77 /* GetAggrementsResponse.swift */; };
 		9E246A8427DF436200F10D77 /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A8327DF436200F10D77 /* OrderManager.swift */; };
+		9E246A8727DF731900F10D77 /* OrderActionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E246A8627DF731900F10D77 /* OrderActionsView.xib */; };
+		9E246A8927DF732500F10D77 /* OrderActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A8827DF732500F10D77 /* OrderActionsView.swift */; };
+		9E246A8B27DF762D00F10D77 /* OrderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A8A27DF762D00F10D77 /* OrderAction.swift */; };
+		9E246A8D27DF7CAA00F10D77 /* GetOrderActionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A8C27DF7CAA00F10D77 /* GetOrderActionsResponse.swift */; };
+		9E246A9027DF7E9A00F10D77 /* OrderActionCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A8E27DF7E9A00F10D77 /* OrderActionCVC.swift */; };
+		9E246A9127DF7E9A00F10D77 /* OrderActionCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E246A8F27DF7E9A00F10D77 /* OrderActionCVC.xib */; };
 		9E33049727C6546000AAB135 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33049627C6546000AAB135 /* HomeVC.swift */; };
 		9E33049927C661CB00AAB135 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33049827C661CB00AAB135 /* HomeHeaderView.swift */; };
 		9E33049B27C661DA00AAB135 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */; };
@@ -131,6 +137,12 @@
 		9E246A7B27DF275100F10D77 /* GetOrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderResponse.swift; sourceTree = "<group>"; };
 		9E246A7D27DF277500F10D77 /* GetAggrementsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAggrementsResponse.swift; sourceTree = "<group>"; };
 		9E246A8327DF436200F10D77 /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
+		9E246A8627DF731900F10D77 /* OrderActionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderActionsView.xib; sourceTree = "<group>"; };
+		9E246A8827DF732500F10D77 /* OrderActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderActionsView.swift; sourceTree = "<group>"; };
+		9E246A8A27DF762D00F10D77 /* OrderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAction.swift; sourceTree = "<group>"; };
+		9E246A8C27DF7CAA00F10D77 /* GetOrderActionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderActionsResponse.swift; sourceTree = "<group>"; };
+		9E246A8E27DF7E9A00F10D77 /* OrderActionCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderActionCVC.swift; sourceTree = "<group>"; };
+		9E246A8F27DF7E9A00F10D77 /* OrderActionCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderActionCVC.xib; sourceTree = "<group>"; };
 		9E33049627C6546000AAB135 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		9E33049827C661CB00AAB135 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
@@ -285,6 +297,17 @@
 				C1D478E1D7B12095363EB400 /* Pods-ulak.kuryeTests.dev release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9E246A8527DF72F400F10D77 /* OrderAction */ = {
+			isa = PBXGroup;
+			children = (
+				9E246A8627DF731900F10D77 /* OrderActionsView.xib */,
+				9E246A8827DF732500F10D77 /* OrderActionsView.swift */,
+				9E246A8E27DF7E9A00F10D77 /* OrderActionCVC.swift */,
+				9E246A8F27DF7E9A00F10D77 /* OrderActionCVC.xib */,
+			);
+			path = OrderAction;
 			sourceTree = "<group>";
 		};
 		9E33049527C6544700AAB135 /* Home */ = {
@@ -565,10 +588,12 @@
 				9ECAAAD627C3D16500F583C4 /* Auth.swift */,
 				9ECAAADA27C3D3DD00F583C4 /* User.swift */,
 				9EA443C827CD1A4400C4A47B /* Order.swift */,
+				9E246A8A27DF762D00F10D77 /* OrderAction.swift */,
 				9E43A1F427CDFFEC00077288 /* Paginate.swift */,
 				9E246A7927DF22FB00F10D77 /* Agreement.swift */,
 				9E246A7B27DF275100F10D77 /* GetOrderResponse.swift */,
 				9E246A7D27DF277500F10D77 /* GetAggrementsResponse.swift */,
+				9E246A8C27DF7CAA00F10D77 /* GetOrderActionsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -589,6 +614,7 @@
 				9EA443C227CCF4C000C4A47B /* SectionHeader */,
 				9E3304AC27C7825F00AAB135 /* NoData */,
 				9E3304A327C6747600AAB135 /* Order */,
+				9E246A8527DF72F400F10D77 /* OrderAction */,
 				9E33049E27C66B9400AAB135 /* Onboarding */,
 				9E3D435627C520B100B6D5C5 /* Policy */,
 				9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */,
@@ -739,6 +765,7 @@
 				9E3304A727C6748A00AAB135 /* OrderTVC.xib in Resources */,
 				9E3D435C27C52AA800B6D5C5 /* Home.storyboard in Resources */,
 				9E3D436727C5366A00B6D5C5 /* Settings.storyboard in Resources */,
+				9E246A8727DF731900F10D77 /* OrderActionsView.xib in Resources */,
 				9E3D433D27C4DEAC00B6D5C5 /* Onboarding.storyboard in Resources */,
 				9E3304B027C7826700AAB135 /* NoDataView.xib in Resources */,
 				9ECAAA8027C395F600F583C4 /* Dev.xcconfig in Resources */,
@@ -754,6 +781,7 @@
 				9ECAAA7A27C393DD00F583C4 /* Poppins-SemiBold.ttf in Resources */,
 				9E3D434927C4E28E00B6D5C5 /* Auth.storyboard in Resources */,
 				9E3D435E27C5335D00B6D5C5 /* Main.storyboard in Resources */,
+				9E246A9127DF7E9A00F10D77 /* OrderActionCVC.xib in Resources */,
 				9E3E2D0B27BE8F1600A17025 /* Splash.storyboard in Resources */,
 				9ECAAA7927C393DD00F583C4 /* Poppins-Medium.ttf in Resources */,
 			);
@@ -927,6 +955,8 @@
 				9E6D2F7127C8C43B00BAA261 /* UIImage+KKUtils.swift in Sources */,
 				9E3E2D0427BE8F1600A17025 /* AppDelegate.swift in Sources */,
 				9E43A1FB27CF8DA000077288 /* Double+KKUtils.swift in Sources */,
+				9E246A8927DF732500F10D77 /* OrderActionsView.swift in Sources */,
+				9E246A8D27DF7CAA00F10D77 /* GetOrderActionsResponse.swift in Sources */,
 				9ECAAA8E27C3B99D00F583C4 /* BaseVC.swift in Sources */,
 				9ECAAA9E27C3C42D00F583C4 /* Session.swift in Sources */,
 				9E3304AF27C7826700AAB135 /* NoDataView.swift in Sources */,
@@ -948,12 +978,14 @@
 				9ECAAA9A27C3C41900F583C4 /* Response.swift in Sources */,
 				9E246A8427DF436200F10D77 /* OrderManager.swift in Sources */,
 				9ECAAAD027C3CF9A00F583C4 /* ServerURL.swift in Sources */,
+				9E246A8B27DF762D00F10D77 /* OrderAction.swift in Sources */,
 				9E43A1FF27CFBA8700077288 /* String+KKUtils.swift in Sources */,
 				9ECAAAD927C3D23E00F583C4 /* Logger.swift in Sources */,
 				9ECAAAD727C3D16500F583C4 /* Auth.swift in Sources */,
 				9E246A7E27DF277500F10D77 /* GetAggrementsResponse.swift in Sources */,
 				9ECAAAA027C3C48000F583C4 /* Constants.swift in Sources */,
 				9EA443C927CD1A4400C4A47B /* Order.swift in Sources */,
+				9E246A9027DF7E9A00F10D77 /* OrderActionCVC.swift in Sources */,
 				9E4BF8C227C92F5E004FE73E /* OrderDataSource.swift in Sources */,
 				9E3D436127C5356100B6D5C5 /* MainTabbarTC.swift in Sources */,
 				9E43A1F727CF686300077288 /* OrderVM.swift in Sources */,

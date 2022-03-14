@@ -34,9 +34,11 @@ class OrderDetailVC: BaseVC {
     
     @IBOutlet weak var breakpointsTitleContainer: UIView!
     @IBOutlet weak var breakpointsContainer: UIView!
+    @IBOutlet weak var actionsView: OrderActionsView!
     
     var order: Order?
     private var viewModel: OrderDetailVM?
+    private var actions: [OrderAction] = []
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -45,16 +47,39 @@ class OrderDetailVC: BaseVC {
         setupTableView()
         setupMap()
         setupUI()
+        getActions()
     }
     
     deinit {
         breakpointTableView.removeObserver(self, forKeyPath: "contentSize", context: nil)
     }
     
+    // MARK: - Data
+    func getActions() {
+        guard let order = order else { return }
+        
+        API.getOrderActions(orderUUID: order.uuid) { result in
+            switch result {
+            case Result.success(let actionResponse):
+                self.actions = actionResponse.actions.filter { $0.isDisabled == false }
+                self.setupActionView()
+                break
+            case Result.failure(let error):
+                self.view.showToast(.error, message: error.localizedDescription)
+                break
+            }
+        }
+    }
+    
     // MARK: - Setup
     func setupTableView() {
         breakpointTableView.registerCell(type: BreakpointTVC.self)
         breakpointTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+    }
+    
+    func setupActionView() {
+        actionsView.delegate = self
+        actionsView.setActions(self.actions)
     }
     
     private func setupMap() {
@@ -179,5 +204,11 @@ extension OrderDetailVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension OrderDetailVC: OrderActionsViewDelegate {
+    func didSelectAction(_ action: OrderAction) {
+        print(action.title)
     }
 }

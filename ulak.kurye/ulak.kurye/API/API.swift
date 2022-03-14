@@ -143,6 +143,23 @@ struct API {
         }
     }
     
+    static func getOrderActions(orderUUID: String, completion:@escaping (Result<GetOrderActionsResponse, Error>) -> Void) {
+        performRequest(route: APIRouter.getOrderActions(orderUUID: orderUUID)) { (result:(Result<Response<GetOrderActionsResponse?>, Error>)) in
+            switch result {
+            case Result.success(let response):
+                if let agreementResponse = response.data {
+                    completion(.success(agreementResponse!))
+                } else {
+                    completion(.failure(CustomError.noData.error))
+                }
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
     // MARK: - Actions
     static func runTakeAction(orderUUID: String, agreementUUID: String, completion:@escaping (Result<Bool, Error>) -> Void) {
         performRequest(route: APIRouter.runTakeAction(orderUUID: orderUUID, agreementUUID: agreementUUID)) { (result:(Result<Response<Bool?>, Error>)) in
