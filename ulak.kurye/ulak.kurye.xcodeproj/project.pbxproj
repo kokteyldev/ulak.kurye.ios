@@ -12,6 +12,7 @@
 		9E246A7A27DF22FB00F10D77 /* Agreement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A7927DF22FB00F10D77 /* Agreement.swift */; };
 		9E246A7C27DF275100F10D77 /* GetOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A7B27DF275100F10D77 /* GetOrderResponse.swift */; };
 		9E246A7E27DF277500F10D77 /* GetAggrementsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A7D27DF277500F10D77 /* GetAggrementsResponse.swift */; };
+		9E246A8427DF436200F10D77 /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A8327DF436200F10D77 /* OrderManager.swift */; };
 		9E33049727C6546000AAB135 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33049627C6546000AAB135 /* HomeVC.swift */; };
 		9E33049927C661CB00AAB135 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33049827C661CB00AAB135 /* HomeHeaderView.swift */; };
 		9E33049B27C661DA00AAB135 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */; };
@@ -129,6 +130,7 @@
 		9E246A7927DF22FB00F10D77 /* Agreement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agreement.swift; sourceTree = "<group>"; };
 		9E246A7B27DF275100F10D77 /* GetOrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderResponse.swift; sourceTree = "<group>"; };
 		9E246A7D27DF277500F10D77 /* GetAggrementsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAggrementsResponse.swift; sourceTree = "<group>"; };
+		9E246A8327DF436200F10D77 /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 		9E33049627C6546000AAB135 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		9E33049827C661CB00AAB135 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 				9ECAAA9D27C3C42D00F583C4 /* Session.swift */,
 				9E3304AA27C76BBC00AAB135 /* LocationManager.swift */,
 				9E3304A827C686A000AAB135 /* NotificationManager.swift */,
+				9E246A8327DF436200F10D77 /* OrderManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -943,6 +946,7 @@
 				9E3D435127C508E900B6D5C5 /* KKLodingButton.swift in Sources */,
 				9E6D2F7327C8D71600BAA261 /* UITableView+KKUtils.swift in Sources */,
 				9ECAAA9A27C3C41900F583C4 /* Response.swift in Sources */,
+				9E246A8427DF436200F10D77 /* OrderManager.swift in Sources */,
 				9ECAAAD027C3CF9A00F583C4 /* ServerURL.swift in Sources */,
 				9E43A1FF27CFBA8700077288 /* String+KKUtils.swift in Sources */,
 				9ECAAAD927C3D23E00F583C4 /* Logger.swift in Sources */,

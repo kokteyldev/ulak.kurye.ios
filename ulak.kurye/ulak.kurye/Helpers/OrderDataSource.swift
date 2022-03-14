@@ -24,15 +24,8 @@ final class OrderDataSource {
         return activeOrderVMs.count > 0 || pastOrderVMs.count > 0
     }
     
-    var shouldRequestMorePast: Bool {
-        return pastPaginate.page > 0 && pastPaginate.page < pastPaginate.pagesTotal
-    }
-    
     var pastOrderVMs: [OrderVM] = []
-    private var pastPaginate: Paginate = Paginate()
-    
     private var orders: [OrderVM] = []
-    
     
     // MARK: Initializer
     init() {}
@@ -44,10 +37,8 @@ final class OrderDataSource {
         }
     }
     
-    func addNewPastOrders(_ orderResponse: GetOrderResponse) {
-        pastPaginate = orderResponse.paginate
-        
-        for order in orderResponse.orders {
+    func addNewPastOrders(_ newPastOrders: [Order]) {
+        for order in newPastOrders {
             pastOrderVMs.append(OrderVM(order: order))
         }
     }

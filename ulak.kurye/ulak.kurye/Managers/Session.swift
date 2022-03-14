@@ -48,8 +48,6 @@ final class Session {
         return user?.maxOrderCount ?? 0
     }
     
-    var activeOrderCount: Int = 0
-    
     var user: User? {
         didSet {
             checkUserState()

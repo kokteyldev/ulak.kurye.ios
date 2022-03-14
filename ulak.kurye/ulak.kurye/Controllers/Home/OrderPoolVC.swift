@@ -30,7 +30,7 @@ final class OrderPoolVC: BaseTBLVC {
         tableView.registerCell(type: OrderTVC.self)
         
         headerView = TableSectionHeaderView(frame: .init(x: 0, y: 0, width: tableView.frame.size.width, height: 32.0))
-        headerView?.titleLabel.text = "pool_total_order".localized + " - \(Session.shared.activeOrderCount) / \(Session.shared.maxOrderCount)"
+        headerView?.titleLabel.text = "pool_total_order".localized + " - \(OrderManager.shared.activeOrderCount) / \(Session.shared.maxOrderCount)"
     }
     
     // MARK: - Data

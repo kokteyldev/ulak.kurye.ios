@@ -72,73 +72,43 @@ final class HomeVC: BaseVC {
     
     // MARK: - Data
     func getOrders() {
-        let group = DispatchGroup()
-        var errorMessages = [String]()
-        
         prepareForLoading()
         
-        group.enter()
-        API.getOrders(status: OrderStatus.running.rawValue) { result in
+        OrderManager.shared.getOrders { result in
             switch result {
-            case Result.success(let orderResponse):
-                Session.shared.activeOrderCount = orderResponse.orders.count
-                self.orderDataSource.addNewOrders(orderResponse.orders)
+            case Result.success(_):
+                self.orderDataSource.addNewOrders(OrderManager.shared.activeOrders)
+                self.orderDataSource.addNewPastOrders(OrderManager.shared.pastOrders)
+                self.resetAfterLoading()
                 self.tableView.reloadData()
-                group.leave()
                 break
             case Result.failure(let error):
-                errorMessages.append(error.localizedDescription)
-                group.leave()
+                self.resetAfterLoading()
+                self.view.showToast(.error, message: error.localizedDescription)
                 break
-            }
-        }
-        
-        group.enter()
-        API.getOrders(status: OrderStatus.closed.rawValue) { result in
-            switch result {
-            case Result.success(let orderResponse):
-                self.orderDataSource.addNewPastOrders(orderResponse)
-                self.tableView.reloadData()
-                group.leave()
-                break
-            case Result.failure(let error):
-                errorMessages.append(error.localizedDescription)
-                group.leave()
-                break
-            }
-        }
-        
-        group.notify(queue: .main) {
-            self.resetAfterLoading()
-            self.tableView.reloadData()
-            
-            if errorMessages.count > 0 {
-                self.view.showToast(.error, message: errorMessages.joined(separator: "\n"))
-                return
             }
         }
     }
     
     func getMoreOrders() {
         if isNetworkRequestInProgress { return }
-        if !orderDataSource.shouldRequestMorePast { return }
         isNetworkRequestInProgress = true
         
         DispatchQueue.main.async {
             self.tableView.tableFooterView = self.tableView.footerLoadingView()
         }
         
-        API.getOrders(status: OrderStatus.closed.rawValue) { result in
+        OrderManager.shared.getMoreOrders { result in
             DispatchQueue.main.async {
                 self.tableView.tableFooterView = nil
             }
             
             switch result {
-            case Result.success(let orderResponse):
+            case Result.success(let newPastOrders):
                 self.isNetworkRequestInProgress = false
                 
-                let indexPaths = (self.orderDataSource.pastOrderVMs.count..<(self.orderDataSource.pastOrderVMs.count + orderResponse.orders.count)).map { IndexPath(row: $0, section: 1) }
-                self.orderDataSource.addNewPastOrders(orderResponse)
+                let indexPaths = (self.orderDataSource.pastOrderVMs.count..<(self.orderDataSource.pastOrderVMs.count + newPastOrders.count)).map { IndexPath(row: $0, section: 1) }
+                self.orderDataSource.addNewPastOrders(newPastOrders)
                 
                 if indexPaths.count != 0 {
                     self.tableView.beginUpdates()
