@@ -7,29 +7,8 @@
 
 import Foundation
 
-struct GetOrderResponse: Codable {
-    var orders: [Order] = []
-    var paginate: Paginate = Paginate()
-    
-    enum CodingKeys: String, CodingKey {
-        case orders = "collection"
-        case paginate = "paginate"
-    }
-    
-        init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-    
-            if container.contains(.orders) {
-                self.orders = try container.decode([Order].self, forKey: .orders)
-            }
-            
-            if container.contains(.paginate) {
-                self.paginate = try container.decode(Paginate.self, forKey: .paginate)
-            }
-        }
-}
-
 enum OrderStatus: String, Codable {
+    case active = "active"
     case running = "running"
     case closed = "closed"
 }

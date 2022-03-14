@@ -8,25 +8,38 @@
 import UIKit
 
 class OrderVM {
-    let isPackagePicked: Bool
+    var isPoolOrder: Bool
+    var isPackagePicked = false
     
-    var backgroundColor: UIColor
-    var iconImage: UIImage
-    let pickAddress: String
-    let pickAddressDetail: String
-    let deliverAddress: String
-    let deliverAddressDetail: String
-    let price: String
-    let serviceTitle: String
-    let alpha: Double
+    var backgroundColor = UIColor.white
+    var iconImage: UIImage?
+    var pickAddress: String?
+    var pickAddressDetail: String?
+    var deliverAddress: String?
+    var deliverAddressDetail: String?
+    var priceTitle: String?
+    var price: String?
+    var serviceTitle: String?
+    var alpha = 1.0
     
     var order: Order
 
     // MARK: Init
     init(order: Order) {
         self.order = order
-        
-        let isOrderActive = (order.status == .running)
+        self.isPoolOrder = false
+        commonInit()
+    }
+    
+    init(poolOrder: Order) {
+        self.order = poolOrder
+        self.isPoolOrder = true
+        commonInit()
+    }
+    
+    // MARK: - Setup
+    private func commonInit() {
+        let isOrderActive = (order.status != .closed)
         let isPackagedDelivered = (order.endTime != nil && order.endTime!.length > 0)
         isPackagePicked = order.startTime != nil && order.startTime!.length > 0
         
@@ -85,12 +98,19 @@ class OrderVM {
         pickAddress = "\(order.sender.district)/\(order.sender.hometown)"
         deliverAddress = "\(order.receiver.district)/\(order.receiver.hometown)"
         
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = Locale.locale(from: order.service.currency)
-        price = currencyFormatter.string(from: order.cost as NSNumber) ?? "-"
+        if isPoolOrder {
+            priceTitle = "order_task_code".localized
+            price = order.code
+        } else {
+            let currencyFormatter = NumberFormatter()
+            currencyFormatter.numberStyle = .currency
+            currencyFormatter.locale = Locale.locale(from: order.service.currency)
+            
+            priceTitle = "order_total_price".localized
+            price = currencyFormatter.string(from: order.cost as NSNumber) ?? "-"
+        }
         
         serviceTitle = order.service.title
-        alpha = (order.status == .running) ? 1.0 : 0.4
+        alpha = (order.status != .closed) ? 1.0 : 0.4
     }
 }

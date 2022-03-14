@@ -15,6 +15,9 @@ enum APIRouter {
     case me
     case updateProfile(name: String?, surname: String?)
     case getOrders(status: String)
+    case getPoolOrders(latitude: Double, longtitude: Double)
+    case getOrderAggrements(orderUUID: String)
+    case runTakeAction(orderUUID: String, agreementUUID: String)
     case sendFeedback(message: String)
     
     private enum Encoding {
@@ -26,7 +29,10 @@ enum APIRouter {
         switch self {
         case .config,
              .me,
-             .getOrders:
+             .getOrders,
+             .getOrderAggrements,
+             .getPoolOrders,
+             .runTakeAction:
             return .get
         case .preLogin,
              .login,
@@ -50,6 +56,12 @@ enum APIRouter {
             return "/user/update-profile"
         case .getOrders:
             return "/courier/orders"
+        case .getPoolOrders:
+            return "/courier/order-pool"
+        case .getOrderAggrements:
+            return "/courier/aggrements"
+        case .runTakeAction:
+            return "/actions/run"
         case .sendFeedback:
             return "/feedback"
         }
@@ -66,6 +78,12 @@ enum APIRouter {
         switch self {
         case .getOrders(let status):
             return ["app_status": status]
+        case .getPoolOrders(let latitude, let longtitude):
+            return ["lat": latitude, "lng": longtitude]
+        case .getOrderAggrements(let orderUUID):
+            return ["order_uuid": orderUUID]
+        case .runTakeAction(let orderUUID, let agreementUUID):
+            return ["action_name": "take", "order_uuid": orderUUID, "agreement_uuid": agreementUUID]
         default:
             return nil
         }
@@ -97,6 +115,9 @@ enum APIRouter {
         case .me,
              .updateProfile,
              .getOrders,
+             .getPoolOrders,
+             .getOrderAggrements,
+             .runTakeAction,
              .sendFeedback:
             return [
                 "Authorization": "Bearer \(Session.shared.token ?? "")",
@@ -116,7 +137,7 @@ extension APIRouter: URLRequestConvertible {
             var isFirstParam: Bool = true
             for queryParameter in queryParameters {
                 let queryParameterEncodedKey = queryParameter.key.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
-                let queryParameterEncodedValue = (queryParameter.value as AnyObject).addingPercentEncoding(withAllowedCharacters: .alphanumerics)
+                let queryParameterEncodedValue = ("\(queryParameter.value)" as AnyObject).addingPercentEncoding(withAllowedCharacters: .alphanumerics)
                 if isFirstParam {
                     isFirstParam = false
                     endpoint.append("?\(queryParameterEncodedKey ?? "")=\(queryParameterEncodedValue ?? "")")
@@ -186,7 +207,7 @@ extension APIRouter {
             var isFirstParam: Bool = true
             for queryParameter in queryParameters {
                 let queryParameterEncodedKey = queryParameter.key.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
-                let queryParameterEncodedValue = (queryParameter.value as AnyObject).addingPercentEncoding(withAllowedCharacters: .alphanumerics)
+                let queryParameterEncodedValue = "\(queryParameter.value)".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
                 if isFirstParam {
                     isFirstParam = false
                     endpoint.append("?\(queryParameterEncodedKey ?? "")=\(queryParameterEncodedValue ?? "")")

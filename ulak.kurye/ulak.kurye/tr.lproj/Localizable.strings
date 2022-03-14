@@ -11,6 +11,7 @@
 "error_no_response" = "Bilinmeyen bir hata oluştu. (No Response)";
 "error_invalid_data" = "Bilinmeyen bir hata oluştu. (Invalid Data)";
 "error_no_data" = "Bilinmeyen bir hata oluştu. (No Data)";
+"error_no_agreement" = "Geçerli bir anlaşma bulunamadı.";
 
 // Force update
 "force_update_message" = "Uygulamayı kullanmaya devam etmek için güncelleme yapmalısınız.";
@@ -51,11 +52,14 @@
 "home_past_orders" = "GEÇMİŞ SİPARİŞLERİM";
 
 // Order
-"remaining_minutes" = "dk kaldı.";
-"remaining_hours" = "saat kaldı.";
-"remaining_days" = "gün kaldı.";
-"order_minutes_late" = "dk gecikti.";
-"no_time_remaining" = "Teslimat gecikti.";
+"remaining_minutes" = "dk kaldı";
+"remaining_hours" = "saat kaldı";
+"remaining_days" = "gün kaldı";
+"order_minutes_late" = "dk gecikti";
+"order_hour_late" = "saat gecikti";
+"order_day_late" = "gün gecikti";
+"no_time_remaining" = "Teslimat gecikti";
+"order_task_code" = "Görev Kodu";
 "order_total_price" = "Tahmini Kazanç";
 "order_service_info" = "Servis Bilgileri";
 "order_task_code" = "Görev Kodu";
@@ -67,6 +71,11 @@
 "order_detail_package_detail" = "Paket İçeriği";
 "order_detail_courier_note" = "Kuryeye Not";
 "order_detail_breakpoints" = "Hareketlerim";
+
+// Pool
+"pool_page_title" = "Havuz";
+"pool_task_take_alert_title" = "Görevi almak istiyor musun?";
+"pool_total_order" = "Toplam Sipariş";
 
 // General
 "location_permission_message" = "Uygulamayı kullanmaya devam etmek için konum izni vermelisin.";
@@ -81,4 +90,6 @@
 "pool" = "Havuz";
 "qr-code" = "QR Kod";
 "working" = "Çalışıyorum";
+"yes" = "Evet";
+"cancel" = "İptal";
 

@@ -43,7 +43,7 @@
                     <color key="textColor" name="ulk-subtitle"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFq-Ai-2Dl" customClass="KKLodingButton" customModule="ulak_kurye" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFq-Ai-2Dl" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
                     <rect key="frame" x="107.5" y="399" width="199" height="60"/>
                     <color key="backgroundColor" name="ulk-orange"/>
                     <constraints>

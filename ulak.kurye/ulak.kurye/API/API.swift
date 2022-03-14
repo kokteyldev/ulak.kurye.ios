@@ -109,6 +109,54 @@ struct API {
         }
     }
     
+    static func getPoolOrders(latitude: Double, longtitude: Double, completion:@escaping (Result<[Order], Error>) -> Void) {
+        performRequest(route: APIRouter.getPoolOrders(latitude: latitude, longtitude: longtitude)) { (result:(Result<Response<[Order]?>, Error>)) in
+            switch result {
+            case Result.success(let response):
+                if let orders = response.data {
+                    completion(.success(orders!))
+                } else {
+                    completion(.success([]))
+                }
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
+    static func getOrderAgreements(orderUUID: String, completion:@escaping (Result<GetAggrementsResponse, Error>) -> Void) {
+        performRequest(route: APIRouter.getOrderAggrements(orderUUID: orderUUID)) { (result:(Result<Response<GetAggrementsResponse?>, Error>)) in
+            switch result {
+            case Result.success(let response):
+                if let agreementResponse = response.data {
+                    completion(.success(agreementResponse!))
+                } else {
+                    completion(.failure(CustomError.noData.error))
+                }
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
+    // MARK: - Actions
+    static func runTakeAction(orderUUID: String, agreementUUID: String, completion:@escaping (Result<Bool, Error>) -> Void) {
+        performRequest(route: APIRouter.runTakeAction(orderUUID: orderUUID, agreementUUID: agreementUUID)) { (result:(Result<Response<Bool?>, Error>)) in
+            switch result {
+            case Result.success(_):
+                completion(.success(true))
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
     // MARK: - Utils    
     static func sendFeedback(message: String, completion:@escaping (Result<Bool, Error>) -> Void) {
         performRequest(route: APIRouter.sendFeedback(message: message)) { (result:(Result<Response<Bool?>, Error>)) in

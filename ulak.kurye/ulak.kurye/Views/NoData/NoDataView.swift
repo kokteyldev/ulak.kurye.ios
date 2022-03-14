@@ -14,7 +14,7 @@ protocol NoDataViewDelegate: AnyObject {
 final class NoDataView: UIView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var actionButton: KKLodingButton!
+    @IBOutlet weak var actionButton: KKLoadingButton!
     
     weak var delegate: NoDataViewDelegate?
     private var userState: UserState?

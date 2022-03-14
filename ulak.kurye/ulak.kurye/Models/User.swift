@@ -13,6 +13,7 @@ struct User: Codable {
     var email: String?
     var phoneNumber: String
     var isVerifiedAccount: Bool
+    var maxOrderCount: Int
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
@@ -20,6 +21,7 @@ struct User: Codable {
         case email = "email"
         case phoneNumber = "phone_number"
         case isVerifiedAccount = "verified_account"
+        case maxOrderCount = "total_task_quotas"
     }
     
     init(from decoder: Decoder) throws {
@@ -44,5 +46,7 @@ struct User: Codable {
         } else {
             self.isVerifiedAccount = true
         }
+        
+        maxOrderCount = try container.decode (Int.self, forKey: .maxOrderCount)
     }
 }

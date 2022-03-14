@@ -12,6 +12,7 @@ enum CustomError: Int {
     case noResponseData = 1
     case invalidData = 2
     case noData = 3
+    case noAgreement = 4
     
     private var message: String {
         switch self {
@@ -23,6 +24,8 @@ enum CustomError: Int {
             return "error_invalid_data".localized
         case .noData:
             return "error_no_data".localized
+        case .noAgreement:
+            return "error_no_agreement".localized
         }
     }
     

@@ -43,6 +43,13 @@ final class Session {
         return user?.isVerifiedAccount ?? false
     }
     
+    //TODO: bu tarz user bilgilerini userManager yapıp oraya taşı
+    var maxOrderCount: Int {
+        return user?.maxOrderCount ?? 0
+    }
+    
+    var activeOrderCount: Int = 0
+    
     var user: User? {
         didSet {
             checkUserState()

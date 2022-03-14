@@ -9,7 +9,7 @@ import UIKit
 
 class LoginVC: BaseVC {
     @IBOutlet weak var codeTextField: KKOutlinedTextField!
-    @IBOutlet weak var loginButton: KKLodingButton!
+    @IBOutlet weak var loginButton: KKLoadingButton!
     
     private var feedBackGenerator: UINotificationFeedbackGenerator?
     private var activeTextField : UITextField?
@@ -74,12 +74,12 @@ class LoginVC: BaseVC {
             return
         }
         
-        loginButton.showLoading()
+        loginButton.startAnimation()
         self.disableView()
         
         API.login(code: code!, phoneNumber: phoneNumber!) { result in
             self.enabledView()
-            self.loginButton.hideLoading()
+            self.loginButton.stopAnimation()
             
             switch result {
             case .success(let loginResponse):

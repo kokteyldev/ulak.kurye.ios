@@ -10,7 +10,7 @@ import UIKit
 final class PreLoginVC: BaseVC {
     @IBOutlet weak var phoneNumberTextField: KKOutlinedTextField!
     @IBOutlet weak var kvvkPolicyButton: UIButton!
-    @IBOutlet weak var loginButton: KKLodingButton!
+    @IBOutlet weak var loginButton: KKLoadingButton!
     
     private var feedBackGenerator: UINotificationFeedbackGenerator?
     private var activeTextField : UITextField?
@@ -97,12 +97,12 @@ final class PreLoginVC: BaseVC {
             return
         }
         
-        loginButton.showLoading()
+        loginButton.startAnimation()
         self.disableView()
         
         API.preLogin(phoneNumber: phoneNumber!) { result in
             self.enabledView()
-            self.loginButton.hideLoading()
+            self.loginButton.stopAnimation()
             
             switch result {
             case .success(_):

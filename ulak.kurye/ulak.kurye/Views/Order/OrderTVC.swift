@@ -7,14 +7,24 @@
 
 import UIKit
 
+protocol OrderTVCDelegate: AnyObject {
+    func orderTVCAddTapped(_ orderTVC: OrderTVC, order: Order)
+}
+
 final class OrderTVC: UITableViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var pickAddressLabel: UILabel!
     @IBOutlet weak var pickDetailLabel: UILabel!
     @IBOutlet weak var deliverAddressLabel: UILabel!
     @IBOutlet weak var deliverDetailLabel: UILabel!
+    @IBOutlet weak var priceTitleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var serviceLabel: UILabel!
+    @IBOutlet weak var addButton: KKLoadingButton!
+    @IBOutlet weak var detailArrowImage: UIImageView!
+    
+    weak var delegate: OrderTVCDelegate?
+    private var order: Order?
     
     // MARK: - View Lifecycle
     override func awakeFromNib() {
@@ -28,11 +38,14 @@ final class OrderTVC: UITableViewCell {
  
     // MARK: - Data
     func setOrder(_ orderVM: OrderVM) {
+        self.order = orderVM.order
+        
         self.iconImageView.image = orderVM.iconImage
         self.pickAddressLabel.text = orderVM.pickAddress
         self.pickDetailLabel.text = orderVM.pickAddressDetail
         self.deliverAddressLabel.text = orderVM.deliverAddress
         self.deliverDetailLabel.text = orderVM.deliverAddressDetail
+        self.priceTitleLabel.text = orderVM.priceTitle
         self.priceLabel.text = orderVM.price
         self.serviceLabel.text = orderVM.serviceTitle
         
@@ -44,5 +57,24 @@ final class OrderTVC: UITableViewCell {
         self.priceLabel.alpha = orderVM.alpha
         self.serviceLabel.alpha = orderVM.alpha
         self.backgroundColor = orderVM.backgroundColor
+        
+        self.detailArrowImage.isHidden = orderVM.isPoolOrder
+        self.addButton.isHidden = !orderVM.isPoolOrder
+    }
+    
+    // MARK: - Utils
+    func stopLoading() {
+//        DispatchQueue.main.async {
+//            self.addButton.hideLoading()
+//        }
+    }
+    
+    // MARK: - Actions
+    @IBAction func addTapped(_ sender: Any) {
+        if let order = order {
+            //TODO: show loading çalışmıyor
+//            addButton.showLoading()
+            delegate?.orderTVCAddTapped(self, order: order)
+        }
     }
 }

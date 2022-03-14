@@ -49,7 +49,7 @@
                                 <rect key="frame" x="177" y="104" width="60" height="43"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merhaba!" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jAS-mF-9gP">
-                                <rect key="frame" x="24" y="179" width="366" height="37.5"/>
+                                <rect key="frame" x="24" y="179" width="366" height="45"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="32"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -58,7 +58,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giriş yapmak için e-posta adresini ve şifreni girmelisin." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UDh-CD-CnJ">
-                                <rect key="frame" x="24" y="224.5" width="366" height="37.5"/>
+                                <rect key="frame" x="24" y="232" width="366" height="45"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                 <color key="textColor" name="ulk-subtitle"/>
                                 <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qwd-v3-DsC" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="24" y="278" width="366" height="60"/>
+                                <rect key="frame" x="24" y="293" width="366" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6Pd-se-vyc"/>
                                 </constraints>
@@ -83,7 +83,7 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Af5-Ez-TzM" userLabel="Aggrement">
-                                <rect key="frame" x="24" y="354" width="366" height="40"/>
+                                <rect key="frame" x="24" y="369" width="366" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pv0-Nt-d2X">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="40"/>
@@ -110,8 +110,8 @@
                                     <constraint firstAttribute="trailing" secondItem="Pv0-Nt-d2X" secondAttribute="trailing" id="sBr-vq-amM"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8q-Jv-E2V" customClass="KKLodingButton" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="224.5" y="410" width="165.5" height="63.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8q-Jv-E2V" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
+                                <rect key="frame" x="224.5" y="425" width="165.5" height="63.5"/>
                                 <color key="backgroundColor" name="ulk-orange"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="u8q-Jv-E2V" secondAttribute="height" multiplier="157:60" id="N6H-8E-8xq"/>
@@ -173,7 +173,7 @@
                                 <rect key="frame" x="177" y="104" width="60" height="43"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doğrulama kodunu gir" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xN5-1e-W9e">
-                                <rect key="frame" x="24" y="179" width="366" height="37.5"/>
+                                <rect key="frame" x="24" y="179" width="366" height="90"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="32"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -182,7 +182,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefonuna SMS olarak gelen 4 haneli kodu gir." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Xv-ht-2GH">
-                                <rect key="frame" x="24" y="224.5" width="366" height="19"/>
+                                <rect key="frame" x="24" y="277" width="366" height="45"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                 <color key="textColor" name="ulk-subtitle"/>
                                 <nil key="highlightedColor"/>
@@ -191,7 +191,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A5s-TN-tup" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="24" y="259.5" width="366" height="60"/>
+                                <rect key="frame" x="24" y="338" width="366" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ejX-fi-LKH"/>
                                 </constraints>
@@ -205,8 +205,8 @@
                                     <action selector="textfieldDidChange:" destination="6Ew-1L-Otk" eventType="editingChanged" id="Wc2-sT-Bom"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbb-VW-e4F" customClass="KKLodingButton" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="224.5" y="335.5" width="165.5" height="63.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbb-VW-e4F" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
+                                <rect key="frame" x="224.5" y="414" width="165.5" height="63.5"/>
                                 <color key="backgroundColor" name="ulk-orange"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Gbb-VW-e4F" secondAttribute="height" multiplier="157:60" id="EI1-uz-Ueq"/>

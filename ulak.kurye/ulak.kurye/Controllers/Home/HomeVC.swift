@@ -57,6 +57,7 @@ final class HomeVC: BaseVC {
         headerAnimation.fromValue = 1.0
         headerAnimation.fillMode = CAMediaTimingFillMode.forwards
         
+        headerView.delegate = self
         headerView.layer.add(headerAnimation, forKey: "fade")
         headerView.layer.speed = 0
         headerView.layer.timeOffset = 0
@@ -80,6 +81,7 @@ final class HomeVC: BaseVC {
         API.getOrders(status: OrderStatus.running.rawValue) { result in
             switch result {
             case Result.success(let orderResponse):
+                Session.shared.activeOrderCount = orderResponse.orders.count
                 self.orderDataSource.addNewOrders(orderResponse.orders)
                 self.tableView.reloadData()
                 group.leave()
@@ -241,6 +243,16 @@ extension HomeVC: UIScrollViewDelegate {
                 self.setNeedsStatusBarAppearanceUpdate()
             }
         }
+    }
+}
+
+extension HomeVC: HeaderViewDelegate {
+    func poolTapped() {
+        self.performSegue(withIdentifier: "OrderPoolVC", sender: self)
+    }
+    
+    func qrCodeTapped() {
+        //TODO: ne yapılacak bilinmiyor.
     }
 }
 

@@ -1,20 +1,21 @@
 //
-//  KKLodingButton.swift
+//  KKLoadingButton.swift
 //  ulak.kurye
 //
 //  Created by Mehmet Karagöz on 22.02.2022.
 //
 
 import UIKit
+import SwiftUI
 
-final class KKLodingButton: UIButton {
+final class KKLoadingButton: UIButton {
     private var originalButtonText: String?
     private var originalImage: UIImage?
     private var originalBackgroundImage: UIImage?
     
     var activityIndicator: UIActivityIndicatorView!
     
-    func showLoading() {
+    func startAnimation() {
         originalButtonText = self.titleLabel?.text
         originalImage = self.image(for: .normal)
         originalBackgroundImage = self.backgroundImage(for: .normal)
@@ -31,7 +32,7 @@ final class KKLodingButton: UIButton {
         showSpinning()
     }
     
-    func hideLoading() {
+    func stopAnimation() {
         self.setTitle(originalButtonText, for: .normal)
         self.setImage(originalImage, for: .normal)
         self.setBackgroundImage(originalBackgroundImage, for: .normal)
@@ -49,6 +50,7 @@ final class KKLodingButton: UIButton {
     private func showSpinning() {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(activityIndicator)
+        self.bringSubviewToFront(activityIndicator)
         centerActivityIndicatorInButton()
         activityIndicator.startAnimating()
     }

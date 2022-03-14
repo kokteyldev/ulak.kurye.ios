@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		26BB7F6847CD336D7C3BB6DE /* Pods_ulak_kurye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9464C032556AE790D022802A /* Pods_ulak_kurye.framework */; };
 		402068E0D9A9EC19D18F316E /* Pods_ulak_kuryeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB9DEDCECBF640EEF71AAA8 /* Pods_ulak_kuryeTests.framework */; };
+		9E246A7A27DF22FB00F10D77 /* Agreement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A7927DF22FB00F10D77 /* Agreement.swift */; };
+		9E246A7C27DF275100F10D77 /* GetOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A7B27DF275100F10D77 /* GetOrderResponse.swift */; };
+		9E246A7E27DF277500F10D77 /* GetAggrementsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A7D27DF277500F10D77 /* GetAggrementsResponse.swift */; };
 		9E33049727C6546000AAB135 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33049627C6546000AAB135 /* HomeVC.swift */; };
 		9E33049927C661CB00AAB135 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33049827C661CB00AAB135 /* HomeHeaderView.swift */; };
 		9E33049B27C661DA00AAB135 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */; };
@@ -60,6 +63,8 @@
 		9E896AB627D64B680041FFBD /* NetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E896AB527D64B680041FFBD /* NetworkRequestable.swift */; };
 		9E896AB827D658BD0041FFBD /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E896AB727D658BD0041FFBD /* OrderDetailVC.swift */; };
 		9E896ABA27D65FFD0041FFBD /* OrderDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E896AB927D65FFD0041FFBD /* OrderDetailVM.swift */; };
+		9E8D66B727DCBA0500C1694A /* OrderPoolVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D66B627DCBA0500C1694A /* OrderPoolVC.swift */; };
+		9E8D66B927DCBBB100C1694A /* BaseTBLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D66B827DCBBB100C1694A /* BaseTBLVC.swift */; };
 		9EA443C427CCF4E800C4A47B /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA443C327CCF4E800C4A47B /* TableSectionHeaderView.swift */; };
 		9EA443C627CCF4EF00C4A47B /* TableSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EA443C527CCF4EF00C4A47B /* TableSectionHeaderView.xib */; };
 		9EA443C927CD1A4400C4A47B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA443C827CD1A4400C4A47B /* Order.swift */; };
@@ -121,6 +126,9 @@
 		5D056A3DC22B8A343D361EDB /* Pods_ulak_kurye_ulak_kuryeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ulak_kurye_ulak_kuryeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9464C032556AE790D022802A /* Pods_ulak_kurye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ulak_kurye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		998B7EE595C176694EAB6DFA /* Pods-ulak.kurye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye.release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye.release.xcconfig"; sourceTree = "<group>"; };
+		9E246A7927DF22FB00F10D77 /* Agreement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agreement.swift; sourceTree = "<group>"; };
+		9E246A7B27DF275100F10D77 /* GetOrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderResponse.swift; sourceTree = "<group>"; };
+		9E246A7D27DF277500F10D77 /* GetAggrementsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAggrementsResponse.swift; sourceTree = "<group>"; };
 		9E33049627C6546000AAB135 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		9E33049827C661CB00AAB135 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
@@ -174,6 +182,8 @@
 		9E896AB527D64B680041FFBD /* NetworkRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestable.swift; sourceTree = "<group>"; };
 		9E896AB727D658BD0041FFBD /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
 		9E896AB927D65FFD0041FFBD /* OrderDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVM.swift; sourceTree = "<group>"; };
+		9E8D66B627DCBA0500C1694A /* OrderPoolVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPoolVC.swift; sourceTree = "<group>"; };
+		9E8D66B827DCBBB100C1694A /* BaseTBLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTBLVC.swift; sourceTree = "<group>"; };
 		9EA443C327CCF4E800C4A47B /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
 		9EA443C527CCF4EF00C4A47B /* TableSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableSectionHeaderView.xib; sourceTree = "<group>"; };
 		9EA443C827CD1A4400C4A47B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -272,7 +282,6 @@
 				C7EA48B1254F7D274D7337BE /* Pods-ulak.kuryeTests.release.xcconfig */,
 				C1D478E1D7B12095363EB400 /* Pods-ulak.kuryeTests.dev release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -283,6 +292,7 @@
 				9E33049827C661CB00AAB135 /* HomeHeaderView.swift */,
 				9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */,
 				9E896AB727D658BD0041FFBD /* OrderDetailVC.swift */,
+				9E8D66B627DCBA0500C1694A /* OrderPoolVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -358,6 +368,7 @@
 			children = (
 				9ECAAA8D27C3B99D00F583C4 /* BaseVC.swift */,
 				9E3D434B27C4E2D800B6D5C5 /* BaseNC.swift */,
+				9E8D66B827DCBBB100C1694A /* BaseTBLVC.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -552,6 +563,9 @@
 				9ECAAADA27C3D3DD00F583C4 /* User.swift */,
 				9EA443C827CD1A4400C4A47B /* Order.swift */,
 				9E43A1F427CDFFEC00077288 /* Paginate.swift */,
+				9E246A7927DF22FB00F10D77 /* Agreement.swift */,
+				9E246A7B27DF275100F10D77 /* GetOrderResponse.swift */,
+				9E246A7D27DF277500F10D77 /* GetAggrementsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -694,8 +708,8 @@
 			mainGroup = 9E3E2CF727BE8F1600A17025;
 			packageReferences = (
 				9E3E2D3527BE927200A17025 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
-				9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift.ios" */,
+				9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift" */,
 			);
 			productRefGroup = 9E3E2D0127BE8F1600A17025 /* Products */;
 			projectDirPath = "";
@@ -887,15 +901,18 @@
 			files = (
 				9ECAAAEA27C3E1FC00F583C4 /* ToastView.swift in Sources */,
 				9E33049727C6546000AAB135 /* HomeVC.swift in Sources */,
+				9E246A7C27DF275100F10D77 /* GetOrderResponse.swift in Sources */,
 				9E43A1F927CF6F5F00077288 /* Date+KKUtils.swift in Sources */,
 				9E33049927C661CB00AAB135 /* HomeHeaderView.swift in Sources */,
 				9E3D434F27C4E66E00B6D5C5 /* KKOutlinedTextField.swift in Sources */,
 				9E3304AB27C76BBC00AAB135 /* LocationManager.swift in Sources */,
 				9E896AB827D658BD0041FFBD /* OrderDetailVC.swift in Sources */,
 				9EE8C01B27D78E600050F37D /* UIStackView+KKUtils.swift in Sources */,
+				9E8D66B727DCBA0500C1694A /* OrderPoolVC.swift in Sources */,
 				9E3D435327C5115D00B6D5C5 /* LoginVC.swift in Sources */,
 				9EE8B45B27C915AA001E8CE6 /* HomeHeaderVM.swift in Sources */,
 				9E3D434027C4DEF600B6D5C5 /* OnboardingVC.swift in Sources */,
+				9E8D66B927DCBBB100C1694A /* BaseTBLVC.swift in Sources */,
 				9E3304A927C686A000AAB135 /* NotificationManager.swift in Sources */,
 				9ECAAA9C27C3C41900F583C4 /* APIRouter.swift in Sources */,
 				9E43A1F527CDFFEC00077288 /* Paginate.swift in Sources */,
@@ -910,6 +927,7 @@
 				9ECAAA8E27C3B99D00F583C4 /* BaseVC.swift in Sources */,
 				9ECAAA9E27C3C42D00F583C4 /* Session.swift in Sources */,
 				9E3304AF27C7826700AAB135 /* NoDataView.swift in Sources */,
+				9E246A7A27DF22FB00F10D77 /* Agreement.swift in Sources */,
 				9ECAAAE027C3DB0D00F583C4 /* LoadingView.swift in Sources */,
 				9ECAAAD327C3D07600F583C4 /* CustomError.swift in Sources */,
 				9EE8C01827D780950050F37D /* BreakpointTVC.swift in Sources */,
@@ -929,6 +947,7 @@
 				9E43A1FF27CFBA8700077288 /* String+KKUtils.swift in Sources */,
 				9ECAAAD927C3D23E00F583C4 /* Logger.swift in Sources */,
 				9ECAAAD727C3D16500F583C4 /* Auth.swift in Sources */,
+				9E246A7E27DF277500F10D77 /* GetAggrementsResponse.swift in Sources */,
 				9ECAAAA027C3C48000F583C4 /* Constants.swift in Sources */,
 				9EA443C927CD1A4400C4A47B /* Order.swift in Sources */,
 				9E4BF8C227C92F5E004FE73E /* OrderDataSource.swift in Sources */,
@@ -1590,7 +1609,7 @@
 				minimumVersion = 8.0.0;
 			};
 		};
-		9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1598,7 +1617,7 @@
 				kind = branch;
 			};
 		};
-		9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift.ios" */ = {
+		9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kokteyldev/kokteyl.utils.swift.ios";
 			requirement = {
@@ -1626,12 +1645,12 @@
 		};
 		9ECAAA9227C3BD4E00F583C4 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = 9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 		9ECAAACA27C3CC9200F583C4 /* KokteylUtils */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift.ios" */;
+			package = 9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift" */;
 			productName = KokteylUtils;
 		};
 /* End XCSwiftPackageProductDependency section */
