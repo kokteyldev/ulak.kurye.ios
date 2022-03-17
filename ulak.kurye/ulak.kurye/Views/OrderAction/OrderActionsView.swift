@@ -113,18 +113,25 @@ final class OrderActionsView: UIView {
         
         let ruleKeys = action.inputs.params.rules.keys
         let group = DispatchGroup()
+        var hasEmptyParam = false
         
         for ruleString in ruleKeys {
             if let rule = OrderActionRuleType(rawValue: ruleString) {
                 group.enter()
                 getParameterForRule(rule) { params in
                     params?.forEach { (k,v) in parameters[k] = v }
+                    if params == nil { hasEmptyParam = true }
                     group.leave()
                 }
             }
         }
         
         group.notify(queue: .main) {
+            if hasEmptyParam {
+                self.resetAfterLoading()
+                return
+            }
+            
             API.runOrderAction(actionName: action.name, params: parameters) { result in
                 switch result {
                 case Result.success(_):

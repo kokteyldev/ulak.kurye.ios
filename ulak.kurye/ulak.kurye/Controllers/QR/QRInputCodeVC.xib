@@ -70,7 +70,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zx-MT-B0I" userLabel="Send Button">
-                                    <rect key="frame" x="16" y="145" width="334" height="60"/>
+                                    <rect key="frame" x="187" y="145" width="163" height="60"/>
                                     <color key="backgroundColor" name="ulk-orange"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="rzl-j8-XHr"/>
@@ -90,19 +90,44 @@
                                         <action selector="sendTapped:" destination="-1" eventType="touchUpInside" id="EyS-bL-D0F"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHc-dJ-D0J" userLabel="Send Button">
+                                    <rect key="frame" x="16" y="145" width="163" height="60"/>
+                                    <color key="backgroundColor" name="ulk-red"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="jBI-1c-mov"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="İptal">
+                                        <fontDescription key="titleFontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
+                                    </buttonConfiguration>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="cancel"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="Gvl-qY-RQE"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="5p0-ff-258" firstAttribute="top" secondItem="n0O-wX-cKF" secondAttribute="bottom" constant="16" id="0oO-oz-peF"/>
                                 <constraint firstItem="n0O-wX-cKF" firstAttribute="top" secondItem="duI-NU-Jn7" secondAttribute="top" constant="24" id="2oX-mu-hVh"/>
                                 <constraint firstItem="GJ0-TK-40P" firstAttribute="top" secondItem="n0O-wX-cKF" secondAttribute="bottom" constant="16" id="8M0-Kp-bgK"/>
+                                <constraint firstAttribute="bottom" secondItem="oHc-dJ-D0J" secondAttribute="bottom" constant="24" id="8QL-kD-iM7"/>
                                 <constraint firstAttribute="trailing" secondItem="n0O-wX-cKF" secondAttribute="trailing" constant="16" id="A1O-Qh-VnD"/>
+                                <constraint firstItem="oHc-dJ-D0J" firstAttribute="leading" secondItem="duI-NU-Jn7" secondAttribute="leading" constant="16" id="LjG-YI-d8F"/>
+                                <constraint firstItem="oHc-dJ-D0J" firstAttribute="width" secondItem="1zx-MT-B0I" secondAttribute="width" id="Mxm-dW-HN9"/>
                                 <constraint firstAttribute="bottom" secondItem="1zx-MT-B0I" secondAttribute="bottom" constant="24" id="OMB-g8-mka"/>
                                 <constraint firstItem="GJ0-TK-40P" firstAttribute="leading" secondItem="duI-NU-Jn7" secondAttribute="leading" constant="16" id="RRp-8F-1zQ"/>
                                 <constraint firstAttribute="trailing" secondItem="5p0-ff-258" secondAttribute="trailing" constant="16" id="XRz-2D-oMA"/>
                                 <constraint firstItem="5p0-ff-258" firstAttribute="leading" secondItem="GJ0-TK-40P" secondAttribute="trailing" constant="8" id="aTU-Wg-tIF"/>
+                                <constraint firstItem="oHc-dJ-D0J" firstAttribute="top" secondItem="GJ0-TK-40P" secondAttribute="bottom" constant="24" id="iwe-Jm-1O3"/>
+                                <constraint firstItem="1zx-MT-B0I" firstAttribute="leading" secondItem="oHc-dJ-D0J" secondAttribute="trailing" constant="8" id="jAX-X3-R9X"/>
                                 <constraint firstAttribute="trailing" secondItem="1zx-MT-B0I" secondAttribute="trailing" constant="16" id="obA-dk-w46"/>
-                                <constraint firstItem="1zx-MT-B0I" firstAttribute="leading" secondItem="duI-NU-Jn7" secondAttribute="leading" constant="16" id="pGV-fX-zf0"/>
                                 <constraint firstItem="1zx-MT-B0I" firstAttribute="top" secondItem="GJ0-TK-40P" secondAttribute="bottom" constant="24" id="wyi-zY-ob3"/>
                                 <constraint firstItem="n0O-wX-cKF" firstAttribute="leading" secondItem="duI-NU-Jn7" secondAttribute="leading" constant="16" id="yfu-4c-urT"/>
                             </constraints>
@@ -136,6 +161,9 @@
         <image name="ic-qrcode" width="36" height="36"/>
         <namedColor name="ulk-orange">
             <color red="1" green="0.62352941176470589" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ulk-red">
+            <color red="1" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

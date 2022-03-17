@@ -82,6 +82,9 @@
 "pick_security_code_title" = "Teslimat kodunu girin.";
 "pick_security_code_input_name" = "Teslimat Kodu";
 
+//QR
+"scan_qr_code" = "QR Kod Tarama";
+
 // General
 "location_permission_message" = "Uygulamayı kullanmaya devam etmek için konum izni vermelisin.";
 "notification_permission_message" = "Uygulamayı kullanmaya devam etmek için bildirim izni vermelisin.";

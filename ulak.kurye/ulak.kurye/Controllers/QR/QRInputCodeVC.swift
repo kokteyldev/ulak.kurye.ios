@@ -34,6 +34,9 @@ final class QRInputCodeVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(gestureTapped))
+        self.view.addGestureRecognizer(tapgesture)
     }
     
     // MARK: - Setup
@@ -50,11 +53,21 @@ final class QRInputCodeVC: BaseVC {
         closeVC()
     }
     
+    @IBAction func cancelTapped(_ sender: Any) {
+        self.codeTextfield.text = nil
+        closeVC()
+    }
+    
+    @objc func gestureTapped() {
+        self.codeTextfield.text = nil
+        closeVC()
+    }
+    
     // MARK: Util
     private func closeVC() {
         self.dismiss(animated: true) {
             if let dismissCallback = self.dismissCallback {
-                dismissCallback(self.codeTextfield.text)
+                dismissCallback(self.codeTextfield.text?.length == 0 ? nil : self.codeTextfield.text)
             }
         }
     }

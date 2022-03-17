@@ -10,6 +10,8 @@
 	<string>Sipariş takibi için konum izni vermelisin.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Sipariş takibi için konum izni vermelisin.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Sipariş kodlarını okumak için kamera izni vermelisin.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Poppins-SemiBold</string>
@@ -18,10 +20,10 @@
 		<string>Poppins-Medium</string>
 		<string>Poppins-Regular</string>
 	</array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>googlechromes</string>
-        <string>comgooglemaps</string>
-    </array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
 </dict>
 </plist>
