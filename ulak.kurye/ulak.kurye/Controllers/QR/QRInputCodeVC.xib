@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRInputCodeVC" customModule="ulak_kurye" customModuleProvider="target">
+            <connections>
+                <outlet property="codeTextfield" destination="GJ0-TK-40P" id="yMx-ZC-cXw"/>
+                <outlet property="sendButton" destination="1zx-MT-B0I" id="vEN-En-lat"/>
+                <outlet property="titleLabel" destination="n0O-wX-cKF" id="bSl-rC-lxc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCf-sr-wcr">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duI-NU-Jn7" userLabel="Popup Container View" customClass="KKUIView" customModule="KokteylUtils">
+                            <rect key="frame" x="24" y="226" width="366" height="229"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0O-wX-cKF" userLabel="Title Label">
+                                    <rect key="frame" x="16" y="24" width="334" height="21"/>
+                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GJ0-TK-40P" userLabel="Code Textfield" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="61" width="266" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="UNU-br-gYK"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Kod"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5p0-ff-258" userLabel="QR Button">
+                                    <rect key="frame" x="290" y="61" width="60" height="60"/>
+                                    <color key="backgroundColor" name="ulk-orange"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="TDz-K3-kgI"/>
+                                        <constraint firstAttribute="height" constant="60" id="ech-Uw-Ct4"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="ic-qrcode"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="qrTapped:" destination="-1" eventType="touchUpInside" id="ejR-4D-Kdo"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zx-MT-B0I" userLabel="Send Button">
+                                    <rect key="frame" x="16" y="145" width="334" height="60"/>
+                                    <color key="backgroundColor" name="ulk-orange"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="rzl-j8-XHr"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Gönder">
+                                        <fontDescription key="titleFontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
+                                    </buttonConfiguration>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="send"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="sendTapped:" destination="-1" eventType="touchUpInside" id="EyS-bL-D0F"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="5p0-ff-258" firstAttribute="top" secondItem="n0O-wX-cKF" secondAttribute="bottom" constant="16" id="0oO-oz-peF"/>
+                                <constraint firstItem="n0O-wX-cKF" firstAttribute="top" secondItem="duI-NU-Jn7" secondAttribute="top" constant="24" id="2oX-mu-hVh"/>
+                                <constraint firstItem="GJ0-TK-40P" firstAttribute="top" secondItem="n0O-wX-cKF" secondAttribute="bottom" constant="16" id="8M0-Kp-bgK"/>
+                                <constraint firstAttribute="trailing" secondItem="n0O-wX-cKF" secondAttribute="trailing" constant="16" id="A1O-Qh-VnD"/>
+                                <constraint firstAttribute="bottom" secondItem="1zx-MT-B0I" secondAttribute="bottom" constant="24" id="OMB-g8-mka"/>
+                                <constraint firstItem="GJ0-TK-40P" firstAttribute="leading" secondItem="duI-NU-Jn7" secondAttribute="leading" constant="16" id="RRp-8F-1zQ"/>
+                                <constraint firstAttribute="trailing" secondItem="5p0-ff-258" secondAttribute="trailing" constant="16" id="XRz-2D-oMA"/>
+                                <constraint firstItem="5p0-ff-258" firstAttribute="leading" secondItem="GJ0-TK-40P" secondAttribute="trailing" constant="8" id="aTU-Wg-tIF"/>
+                                <constraint firstAttribute="trailing" secondItem="1zx-MT-B0I" secondAttribute="trailing" constant="16" id="obA-dk-w46"/>
+                                <constraint firstItem="1zx-MT-B0I" firstAttribute="leading" secondItem="duI-NU-Jn7" secondAttribute="leading" constant="16" id="pGV-fX-zf0"/>
+                                <constraint firstItem="1zx-MT-B0I" firstAttribute="top" secondItem="GJ0-TK-40P" secondAttribute="bottom" constant="24" id="wyi-zY-ob3"/>
+                                <constraint firstItem="n0O-wX-cKF" firstAttribute="leading" secondItem="duI-NU-Jn7" secondAttribute="leading" constant="16" id="yfu-4c-urT"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.71938258291080304" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="duI-NU-Jn7" firstAttribute="centerY" secondItem="PCf-sr-wcr" secondAttribute="centerY" multiplier="0.76" id="1o2-R0-MZd"/>
+                        <constraint firstItem="duI-NU-Jn7" firstAttribute="leading" secondItem="PCf-sr-wcr" secondAttribute="leading" constant="24" id="3d2-7L-xYP"/>
+                        <constraint firstAttribute="trailing" secondItem="duI-NU-Jn7" secondAttribute="trailing" constant="24" id="SwR-Gd-t7X"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="PCf-sr-wcr" secondAttribute="trailing" id="1HV-he-s2r"/>
+                <constraint firstAttribute="bottom" secondItem="PCf-sr-wcr" secondAttribute="bottom" id="ELi-hM-EUl"/>
+                <constraint firstItem="PCf-sr-wcr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZR3-OD-ckg"/>
+                <constraint firstItem="PCf-sr-wcr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yuX-hn-8lp"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="125.89285714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic-qrcode" width="36" height="36"/>
+        <namedColor name="ulk-orange">
+            <color red="1" green="0.62352941176470589" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -71,11 +71,16 @@
 "order_detail_package_detail" = "Paket İçeriği";
 "order_detail_courier_note" = "Kuryeye Not";
 "order_detail_breakpoints" = "Hareketlerim";
+"order_detail_get_picking_code_title" = "Teslimat Kodunu Gir";
 
 // Pool
 "pool_page_title" = "Havuz";
 "pool_task_take_alert_title" = "Görevi almak istiyor musun?";
 "pool_total_order" = "Toplam Sipariş";
+
+// Order Action
+"pick_security_code_title" = "Teslimat kodunu girin.";
+"pick_security_code_input_name" = "Teslimat Kodu";
 
 // General
 "location_permission_message" = "Uygulamayı kullanmaya devam etmek için konum izni vermelisin.";
@@ -92,4 +97,7 @@
 "working" = "Çalışıyorum";
 "yes" = "Evet";
 "cancel" = "İptal";
-
+"ok" = "Tamam";
+"pick_security_code" = "Teslimat Kodu";
+"send" = "Gönder";
+"code" = "Kod";

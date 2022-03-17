@@ -34,11 +34,12 @@ class OrderDetailVC: BaseVC {
     
     @IBOutlet weak var breakpointsTitleContainer: UIView!
     @IBOutlet weak var breakpointsContainer: UIView!
-    @IBOutlet weak var actionsView: OrderActionsView!
     
+    @IBOutlet weak var actionsView: OrderActionsView!
+    @IBOutlet weak var safeAreaView: UIView!
+    @IBOutlet weak var actionsViewHeightCons: NSLayoutConstraint!
     var order: Order?
     private var viewModel: OrderDetailVM?
-    private var actions: [OrderAction] = []
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -57,29 +58,17 @@ class OrderDetailVC: BaseVC {
     // MARK: - Data
     func getActions() {
         guard let order = order else { return }
+        if order.status == .closed { return }
         
-        API.getOrderActions(orderUUID: order.uuid) { result in
-            switch result {
-            case Result.success(let actionResponse):
-                self.actions = actionResponse.actions.filter { $0.isDisabled == false }
-                self.setupActionView()
-                break
-            case Result.failure(let error):
-                self.view.showToast(.error, message: error.localizedDescription)
-                break
-            }
-        }
+        actionsView.prepareForLoading()
+        actionsView.delegate = self
+        actionsView.setOrderUUID(order.uuid)
     }
     
     // MARK: - Setup
     func setupTableView() {
         breakpointTableView.registerCell(type: BreakpointTVC.self)
         breakpointTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-    }
-    
-    func setupActionView() {
-        actionsView.delegate = self
-        actionsView.setActions(self.actions)
     }
     
     private func setupMap() {
@@ -123,6 +112,10 @@ class OrderDetailVC: BaseVC {
             stackView.removeFully(view: breakpointsTitleContainer)
             stackView.removeFully(view: breakpointsContainer)
         }
+        
+        actionsViewHeightCons.constant = viewModel.isActionViewHeight
+        //TODO: kapalı sipaiş ise safeArea hiç olmasın, content aşağıya kadar insin
+        safeAreaView.isHidden = (viewModel.isActionViewHeight == 0)
         
         var bounds = GMSCoordinateBounds()
         
@@ -208,7 +201,13 @@ extension OrderDetailVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension OrderDetailVC: OrderActionsViewDelegate {
-    func didSelectAction(_ action: OrderAction) {
-        print(action.title)
+    func didRunAction(_ action: OrderAction, error: Error?) {
+        if let error = error {
+            self.view.showToast(.error, message: error.localizedDescription)
+            return
+        }
+
+        NotificationCenter.default.post(name: NSNotification.Name.ReloadOrders, object: nil)
+        //TODO: refresh vc if needed
     }
 }

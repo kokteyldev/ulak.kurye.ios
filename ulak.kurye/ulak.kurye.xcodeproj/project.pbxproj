@@ -65,6 +65,9 @@
 		9E43A1FD27CF908800077288 /* Int+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43A1FC27CF908800077288 /* Int+KKUtils.swift */; };
 		9E43A1FF27CFBA8700077288 /* String+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43A1FE27CFBA8700077288 /* String+KKUtils.swift */; };
 		9E4BF8C227C92F5E004FE73E /* OrderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4BF8C127C92F5E004FE73E /* OrderDataSource.swift */; };
+		9E5BB61827E328C900B6C0A0 /* QRInputCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5BB61627E328C900B6C0A0 /* QRInputCodeVC.swift */; };
+		9E5BB61927E328C900B6C0A0 /* QRInputCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E5BB61727E328C900B6C0A0 /* QRInputCodeVC.xib */; };
+		9E5BB61C27E3656200B6C0A0 /* KKUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5BB61B27E3656200B6C0A0 /* KKUICollectionView.swift */; };
 		9E6D2F7127C8C43B00BAA261 /* UIImage+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D2F7027C8C43B00BAA261 /* UIImage+KKUtils.swift */; };
 		9E6D2F7327C8D71600BAA261 /* UITableView+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D2F7227C8D71600BAA261 /* UITableView+KKUtils.swift */; };
 		9E896AB627D64B680041FFBD /* NetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E896AB527D64B680041FFBD /* NetworkRequestable.swift */; };
@@ -191,6 +194,9 @@
 		9E43A1FC27CF908800077288 /* Int+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+KKUtils.swift"; sourceTree = "<group>"; };
 		9E43A1FE27CFBA8700077288 /* String+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+KKUtils.swift"; sourceTree = "<group>"; };
 		9E4BF8C127C92F5E004FE73E /* OrderDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDataSource.swift; sourceTree = "<group>"; };
+		9E5BB61627E328C900B6C0A0 /* QRInputCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRInputCodeVC.swift; sourceTree = "<group>"; };
+		9E5BB61727E328C900B6C0A0 /* QRInputCodeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRInputCodeVC.xib; sourceTree = "<group>"; };
+		9E5BB61B27E3656200B6C0A0 /* KKUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKUICollectionView.swift; sourceTree = "<group>"; };
 		9E6D2F7027C8C43B00BAA261 /* UIImage+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+KKUtils.swift"; sourceTree = "<group>"; };
 		9E6D2F7227C8D71600BAA261 /* UITableView+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+KKUtils.swift"; sourceTree = "<group>"; };
 		9E896AB527D64B680041FFBD /* NetworkRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestable.swift; sourceTree = "<group>"; };
@@ -474,6 +480,15 @@
 			path = ulak.kuryeUITests;
 			sourceTree = "<group>";
 		};
+		9E5BB61A27E328D100B6C0A0 /* QR */ = {
+			isa = PBXGroup;
+			children = (
+				9E5BB61627E328C900B6C0A0 /* QRInputCodeVC.swift */,
+				9E5BB61727E328C900B6C0A0 /* QRInputCodeVC.xib */,
+			);
+			path = QR;
+			sourceTree = "<group>";
+		};
 		9E6D2F6F27C8C42700BAA261 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +501,7 @@
 				9E43A1FC27CF908800077288 /* Int+KKUtils.swift */,
 				9E43A1FE27CFBA8700077288 /* String+KKUtils.swift */,
 				9EE8C01A27D78E600050F37D /* UIStackView+KKUtils.swift */,
+				9E5BB61B27E3656200B6C0A0 /* KKUICollectionView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -565,6 +581,7 @@
 				9E3D433E27C4DEE100B6D5C5 /* Onboarding */,
 				9E3D435F27C5354800B6D5C5 /* Main */,
 				9E33049527C6544700AAB135 /* Home */,
+				9E5BB61A27E328D100B6C0A0 /* QR */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -764,6 +781,7 @@
 				9E3D434427C4DFAA00B6D5C5 /* OnboardingView.xib in Resources */,
 				9E3304A727C6748A00AAB135 /* OrderTVC.xib in Resources */,
 				9E3D435C27C52AA800B6D5C5 /* Home.storyboard in Resources */,
+				9E5BB61927E328C900B6C0A0 /* QRInputCodeVC.xib in Resources */,
 				9E3D436727C5366A00B6D5C5 /* Settings.storyboard in Resources */,
 				9E246A8727DF731900F10D77 /* OrderActionsView.xib in Resources */,
 				9E3D433D27C4DEAC00B6D5C5 /* Onboarding.storyboard in Resources */,
@@ -931,6 +949,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ECAAAEA27C3E1FC00F583C4 /* ToastView.swift in Sources */,
+				9E5BB61C27E3656200B6C0A0 /* KKUICollectionView.swift in Sources */,
 				9E33049727C6546000AAB135 /* HomeVC.swift in Sources */,
 				9E246A7C27DF275100F10D77 /* GetOrderResponse.swift in Sources */,
 				9E43A1F927CF6F5F00077288 /* Date+KKUtils.swift in Sources */,
@@ -987,6 +1006,7 @@
 				9EA443C927CD1A4400C4A47B /* Order.swift in Sources */,
 				9E246A9027DF7E9A00F10D77 /* OrderActionCVC.swift in Sources */,
 				9E4BF8C227C92F5E004FE73E /* OrderDataSource.swift in Sources */,
+				9E5BB61827E328C900B6C0A0 /* QRInputCodeVC.swift in Sources */,
 				9E3D436127C5356100B6D5C5 /* MainTabbarTC.swift in Sources */,
 				9E43A1F727CF686300077288 /* OrderVM.swift in Sources */,
 			);

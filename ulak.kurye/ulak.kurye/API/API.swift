@@ -174,6 +174,19 @@ struct API {
         }
     }
     
+    static func runOrderAction(actionName: String, params: [String: String], completion:@escaping (Result<Bool, Error>) -> Void) {
+        performRequest(route: APIRouter.runOrderAction(actionName: actionName, parameters: params)) { (result:(Result<Response<Bool?>, Error>)) in
+            switch result {
+            case Result.success(_):
+                completion(.success(true))
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
     // MARK: - Utils    
     static func sendFeedback(message: String, completion:@escaping (Result<Bool, Error>) -> Void) {
         performRequest(route: APIRouter.sendFeedback(message: message)) { (result:(Result<Response<Bool?>, Error>)) in
