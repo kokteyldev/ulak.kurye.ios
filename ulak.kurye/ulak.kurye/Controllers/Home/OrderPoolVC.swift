@@ -44,7 +44,7 @@ final class OrderPoolVC: BaseTBLVC {
             switch result {
             case Result.success(let orders):
                 for order in orders {
-                    self.orderVMs.append(OrderVM(poolOrder: order))
+                    self.orderVMs.append(OrderVM(order: order))
                 }
                 
                 self.resetAfterLoading()

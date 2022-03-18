@@ -8,8 +8,9 @@
 import UIKit
 
 class OrderVM {
-    var isPoolOrder: Bool
-    var isPackagePicked = false
+    let order: Order
+    let isPoolOrder: Bool
+    let isPackagePicked: Bool
     
     var backgroundColor = UIColor.white
     var iconImage: UIImage?
@@ -21,27 +22,15 @@ class OrderVM {
     var price: String?
     var serviceTitle: String?
     var alpha = 1.0
-    
-    var order: Order
 
     // MARK: Init
     init(order: Order) {
         self.order = order
-        self.isPoolOrder = false
-        commonInit()
-    }
-    
-    init(poolOrder: Order) {
-        self.order = poolOrder
-        self.isPoolOrder = true
-        commonInit()
-    }
-    
-    // MARK: - Setup
-    private func commonInit() {
+        self.isPoolOrder = (order.status == .active)
+        self.isPackagePicked = order.startTime != nil && order.startTime!.length > 0
+        
         let isOrderActive = (order.status != .closed)
         let isPackagedDelivered = (order.endTime != nil && order.endTime!.length > 0)
-        isPackagePicked = order.startTime != nil && order.startTime!.length > 0
         
         let expectedStartDate = order.createdTime.serverDate?.addMinutes(order.service.expPickingTime) ?? Date()
         let expectedDeliverDate = order.createdTime.serverDate?.addMinutes(order.service.expDeliveryTime) ?? Date()

@@ -27,6 +27,7 @@ struct Order: Codable {
     var cost: Double
     var sender: OrderPerson
     var receiver: OrderPerson
+    var owner: Owner?
     var senderDistance: OrderDistance
     var receiverDistance: OrderDistance
     var breakpoints: [OrderBreakpoint]?
@@ -48,6 +49,7 @@ struct Order: Codable {
         case cost = "cost"
         case sender = "sender"
         case receiver = "receiver"
+        case owner = "owner"
         case senderDistance = "sender_distance"
         case receiverDistance = "receiver_distance"
         case breakpoints = "breakpoints"
@@ -92,6 +94,18 @@ struct OrderPerson: Codable {
         case hometown = "hometown_name"
         case latitude = "latitude"
         case longtitude = "longitude"
+    }
+}
+
+struct Owner: Codable {
+    var id: Int
+    var name: String
+    var surname: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case name = "name"
+        case surname = "surname"
     }
 }
 

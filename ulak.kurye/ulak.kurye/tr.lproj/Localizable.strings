@@ -69,6 +69,7 @@
 "order_detail_pick_point" = "Alım Noktası";
 "order_detail_deliver_point" = "Teslim Noktası";
 "order_detail_package_detail" = "Paket İçeriği";
+"order_detail_owner_point" = "Sipariş Sahibi";
 "order_detail_courier_note" = "Kuryeye Not";
 "order_detail_breakpoints" = "Hareketlerim";
 "order_detail_get_picking_code_title" = "Teslimat Kodunu Gir";

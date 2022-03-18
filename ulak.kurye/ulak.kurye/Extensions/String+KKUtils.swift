@@ -19,4 +19,11 @@ extension String {
         df.dateFormat = Constants.longServerDateFormat
         return df.date(from: self)
     }
+    
+    var encrypted: String {
+        if let first = self.first {
+            return "\(first)***"
+        }
+        return ""
+    }
 }

@@ -23,6 +23,15 @@ class OrderDetailVC: BaseVC {
     @IBOutlet weak var packageContentLabel: UILabel!
     @IBOutlet weak var courierNoteLabel: UILabel!
     
+    @IBOutlet weak var pickMapButton: UIButton!
+    @IBOutlet weak var deliverMapButton: UIButton!
+    
+    @IBOutlet weak var pickCallButton: UIButton!
+    @IBOutlet weak var deliverCallButton: UIButton!
+    
+    @IBOutlet weak var ownerNameLabel: UILabel!
+    @IBOutlet weak var ownerCallButton: UIButton!
+    
     @IBOutlet weak var breakpointTableView: UITableView!
     @IBOutlet weak var breakpointHeightConst: NSLayoutConstraint!
     
@@ -49,10 +58,6 @@ class OrderDetailVC: BaseVC {
         setupMap()
         setupUI()
         getActions()
-    }
-    
-    deinit {
-        breakpointTableView.removeObserver(self, forKeyPath: "contentSize", context: nil)
     }
     
     // MARK: - Data
@@ -95,8 +100,22 @@ class OrderDetailVC: BaseVC {
         deliverAddressLabel.text = viewModel.deliverAddress
         receiverNameLabel.text = viewModel.receiverName
         
+        ownerNameLabel.text = viewModel.ownerName
+        
         packageContentLabel.text = viewModel.packageDetail
         courierNoteLabel.text = viewModel.courierNote
+        
+        pickMapButton.isUserInteractionEnabled = viewModel.isMapButtonsActive
+        deliverMapButton.isUserInteractionEnabled = viewModel.isMapButtonsActive
+        pickMapButton.alpha = viewModel.mapButtonsAlpha
+        deliverMapButton.alpha = viewModel.mapButtonsAlpha
+        
+        pickCallButton.isUserInteractionEnabled = viewModel.isMapButtonsActive
+        deliverCallButton.isUserInteractionEnabled = viewModel.isMapButtonsActive
+        ownerCallButton.isUserInteractionEnabled = viewModel.isMapButtonsActive
+        pickCallButton.alpha = viewModel.mapButtonsAlpha
+        deliverCallButton.alpha = viewModel.mapButtonsAlpha
+        ownerCallButton.alpha = viewModel.mapButtonsAlpha
         
         if viewModel.isPackageDetailHidden == true {
             stackView.removeFully(view: packageContentTitleContainer)
@@ -117,25 +136,29 @@ class OrderDetailVC: BaseVC {
         //TODO: kapalı sipaiş ise safeArea hiç olmasın, content aşağıya kadar insin
         safeAreaView.isHidden = (viewModel.isActionViewHeight == 0)
         
-        var bounds = GMSCoordinateBounds()
-        
-        let senderMarker = GMSMarker(position: viewModel.senderLocation)
-        senderMarker.icon = .init(named: "ic-marker-orange")
-        senderMarker.map = mapView
-        bounds = bounds.includingCoordinate(viewModel.senderLocation)
+        if !viewModel.isDetailsHidden {
+            var bounds = GMSCoordinateBounds()
+            
+            let senderMarker = GMSMarker(position: viewModel.senderLocation)
+            senderMarker.icon = .init(named: "ic-marker-orange")
+            senderMarker.map = mapView
+            bounds = bounds.includingCoordinate(viewModel.senderLocation)
 
-        let receiverMarker = GMSMarker(position: viewModel.receiverLocation)
-        receiverMarker.icon = .init(named: "ic-marker-blue")
-        receiverMarker.map = mapView
-        bounds = bounds.includingCoordinate(viewModel.receiverLocation)
+            let receiverMarker = GMSMarker(position: viewModel.receiverLocation)
+            receiverMarker.icon = .init(named: "ic-marker-blue")
+            receiverMarker.map = mapView
+            bounds = bounds.includingCoordinate(viewModel.receiverLocation)
+            
+            mapView.animate(with: GMSCameraUpdate.fit(bounds, with: .init(top: 38, left: 20, bottom: 2, right: 20)))
+        }
         
-        mapView.animate(with: GMSCameraUpdate.fit(bounds, with: .init(top: 38, left: 20, bottom: 2, right: 20)))
         breakpointTableView.reloadData()
     }
     
     // MARK: - Actions
     @IBAction func mapTapped(_ sender: Any) {
         guard let viewModel = viewModel else { return }
+        if viewModel.isDetailsHidden { return }
 
         if viewModel.isPackagePicked {
             getMapDirections(viewModel.receiverLocation)

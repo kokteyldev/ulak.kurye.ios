@@ -87,7 +87,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="792"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Oe-b0-lfQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="757.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="859.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lip-7H-aXP" userLabel="Header Container Viewe">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -498,8 +498,93 @@
                                                     <constraint firstItem="C2n-J7-rFL" firstAttribute="top" secondItem="mwB-Vc-MOs" secondAttribute="bottom" constant="12" id="mUG-2D-2Zu"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2t9-IF-EGd" userLabel="Package Detail Title View">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRN-yr-t8H" userLabel="Owner Point View">
                                                 <rect key="frame" x="0.0" y="509.5" width="414" height="44"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-address" translatesAutoresizingMaskIntoConstraints="NO" id="lxQ-D5-CE5">
+                                                        <rect key="frame" x="16" y="13" width="15" height="18"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="18" id="07T-Bd-f4N"/>
+                                                            <constraint firstAttribute="width" constant="15" id="z0d-vs-svd"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sipariş Sahibi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrM-5o-Blt">
+                                                        <rect key="frame" x="39" y="8" width="359" height="28"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="order_detail_owner_point"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="ulk-green"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="10R-8P-gXW"/>
+                                                    <constraint firstItem="zrM-5o-Blt" firstAttribute="top" secondItem="JRN-yr-t8H" secondAttribute="top" constant="8" id="BnS-WV-ie4"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zrM-5o-Blt" secondAttribute="bottom" constant="8" id="Fr6-cy-52D"/>
+                                                    <constraint firstItem="lxQ-D5-CE5" firstAttribute="centerY" secondItem="JRN-yr-t8H" secondAttribute="centerY" id="GVc-pu-rMw"/>
+                                                    <constraint firstItem="zrM-5o-Blt" firstAttribute="leading" secondItem="lxQ-D5-CE5" secondAttribute="trailing" constant="8" symbolic="YES" id="o5c-xc-lFL"/>
+                                                    <constraint firstItem="lxQ-D5-CE5" firstAttribute="leading" secondItem="JRN-yr-t8H" secondAttribute="leading" constant="16" id="sdU-F3-2gH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zrM-5o-Blt" secondAttribute="trailing" constant="16" id="vmh-WH-GCO"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuT-jU-Jcm" userLabel="Owner Address Name View">
+                                                <rect key="frame" x="0.0" y="553.5" width="414" height="58"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mehmet KARAGÖZ" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="a5s-ld-4UW">
+                                                        <rect key="frame" x="39" y="12" width="315" height="33"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSa-ze-zyL" userLabel="Seperator">
+                                                        <rect key="frame" x="354" y="0.0" width="1" height="58"/>
+                                                        <color key="backgroundColor" name="ulk-input-border"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="1" id="jfI-dK-AEa"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1D-M3-rd3" userLabel="Bottom Seperator">
+                                                        <rect key="frame" x="0.0" y="57" width="414" height="1"/>
+                                                        <color key="backgroundColor" name="ulk-input-border"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="ovj-7b-ibd"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9T-o5-H3B">
+                                                        <rect key="frame" x="356" y="0.0" width="58" height="57"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="58" id="son-3L-W7Z"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="ic-phone"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value=" "/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="O1D-M3-rd3" firstAttribute="leading" secondItem="uuT-jU-Jcm" secondAttribute="leading" id="2is-Rg-KUi"/>
+                                                    <constraint firstAttribute="bottom" secondItem="O1D-M3-rd3" secondAttribute="bottom" id="6EU-ua-Uy2"/>
+                                                    <constraint firstItem="KSa-ze-zyL" firstAttribute="top" secondItem="uuT-jU-Jcm" secondAttribute="top" id="7uD-0W-sWw"/>
+                                                    <constraint firstItem="a5s-ld-4UW" firstAttribute="top" secondItem="uuT-jU-Jcm" secondAttribute="top" constant="12" id="F5l-l0-opo"/>
+                                                    <constraint firstItem="a5s-ld-4UW" firstAttribute="leading" secondItem="uuT-jU-Jcm" secondAttribute="leading" constant="39" id="I82-Kz-Xbw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="n9T-o5-H3B" secondAttribute="trailing" id="JJm-9W-M4u"/>
+                                                    <constraint firstItem="n9T-o5-H3B" firstAttribute="top" secondItem="uuT-jU-Jcm" secondAttribute="top" id="Ofe-vZ-U35"/>
+                                                    <constraint firstAttribute="bottom" secondItem="KSa-ze-zyL" secondAttribute="bottom" id="k0K-yg-iyy"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="kjP-Jd-06j"/>
+                                                    <constraint firstItem="O1D-M3-rd3" firstAttribute="top" secondItem="a5s-ld-4UW" secondAttribute="bottom" constant="12" id="nJQ-Jz-0GL"/>
+                                                    <constraint firstItem="n9T-o5-H3B" firstAttribute="leading" secondItem="KSa-ze-zyL" secondAttribute="trailing" constant="1" id="uo2-t4-pfo"/>
+                                                    <constraint firstItem="KSa-ze-zyL" firstAttribute="leading" secondItem="a5s-ld-4UW" secondAttribute="trailing" id="v5f-MJ-ekB"/>
+                                                    <constraint firstItem="O1D-M3-rd3" firstAttribute="top" secondItem="n9T-o5-H3B" secondAttribute="bottom" id="xJq-PQ-qOv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="O1D-M3-rd3" secondAttribute="trailing" id="xT6-Kh-sE1"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2t9-IF-EGd" userLabel="Package Detail Title View">
+                                                <rect key="frame" x="0.0" y="611.5" width="414" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-file" translatesAutoresizingMaskIntoConstraints="NO" id="l1F-3N-AZx">
                                                         <rect key="frame" x="16" y="13" width="15" height="18"/>
@@ -540,7 +625,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfQ-FB-i46" userLabel="Package Detail View">
-                                                <rect key="frame" x="0.0" y="553.5" width="414" height="58"/>
+                                                <rect key="frame" x="0.0" y="655.5" width="414" height="58"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İçli köfte ve ayran" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GCE-c3-Mwi">
                                                         <rect key="frame" x="39" y="12" width="359" height="33"/>
@@ -569,7 +654,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnI-b0-biS" userLabel="Courier Note Title View">
-                                                <rect key="frame" x="0.0" y="611.5" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="713.5" width="414" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-note" translatesAutoresizingMaskIntoConstraints="NO" id="Kcu-j5-RM8">
                                                         <rect key="frame" x="16" y="13" width="15" height="18"/>
@@ -610,7 +695,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnP-3P-OGn" userLabel="Courier Note View">
-                                                <rect key="frame" x="0.0" y="655.5" width="414" height="58"/>
+                                                <rect key="frame" x="0.0" y="757.5" width="414" height="58"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paket içerisinde sıcak yemek var." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="E2t-dz-t5g">
                                                         <rect key="frame" x="39" y="12" width="359" height="33"/>
@@ -639,7 +724,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ht0-NV-g81" userLabel="Breakpoints Title View">
-                                                <rect key="frame" x="0.0" y="713.5" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="815.5" width="414" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-time" translatesAutoresizingMaskIntoConstraints="NO" id="Bh0-9p-vNI">
                                                         <rect key="frame" x="16" y="13" width="15" height="18"/>
@@ -680,7 +765,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="We3-ZQ-hHt" userLabel="Breakpoints View">
-                                                <rect key="frame" x="0.0" y="757.5" width="414" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="859.5" width="414" height="0.0"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4rW-55-nf0">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
@@ -752,14 +837,20 @@
                         <outlet property="courierNoteLabel" destination="E2t-dz-t5g" id="ITb-hr-Rtu"/>
                         <outlet property="courierNoteTitleContainer" destination="CnI-b0-biS" id="942-7G-iPh"/>
                         <outlet property="deliverAddressLabel" destination="iXV-Zg-wkT" id="BZs-vC-Irf"/>
+                        <outlet property="deliverCallButton" destination="64A-z2-vK6" id="3fp-LV-EIF"/>
                         <outlet property="deliverDateLabel" destination="mbH-L0-efU" id="8io-Jn-rfr"/>
+                        <outlet property="deliverMapButton" destination="btI-y0-wst" id="aO9-mc-Qt3"/>
                         <outlet property="mapView" destination="5CH-ax-TDw" id="Oww-zc-fh1"/>
                         <outlet property="orderCodeLabel" destination="izl-kS-VvX" id="k30-S9-SZi"/>
+                        <outlet property="ownerCallButton" destination="n9T-o5-H3B" id="HGQ-pS-tsO"/>
+                        <outlet property="ownerNameLabel" destination="a5s-ld-4UW" id="eN0-MN-iH6"/>
                         <outlet property="packageContentContainer" destination="cfQ-FB-i46" id="YxG-vd-afG"/>
                         <outlet property="packageContentLabel" destination="GCE-c3-Mwi" id="y7l-Eb-2JN"/>
                         <outlet property="packageContentTitleContainer" destination="2t9-IF-EGd" id="YaP-ms-9wB"/>
                         <outlet property="pickAddressLabel" destination="GTS-Qb-uJP" id="Ntx-xh-mqY"/>
+                        <outlet property="pickCallButton" destination="nG1-iy-nqI" id="tyn-mh-0TS"/>
                         <outlet property="pickDateLabel" destination="Ytx-Zd-RWy" id="n2c-if-dGw"/>
+                        <outlet property="pickMapButton" destination="J12-4n-Zjv" id="UqP-uK-u0P"/>
                         <outlet property="receiverNameLabel" destination="mwB-Vc-MOs" id="Es2-yG-JGg"/>
                         <outlet property="safeAreaView" destination="ETY-HX-NIT" id="kLu-Qu-dbi"/>
                         <outlet property="senderNameLabel" destination="Qh3-F1-KWd" id="bDF-nZ-2PD"/>
@@ -791,6 +882,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic-address" width="18" height="18"/>
         <image name="ic-file" width="16" height="17"/>
         <image name="ic-note" width="15" height="17"/>
         <image name="ic-phone" width="20" height="24"/>
@@ -799,6 +891,9 @@
         <image name="ic-time" width="16" height="16"/>
         <namedColor name="ulk-blue">
             <color red="0.42745098039215684" green="0.59999999999999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ulk-green">
+            <color red="0.23529411764705882" green="0.70588235294117652" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ulk-input-back">
             <color red="0.93725490196078431" green="0.94509803921568625" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
