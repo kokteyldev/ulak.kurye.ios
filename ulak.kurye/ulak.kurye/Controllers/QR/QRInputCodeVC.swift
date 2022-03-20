@@ -26,6 +26,7 @@ final class QRInputCodeVC: BaseVC {
         vc.qrCodeKey = qrCodeKey
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
+        vc.hidesBottomBarWhenPushed = true
         
         return vc
     }
@@ -47,6 +48,10 @@ final class QRInputCodeVC: BaseVC {
 
     // MARK: - Actions
     @IBAction func qrTapped(_ sender: Any) {
+        let svc = ScannerVC()
+        svc.delegate = self
+        svc.modalPresentationStyle = .fullScreen
+        self.present(svc, animated: true, completion: nil)
     }
     
     @IBAction func sendTapped(_ sender: Any) {
@@ -70,5 +75,25 @@ final class QRInputCodeVC: BaseVC {
                 dismissCallback(self.codeTextfield.text?.length == 0 ? nil : self.codeTextfield.text)
             }
         }
+    }
+}
+
+extension QRInputCodeVC: ScannerDelegate {
+    func didScanCode(code: String) {
+        // picking_security_code: DutHix, orderCode: b-1545171599
+        let range = NSRange(location: 0, length: code.utf16.count)
+        let regex = try! NSRegularExpression(pattern: "(?<=\(qrCodeKey!): )(.*)(?=,)")
+        
+        guard let foundedResult = regex.firstMatch(in: code, options: [], range: range) else {
+            self.view.showToast(.error, message: "scan_error".localized)
+            return
+        }
+        
+        let resultCode = code[Range(foundedResult.range, in: code)!]
+        codeTextfield.text = "\(resultCode)"
+    }
+    
+    func didFailScan(errorMessage: String) {
+        self.view.showToast(.error, message: errorMessage)
     }
 }

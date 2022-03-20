@@ -79,6 +79,7 @@
 		9EA443C427CCF4E800C4A47B /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA443C327CCF4E800C4A47B /* TableSectionHeaderView.swift */; };
 		9EA443C627CCF4EF00C4A47B /* TableSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EA443C527CCF4EF00C4A47B /* TableSectionHeaderView.xib */; };
 		9EA443C927CD1A4400C4A47B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA443C827CD1A4400C4A47B /* Order.swift */; };
+		9EC177D727E4BB0D0005FA8E /* ScannerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EC177D527E4BB0D0005FA8E /* ScannerVC.xib */; };
 		9ECAAA7927C393DD00F583C4 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9ECAAA7427C393DC00F583C4 /* Poppins-Medium.ttf */; };
 		9ECAAA7A27C393DD00F583C4 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9ECAAA7527C393DC00F583C4 /* Poppins-SemiBold.ttf */; };
 		9ECAAA7B27C393DD00F583C4 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9ECAAA7627C393DC00F583C4 /* Poppins-Light.ttf */; };
@@ -209,6 +210,7 @@
 		9EA443C327CCF4E800C4A47B /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
 		9EA443C527CCF4EF00C4A47B /* TableSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableSectionHeaderView.xib; sourceTree = "<group>"; };
 		9EA443C827CD1A4400C4A47B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		9EC177D527E4BB0D0005FA8E /* ScannerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannerVC.xib; sourceTree = "<group>"; };
 		9ECAAA7427C393DC00F583C4 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		9ECAAA7527C393DC00F583C4 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		9ECAAA7627C393DC00F583C4 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 				9E5BB61627E328C900B6C0A0 /* QRInputCodeVC.swift */,
 				9E5BB61727E328C900B6C0A0 /* QRInputCodeVC.xib */,
 				9E5BB61D27E3889000B6C0A0 /* ScannerVC.swift */,
+				9EC177D527E4BB0D0005FA8E /* ScannerVC.xib */,
 			);
 			path = QR;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ECAAA7B27C393DD00F583C4 /* Poppins-Light.ttf in Resources */,
+				9EC177D727E4BB0D0005FA8E /* ScannerVC.xib in Resources */,
 				9E3D436527C5366200B6D5C5 /* Wallet.storyboard in Resources */,
 				9E3D433827C4CBDE00B6D5C5 /* Localizable.strings in Resources */,
 				9EA443C627CCF4EF00C4A47B /* TableSectionHeaderView.xib in Resources */,

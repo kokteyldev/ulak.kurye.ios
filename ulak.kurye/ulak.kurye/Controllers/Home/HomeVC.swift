@@ -226,13 +226,7 @@ extension HomeVC: UIScrollViewDelegate {
 
 extension HomeVC: HeaderViewDelegate {
     func poolTapped() {
-        let svc = ScannerVC()
-        svc.modalPresentationStyle = .fullScreen
-        svc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(svc, animated: true)
-
-        return
-//        self.performSegue(withIdentifier: "OrderPoolVC", sender: self)
+        self.performSegue(withIdentifier: "OrderPoolVC", sender: self)
     }
     
     func qrCodeTapped() {

@@ -80,11 +80,13 @@
 "pool_total_order" = "Toplam Sipariş";
 
 // Order Action
-"pick_security_code_title" = "Teslimat kodunu girin.";
-"pick_security_code_input_name" = "Teslimat Kodu";
+"picking_security_code_title" = "Teslimat kodunu girin.";
+"picking_security_code_input_name" = "Teslimat Kodu";
 
 //QR
 "scan_qr_code" = "QR Kod Tarama";
+"scan_not_supported_error" = "Telefon tarama için uygun değil!";
+"scan_error" = "Kod bulunamadı!";
 
 // General
 "location_permission_message" = "Uygulamayı kullanmaya devam etmek için konum izni vermelisin.";
@@ -102,6 +104,6 @@
 "yes" = "Evet";
 "cancel" = "İptal";
 "ok" = "Tamam";
-"pick_security_code" = "Teslimat Kodu";
+"picking_security_code" = "Teslimat Kodu";
 "send" = "Gönder";
 "code" = "Kod";

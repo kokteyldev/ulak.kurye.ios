@@ -26,4 +26,16 @@ extension String {
         }
         return ""
     }
+    
+    func toDictionary() -> [String:String]? {
+       if let data = self.data(using: .utf8) {
+           do {
+               let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:String]
+               return json
+           } catch {
+               print("Something went wrong")
+           }
+       }
+       return nil
+   }
 }

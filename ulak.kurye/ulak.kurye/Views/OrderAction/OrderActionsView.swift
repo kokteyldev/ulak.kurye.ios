@@ -156,8 +156,8 @@ final class OrderActionsView: UIView {
             completion([rule.rawValue: agreement!.uuid])
             return
         } else if rule == .pickSecurityCode {
-            let qrInputVC = QRInputCodeVC.qrInputVC(title: "pick_security_code_title".localized,
-                                                    inputTitle: "pick_security_code_input_name".localized,
+            let qrInputVC = QRInputCodeVC.qrInputVC(title: "picking_security_code_title".localized,
+                                                    inputTitle: "picking_security_code_input_name".localized,
                                                     qrCodeKey: rule.rawValue)
             UIApplication.topViewController()?.present(qrInputVC, animated: true, completion: nil)
             
@@ -171,8 +171,8 @@ final class OrderActionsView: UIView {
             }
             return
         } else if rule == .deliverSecurityCode {
-            let qrInputVC = QRInputCodeVC.qrInputVC(title: "pick_security_code_title".localized,
-                                                    inputTitle: "pick_security_code_input_name".localized,
+            let qrInputVC = QRInputCodeVC.qrInputVC(title: "picking_security_code_title".localized,
+                                                    inputTitle: "picking_security_code_input_name".localized,
                                                     qrCodeKey: rule.rawValue)
             UIApplication.topViewController()?.present(qrInputVC, animated: true, completion: nil)
             
