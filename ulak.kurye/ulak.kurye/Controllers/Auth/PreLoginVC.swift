@@ -8,7 +8,8 @@
 import UIKit
 
 final class PreLoginVC: BaseVC {
-    @IBOutlet weak var phoneNumberTextField: KKOutlinedTextField!
+    @IBOutlet weak var phoneCodeView: PhoneCodeView!
+    
     @IBOutlet weak var kvvkPolicyButton: UIButton!
     @IBOutlet weak var loginButton: KKLoadingButton!
     
@@ -37,7 +38,7 @@ final class PreLoginVC: BaseVC {
         kvvkPolicyButton.underline()
         navigationController?.setNavigationBarTransparent(true)
         
-        phoneNumberTextField.delegate = self
+        phoneCodeView.delegate = self
         
         feedBackGenerator = UINotificationFeedbackGenerator()
         feedBackGenerator?.prepare()
@@ -45,7 +46,7 @@ final class PreLoginVC: BaseVC {
     
     // MARK: - Data
     private func validateData() {
-        if phoneNumberTextField.text?.isValidPhoneNumber == false {
+        if phoneCodeView.validatedPhoneNumber?.isPhoneNumber == false {
             loginButton.isActive = false
             return
         }
@@ -85,9 +86,9 @@ final class PreLoginVC: BaseVC {
         
         var hasError = false
         
-        let phoneNumber = phoneNumberTextField.text
-        if phoneNumber == nil || phoneNumber?.isValidPhoneNumber == false {
-            phoneNumberTextField.invalidate()
+        let phoneNumber = phoneCodeView.validatedPhoneNumber
+        if phoneNumber == nil || phoneNumber?.isPhoneNumber == false {
+            phoneCodeView.invalidate()
             hasError = true
         }
         
@@ -174,6 +175,13 @@ extension PreLoginVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return true
+    }
+}
+
+// MARK: - PhoneCodeViewDelegate
+extension PreLoginVC: PhoneCodeViewDelegate {
+    func didChangePhoneCode(_ phoneCodeView: PhoneCodeView) {
+        validateData()
     }
 }
 

@@ -66,24 +66,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="preLogin_title_desc"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qwd-v3-DsC" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="24" y="293" width="366" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="6Pd-se-vyc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Telefon No."/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedTitleKey" value="preLogin_phone_number"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="textfieldDidChange:" destination="5f4-lf-SJ2" eventType="editingChanged" id="G2M-Am-xea"/>
-                                    <outlet property="delegate" destination="5f4-lf-SJ2" id="iPP-Th-Uvb"/>
-                                </connections>
-                            </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Af5-Ez-TzM" userLabel="Aggrement">
-                                <rect key="frame" x="24" y="369" width="366" height="40"/>
+                                <rect key="frame" x="24" y="379" width="366" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pv0-Nt-d2X">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="40"/>
@@ -111,7 +95,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8q-Jv-E2V" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="224.5" y="425" width="165.5" height="63.5"/>
+                                <rect key="frame" x="224.5" y="435" width="165.5" height="63.5"/>
                                 <color key="backgroundColor" name="ulk-orange"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="u8q-Jv-E2V" secondAttribute="height" multiplier="157:60" id="N6H-8E-8xq"/>
@@ -126,6 +110,13 @@
                                     <action selector="loginTapped:" destination="5f4-lf-SJ2" eventType="touchUpInside" id="T4g-Bx-ZDc"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0s-7z-0og" customClass="PhoneCodeView" customModule="ulak_kurye" customModuleProvider="target">
+                                <rect key="frame" x="24" y="293" width="366" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="4LM-OY-lHi"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3cn-9J-a0s"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -134,15 +125,15 @@
                             <constraint firstItem="3cn-9J-a0s" firstAttribute="trailing" secondItem="UDh-CD-CnJ" secondAttribute="trailing" constant="24" id="6Ps-zV-dzy"/>
                             <constraint firstItem="3cn-9J-a0s" firstAttribute="trailing" secondItem="jAS-mF-9gP" secondAttribute="trailing" constant="24" id="E8f-xd-5Fx"/>
                             <constraint firstItem="jAS-mF-9gP" firstAttribute="leading" secondItem="3cn-9J-a0s" secondAttribute="leading" constant="24" id="HBy-HL-46h"/>
+                            <constraint firstItem="3cn-9J-a0s" firstAttribute="trailing" secondItem="H0s-7z-0og" secondAttribute="trailing" constant="24" id="HYU-Ij-2Gl"/>
                             <constraint firstItem="UDh-CD-CnJ" firstAttribute="leading" secondItem="3cn-9J-a0s" secondAttribute="leading" constant="24" id="I2C-hB-XfJ"/>
+                            <constraint firstItem="Af5-Ez-TzM" firstAttribute="top" secondItem="H0s-7z-0og" secondAttribute="bottom" constant="16" id="MmW-OZ-jBj"/>
                             <constraint firstItem="2tB-Ab-r0i" firstAttribute="centerX" secondItem="BYX-Rb-qT9" secondAttribute="centerX" id="Npz-On-b7T"/>
-                            <constraint firstItem="Af5-Ez-TzM" firstAttribute="top" secondItem="qwd-v3-DsC" secondAttribute="bottom" constant="16" id="Re6-bV-1DY"/>
-                            <constraint firstItem="3cn-9J-a0s" firstAttribute="trailing" secondItem="qwd-v3-DsC" secondAttribute="trailing" constant="24" id="W4B-1P-nbi"/>
-                            <constraint firstItem="qwd-v3-DsC" firstAttribute="top" secondItem="UDh-CD-CnJ" secondAttribute="bottom" constant="16" id="YWO-dL-jwk"/>
-                            <constraint firstItem="qwd-v3-DsC" firstAttribute="leading" secondItem="3cn-9J-a0s" secondAttribute="leading" constant="24" id="Z7m-wU-JYJ"/>
+                            <constraint firstItem="H0s-7z-0og" firstAttribute="top" secondItem="UDh-CD-CnJ" secondAttribute="bottom" constant="16" id="QBc-bM-Lbk"/>
                             <constraint firstItem="jAS-mF-9gP" firstAttribute="top" secondItem="2tB-Ab-r0i" secondAttribute="bottom" constant="32" id="aMD-wp-rYN"/>
                             <constraint firstItem="u8q-Jv-E2V" firstAttribute="top" secondItem="Af5-Ez-TzM" secondAttribute="bottom" constant="16" id="az4-UQ-lm6"/>
                             <constraint firstAttribute="trailing" secondItem="Af5-Ez-TzM" secondAttribute="trailing" constant="24" id="g2H-d0-Hbe"/>
+                            <constraint firstItem="H0s-7z-0og" firstAttribute="leading" secondItem="3cn-9J-a0s" secondAttribute="leading" constant="24" id="hox-1n-KhB"/>
                             <constraint firstItem="3cn-9J-a0s" firstAttribute="trailing" secondItem="u8q-Jv-E2V" secondAttribute="trailing" constant="24" id="r24-po-RO2"/>
                             <constraint firstItem="2tB-Ab-r0i" firstAttribute="top" secondItem="3cn-9J-a0s" secondAttribute="top" constant="16" id="s0Q-1Z-JvY"/>
                             <constraint firstItem="UDh-CD-CnJ" firstAttribute="top" secondItem="jAS-mF-9gP" secondAttribute="bottom" constant="8" id="tpJ-Ld-fdZ"/>
@@ -153,7 +144,7 @@
                     <connections>
                         <outlet property="kvvkPolicyButton" destination="Pv0-Nt-d2X" id="XuJ-ls-COv"/>
                         <outlet property="loginButton" destination="u8q-Jv-E2V" id="LHq-aY-RTb"/>
-                        <outlet property="phoneNumberTextField" destination="qwd-v3-DsC" id="g0a-3J-bxj"/>
+                        <outlet property="phoneCodeView" destination="H0s-7z-0og" id="Mbk-gW-R3N"/>
                         <segue destination="6Ew-1L-Otk" kind="show" identifier="login" id="Hl0-Iv-aDK"/>
                     </connections>
                 </viewController>
@@ -289,20 +280,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PhoneCodeTVC" id="I3H-X5-1mc" customClass="PhoneCodeTVC" customModule="ulak_consumer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I3H-X5-1mc" id="zgk-Ox-ey9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeR-P8-tU8">
-                                                    <rect key="frame" x="20" y="11" width="33" height="21.5"/>
+                                                    <rect key="frame" x="20" y="11" width="33" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turkey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-mr-TAf">
-                                                    <rect key="frame" x="58" y="11" width="200" height="21.5"/>
+                                                    <rect key="frame" x="58" y="11" width="200" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="oUf-lS-oP7"/>
                                                     </constraints>
@@ -311,7 +302,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+90" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DT-vu-nE3">
-                                                    <rect key="frame" x="283" y="11" width="96" height="21.5"/>
+                                                    <rect key="frame" x="283" y="11" width="96" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

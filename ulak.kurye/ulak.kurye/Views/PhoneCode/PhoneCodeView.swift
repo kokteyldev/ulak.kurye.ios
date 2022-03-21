@@ -57,6 +57,7 @@ final class PhoneCodeView: UIView {
     private func setupPhoneNumber() {
         phoneCodeButton.setTitle(country?.title, for: .normal)
         phoneTextField.text = phoneNumber
+        phoneTextField.validate()
         delegate?.didChangePhoneCode(self)
     }
     
@@ -74,11 +75,18 @@ final class PhoneCodeView: UIView {
     
     func disableView() {
         phoneCodeButton.backgroundColor = .init(named: "ulk-input-back")
+        phoneCodeButton.isUserInteractionEnabled = false
+        phoneCodeButton.alpha = 0.7
         phoneTextField.disableView()
     }
 
+    // MARK: - Actions
     @IBAction func phoneCodeButtonTapped(_ sender: Any) {
         PhoneCodeVC.present(fromVC: UIApplication.topViewController()!, delegate: self)
+    }
+    
+    @IBAction func textfieldDidChange(_ sender: Any) {
+        delegate?.didChangePhoneCode(self)
     }
 }
 

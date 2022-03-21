@@ -29,6 +29,7 @@
 		9E2CAC3127E880D900106FD1 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9E2CAC3027E880D900106FD1 /* PhoneNumberKit */; };
 		9E2CAC3327E8995500106FD1 /* PhoneCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2CAC3227E8995500106FD1 /* PhoneCodeVC.swift */; };
 		9E2CAC3527E899C600106FD1 /* PhoneCodeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2CAC3427E899C600106FD1 /* PhoneCodeTVC.swift */; };
+		9E2CAC3727E8A8DE00106FD1 /* String+Ulak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2CAC3627E8A8DE00106FD1 /* String+Ulak.swift */; };
 		9E33049727C6546000AAB135 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33049627C6546000AAB135 /* HomeVC.swift */; };
 		9E33049927C661CB00AAB135 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33049827C661CB00AAB135 /* HomeHeaderView.swift */; };
 		9E33049B27C661DA00AAB135 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */; };
@@ -167,6 +168,7 @@
 		9E2CAC2D27E8808F00106FD1 /* countryCode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = countryCode.plist; sourceTree = "<group>"; };
 		9E2CAC3227E8995500106FD1 /* PhoneCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCodeVC.swift; sourceTree = "<group>"; };
 		9E2CAC3427E899C600106FD1 /* PhoneCodeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCodeTVC.swift; sourceTree = "<group>"; };
+		9E2CAC3627E8A8DE00106FD1 /* String+Ulak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ulak.swift"; sourceTree = "<group>"; };
 		9E33049627C6546000AAB135 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		9E33049827C661CB00AAB135 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
@@ -549,6 +551,7 @@
 				9E43A1FE27CFBA8700077288 /* String+KKUtils.swift */,
 				9EE8C01A27D78E600050F37D /* UIStackView+KKUtils.swift */,
 				9E5BB61B27E3656200B6C0A0 /* KKUICollectionView.swift */,
+				9E2CAC3627E8A8DE00106FD1 /* String+Ulak.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1011,6 +1014,7 @@
 				9E43A1F927CF6F5F00077288 /* Date+KKUtils.swift in Sources */,
 				9E33049927C661CB00AAB135 /* HomeHeaderView.swift in Sources */,
 				9E3D434F27C4E66E00B6D5C5 /* KKOutlinedTextField.swift in Sources */,
+				9E2CAC3727E8A8DE00106FD1 /* String+Ulak.swift in Sources */,
 				9E3304AB27C76BBC00AAB135 /* LocationManager.swift in Sources */,
 				9E896AB827D658BD0041FFBD /* OrderDetailVC.swift in Sources */,
 				9EE8C01B27D78E600050F37D /* UIStackView+KKUtils.swift in Sources */,

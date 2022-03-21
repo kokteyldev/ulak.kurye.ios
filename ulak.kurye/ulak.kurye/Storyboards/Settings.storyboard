@@ -247,7 +247,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40w-T2-FtW" userLabel="Container" customClass="KKUIView" customModule="ulak_consumer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="125" width="382" height="377.5"/>
+                                <rect key="frame" x="16" y="130" width="382" height="367.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cv6-Ay-bKG">
                                         <rect key="frame" x="344" y="16" width="22" height="22"/>
@@ -261,7 +261,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geri Bildirim Gönder" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oQ-tq-RtS" userLabel="Katılım Koşulları">
-                                        <rect key="frame" x="16" y="46" width="350" height="34"/>
+                                        <rect key="frame" x="16" y="46" width="350" height="28"/>
                                         <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="24"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -270,7 +270,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnT-Kr-i1T">
-                                        <rect key="frame" x="16" y="304" width="341" height="49.5"/>
+                                        <rect key="frame" x="20.5" y="295" width="341" height="48.5"/>
                                         <color key="backgroundColor" name="ulk-orange"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
                                         <state key="normal" title="Gönder"/>
@@ -285,7 +285,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lütfen aşağıdaki alana bize iletmek istediğini geri bildiriminizi yazın." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnN-3r-NBY">
-                                        <rect key="frame" x="16" y="88" width="350" height="43"/>
+                                        <rect key="frame" x="16" y="82" width="350" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="cOm-NT-m90"/>
                                         </constraints>
@@ -297,7 +297,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWh-yY-oVU">
-                                        <rect key="frame" x="16" y="147" width="341" height="125"/>
+                                        <rect key="frame" x="16" y="141" width="341" height="122"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -307,7 +307,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="1oQ-tq-RtS" secondAttribute="trailing" constant="16" id="2HO-xV-Wmb"/>
-                                    <constraint firstItem="RnT-Kr-i1T" firstAttribute="centerX" secondItem="40w-T2-FtW" secondAttribute="centerX" constant="-4.5" id="5hW-Tv-N4L"/>
+                                    <constraint firstItem="RnT-Kr-i1T" firstAttribute="centerX" secondItem="40w-T2-FtW" secondAttribute="centerX" id="5hW-Tv-N4L"/>
                                     <constraint firstItem="RnT-Kr-i1T" firstAttribute="height" secondItem="40w-T2-FtW" secondAttribute="height" multiplier="0.12" constant="4.0600000000000023" id="64U-Sz-ECB"/>
                                     <constraint firstItem="bWh-yY-oVU" firstAttribute="width" secondItem="40w-T2-FtW" secondAttribute="width" multiplier="0.89267" id="7Sg-bQ-Cv6"/>
                                     <constraint firstItem="Cv6-Ay-bKG" firstAttribute="top" secondItem="40w-T2-FtW" secondAttribute="top" constant="16" id="CFv-LL-maW"/>
