@@ -110,7 +110,10 @@ final class KKOutlinedTextField: UITextField {
     
     private func setupTitle() {
         titleLabel.sizeToFit()
-        titleLabel.frame = .init(x: 12, y: -titleLabel.frame.size.height/2, width: titleLabel.frame.size.width + 6.0, height: titleLabel.frame.size.height)
+        titleLabel.frame = .init(x: 12,
+                                 y: -titleLabel.frame.size.height/2,
+                                 width: titleLabel.frame.size.width + 6.0,
+                                 height: titleLabel.frame.size.height)
     }
     
     func setupRightView() {
@@ -140,6 +143,14 @@ final class KKOutlinedTextField: UITextField {
     func validate() {
         self.activeborderView.layer.borderColor = borderColor?.cgColor
         titleLabel.textColor = titleColor
+    }
+    
+    func disableView() {
+        activeborderView.backgroundColor = .init(named: "ulk-input-back")
+        titleLabel.backgroundColor = .clear
+        titleLabel.text = nil
+        self.alpha = 0.7
+        self.isUserInteractionEnabled = false
     }
 }
 

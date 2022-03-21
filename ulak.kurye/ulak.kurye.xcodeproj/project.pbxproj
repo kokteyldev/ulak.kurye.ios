@@ -19,6 +19,16 @@
 		9E246A8D27DF7CAA00F10D77 /* GetOrderActionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A8C27DF7CAA00F10D77 /* GetOrderActionsResponse.swift */; };
 		9E246A9027DF7E9A00F10D77 /* OrderActionCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E246A8E27DF7E9A00F10D77 /* OrderActionCVC.swift */; };
 		9E246A9127DF7E9A00F10D77 /* OrderActionCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E246A8F27DF7E9A00F10D77 /* OrderActionCVC.xib */; };
+		9E2CAC2127E872AF00106FD1 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2CAC2027E872AF00106FD1 /* SettingsVC.swift */; };
+		9E2CAC2327E8757F00106FD1 /* FeedBackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2CAC2227E8757E00106FD1 /* FeedBackVC.swift */; };
+		9E2CAC2527E87A3200106FD1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2CAC2427E87A3200106FD1 /* ProfileVC.swift */; };
+		9E2CAC2927E87FFD00106FD1 /* PhoneCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2CAC2727E87FFC00106FD1 /* PhoneCodeView.swift */; };
+		9E2CAC2A27E87FFD00106FD1 /* PhoneCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E2CAC2827E87FFC00106FD1 /* PhoneCodeView.xib */; };
+		9E2CAC2C27E8806E00106FD1 /* PhoneHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2CAC2B27E8806E00106FD1 /* PhoneHelper.swift */; };
+		9E2CAC2E27E8808F00106FD1 /* countryCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E2CAC2D27E8808F00106FD1 /* countryCode.plist */; };
+		9E2CAC3127E880D900106FD1 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9E2CAC3027E880D900106FD1 /* PhoneNumberKit */; };
+		9E2CAC3327E8995500106FD1 /* PhoneCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2CAC3227E8995500106FD1 /* PhoneCodeVC.swift */; };
+		9E2CAC3527E899C600106FD1 /* PhoneCodeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2CAC3427E899C600106FD1 /* PhoneCodeTVC.swift */; };
 		9E33049727C6546000AAB135 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33049627C6546000AAB135 /* HomeVC.swift */; };
 		9E33049927C661CB00AAB135 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33049827C661CB00AAB135 /* HomeHeaderView.swift */; };
 		9E33049B27C661DA00AAB135 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */; };
@@ -148,6 +158,15 @@
 		9E246A8C27DF7CAA00F10D77 /* GetOrderActionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderActionsResponse.swift; sourceTree = "<group>"; };
 		9E246A8E27DF7E9A00F10D77 /* OrderActionCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderActionCVC.swift; sourceTree = "<group>"; };
 		9E246A8F27DF7E9A00F10D77 /* OrderActionCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderActionCVC.xib; sourceTree = "<group>"; };
+		9E2CAC2027E872AF00106FD1 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		9E2CAC2227E8757E00106FD1 /* FeedBackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackVC.swift; sourceTree = "<group>"; };
+		9E2CAC2427E87A3200106FD1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		9E2CAC2727E87FFC00106FD1 /* PhoneCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCodeView.swift; sourceTree = "<group>"; };
+		9E2CAC2827E87FFC00106FD1 /* PhoneCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneCodeView.xib; sourceTree = "<group>"; };
+		9E2CAC2B27E8806E00106FD1 /* PhoneHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneHelper.swift; sourceTree = "<group>"; };
+		9E2CAC2D27E8808F00106FD1 /* countryCode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = countryCode.plist; sourceTree = "<group>"; };
+		9E2CAC3227E8995500106FD1 /* PhoneCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCodeVC.swift; sourceTree = "<group>"; };
+		9E2CAC3427E899C600106FD1 /* PhoneCodeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCodeTVC.swift; sourceTree = "<group>"; };
 		9E33049627C6546000AAB135 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		9E33049827C661CB00AAB135 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		9E33049A27C661DA00AAB135 /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
@@ -252,6 +271,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E2CAC3127E880D900106FD1 /* PhoneNumberKit in Frameworks */,
 				9ECAAA9327C3BD4E00F583C4 /* Alamofire in Frameworks */,
 				9E3E2D3727BE927200A17025 /* FirebaseAnalytics in Frameworks */,
 				9ECAAACB27C3CC9200F583C4 /* KokteylUtils in Frameworks */,
@@ -320,6 +340,26 @@
 			path = OrderAction;
 			sourceTree = "<group>";
 		};
+		9E2CAC1F27E8728200106FD1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9E2CAC2027E872AF00106FD1 /* SettingsVC.swift */,
+				9E2CAC2227E8757E00106FD1 /* FeedBackVC.swift */,
+				9E2CAC2427E87A3200106FD1 /* ProfileVC.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9E2CAC2627E87FE800106FD1 /* PhoneCode */ = {
+			isa = PBXGroup;
+			children = (
+				9E2CAC2727E87FFC00106FD1 /* PhoneCodeView.swift */,
+				9E2CAC2827E87FFC00106FD1 /* PhoneCodeView.xib */,
+				9E2CAC3427E899C600106FD1 /* PhoneCodeTVC.swift */,
+			);
+			path = PhoneCode;
+			sourceTree = "<group>";
+		};
 		9E33049527C6544700AAB135 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +406,7 @@
 			children = (
 				9E3D434627C4E27200B6D5C5 /* PreLoginVC.swift */,
 				9E3D435227C5115D00B6D5C5 /* LoginVC.swift */,
+				9E2CAC3227E8995500106FD1 /* PhoneCodeVC.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -546,6 +587,7 @@
 				9E3E2D0C27BE8F1700A17025 /* Assets.xcassets */,
 				9E3E2D3327BE901200A17025 /* GoogleService-Info.plist */,
 				9E3E2D1127BE8F1700A17025 /* Info.plist */,
+				9E2CAC2D27E8808F00106FD1 /* countryCode.plist */,
 				9E3D433A27C4CBDE00B6D5C5 /* Localizable.strings */,
 			);
 			name = Assets;
@@ -588,6 +630,7 @@
 				9E3D435F27C5354800B6D5C5 /* Main */,
 				9E33049527C6544700AAB135 /* Home */,
 				9E5BB61A27E328D100B6C0A0 /* QR */,
+				9E2CAC1F27E8728200106FD1 /* Settings */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -627,6 +670,7 @@
 				9ECAAAD227C3D07600F583C4 /* CustomError.swift */,
 				9ECAAAD827C3D23E00F583C4 /* Logger.swift */,
 				9E4BF8C127C92F5E004FE73E /* OrderDataSource.swift */,
+				9E2CAC2B27E8806E00106FD1 /* PhoneHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -639,6 +683,7 @@
 				9E3304A327C6747600AAB135 /* Order */,
 				9E246A8527DF72F400F10D77 /* OrderAction */,
 				9E33049E27C66B9400AAB135 /* Onboarding */,
+				9E2CAC2627E87FE800106FD1 /* PhoneCode */,
 				9E3D435627C520B100B6D5C5 /* Policy */,
 				9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */,
 				9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */,
@@ -681,6 +726,7 @@
 				9E3E2D3A27BE927200A17025 /* FirebasePerformance */,
 				9ECAAA9227C3BD4E00F583C4 /* Alamofire */,
 				9ECAAACA27C3CC9200F583C4 /* KokteylUtils */,
+				9E2CAC3027E880D900106FD1 /* PhoneNumberKit */,
 			);
 			productName = ulak.kurye;
 			productReference = 9E3E2D0027BE8F1600A17025 /* ulak.kurye.app */;
@@ -762,6 +808,7 @@
 				9E3E2D3527BE927200A17025 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift" */,
+				9E2CAC2F27E880D800106FD1 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
 			);
 			productRefGroup = 9E3E2D0127BE8F1600A17025 /* Products */;
 			projectDirPath = "";
@@ -803,7 +850,9 @@
 				9EE8C01927D780950050F37D /* BreakpointTVC.xib in Resources */,
 				9ECAAA7C27C393DD00F583C4 /* Poppins-Bold.ttf in Resources */,
 				9E3E2D0D27BE8F1700A17025 /* Assets.xcassets in Resources */,
+				9E2CAC2A27E87FFD00106FD1 /* PhoneCodeView.xib in Resources */,
 				9ECAAA7A27C393DD00F583C4 /* Poppins-SemiBold.ttf in Resources */,
+				9E2CAC2E27E8808F00106FD1 /* countryCode.plist in Resources */,
 				9E3D434927C4E28E00B6D5C5 /* Auth.storyboard in Resources */,
 				9E3D435E27C5335D00B6D5C5 /* Main.storyboard in Resources */,
 				9E246A9127DF7E9A00F10D77 /* OrderActionCVC.xib in Resources */,
@@ -966,6 +1015,7 @@
 				9E896AB827D658BD0041FFBD /* OrderDetailVC.swift in Sources */,
 				9EE8C01B27D78E600050F37D /* UIStackView+KKUtils.swift in Sources */,
 				9E8D66B727DCBA0500C1694A /* OrderPoolVC.swift in Sources */,
+				9E2CAC2C27E8806E00106FD1 /* PhoneHelper.swift in Sources */,
 				9E3D435327C5115D00B6D5C5 /* LoginVC.swift in Sources */,
 				9EE8B45B27C915AA001E8CE6 /* HomeHeaderVM.swift in Sources */,
 				9E3D434027C4DEF600B6D5C5 /* OnboardingVC.swift in Sources */,
@@ -992,10 +1042,12 @@
 				9ECAAAD327C3D07600F583C4 /* CustomError.swift in Sources */,
 				9EE8C01827D780950050F37D /* BreakpointTVC.swift in Sources */,
 				9ECAAA9927C3C41900F583C4 /* API.swift in Sources */,
+				9E2CAC3327E8995500106FD1 /* PhoneCodeVC.swift in Sources */,
 				9ECAAA9027C3B9DA00F583C4 /* SplashVC.swift in Sources */,
 				9E3D434C27C4E2D800B6D5C5 /* BaseNC.swift in Sources */,
 				9E43A1FD27CF908800077288 /* Int+KKUtils.swift in Sources */,
 				9E3D434527C4DFAA00B6D5C5 /* OnboardingView.swift in Sources */,
+				9E2CAC2327E8757F00106FD1 /* FeedBackVC.swift in Sources */,
 				9EA443C427CCF4E800C4A47B /* TableSectionHeaderView.swift in Sources */,
 				9ECAAADB27C3D3DD00F583C4 /* User.swift in Sources */,
 				9ECAAACE27C3CE9000F583C4 /* Config.swift in Sources */,
@@ -1008,15 +1060,19 @@
 				9E246A8B27DF762D00F10D77 /* OrderAction.swift in Sources */,
 				9E43A1FF27CFBA8700077288 /* String+KKUtils.swift in Sources */,
 				9ECAAAD927C3D23E00F583C4 /* Logger.swift in Sources */,
+				9E2CAC2927E87FFD00106FD1 /* PhoneCodeView.swift in Sources */,
 				9ECAAAD727C3D16500F583C4 /* Auth.swift in Sources */,
+				9E2CAC3527E899C600106FD1 /* PhoneCodeTVC.swift in Sources */,
 				9E246A7E27DF277500F10D77 /* GetAggrementsResponse.swift in Sources */,
 				9ECAAAA027C3C48000F583C4 /* Constants.swift in Sources */,
 				9EA443C927CD1A4400C4A47B /* Order.swift in Sources */,
 				9E246A9027DF7E9A00F10D77 /* OrderActionCVC.swift in Sources */,
 				9E4BF8C227C92F5E004FE73E /* OrderDataSource.swift in Sources */,
+				9E2CAC2527E87A3200106FD1 /* ProfileVC.swift in Sources */,
 				9E5BB61827E328C900B6C0A0 /* QRInputCodeVC.swift in Sources */,
 				9E3D436127C5356100B6D5C5 /* MainTabbarTC.swift in Sources */,
 				9E43A1F727CF686300077288 /* OrderVM.swift in Sources */,
+				9E2CAC2127E872AF00106FD1 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1665,6 +1721,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9E2CAC2F27E880D800106FD1 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		9E3E2D3527BE927200A17025 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1692,6 +1756,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9E2CAC3027E880D900106FD1 /* PhoneNumberKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E2CAC2F27E880D800106FD1 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = PhoneNumberKit;
+		};
 		9E3E2D3627BE927200A17025 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9E3E2D3527BE927200A17025 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

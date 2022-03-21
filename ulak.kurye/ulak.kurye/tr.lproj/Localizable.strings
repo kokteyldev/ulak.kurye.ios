@@ -83,10 +83,31 @@
 "picking_security_code_title" = "Teslimat kodunu girin.";
 "picking_security_code_input_name" = "Teslimat Kodu";
 
-//QR
+// QR
 "scan_qr_code" = "QR Kod Tarama";
 "scan_not_supported_error" = "Telefon tarama için uygun değil!";
 "scan_error" = "Kod bulunamadı!";
+
+// Settings
+"settings_title" = "Ayarlar";
+"settings_my_account" = "Hesabım";
+"settings_privacy_policy" = "Gizlilik Politikası";
+"settings_feedback" = "Geribildirim Gönder";
+"settings_app_star" = "Uygulamayı Değerlendir";
+"settings_logout" = "Çıkış Yap";
+"settings_send_feedback" = "Geri Bildirim Gönder";
+"settings_send_feedback_desc" = "Lütfen aşağıdaki alana bize iletmek istediğiniz geri bildiriminizi yazın.";
+"settings_send_feedback_send" = "Gönder";
+"settings_feedback_sent" = "Geri bildiriminiz gönderildi.";
+
+// Profile
+"profile_mising_info" = "Girdiğiniz bilgileri kontrol edin!";
+"profile_updated_success" = "Profil başarıyla güncellendi.";
+"profile_change_password_save" = "Değiştir ve Kaydet";
+"profile_login_name" = "Ad";
+"profile_login_surname" = "Soyad";
+"profile_login_phone" = "Telefon Numarası";
+"profile_title" = "Hesabım";
 
 // General
 "location_permission_message" = "Uygulamayı kullanmaya devam etmek için konum izni vermelisin.";
@@ -107,3 +128,4 @@
 "picking_security_code" = "Teslimat Kodu";
 "send" = "Gönder";
 "code" = "Kod";
+"country_phone_code" = "Ülke Kodu Seçimi";

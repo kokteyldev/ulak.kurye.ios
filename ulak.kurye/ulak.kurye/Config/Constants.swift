@@ -31,6 +31,10 @@ struct Constants {
         return Locale.current.languageCode ?? "tr"
     }
     
+    static var currentCountry: String {
+        return (Locale.current as NSLocale).object(forKey: .countryCode) as? String ?? "TR"
+    }
+    
     static var serverDateFormat: String {
         return "dd/MM/yyyy HH:mm:ss"
     }

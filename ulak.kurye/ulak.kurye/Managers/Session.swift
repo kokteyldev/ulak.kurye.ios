@@ -113,6 +113,7 @@ final class Session {
     
     // MARK: - Auth
     func logout() {
-        //TODO: doldur
+        token = nil
+        user = nil
     }
 }
