@@ -64,6 +64,7 @@ final class OrderActionsView: UIView {
         API.getOrderAgreements(orderUUID: orderUUID) { result in
             switch result {
             case Result.success(let agreementResponse):
+                //TODO: hiç agreement yoksa hata göster.
                 self.agreement = agreementResponse.curentAggrements.first
                 group.leave()
                 break

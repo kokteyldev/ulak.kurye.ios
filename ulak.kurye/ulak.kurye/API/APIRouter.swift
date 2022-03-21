@@ -14,6 +14,7 @@ enum APIRouter {
     case login(code: String, phoneNumber: String)
     case me
     case updateProfile(name: String?, surname: String?)
+    case getOrder(orderUUID: String)
     case getOrders(status: String)
     case getPoolOrders(latitude: Double, longtitude: Double)
     case getOrderAggrements(orderUUID: String)
@@ -31,6 +32,7 @@ enum APIRouter {
         switch self {
         case .config,
              .me,
+             .getOrder,
              .getOrders,
              .getOrderAggrements,
              .getOrderActions,
@@ -58,6 +60,8 @@ enum APIRouter {
             return "/user/me"
         case .updateProfile:
             return "/user/update-profile"
+        case .getOrder:
+            return "/courier/order-search"
         case .getOrders:
             return "/courier/orders"
         case .getPoolOrders:
@@ -84,6 +88,8 @@ enum APIRouter {
     
     private var queryParameters: [String: Any]? {
         switch self {
+        case .getOrder(let orderUUID):
+            return ["query": orderUUID]
         case .getOrders(let status):
             return ["app_status": status]
         case .getPoolOrders(let latitude, let longtitude):
@@ -128,6 +134,7 @@ enum APIRouter {
         switch self {
         case .me,
              .updateProfile,
+             .getOrder,
              .getOrders,
              .getPoolOrders,
              .getOrderAggrements,

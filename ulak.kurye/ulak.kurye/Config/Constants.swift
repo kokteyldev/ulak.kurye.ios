@@ -46,6 +46,7 @@ extension Notification.Name {
     public static var UserStateChanged: Notification.Name { return self.init("com.ulak.notification.userStateChanged") }
     public static var GoToPool: Notification.Name { return self.init("com.ulak.notification.goToPool") }
     public static var ReloadOrders: Notification.Name { return self.init("com.ulak.notification.reloadOrders") }
+    public static var OrdersUpdated: Notification.Name { return self.init("com.ulak.notification.ordersUpdated") }
     
     //TODO: bunları kullan
     public static var WillEnterForeground: Notification.Name { return self.init("com.ulak.notification.willEnterForeground") }

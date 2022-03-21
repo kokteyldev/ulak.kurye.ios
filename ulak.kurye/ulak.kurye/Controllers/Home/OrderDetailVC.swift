@@ -70,6 +70,24 @@ class OrderDetailVC: BaseVC {
         actionsView.setOrderUUID(order.uuid)
     }
     
+    func getOrder() {
+        prepareForLoading()
+        API.getOrder(orderUUID: order!.uuid) { result in
+            self.resetAfterLoading()
+            
+            switch result {
+            case Result.success(let order):
+                self.order = order
+                self.setupUI()
+                OrderManager.shared.updateOrder(order: order)
+                break
+            case Result.failure(let error):
+                print(error.localizedDescription)
+                break
+            }
+        }
+    }
+    
     // MARK: - Setup
     func setupTableView() {
         breakpointTableView.registerCell(type: BreakpointTVC.self)
@@ -230,7 +248,16 @@ extension OrderDetailVC: OrderActionsViewDelegate {
             return
         }
 
-        NotificationCenter.default.post(name: NSNotification.Name.ReloadOrders, object: nil)
-        //TODO: refresh vc if needed
+        self.getOrder()
+    }
+}
+
+extension OrderDetailVC: NetworkRequestable {
+    func prepareForLoading() {
+        self.showLoading(isDark: false)
+    }
+    
+    func resetAfterLoading() {
+        self.hideLoading()
     }
 }

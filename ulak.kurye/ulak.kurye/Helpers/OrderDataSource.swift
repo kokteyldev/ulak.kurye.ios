@@ -34,6 +34,9 @@ final class OrderDataSource {
     func resetOrders() {
         orderVMs.removeAll()
         pastOrderVMs.removeAll()
+        
+        addNewOrders(OrderManager.shared.activeOrders)
+        addNewPastOrders(OrderManager.shared.pastOrders)
     }
     
     func addNewOrders(_ newOrders: [Order]) {

@@ -92,6 +92,23 @@ struct API {
     }
     
     // MARK: - Orders
+    static func getOrder(orderUUID: String, completion:@escaping (Result<Order, Error>) -> Void) {
+        performRequest(route: APIRouter.getOrder(orderUUID: orderUUID)) { (result:(Result<Response<[Order]?>, Error>)) in
+            switch result {
+            case Result.success(let response):
+                if let orderResponse = response.data, orderResponse!.count > 0 {
+                    completion(.success(orderResponse![0]))
+                } else {
+                    completion(.failure(CustomError.noData.error))
+                }
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
     static func getOrders(status: String, completion:@escaping (Result<GetOrderResponse, Error>) -> Void) {
         performRequest(route: APIRouter.getOrders(status: status)) { (result:(Result<Response<GetOrderResponse?>, Error>)) in
             switch result {

@@ -104,4 +104,21 @@ final class OrderManager {
         activeOrders.insert(order, at: 0)
         NotificationCenter.default.post(name: NSNotification.Name.ReloadOrders, object: nil)
     }
+    
+    // MARK: - Util
+    func updateOrder(order: Order) {
+        if let row = activeOrders.firstIndex(where: {$0.uuid == order.uuid}) {
+            activeOrders[row] = order
+        } else if let row = pastOrders.firstIndex(where: {$0.uuid == order.uuid}) {
+            pastOrders[row] = order
+        } else {
+            if order.status == .running {
+                activeOrders.insert(order, at: 0)
+            } else if order.status == .closed {
+                pastOrders.insert(order, at: 0)
+            }
+        }
+        
+        NotificationCenter.default.post(name: NSNotification.Name.OrdersUpdated, object: nil)
+    }
 }
