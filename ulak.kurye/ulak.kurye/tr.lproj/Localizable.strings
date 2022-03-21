@@ -94,11 +94,14 @@
 "settings_privacy_policy" = "Gizlilik Politikası";
 "settings_feedback" = "Geribildirim Gönder";
 "settings_app_star" = "Uygulamayı Değerlendir";
+"settings_ulak_card" = "Ulak Kartın";
 "settings_logout" = "Çıkış Yap";
 "settings_send_feedback" = "Geri Bildirim Gönder";
 "settings_send_feedback_desc" = "Lütfen aşağıdaki alana bize iletmek istediğiniz geri bildiriminizi yazın.";
 "settings_send_feedback_send" = "Gönder";
 "settings_feedback_sent" = "Geri bildiriminiz gönderildi.";
+"settings_ulak_card_popup_title" = "Ulak Kart Ekle";
+"settings_ulak_card_popup_input_title" = "Kart Numarası";
 
 // Profile
 "profile_mising_info" = "Girdiğiniz bilgileri kontrol edin!";
@@ -129,3 +132,4 @@
 "send" = "Gönder";
 "code" = "Kod";
 "country_phone_code" = "Ülke Kodu Seçimi";
+"card_loading" = "Kart bilgileri güncelleniyor..";

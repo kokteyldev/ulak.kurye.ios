@@ -14,14 +14,16 @@ struct User: Codable {
     var phoneNumber: String
     var isVerifiedAccount: Bool
     var maxOrderCount: Int
+    var cardNumber: String?
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
         case surname = "surname"
         case email = "email"
         case phoneNumber = "phone_number"
-        case isVerifiedAccount = "verified_account"
+        case isVerifiedAccount = "is_confirmed"
         case maxOrderCount = "total_task_quotas"
+        case cardNumber = "ininal_card_number"
     }
     
     init(from decoder: Decoder) throws {
@@ -44,9 +46,10 @@ struct User: Codable {
         if container.contains(.isVerifiedAccount) {
             self.isVerifiedAccount = try container.decode(Bool.self, forKey: .isVerifiedAccount)
         } else {
-            self.isVerifiedAccount = true
+            self.isVerifiedAccount = false
         }
         
         maxOrderCount = try container.decode (Int.self, forKey: .maxOrderCount)
+        cardNumber = try? container.decode (String.self, forKey: .cardNumber)
     }
 }

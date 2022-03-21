@@ -16,6 +16,9 @@
         <array key="Poppins-Light.ttf">
             <string>Poppins-Light</string>
         </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
         <array key="Poppins-SemiBold.ttf">
             <string>Poppins-SemiBold</string>
         </array>
@@ -40,7 +43,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hesabım" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OJ-UH-ad1">
-                                                    <rect key="frame" x="61" y="25" width="55.5" height="16.5"/>
+                                                    <rect key="frame" x="61" y="23" width="64.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -68,15 +71,56 @@
                                             <segue destination="jmF-14-6ra" kind="show" id="WNE-Tg-jPy"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="66" id="d8e-t9-oar">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="66" id="o0k-WU-ym8" userLabel="Ulak Card Cell">
                                         <rect key="frame" x="0.0" y="84" width="414" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o0k-WU-ym8" id="Jzy-Ng-IPS">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ulak Kartın" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZN-PP-Rda">
+                                                    <rect key="frame" x="61" y="23" width="78" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="settings_ulak_card"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-card" translatesAutoresizingMaskIntoConstraints="NO" id="bzK-5s-8ay">
+                                                    <rect key="frame" x="20" y="20.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="JAz-e4-iYJ"/>
+                                                        <constraint firstAttribute="width" constant="25" id="gAw-r8-4b4"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSU-ea-Exk">
+                                                    <rect key="frame" x="61" y="45" width="33" height="18.5"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
+                                                    <color key="textColor" name="ulk-subtitle"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lZN-PP-Rda" firstAttribute="leading" secondItem="bzK-5s-8ay" secondAttribute="trailing" constant="16" id="6pq-8x-sYD"/>
+                                                <constraint firstItem="MSU-ea-Exk" firstAttribute="top" secondItem="lZN-PP-Rda" secondAttribute="bottom" constant="2" id="7T1-5J-TYJ"/>
+                                                <constraint firstItem="MSU-ea-Exk" firstAttribute="leading" secondItem="lZN-PP-Rda" secondAttribute="leading" id="Irj-nb-gpI"/>
+                                                <constraint firstItem="bzK-5s-8ay" firstAttribute="leading" secondItem="Jzy-Ng-IPS" secondAttribute="leadingMargin" id="erI-zA-Qmd"/>
+                                                <constraint firstItem="lZN-PP-Rda" firstAttribute="centerY" secondItem="Jzy-Ng-IPS" secondAttribute="centerY" id="lz2-9n-I6S"/>
+                                                <constraint firstItem="bzK-5s-8ay" firstAttribute="centerY" secondItem="Jzy-Ng-IPS" secondAttribute="centerY" id="ose-rw-8ot"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="61" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="66" id="d8e-t9-oar">
+                                        <rect key="frame" x="0.0" y="150" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d8e-t9-oar" id="3Si-gV-lpg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gizlilik Politikası" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whp-lm-vzk">
-                                                    <rect key="frame" x="61" y="25" width="100" height="16.5"/>
+                                                    <rect key="frame" x="61" y="23" width="112.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -102,14 +146,14 @@
                                         <inset key="separatorInset" minX="61" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="66" id="BWj-cN-D3f">
-                                        <rect key="frame" x="0.0" y="150" width="414" height="66"/>
+                                        <rect key="frame" x="0.0" y="216" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BWj-cN-D3f" id="YSQ-JY-ejx">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geribildirim Gönder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3V-IR-2Ep">
-                                                    <rect key="frame" x="61" y="25" width="122.5" height="16.5"/>
+                                                    <rect key="frame" x="61" y="23" width="140" height="20"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -135,14 +179,14 @@
                                         <inset key="separatorInset" minX="61" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="66" id="xf4-jh-lTX">
-                                        <rect key="frame" x="0.0" y="216" width="414" height="66"/>
+                                        <rect key="frame" x="0.0" y="282" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xf4-jh-lTX" id="a7P-IW-y38">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uygulamayı Değerlendir" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJE-O1-EeU">
-                                                    <rect key="frame" x="61" y="25" width="149.5" height="16.5"/>
+                                                    <rect key="frame" x="61" y="23" width="174" height="20"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -168,14 +212,14 @@
                                         <inset key="separatorInset" minX="61" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="66" id="VVU-Wc-bs8">
-                                        <rect key="frame" x="0.0" y="282" width="414" height="66"/>
+                                        <rect key="frame" x="0.0" y="348" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VVU-Wc-bs8" id="w0W-gn-phk">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çıkış Yap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfn-kC-2GH">
-                                                    <rect key="frame" x="61" y="25" width="58.5" height="16.5"/>
+                                                    <rect key="frame" x="61" y="23" width="66" height="20"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -210,15 +254,18 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Ayarlar" id="CeC-BF-u85"/>
                     <connections>
+                        <outlet property="cardNumberLabel" destination="MSU-ea-Exk" id="0HN-s4-BXJ"/>
+                        <outlet property="cardNumberTitleCenterCons" destination="lz2-9n-I6S" id="GR3-As-CEX"/>
                         <outlet property="feedbackCell" destination="BWj-cN-D3f" id="CUQ-fE-W8c"/>
                         <outlet property="logoutCell" destination="VVU-Wc-bs8" id="fN5-85-HQO"/>
                         <outlet property="rateCell" destination="xf4-jh-lTX" id="d3y-aH-Yjs"/>
                         <outlet property="termOfUseCell" destination="d8e-t9-oar" id="aMd-fC-NSk"/>
+                        <outlet property="ulakCardCell" destination="o0k-WU-ym8" id="GKY-KH-yk4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1R-a3-nAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890" y="150"/>
+            <point key="canvasLocation" x="886.95652173913049" y="146.65178571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t1t-pV-k7P">
@@ -247,7 +294,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40w-T2-FtW" userLabel="Container" customClass="KKUIView" customModule="ulak_consumer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="130" width="382" height="367.5"/>
+                                <rect key="frame" x="16" y="125" width="382" height="377.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cv6-Ay-bKG">
                                         <rect key="frame" x="344" y="16" width="22" height="22"/>
@@ -261,7 +308,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geri Bildirim Gönder" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oQ-tq-RtS" userLabel="Katılım Koşulları">
-                                        <rect key="frame" x="16" y="46" width="350" height="28"/>
+                                        <rect key="frame" x="16" y="46" width="350" height="34"/>
                                         <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="24"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -270,7 +317,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnT-Kr-i1T">
-                                        <rect key="frame" x="20.5" y="295" width="341" height="48.5"/>
+                                        <rect key="frame" x="20.5" y="304" width="341" height="49.5"/>
                                         <color key="backgroundColor" name="ulk-orange"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
                                         <state key="normal" title="Gönder"/>
@@ -285,7 +332,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lütfen aşağıdaki alana bize iletmek istediğini geri bildiriminizi yazın." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnN-3r-NBY">
-                                        <rect key="frame" x="16" y="82" width="350" height="43"/>
+                                        <rect key="frame" x="16" y="88" width="350" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="cOm-NT-m90"/>
                                         </constraints>
@@ -297,7 +344,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWh-yY-oVU">
-                                        <rect key="frame" x="16" y="141" width="341" height="122"/>
+                                        <rect key="frame" x="16" y="147" width="341" height="125"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -390,6 +437,7 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="profile_change_password_save"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isActive" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="saveTapped:" destination="jmF-14-6ra" eventType="touchUpInside" id="KWs-wA-ege"/>
@@ -451,6 +499,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic-card" width="25" height="20"/>
         <image name="ic-close" width="19" height="20"/>
         <image name="ic-fb" width="28" height="27"/>
         <image name="ic-kvkk" width="25" height="30"/>
@@ -459,6 +508,9 @@
         <image name="ic-user" width="512" height="512"/>
         <namedColor name="ulk-orange">
             <color red="1" green="0.62352941176470589" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ulk-subtitle">
+            <color red="0.52941176470588236" green="0.54509803921568623" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

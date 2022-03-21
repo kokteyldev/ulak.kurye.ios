@@ -91,6 +91,19 @@ struct API {
         }
     }
     
+    static func updateCardNumber(cardNumber: String, completion:@escaping (Result<Bool, Error>) -> Void) {
+        performRequest(route: APIRouter.updateCardNumber(cardNumber: cardNumber)) { (result:(Result<Response<Bool?>, Error>)) in
+            switch result {
+            case Result.success(_):
+                completion(.success(true))
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
     // MARK: - Orders
     static func getOrder(orderUUID: String, completion:@escaping (Result<Order, Error>) -> Void) {
         performRequest(route: APIRouter.getOrder(orderUUID: orderUUID)) { (result:(Result<Response<[Order]?>, Error>)) in

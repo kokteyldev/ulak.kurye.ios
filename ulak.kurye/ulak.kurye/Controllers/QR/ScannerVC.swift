@@ -85,7 +85,7 @@ final class ScannerVC: BaseVC {
             captureSession.addOutput(metadataOutput)
 
             metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            metadataOutput.metadataObjectTypes = [.qr]
+            metadataOutput.metadataObjectTypes = [.qr, .ean8, .ean13, .pdf417]
         } else {
             failed()
             return

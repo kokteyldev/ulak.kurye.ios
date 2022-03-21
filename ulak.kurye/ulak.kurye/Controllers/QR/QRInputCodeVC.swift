@@ -26,7 +26,6 @@ final class QRInputCodeVC: BaseVC {
         vc.qrCodeKey = qrCodeKey
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
-        vc.hidesBottomBarWhenPushed = true
         
         return vc
     }
@@ -80,6 +79,12 @@ final class QRInputCodeVC: BaseVC {
 
 extension QRInputCodeVC: ScannerDelegate {
     func didScanCode(code: String) {
+        if qrCodeKey == nil {
+            codeTextfield.text = code
+            return
+        }
+        
+        //TODO: read json
         // picking_security_code: DutHix, orderCode: b-1545171599
         let range = NSRange(location: 0, length: code.utf16.count)
         let regex = try! NSRegularExpression(pattern: "(?<=\(qrCodeKey!): )(.*)(?=,)")

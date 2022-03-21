@@ -25,6 +25,9 @@ final class ProfileVC: BaseVC {
         setupProfile()
         hideKeyboardWhenTappedAround()
         
+        nameTextField.addTarget(self, action: #selector(textfieldDidChange(_:)), for: .editingChanged)
+        surnameTextField.addTarget(self, action: #selector(textfieldDidChange(_:)), for: .editingChanged)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -42,7 +45,7 @@ final class ProfileVC: BaseVC {
         nameTextField.delegate = self
         surnameTextField.delegate = self
         phoneCodeView.disableView()
-
+        
         feedBackGenerator = UINotificationFeedbackGenerator()
         feedBackGenerator?.prepare()
     }
@@ -54,6 +57,29 @@ final class ProfileVC: BaseVC {
         if let phone = Session.shared.user?.phoneNumber {
             phoneCodeView.setFullPhoneNumber(phone)
         }
+    }
+    
+    // MARK: - Data
+    private func validateData() {
+        //TODO: isValidName ekle
+        if nameTextField.text == nil || nameTextField.text!.length < 3 {
+            saveButton.isActive = false
+            return
+        }
+        
+        //TODO: isValidSurname ekle
+        if surnameTextField.text == nil || surnameTextField.text!.length < 3 {
+            saveButton.isActive = false
+            return
+        }
+        
+        if nameTextField.text == Session.shared.user?.name &&
+            surnameTextField.text == Session.shared.user?.surname {
+            saveButton.isActive = false
+            return
+        }
+        
+        saveButton.isActive = true
     }
     
     // MARK: - Actions
@@ -91,11 +117,15 @@ final class ProfileVC: BaseVC {
                 self.view.showToast(.success, message: "profile_updated_success".localized)
                 Session.shared.user?.name = name
                 Session.shared.user?.surname = surname
-                self.dismiss(animated: true, completion: nil)
+                self.saveButton.isActive = false
             case .failure(let error):
                 self.navigationController?.view.showToast(.error, message: error.localizedDescription)
             }
         }
+    }
+    
+    @IBAction func textfieldDidChange(_ sender: Any) {
+        validateData()
     }
     
     //MARK: - Utils
