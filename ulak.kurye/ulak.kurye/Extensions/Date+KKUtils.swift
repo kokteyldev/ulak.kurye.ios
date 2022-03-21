@@ -14,6 +14,12 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    var longDateString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy | hh:mm"
+        return dateFormatter.string(from: self)
+    }
+    
     func addMinutes(_ minutes: Int) -> Date {
         return self.addingTimeInterval(TimeInterval(minutes * 60))
     }

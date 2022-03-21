@@ -16,15 +16,15 @@ struct GetOrderResponse: Codable {
         case paginate = "paginate"
     }
     
-        init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-    
-            if container.contains(.orders) {
-                self.orders = try container.decode([Order].self, forKey: .orders)
-            }
-            
-            if container.contains(.paginate) {
-                self.paginate = try container.decode(Paginate.self, forKey: .paginate)
-            }
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        if container.contains(.orders) {
+            self.orders = try container.decode([Order].self, forKey: .orders)
         }
+        
+        if container.contains(.paginate) {
+            self.paginate = try container.decode(Paginate.self, forKey: .paginate)
+        }
+    }
 }

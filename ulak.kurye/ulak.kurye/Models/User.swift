@@ -15,6 +15,7 @@ struct User: Codable {
     var isVerifiedAccount: Bool
     var maxOrderCount: Int
     var cardNumber: String?
+    var wallets: [BaseWallet] = []
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
@@ -24,6 +25,7 @@ struct User: Codable {
         case isVerifiedAccount = "is_confirmed"
         case maxOrderCount = "total_task_quotas"
         case cardNumber = "ininal_card_number"
+        case wallets = "wallets"
     }
     
     init(from decoder: Decoder) throws {
@@ -51,5 +53,9 @@ struct User: Codable {
         
         maxOrderCount = try container.decode (Int.self, forKey: .maxOrderCount)
         cardNumber = try? container.decode (String.self, forKey: .cardNumber)
+        
+        if container.contains(.wallets) {
+            self.wallets = try container.decode([BaseWallet].self, forKey: .wallets)
+        }
     }
 }

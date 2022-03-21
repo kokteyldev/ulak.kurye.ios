@@ -217,6 +217,24 @@ struct API {
         }
     }
     
+    // MARK: - Wallets
+    static func getWallet(walletUUID: String, completion:@escaping (Result<WalletResponse, Error>) -> Void) {
+        performRequest(route: APIRouter.getWallet(walletUUID: walletUUID)) { (result:(Result<Response<WalletResponse?>, Error>)) in
+            switch result {
+            case Result.success(let response):
+                if let walletResponse = response.data {
+                    completion(.success(walletResponse!))
+                } else {
+                    completion(.failure(CustomError.noData.error))
+                }
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
     // MARK: - Utils    
     static func sendFeedback(message: String, completion:@escaping (Result<Bool, Error>) -> Void) {
         performRequest(route: APIRouter.sendFeedback(message: message)) { (result:(Result<Response<Bool?>, Error>)) in

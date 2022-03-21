@@ -1,29 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WLM-Hn-9Ph">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WLM-Hn-9Ph">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Cüzdan-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="WalletsVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TfX-4w-QdD">
+                                <rect key="frame" x="16" y="96" width="382" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5hB-y6-Qpg"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" name="ulk-orange"/>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="cNr-jY-zYa"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PuK-m6-h5K" userLabel="Balance Container View" customClass="KKUIView" customModule="KokteylUtils">
+                                <rect key="frame" x="16" y="144" width="382" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bakiye" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUj-qW-ltt">
+                                        <rect key="frame" x="8" y="4" width="52" height="32"/>
+                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="wallet_balance"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFb-eB-PAt">
+                                        <rect key="frame" x="364" y="4" width="10" height="32"/>
+                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="ulk-green"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="iUj-qW-ltt" secondAttribute="bottom" constant="4" id="0Dg-oC-xwQ"/>
+                                    <constraint firstItem="KFb-eB-PAt" firstAttribute="top" secondItem="PuK-m6-h5K" secondAttribute="top" constant="4" id="3ka-1T-eGP"/>
+                                    <constraint firstAttribute="height" constant="40" id="Cst-h5-cyB"/>
+                                    <constraint firstItem="iUj-qW-ltt" firstAttribute="leading" secondItem="PuK-m6-h5K" secondAttribute="leading" constant="8" id="JAb-Uv-b1t"/>
+                                    <constraint firstItem="KFb-eB-PAt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iUj-qW-ltt" secondAttribute="trailing" constant="8" id="OHg-Iu-pFR"/>
+                                    <constraint firstAttribute="bottom" secondItem="KFb-eB-PAt" secondAttribute="bottom" constant="4" id="g4w-jB-wcV"/>
+                                    <constraint firstItem="iUj-qW-ltt" firstAttribute="top" secondItem="PuK-m6-h5K" secondAttribute="top" constant="4" id="pD0-d3-Q51"/>
+                                    <constraint firstAttribute="trailing" secondItem="KFb-eB-PAt" secondAttribute="trailing" constant="8" id="ybn-yb-U17"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Itn-pu-Hao">
+                                <rect key="frame" x="0.0" y="192" width="414" height="704"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="MLC-AK-UAx"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="vv9-yg-zxq"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="GKd-nb-Pcq">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Itn-pu-Hao" firstAttribute="top" secondItem="PuK-m6-h5K" secondAttribute="bottom" constant="8" symbolic="YES" id="5WV-OI-6Ym"/>
+                            <constraint firstItem="GKd-nb-Pcq" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="7jh-eK-nxc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PuK-m6-h5K" secondAttribute="trailing" constant="16" id="A1E-8I-Jvs"/>
+                            <constraint firstItem="TfX-4w-QdD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="MOv-g3-PAj"/>
+                            <constraint firstItem="GKd-nb-Pcq" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Tbc-7j-TEk"/>
+                            <constraint firstItem="PuK-m6-h5K" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="asB-CR-ihA"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TfX-4w-QdD" secondAttribute="trailing" constant="16" id="gho-gs-YqE"/>
+                            <constraint firstItem="Itn-pu-Hao" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hwf-wz-uwQ"/>
+                            <constraint firstItem="TfX-4w-QdD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="qgv-H1-AAx"/>
+                            <constraint firstItem="PuK-m6-h5K" firstAttribute="top" secondItem="TfX-4w-QdD" secondAttribute="bottom" constant="8" id="sTj-Ps-I7e"/>
+                            <constraint firstAttribute="bottom" secondItem="Itn-pu-Hao" secondAttribute="bottom" id="tyh-2R-PZI"/>
+                            <constraint firstItem="Itn-pu-Hao" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="wf0-If-kSF"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Cüzdan" id="lPl-qD-gdR"/>
+                    <navigationItem key="navigationItem" title="Cüzdan" id="lPl-qD-gdR">
+                        <barButtonItem key="rightBarButtonItem" title="Bakiye Aktar" id="w6E-k5-1lL">
+                            <connections>
+                                <action selector="transferBalanceTapped:" destination="Y6W-OH-hqX" id="pSA-3d-0jx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="GKd-nb-Pcq" id="zAR-DG-fCJ"/>
+                        <outlet property="balanceLabel" destination="KFb-eB-PAt" id="3ww-j5-e9a"/>
+                        <outlet property="segmentHeightCons" destination="5hB-y6-Qpg" id="fJ5-1T-HCl"/>
+                        <outlet property="segmentTopCons" destination="qgv-H1-AAx" id="cQq-FL-ZiJ"/>
+                        <outlet property="tableView" destination="Itn-pu-Hao" id="lBr-CG-Ckk"/>
+                        <outlet property="transferBalanceButton" destination="w6E-k5-1lL" id="fHK-hm-WNs"/>
+                        <outlet property="walletSegment" destination="TfX-4w-QdD" id="p1z-CQ-Dcd"/>
+                        <segue destination="LrG-4A-VJ5" kind="show" identifier="OrderDetailVC" id="F60-sg-1EV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="110"/>
+            <point key="canvasLocation" x="847.82608695652175" y="109.82142857142857"/>
+        </scene>
+        <!--OrderDetailVC-->
+        <scene sceneID="PD7-LL-QWa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="OrderDetailVC" id="LrG-4A-VJ5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="sKe-Cf-tv8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nmV-E5-Og8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1538" y="-33"/>
         </scene>
         <!--BaseNC-->
         <scene sceneID="xpc-Ij-iMc">
@@ -45,6 +154,12 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="ulk-green">
+            <color red="0.23529411764705882" green="0.70588235294117652" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ulk-orange">
+            <color red="1" green="0.62352941176470589" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

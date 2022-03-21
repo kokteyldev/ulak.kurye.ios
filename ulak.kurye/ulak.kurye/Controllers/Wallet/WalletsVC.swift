@@ -1,0 +1,180 @@
+//
+//  WalletsVC.swift
+//  ulak.kurye
+//
+//  Created by Mehmet Karagöz on 21.03.2022.
+//
+
+import UIKit
+
+final class WalletsVC: BaseVC {
+    @IBOutlet weak var walletSegment: UISegmentedControl!
+    @IBOutlet weak var segmentHeightCons: NSLayoutConstraint!
+    @IBOutlet weak var segmentTopCons: NSLayoutConstraint!
+    @IBOutlet weak var transferBalanceButton: UIBarButtonItem!
+    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    private var userWallets: [BaseWallet] = []
+    private var walletVM: WalletVM?
+    
+    // MARK: - View Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+
+        tableView.registerCell(type: WalletTVC.self)
+        
+        setupSegmentedControl()
+        getWalletDetail()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+    
+    // MARK: - Setup
+    private func setupUI() {
+        self.title = "wallet_title".localized
+        transferBalanceButton.title = "wallet_transfer_balance".localized
+        let attr = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: UIFont(name: "Poppins-Regular", size: 14)!
+        ]
+        
+        let selectedAttr = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(name: "Poppins-Regular", size: 14)!
+        ]
+        
+        walletSegment.setTitleTextAttributes(attr, for: .normal)
+        walletSegment.setTitleTextAttributes(selectedAttr, for: .selected)
+    }
+    
+    private func setupSegmentedControl() {
+        walletSegment.removeAllSegments()
+        
+        userWallets.removeAll()
+        if let wallets = Session.shared.user?.wallets {
+            self.userWallets = wallets
+        }
+        
+        if userWallets.count == 0 {
+            //TODO: Hata göster ve retry butonu koy
+            return
+        }
+        
+        if userWallets.count == 1 {
+            self.title = userWallets[0].name
+            segmentTopCons.constant = 0
+            segmentHeightCons.constant = 0
+            walletSegment.isHidden = true
+        }
+        
+        var index = 0
+        for wallet in userWallets {
+            walletSegment.insertSegment(withTitle: wallet.name, at: index, animated: false)
+            index += 1
+        }
+        
+        walletSegment.selectedSegmentIndex = 0
+    }
+    
+    private func setupData() {
+        balanceLabel.text = walletVM?.balance ?? "0"
+        tableView.reloadData()
+    }
+    
+    // MARK: - Data
+    func getWalletDetail() {
+        if userWallets.count < walletSegment.selectedSegmentIndex { return }
+        
+        let userWallet = userWallets[walletSegment.selectedSegmentIndex]
+        
+        prepareForLoading()
+        API.getWallet(walletUUID: userWallet.uuid) { result in
+            self.resetAfterLoading()
+            
+            switch result {
+            case Result.success(let walletResponse):
+                self.walletVM = WalletVM(walletResponse: walletResponse)
+                self.setupData()
+                break
+            case Result.failure(let error):
+                self.view.showToast(.error, message: error.localizedDescription)
+                break
+            }
+        }
+        
+    }
+    
+    // MARK: - Actions
+    @IBAction func transferBalanceTapped(_ sender: Any) {
+        //TODO: bakiye aktar
+    }
+    
+    @IBAction func segmentChanged(_ sender: Any) {
+        getWalletDetail()
+    }
+    
+    // MARK: - Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "OrderDetailVC" {
+            guard let orderUUID = sender as? String else { return }
+            let orderDetailVC = segue.destination as! OrderDetailVC
+            orderDetailVC.orderUUID = orderUUID
+        }
+    }
+}
+
+// MARK: UITableViewDelegate
+extension WalletsVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let transaction = walletVM?.transactions[indexPath.row] {
+            performSegue(withIdentifier: "OrderDetailVC", sender: transaction.orderUUID)
+        }
+    }
+}
+
+// MARK: UITableViewDataSource
+extension WalletsVC: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //TODO: no data için bişey yok.
+        return walletVM?.transactions.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WalletTVC", for: indexPath) as! WalletTVC
+        
+        if let transaction = walletVM?.transactions[indexPath.row] {
+            cell.setTransaction(transaction)
+        }
+        
+        return cell
+    }
+}
+
+extension WalletsVC: NetworkRequestable {
+    func prepareForLoading() {
+        self.disableView()
+        tableView.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    func resetAfterLoading() {
+        self.enabledView()
+        tableView.isHidden = false
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+    }
+}

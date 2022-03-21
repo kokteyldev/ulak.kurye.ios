@@ -22,6 +22,7 @@ enum APIRouter {
     case getOrderActions(orderUUID: String, agreementUUID: String)
     case runTakeAction(orderUUID: String, agreementUUID: String)
     case runOrderAction(actionName: String, parameters: [String: String])
+    case getWallet(walletUUID: String)
     case sendFeedback(message: String)
     
     private enum Encoding {
@@ -39,7 +40,8 @@ enum APIRouter {
              .getOrderActions,
              .getPoolOrders,
              .runTakeAction,
-             .runOrderAction:
+             .runOrderAction,
+             .getWallet:
             return .get
         case .preLogin,
              .login,
@@ -78,6 +80,8 @@ enum APIRouter {
             return "/actions/run"
         case .runOrderAction:
             return "/actions/run"
+        case .getWallet(let walletUUID):
+            return "/wallet/\(walletUUID)"
         case .sendFeedback:
             return "/feedback"
         }
@@ -150,6 +154,7 @@ enum APIRouter {
              .getOrderActions,
              .runTakeAction,
              .runOrderAction,
+             .getWallet,
              .sendFeedback:
             return [
                 "Authorization": "Bearer \(Session.shared.token ?? "")",

@@ -103,6 +103,11 @@
 "settings_ulak_card_popup_title" = "Ulak Kart Ekle";
 "settings_ulak_card_popup_input_title" = "Kart Numarası";
 
+// Wallet
+"wallet_title" = "Cüzdan";
+"wallet_balance" = "Bakiye";
+"wallet_transfer_balance" = "Bakiye Aktar";
+
 // Profile
 "profile_mising_info" = "Girdiğiniz bilgileri kontrol edin!";
 "profile_updated_success" = "Profil başarıyla güncellendi.";
@@ -133,3 +138,4 @@
 "code" = "Kod";
 "country_phone_code" = "Ülke Kodu Seçimi";
 "card_loading" = "Kart bilgileri güncelleniyor..";
+"deposit" = "Kazanç";

@@ -9,7 +9,6 @@ import UIKit
 import CoreLocation
 
 final class OrderDetailVM: OrderVM {
-    let pageTitle: String
     let orderCode: String?
     let senderName: String?
     let ownerName: String?
@@ -47,7 +46,6 @@ final class OrderDetailVM: OrderVM {
     
     // MARK: Init
     override init(order: Order) {
-        pageTitle = "order_detail_title".localized
         orderCode = order.code
         
         packageDetail = order.packageDetail

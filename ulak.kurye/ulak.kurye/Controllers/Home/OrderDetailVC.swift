@@ -47,32 +47,45 @@ class OrderDetailVC: BaseVC {
     @IBOutlet weak var actionsView: OrderActionsView!
     @IBOutlet weak var safeAreaView: UIView!
     @IBOutlet weak var actionsViewHeightCons: NSLayoutConstraint!
+   
     var order: Order?
+    var orderUUID: String?
+    
     private var viewModel: OrderDetailVM?
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "order_detail_title".localized
         
         setupTableView()
         setupMap()
+        
         setupUI()
         getActions()
+        
+        if orderUUID != nil {
+            getOrder(orderUUID!)
+        }
     }
     
     // MARK: - Data
     func getActions() {
-        guard let order = order else { return }
-        if order.status == .closed { return }
+        if order == nil || order!.status == .closed {
+            actionsView.isHidden = true
+            actionsViewHeightCons.constant = 0
+            safeAreaView.isHidden = true
+            return
+        }
         
         actionsView.prepareForLoading()
         actionsView.delegate = self
-        actionsView.setOrderUUID(order.uuid)
+        actionsView.setOrderUUID(order!.uuid)
     }
     
-    func getOrder() {
+    func getOrder(_ orderUUID: String) {
         prepareForLoading()
-        API.getOrder(orderUUID: order!.uuid) { result in
+        API.getOrder(orderUUID: orderUUID) { result in
             self.resetAfterLoading()
             
             switch result {
@@ -106,7 +119,6 @@ class OrderDetailVC: BaseVC {
         viewModel = OrderDetailVM(order: order)
         guard let viewModel = viewModel else { return }
         
-        self.title = viewModel.pageTitle
         orderCodeLabel.text = viewModel.orderCode
         serviceInfoLabel.text = viewModel.serviceTitle
         
@@ -241,16 +253,18 @@ extension OrderDetailVC: OrderActionsViewDelegate {
             return
         }
 
-        self.getOrder()
+        self.getOrder(order!.uuid)
     }
 }
 
 extension OrderDetailVC: NetworkRequestable {
     func prepareForLoading() {
         self.showLoading(isDark: false)
+        self.stackView.isHidden = true
     }
     
     func resetAfterLoading() {
         self.hideLoading()
+        self.stackView.isHidden = false
     }
 }

@@ -81,7 +81,7 @@
         <!--Order DetailVC-->
         <scene sceneID="ovE-lg-KCf">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="xY0-xu-mZS" customClass="OrderDetailVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderDetailVC" hidesBottomBarWhenPushed="YES" id="xY0-xu-mZS" customClass="OrderDetailVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lc0-t9-e7O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
