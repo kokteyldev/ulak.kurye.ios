@@ -70,6 +70,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="mZ2-A4-2ag"/>
+                    <connections>
+                        <segue destination="xY0-xu-mZS" kind="show" identifier="OrderDetailVC" id="P9w-v1-bRT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="07w-gH-cJN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -881,6 +884,9 @@
             <point key="canvasLocation" x="-4.3478260869565224" y="153.34821428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="P9w-v1-bRT"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="ic-address" width="18" height="18"/>
         <image name="ic-file" width="16" height="17"/>

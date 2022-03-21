@@ -138,6 +138,20 @@ final class OrderPoolVC: BaseTBLVC {
         return headerView != nil ? 32.0 : 0
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let order = orderVMs[indexPath.row].order
+        performSegue(withIdentifier: "OrderDetailVC", sender: order)
+    }
+    
+    // MARK: - Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "OrderDetailVC" {
+            guard let order = sender as? Order else { return }
+            let orderDetailVC = segue.destination as! OrderDetailVC
+            orderDetailVC.order = order
+        }
+    }
+    
     // MARK: - Notifications
     @objc private func userStateChanged() {
         //TODO: check status and hide orders if needed.

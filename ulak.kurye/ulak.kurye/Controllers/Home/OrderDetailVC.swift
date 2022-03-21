@@ -135,20 +135,14 @@ class OrderDetailVC: BaseVC {
         deliverCallButton.alpha = viewModel.mapButtonsAlpha
         ownerCallButton.alpha = viewModel.mapButtonsAlpha
         
-        if viewModel.isPackageDetailHidden == true {
-            stackView.removeFully(view: packageContentTitleContainer)
-            stackView.removeFully(view: packageContentContainer)
-        }
+        packageContentTitleContainer.isHidden = viewModel.isPackageDetailHidden
+        packageContentContainer.isHidden = viewModel.isPackageDetailHidden
         
-        if viewModel.isCourierNoteHidden == true {
-            stackView.removeFully(view: courierNoteTitleContainer)
-            stackView.removeFully(view: courierNoteContainer)
-        }
-        
-        if viewModel.isBreakpointsHidden == true {
-            stackView.removeFully(view: breakpointsTitleContainer)
-            stackView.removeFully(view: breakpointsContainer)
-        }
+        courierNoteTitleContainer.isHidden = viewModel.isCourierNoteHidden
+        courierNoteContainer.isHidden = viewModel.isCourierNoteHidden
+
+        breakpointsTitleContainer.isHidden = viewModel.isBreakpointsHidden
+        breakpointsContainer.isHidden = viewModel.isBreakpointsHidden
         
         actionsViewHeightCons.constant = viewModel.isActionViewHeight
         //TODO: kapalı sipaiş ise safeArea hiç olmasın, content aşağıya kadar insin
@@ -211,7 +205,6 @@ class OrderDetailVC: BaseVC {
     }
     
     // MARK: - Utils
-    
     private func getMapDirections(_ location: CLLocationCoordinate2D) {
         let url = URL(string: "comgooglemaps://?saddr=&daddr=\(location.latitude),\(location.longitude)&directionsmode=driving")
         if UIApplication.shared.canOpenURL(url!) {

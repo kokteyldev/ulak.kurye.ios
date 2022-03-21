@@ -65,7 +65,13 @@ final class OrderActionsView: UIView {
             switch result {
             case Result.success(let agreementResponse):
                 //TODO: hiç agreement yoksa hata göster.
-                self.agreement = agreementResponse.curentAggrements.first
+                
+                if let agreement = agreementResponse.curentAggrements.first {
+                    self.agreement = agreement
+                } else {
+                    self.agreement = agreementResponse.aggrements.first
+                }
+                
                 group.leave()
                 break
             case Result.failure(_):
@@ -88,7 +94,7 @@ final class OrderActionsView: UIView {
     }
     
     private func getOrderActions() {
-        API.getOrderActions(orderUUID: orderUUID!) { result in
+        API.getOrderActions(orderUUID: orderUUID!, agreementUUID: self.agreement?.uuid ?? "") { result in
             switch result {
             case Result.success(let actionResponse):
                 self.actions = actionResponse.actions.filter { $0.isDisabled == false }

@@ -160,8 +160,8 @@ struct API {
         }
     }
     
-    static func getOrderActions(orderUUID: String, completion:@escaping (Result<GetOrderActionsResponse, Error>) -> Void) {
-        performRequest(route: APIRouter.getOrderActions(orderUUID: orderUUID)) { (result:(Result<Response<GetOrderActionsResponse?>, Error>)) in
+    static func getOrderActions(orderUUID: String, agreementUUID: String, completion:@escaping (Result<GetOrderActionsResponse, Error>) -> Void) {
+        performRequest(route: APIRouter.getOrderActions(orderUUID: orderUUID, agreementUUID: agreementUUID)) { (result:(Result<Response<GetOrderActionsResponse?>, Error>)) in
             switch result {
             case Result.success(let response):
                 if let agreementResponse = response.data {

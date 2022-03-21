@@ -18,7 +18,7 @@ enum APIRouter {
     case getOrders(status: String)
     case getPoolOrders(latitude: Double, longtitude: Double)
     case getOrderAggrements(orderUUID: String)
-    case getOrderActions(orderUUID: String)
+    case getOrderActions(orderUUID: String, agreementUUID: String)
     case runTakeAction(orderUUID: String, agreementUUID: String)
     case runOrderAction(actionName: String, parameters: [String: String])
     case sendFeedback(message: String)
@@ -96,8 +96,8 @@ enum APIRouter {
             return ["lat": latitude, "lng": longtitude]
         case .getOrderAggrements(let orderUUID):
             return ["order_uuid": orderUUID]
-        case .getOrderActions(let orderUUID):
-            return ["order_uuid": orderUUID]
+        case .getOrderActions(let orderUUID, let agreementUUID):
+            return ["order_uuid": orderUUID, "agreement_uuid": agreementUUID]
         case .runTakeAction(let orderUUID, let agreementUUID):
             return ["action_name": "take", "order_uuid": orderUUID, "agreement_uuid": agreementUUID]
         case .runOrderAction(let actionName, let paramaters):
