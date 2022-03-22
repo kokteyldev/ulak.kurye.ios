@@ -8,7 +8,9 @@
 import Foundation
 
 struct WalletVM {
+    let uuid: String
     let balance: String
+    let payableBalance: Double
     let transactions: [WalletTransactionVM]
     
     private var walletResponse: WalletResponse
@@ -16,7 +18,9 @@ struct WalletVM {
     init(walletResponse: WalletResponse) {
         self.walletResponse = walletResponse
         
+        uuid = walletResponse.wallet.uuid
         balance = walletResponse.wallet.balance
+        payableBalance = Double(balance) ?? 0.0
         
         var tempTransactions: [WalletTransactionVM] = []
         for transaction in walletResponse.transactions {

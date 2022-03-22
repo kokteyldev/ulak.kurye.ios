@@ -24,6 +24,7 @@ enum APIRouter {
     case runTakeAction(orderUUID: String, agreementUUID: String)
     case runOrderAction(actionName: String, parameters: [String: String])
     case getWallet(walletUUID: String)
+    case transferBalance(walletUUID: String, amount: Double)
     case sendFeedback(message: String)
     
     private enum Encoding {
@@ -49,6 +50,7 @@ enum APIRouter {
              .updateProfile,
              .updateCardNumber,
              .updateLocation,
+             .transferBalance,
              .sendFeedback:
             return .post
         }
@@ -86,6 +88,8 @@ enum APIRouter {
             return "/actions/run"
         case .getWallet(let walletUUID):
             return "/wallet/\(walletUUID)"
+        case .transferBalance:
+            return "/courier/earn-money"
         case .sendFeedback:
             return "/feedback"
         }
@@ -146,6 +150,11 @@ enum APIRouter {
                 "battery_rate": batteryLevel,
                 "accuracy": accuracy
             ]
+        case .transferBalance(let walletUUID, let amount):
+            return [
+                "wallet_uuid": walletUUID,
+                "amount": amount
+            ]
         case .sendFeedback(let message):
             return ["message": message]
         default:
@@ -167,6 +176,7 @@ enum APIRouter {
              .runTakeAction,
              .runOrderAction,
              .getWallet,
+             .transferBalance,
              .sendFeedback:
             return [
                 "Authorization": "Bearer \(Session.shared.token ?? "")",

@@ -101,7 +101,6 @@ final class WalletsVC: BaseVC {
     // MARK: - Data
     func getWalletDetail() {
         if userWallets.count < walletSegment.selectedSegmentIndex { return }
-        
         let userWallet = userWallets[walletSegment.selectedSegmentIndex]
         
         prepareForLoading()
@@ -123,7 +122,21 @@ final class WalletsVC: BaseVC {
     
     // MARK: - Actions
     @IBAction func transferBalanceTapped(_ sender: Any) {
-        //TODO: bakiye aktar
+        guard let walletVM = walletVM else { return }
+        if walletVM.payableBalance == 0 { return }
+        
+        prepareForLoading()
+        API.transferBalance(walletUUID: walletVM.uuid, amount: walletVM.payableBalance) { result in
+            switch result {
+            case Result.success(_):
+                self.getWalletDetail()
+                break
+            case Result.failure(let error):
+                self.resetAfterLoading()
+                self.view.showToast(.error, message: error.localizedDescription)
+                break
+            }
+        }
     }
     
     @IBAction func segmentChanged(_ sender: Any) {
