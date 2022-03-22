@@ -10,12 +10,18 @@ import UIKit
 final class OrderPoolVC: BaseTBLVC {
     private var orderVMs: [OrderVM] = []
     private var headerView: TableSectionHeaderView?
+    private var activeOrderCount = 0
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        activeOrderCount = OrderManager.shared.activeOrderCount
         setupHeaderView()
         getOrders()
     }
@@ -33,7 +39,7 @@ final class OrderPoolVC: BaseTBLVC {
     
     func setupHeaderView() {
         headerView = TableSectionHeaderView(frame: .init(x: 0, y: 0, width: tableView.frame.size.width, height: 32.0))
-        headerView?.titleLabel.text = "pool_total_order".localized + " - \(OrderManager.shared.activeOrderCount) / \(Session.shared.maxOrderCount)"
+        headerView?.titleLabel.text = "pool_total_order".localized + " - \(activeOrderCount) / \(Session.shared.maxOrderCount)"
     }
     
     // MARK: - Data
@@ -43,6 +49,8 @@ final class OrderPoolVC: BaseTBLVC {
         API.getPoolOrders(latitude: LocationManager.shared.location.latitude, longtitude: LocationManager.shared.location.longitude) { result in
             switch result {
             case Result.success(let orders):
+                self.orderVMs.removeAll()
+                
                 for order in orders {
                     self.orderVMs.append(OrderVM(order: order))
                 }
@@ -93,6 +101,7 @@ final class OrderPoolVC: BaseTBLVC {
                 case Result.success(_):
                     self.resetAfterLoading()
                     OrderManager.shared.didTakeAction(order: order)
+                    self.activeOrderCount += 1
                     self.setupHeaderView()
                     self.tableView.reloadData()
                     

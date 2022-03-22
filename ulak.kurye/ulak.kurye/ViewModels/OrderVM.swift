@@ -84,8 +84,19 @@ class OrderVM {
             }
         }
         
-        pickAddress = "\(order.sender.district)/\(order.sender.hometown)"
-        deliverAddress = "\(order.receiver.district)/\(order.receiver.hometown)"
+        if let imageURL = order.customer?.image {
+            var imageURLString = imageURL
+            
+            if imageURLString.contains("http") == false {
+                imageURLString = "https://dev-api.ulakapp.com\(imageURLString)"
+            }
+            
+            let data = try? Data(contentsOf: URL(string: imageURLString)!)
+            iconImage = UIImage(data: data!)
+        }
+        
+        pickAddress = "\(order.sender.hometown)/\(order.sender.district)/\(order.sender.city)"
+        deliverAddress = "\(order.receiver.hometown)/\(order.receiver.district)/\(order.receiver.city)"
         
         if isPoolOrder {
             priceTitle = "order_task_code".localized

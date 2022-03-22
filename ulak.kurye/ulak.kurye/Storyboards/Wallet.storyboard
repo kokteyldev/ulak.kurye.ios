@@ -38,7 +38,7 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PuK-m6-h5K" userLabel="Balance Container View" customClass="KKUIView" customModule="KokteylUtils">
-                                <rect key="frame" x="16" y="144" width="382" height="40"/>
+                                <rect key="frame" x="16" y="144" width="187" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bakiye" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUj-qW-ltt">
                                         <rect key="frame" x="8" y="4" width="52" height="32"/>
@@ -50,7 +50,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFb-eB-PAt">
-                                        <rect key="frame" x="364" y="4" width="10" height="32"/>
+                                        <rect key="frame" x="169" y="4" width="10" height="32"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -84,31 +84,66 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="GKd-nb-Pcq">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                             </activityIndicatorView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5VH-zH-3q6" userLabel="Transfer Container View" customClass="KKUIView" customModule="KokteylUtils">
+                                <rect key="frame" x="211" y="144" width="187" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bakiye Aktar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpd-A0-Hzr">
+                                        <rect key="frame" x="8" y="4" width="171" height="32"/>
+                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="wallet_transfer_balance"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3E-aa-tYg">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="40"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="transferBalanceTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nua-uR-XlV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="ulk-orange"/>
+                                <constraints>
+                                    <constraint firstItem="P3E-aa-tYg" firstAttribute="leading" secondItem="5VH-zH-3q6" secondAttribute="leading" id="9vN-sg-azt"/>
+                                    <constraint firstAttribute="trailing" secondItem="lpd-A0-Hzr" secondAttribute="trailing" constant="8" id="N1w-55-8RD"/>
+                                    <constraint firstAttribute="bottom" secondItem="lpd-A0-Hzr" secondAttribute="bottom" constant="4" id="Of1-c1-zZv"/>
+                                    <constraint firstItem="lpd-A0-Hzr" firstAttribute="leading" secondItem="5VH-zH-3q6" secondAttribute="leading" constant="8" id="RwV-NW-QSs"/>
+                                    <constraint firstItem="lpd-A0-Hzr" firstAttribute="top" secondItem="5VH-zH-3q6" secondAttribute="top" constant="4" id="XcX-jd-0bj"/>
+                                    <constraint firstAttribute="trailing" secondItem="P3E-aa-tYg" secondAttribute="trailing" id="dIX-az-ak5"/>
+                                    <constraint firstAttribute="height" constant="40" id="jgF-bO-Ivs"/>
+                                    <constraint firstItem="P3E-aa-tYg" firstAttribute="top" secondItem="5VH-zH-3q6" secondAttribute="top" id="rcG-ce-goG"/>
+                                    <constraint firstAttribute="bottom" secondItem="P3E-aa-tYg" secondAttribute="bottom" id="w5F-Pq-TMN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Itn-pu-Hao" firstAttribute="top" secondItem="PuK-m6-h5K" secondAttribute="bottom" constant="8" symbolic="YES" id="5WV-OI-6Ym"/>
                             <constraint firstItem="GKd-nb-Pcq" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="7jh-eK-nxc"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PuK-m6-h5K" secondAttribute="trailing" constant="16" id="A1E-8I-Jvs"/>
+                            <constraint firstItem="5VH-zH-3q6" firstAttribute="width" secondItem="PuK-m6-h5K" secondAttribute="width" id="Jtc-Pn-CbM"/>
                             <constraint firstItem="TfX-4w-QdD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="MOv-g3-PAj"/>
                             <constraint firstItem="GKd-nb-Pcq" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Tbc-7j-TEk"/>
+                            <constraint firstItem="5VH-zH-3q6" firstAttribute="top" secondItem="TfX-4w-QdD" secondAttribute="bottom" constant="8" symbolic="YES" id="Xew-fy-mgr"/>
                             <constraint firstItem="PuK-m6-h5K" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="asB-CR-ihA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TfX-4w-QdD" secondAttribute="trailing" constant="16" id="gho-gs-YqE"/>
                             <constraint firstItem="Itn-pu-Hao" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hwf-wz-uwQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5VH-zH-3q6" secondAttribute="trailing" constant="16" id="n5k-Bk-ceZ"/>
                             <constraint firstItem="TfX-4w-QdD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="qgv-H1-AAx"/>
                             <constraint firstItem="PuK-m6-h5K" firstAttribute="top" secondItem="TfX-4w-QdD" secondAttribute="bottom" constant="8" id="sTj-Ps-I7e"/>
                             <constraint firstAttribute="bottom" secondItem="Itn-pu-Hao" secondAttribute="bottom" id="tyh-2R-PZI"/>
+                            <constraint firstItem="5VH-zH-3q6" firstAttribute="leading" secondItem="PuK-m6-h5K" secondAttribute="trailing" constant="8" id="wCY-R8-xCs"/>
                             <constraint firstItem="Itn-pu-Hao" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="wf0-If-kSF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Cüzdan" id="lPl-qD-gdR">
-                        <barButtonItem key="rightBarButtonItem" title="Bakiye Aktar" id="w6E-k5-1lL">
-                            <connections>
-                                <action selector="transferBalanceTapped:" destination="Y6W-OH-hqX" id="pSA-3d-0jx"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Cüzdan" id="lPl-qD-gdR"/>
                     <connections>
                         <outlet property="activityIndicator" destination="GKd-nb-Pcq" id="zAR-DG-fCJ"/>
                         <outlet property="balanceContainerView" destination="PuK-m6-h5K" id="xGw-hz-wS2"/>
@@ -116,7 +151,7 @@
                         <outlet property="segmentHeightCons" destination="5hB-y6-Qpg" id="fJ5-1T-HCl"/>
                         <outlet property="segmentTopCons" destination="qgv-H1-AAx" id="cQq-FL-ZiJ"/>
                         <outlet property="tableView" destination="Itn-pu-Hao" id="lBr-CG-Ckk"/>
-                        <outlet property="transferBalanceButton" destination="w6E-k5-1lL" id="fHK-hm-WNs"/>
+                        <outlet property="transferContainerView" destination="5VH-zH-3q6" id="M53-jg-wqa"/>
                         <outlet property="walletSegment" destination="TfX-4w-QdD" id="p1z-CQ-Dcd"/>
                         <segue destination="LrG-4A-VJ5" kind="show" identifier="OrderDetailVC" id="F60-sg-1EV"/>
                     </connections>

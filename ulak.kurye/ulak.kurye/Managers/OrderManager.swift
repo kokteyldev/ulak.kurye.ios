@@ -22,16 +22,7 @@ final class OrderManager {
     var shouldRequestMorePast: Bool {
         return pastPaginate.page > 0 && pastPaginate.page < pastPaginate.pagesTotal
     }
-    
-    // MARK: - Init
-    init() {
         
-    }
-    
-    deinit {
-        
-    }
-    
     // MARK: - Data
     func getOrders(completion: @escaping(Result<Bool, Error>) -> Void) {
         let group = DispatchGroup()

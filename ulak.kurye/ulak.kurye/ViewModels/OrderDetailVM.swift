@@ -69,7 +69,14 @@ final class OrderDetailVM: OrderVM {
         
         if !isDetailsHidden {
             pickAddress = order.sender.address
+            if let adressDetail = order.sender.addressDetail {
+                pickAddress = "\(pickAddress ?? "") (\(adressDetail))"
+            }
+            
             deliverAddress = order.receiver.address
+            if let adressDetail = order.receiver.addressDetail {
+                deliverAddress = "\(deliverAddress ?? "") (\(adressDetail))"
+            }
         }
     }
 }

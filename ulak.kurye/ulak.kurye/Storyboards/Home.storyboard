@@ -255,7 +255,7 @@
                                                 <rect key="frame" x="0.0" y="220.5" width="414" height="64.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zühtüpaşa Mah. Şefikbey Sk. Xcode Caddesi İstanbul " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GTS-Qb-uJP">
-                                                        <rect key="frame" x="39" y="12" width="315" height="39.5"/>
+                                                        <rect key="frame" x="39" y="12" width="307" height="39.5"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -302,7 +302,7 @@
                                                     <constraint firstItem="GTS-Qb-uJP" firstAttribute="leading" secondItem="irQ-mP-foO" secondAttribute="leading" constant="39" id="j2D-ba-1Lf"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="kTq-d0-9gd"/>
                                                     <constraint firstAttribute="bottom" secondItem="tuH-gc-7K6" secondAttribute="bottom" id="mN3-Lp-Ghg"/>
-                                                    <constraint firstItem="M5y-dr-hIs" firstAttribute="leading" secondItem="GTS-Qb-uJP" secondAttribute="trailing" id="rAA-vs-E9p"/>
+                                                    <constraint firstItem="M5y-dr-hIs" firstAttribute="leading" secondItem="GTS-Qb-uJP" secondAttribute="trailing" constant="8" id="rAA-vs-E9p"/>
                                                     <constraint firstItem="tuH-gc-7K6" firstAttribute="top" secondItem="GTS-Qb-uJP" secondAttribute="bottom" constant="12" id="uYh-Ue-udu"/>
                                                     <constraint firstItem="M5y-dr-hIs" firstAttribute="top" secondItem="irQ-mP-foO" secondAttribute="top" id="ubp-2B-Dlp"/>
                                                 </constraints>
@@ -408,7 +408,7 @@
                                                 <rect key="frame" x="0.0" y="387" width="414" height="64.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valide-i Atik Mah. Kartalbaba Cad. Test Apartmanı Üsküdar İstanbul" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iXV-Zg-wkT">
-                                                        <rect key="frame" x="39" y="12" width="315" height="39.5"/>
+                                                        <rect key="frame" x="39" y="12" width="307" height="39.5"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -446,7 +446,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="uTW-ej-blg" secondAttribute="trailing" id="1Jl-dL-y8u"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="CGp-zQ-QCm"/>
-                                                    <constraint firstItem="yCh-Sm-6Tf" firstAttribute="leading" secondItem="iXV-Zg-wkT" secondAttribute="trailing" id="EQa-PL-ROq"/>
+                                                    <constraint firstItem="yCh-Sm-6Tf" firstAttribute="leading" secondItem="iXV-Zg-wkT" secondAttribute="trailing" constant="8" id="EQa-PL-ROq"/>
                                                     <constraint firstItem="btI-y0-wst" firstAttribute="top" secondItem="l4Z-DS-kJJ" secondAttribute="top" id="FbP-ay-ITW"/>
                                                     <constraint firstItem="iXV-Zg-wkT" firstAttribute="leading" secondItem="l4Z-DS-kJJ" secondAttribute="leading" constant="39" id="JDP-hc-MWd"/>
                                                     <constraint firstAttribute="trailing" secondItem="btI-y0-wst" secondAttribute="trailing" id="Nue-Cf-EGX"/>
@@ -519,7 +519,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRN-yr-t8H" userLabel="Owner Point View">
                                                 <rect key="frame" x="0.0" y="509.5" width="414" height="44"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-address" translatesAutoresizingMaskIntoConstraints="NO" id="lxQ-D5-CE5">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-user" translatesAutoresizingMaskIntoConstraints="NO" id="lxQ-D5-CE5">
                                                         <rect key="frame" x="16" y="13" width="15" height="18"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -903,7 +903,6 @@
         <segue reference="vIp-8N-PLI"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="ic-address" width="18" height="18"/>
         <image name="ic-file" width="16" height="17"/>
         <image name="ic-note" width="15" height="17"/>
         <image name="ic-phone" width="20" height="24"/>
@@ -911,6 +910,7 @@
         <image name="ic-pin-white" width="16" height="18"/>
         <image name="ic-refresh" width="78" height="79"/>
         <image name="ic-time" width="16" height="16"/>
+        <image name="ic-user" width="512" height="512"/>
         <namedColor name="ulk-blue">
             <color red="0.42745098039215684" green="0.59999999999999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

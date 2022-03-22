@@ -12,7 +12,7 @@ final class WalletsVC: BaseVC {
     @IBOutlet weak var walletSegment: UISegmentedControl!
     @IBOutlet weak var segmentHeightCons: NSLayoutConstraint!
     @IBOutlet weak var segmentTopCons: NSLayoutConstraint!
-    @IBOutlet weak var transferBalanceButton: UIBarButtonItem!
+    @IBOutlet weak var transferContainerView: KKUIView!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var balanceContainerView: KKUIView!
@@ -49,7 +49,7 @@ final class WalletsVC: BaseVC {
     // MARK: - Setup
     private func setupUI() {
         self.title = "wallet_title".localized
-        transferBalanceButton.title = "wallet_transfer_balance".localized
+        
         let attr = [
             NSAttributedString.Key.foregroundColor: UIColor.black,
             NSAttributedString.Key.font: UIFont(name: "Poppins-Regular", size: 14)!
@@ -95,6 +95,7 @@ final class WalletsVC: BaseVC {
     
     private func setupData() {
         balanceLabel.text = walletVM?.balance ?? "0"
+        transferContainerView.alpha = walletVM?.transferButtonAlpha ?? 1.0
         tableView.reloadData()
     }
     
@@ -189,8 +190,7 @@ extension WalletsVC: NetworkRequestable {
         self.disableView()
         tableView.isHidden = true
         balanceContainerView.isHidden = true
-        transferBalanceButton.isEnabled = false
-        transferBalanceButton.title = "";
+        transferContainerView.isHidden = true
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
     }
@@ -199,9 +199,7 @@ extension WalletsVC: NetworkRequestable {
         self.enabledView()
         tableView.isHidden = false
         balanceContainerView.isHidden = false
-        transferBalanceButton.isEnabled = true
-        transferBalanceButton.title = "wallet_transfer_balance".localized;
-
+        transferContainerView.isHidden = false
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
     }

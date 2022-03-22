@@ -12,6 +12,7 @@ struct WalletVM {
     let balance: String
     let payableBalance: Double
     let transactions: [WalletTransactionVM]
+    let transferButtonAlpha: Double
     
     private var walletResponse: WalletResponse
     
@@ -21,6 +22,12 @@ struct WalletVM {
         uuid = walletResponse.wallet.uuid
         balance = walletResponse.wallet.balance
         payableBalance = Double(balance) ?? 0.0
+        
+        if payableBalance == 0 {
+            transferButtonAlpha = 0.5
+        } else {
+            transferButtonAlpha = 1.0
+        }
         
         var tempTransactions: [WalletTransactionVM] = []
         for transaction in walletResponse.transactions {
