@@ -74,6 +74,7 @@ final class SplashVC: BaseVC {
             switch result {
             case .success(let user):
                 Session.shared.user = user
+                LocationManager.shared.start()
                 MainTabbarTC.presentAsRoot()
             case .failure(_):
                 Session.shared.logout()

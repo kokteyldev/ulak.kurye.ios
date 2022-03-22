@@ -29,10 +29,37 @@ final class LocationManager: NSObject {
         }
     }
     
+    private var timer: Timer?
     private let lm = CLLocationManager()
     
     // MARK: - Initializer
     override init() {}
+    
+    func start() {
+        NotificationCenter.default.addObserver(self, selector: #selector(userStateChanged), name: .UserStateChanged, object: nil)
+        self.userStateChanged()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .UserStateChanged, object: nil)
+    }
+    
+    // MARK: - Data
+    private func updateLocation() {
+        //TODO: interval
+        
+        let batteryLevel = Double(UIDevice.current.batteryLevel) * 100.0
+        API.updateLocation(lat: location.latitude, lng: location.longitude, batteryLevel: batteryLevel, accuracy: 10.0) { result in
+            switch result {
+            case Result.success(_):
+                Log.d("Location updated!")
+                break
+            case Result.failure(let error):
+                Log.e("Location update error: \(error.localizedDescription)")
+                break
+            }
+        }
+    }
     
     // MARK: - Location
     func getLocationConsent() {
@@ -44,19 +71,51 @@ final class LocationManager: NSObject {
         UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
     }
     
-    func getLocation() {
+    private func startMonitoring() {
         if CLLocationManager.locationServicesEnabled() {
             lm.delegate = self
             lm.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            lm.allowsBackgroundLocationUpdates = true
+            lm.pausesLocationUpdatesAutomatically = false
             lm.startUpdatingLocation()
+            
+            UIDevice.current.isBatteryMonitoringEnabled = true
+            timer = Timer.scheduledTimer(timeInterval: Constants.App.locationUpdateInterval,
+                                         target: self,
+                                         selector: #selector(timerTicked),
+                                         userInfo: nil,
+                                         repeats: true)
+            updateLocation()
         }
+    }
+    
+    private func stopMonitoring() {
+        lm.stopUpdatingLocation()
+        UIDevice.current.isBatteryMonitoringEnabled = false
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    // MARK: - Notifications
+    @objc private func userStateChanged() {
+        if Session.shared.isUserLoggedIn &&
+            Session.shared.userState != .notWorking &&
+            Session.shared.userState != .accountNotVerified {
+            startMonitoring()
+        } else {
+            stopMonitoring()
+        }
+    }
+    
+    @objc func timerTicked() {
+        self.updateLocation()
     }
 }
 
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        self.location = locValue
+        guard let newLocation = locations.last?.coordinate else { return }
+        self.location = newLocation
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {

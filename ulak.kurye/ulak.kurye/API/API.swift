@@ -104,6 +104,19 @@ struct API {
         }
     }
     
+    static func updateLocation(lat: Double, lng: Double, batteryLevel: Double, accuracy: Double, completion:@escaping (Result<Bool, Error>) -> Void) {
+        performRequest(route: APIRouter.updateLocation(lat: lat, lng: lng, batteryLevel: batteryLevel, accuracy: accuracy)) { (result:(Result<Response<Bool?>, Error>)) in
+            switch result {
+            case Result.success(_):
+                completion(.success(true))
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
     // MARK: - Orders
     static func getOrder(orderUUID: String, completion:@escaping (Result<Order, Error>) -> Void) {
         performRequest(route: APIRouter.getOrder(orderUUID: orderUUID)) { (result:(Result<Response<[Order]?>, Error>)) in

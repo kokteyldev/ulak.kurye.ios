@@ -15,6 +15,7 @@ enum APIRouter {
     case me
     case updateProfile(name: String?, surname: String?)
     case updateCardNumber(cardNumber: String)
+    case updateLocation(lat: Double, lng: Double, batteryLevel: Double, accuracy: Double)
     case getOrder(orderUUID: String)
     case getOrders(status: String)
     case getPoolOrders(latitude: Double, longtitude: Double)
@@ -47,6 +48,7 @@ enum APIRouter {
              .login,
              .updateProfile,
              .updateCardNumber,
+             .updateLocation,
              .sendFeedback:
             return .post
         }
@@ -66,6 +68,8 @@ enum APIRouter {
             return "/user/update-profile"
         case .updateCardNumber:
             return "/ininal/update-card-number"
+        case .updateLocation:
+            return "/user/update-location"
         case .getOrder:
             return "/courier/order-search"
         case .getOrders:
@@ -135,6 +139,13 @@ enum APIRouter {
             return [
                 "barcode": cardNumber
             ]
+        case .updateLocation(let lat, let lng, let batteryLevel, let accuracy):
+            return [
+                "lat": lat,
+                "lng": lng,
+                "battery_rate": batteryLevel,
+                "accuracy": accuracy
+            ]
         case .sendFeedback(let message):
             return ["message": message]
         default:
@@ -147,6 +158,7 @@ enum APIRouter {
         case .me,
              .updateProfile,
              .updateCardNumber,
+             .updateLocation,
              .getOrder,
              .getOrders,
              .getPoolOrders,

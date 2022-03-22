@@ -14,6 +14,7 @@ struct Constants {
         static let googleMapsKey = "AIzaSyBa2-fRghCvB2VlhcVXwK37nyPC20RqsTQ"
         //TODO: Kurye başvuru adresi nedir?
         static let courierApplicationURL = "https://ulakapp.com/"
+        static let locationUpdateInterval = 45.0
     }
 
     struct API {
