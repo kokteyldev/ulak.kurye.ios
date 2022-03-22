@@ -44,7 +44,7 @@ final class QRInputCodeVC: BaseVC {
         titleLabel.text = popupTitle
         codeTextfield.title = inputTitle
     }
-
+    
     // MARK: - Actions
     @IBAction func qrTapped(_ sender: Any) {
         let svc = ScannerVC()
@@ -84,18 +84,25 @@ extension QRInputCodeVC: ScannerDelegate {
             return
         }
         
-        //TODO: read json
         // picking_security_code: DutHix, orderCode: b-1545171599
-        let range = NSRange(location: 0, length: code.utf16.count)
-        let regex = try! NSRegularExpression(pattern: "(?<=\(qrCodeKey!): )(.*)(?=,)")
-        
-        guard let foundedResult = regex.firstMatch(in: code, options: [], range: range) else {
-            self.view.showToast(.error, message: "scan_error".localized)
+        let data = code.data(using: .utf8)!
+        do {
+            guard let parameters = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? Dictionary<String,Any> else {
+                self.view.showToast(.error, message: "scan_error".localized)
+                return
+            }
+            
+            if let foundedResult = parameters[qrCodeKey!] {
+                codeTextfield.text = "\(foundedResult)"
+            } else {
+                self.view.showToast(.error, message: "scan_error".localized)
+                return
+            }
+            
+        } catch let error as NSError {
+            self.view.showToast(.error, message: error.localizedDescription)
             return
         }
-        
-        let resultCode = code[Range(foundedResult.range, in: code)!]
-        codeTextfield.text = "\(resultCode)"
     }
     
     func didFailScan(errorMessage: String) {

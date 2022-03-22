@@ -95,6 +95,7 @@ class OrderDetailVC: BaseVC {
                 OrderManager.shared.updateOrder(order: order)
                 break
             case Result.failure(let error):
+                //TODO: hata göster ve geri git
                 print(error.localizedDescription)
                 break
             }

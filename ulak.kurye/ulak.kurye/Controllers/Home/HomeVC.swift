@@ -230,7 +230,36 @@ extension HomeVC: HeaderViewDelegate {
     }
     
     func qrCodeTapped() {
-        //TODO: ne yapılacak bilinmiyor.
+        self.disableView()
+        self.showLoading(isDark: false)
+        
+        let qrInputVC = QRInputCodeVC.qrInputVC(title: "order_qr_order_code_title".localized,
+                                                inputTitle: "order_qr_order_code_input_title".localized,
+                                                qrCodeKey: "orderCode")
+        self.present(qrInputVC, animated: true, completion: nil)
+        
+        qrInputVC.dismissCallback = { code in
+            guard let orderUUID = code else {
+                self.enabledView()
+                self.hideLoading()
+                self.view.showToast(.error, message: "error_unkown".localized)
+                return
+            }
+            
+            API.getOrder(orderUUID: orderUUID) { result in
+                self.enabledView()
+                self.hideLoading()
+                
+                switch result {
+                case Result.success(let order):
+                    self.performSegue(withIdentifier: "OrderDetailVC", sender: order)
+                    break
+                case Result.failure(let error):
+                    self.view.showToast(.error, message: error.localizedDescription)
+                    break
+                }
+            }
+        }
     }
 }
 

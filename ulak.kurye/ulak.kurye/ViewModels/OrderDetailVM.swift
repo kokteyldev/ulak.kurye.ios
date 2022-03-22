@@ -41,7 +41,7 @@ final class OrderDetailVM: OrderVM {
     }
     
     var isBreakpointsHidden: Bool {
-        return breakpoints.count == 0 || isDetailsHidden
+        return breakpoints.count == 0 || order.status == .active
     }
     
     // MARK: Init

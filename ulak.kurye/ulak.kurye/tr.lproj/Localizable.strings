@@ -64,6 +64,8 @@
 "order_service_info" = "Servis Bilgileri";
 "order_task_code" = "Görev Kodu";
 "order_not_working_while_have_order_error" = "Aktif sipariş varken bu özellik kullanılamaz!";
+"order_qr_order_code_title" = "Teslimat Kodu Tarama";
+"order_qr_order_code_input_title" = "Teslimat Kodu";
 
 // Order Detail
 "order_detail_title" = "Görev Detay";
