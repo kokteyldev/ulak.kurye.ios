@@ -170,7 +170,7 @@ extension HomeVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tableView.backgroundView = orderDataSource.isDataAvailable ? nil : noDataView
+        tableView.backgroundView = orderDataSource.isBackgroundViewAvailable ? nil : noDataView
         return orderDataSource.tableView(numberOfRowsInSection: section)
     }
     
@@ -190,19 +190,11 @@ extension HomeVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            let headerView = TableSectionHeaderView(frame: .init(x: 0, y: 0, width: tableView.frame.size.width, height: 32.0))
-            headerView.titleLabel.text = "home_active_orders".localized
-            return headerView
-        }
-        
-        let headerView = TableSectionHeaderView(frame: .init(x: 0, y: 0, width: tableView.frame.size.width, height: 32.0))
-        headerView.titleLabel.text = "home_past_orders".localized
-        return headerView
+        return orderDataSource.tableView(tableView, viewForHeaderInSection: section)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 32.0
+        return orderDataSource.tableView(tableView, heightForHeaderInSection: section)
     }
 }
 

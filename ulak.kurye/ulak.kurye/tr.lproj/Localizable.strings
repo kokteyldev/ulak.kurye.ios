@@ -63,6 +63,7 @@
 "order_total_price" = "Tahmini Kazanç";
 "order_service_info" = "Servis Bilgileri";
 "order_task_code" = "Görev Kodu";
+"order_not_working_while_have_order_error" = "Aktif sipariş varken bu özellik kullanılamaz!";
 
 // Order Detail
 "order_detail_title" = "Görev Detay";

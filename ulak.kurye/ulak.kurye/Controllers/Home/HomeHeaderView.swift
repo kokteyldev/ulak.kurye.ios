@@ -71,6 +71,11 @@ final class HomeHeaderView: UIView {
     
     // MARK: - Actions
     @IBAction func workTapped(_ sender: Any) {
+        if Session.shared.isUserWorking == true && OrderManager.shared.activeOrders.count > 0 {
+            UIApplication.topViewController()?.view.showToast(.error, message: "order_not_working_while_have_order_error".localized)
+            return
+        }
+        
         Session.shared.isUserWorking = !Session.shared.isUserWorking
         setupUI()
     }
