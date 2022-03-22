@@ -18,6 +18,13 @@ final class WalletsVC: BaseVC {
     
     private var userWallets: [BaseWallet] = []
     private var walletVM: WalletVM?
+    private lazy var noDataView: UIView = {
+        let view = NoDataView(title: "wallet_no_wallet".localized,
+                              message: "",
+                              image: .init(named: "ic-wallet")!)
+        view.frame = tableView.bounds
+        return view
+    }()
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -148,7 +155,7 @@ extension WalletsVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //TODO: no data için bişey yok.
+        tableView.backgroundView = walletVM?.transactions.count ?? 0 > 0 ? nil : noDataView
         return walletVM?.transactions.count ?? 0
     }
     

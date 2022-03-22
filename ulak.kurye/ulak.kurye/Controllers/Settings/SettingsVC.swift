@@ -16,7 +16,6 @@ final class SettingsVC: BaseTBLVC {
     @IBOutlet weak var logoutCell: UITableViewCell!
     
     @IBOutlet weak var cardNumberLabel: UILabel!
-    @IBOutlet weak var cardNumberTitleCenterCons: NSLayoutConstraint!
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -29,8 +28,11 @@ final class SettingsVC: BaseTBLVC {
         self.title = "settings_title".localized
         
         let cardNumber = Session.shared.user?.cardNumber
-        cardNumberTitleCenterCons.constant = cardNumber != nil ? -9 : 0
-        cardNumberLabel.text = Session.shared.user?.cardNumber
+        if cardNumber == nil {
+            cardNumberLabel.text = "settings_no_ulak_card".localized
+        } else {
+            cardNumberLabel.text = cardNumber
+        }
     }
     
     // MARK: - Data

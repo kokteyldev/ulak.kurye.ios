@@ -79,7 +79,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ulak Kartın" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZN-PP-Rda">
-                                                    <rect key="frame" x="61" y="23" width="78" height="20"/>
+                                                    <rect key="frame" x="61" y="14" width="78" height="20"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -95,7 +95,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSU-ea-Exk">
-                                                    <rect key="frame" x="61" y="45" width="33" height="18.5"/>
+                                                    <rect key="frame" x="61" y="36" width="33" height="18.5"/>
                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                     <color key="textColor" name="ulk-subtitle"/>
                                                     <nil key="highlightedColor"/>
@@ -106,7 +106,7 @@
                                                 <constraint firstItem="MSU-ea-Exk" firstAttribute="top" secondItem="lZN-PP-Rda" secondAttribute="bottom" constant="2" id="7T1-5J-TYJ"/>
                                                 <constraint firstItem="MSU-ea-Exk" firstAttribute="leading" secondItem="lZN-PP-Rda" secondAttribute="leading" id="Irj-nb-gpI"/>
                                                 <constraint firstItem="bzK-5s-8ay" firstAttribute="leading" secondItem="Jzy-Ng-IPS" secondAttribute="leadingMargin" id="erI-zA-Qmd"/>
-                                                <constraint firstItem="lZN-PP-Rda" firstAttribute="centerY" secondItem="Jzy-Ng-IPS" secondAttribute="centerY" id="lz2-9n-I6S"/>
+                                                <constraint firstItem="lZN-PP-Rda" firstAttribute="centerY" secondItem="Jzy-Ng-IPS" secondAttribute="centerY" constant="-9" id="lz2-9n-I6S"/>
                                                 <constraint firstItem="bzK-5s-8ay" firstAttribute="centerY" secondItem="Jzy-Ng-IPS" secondAttribute="centerY" id="ose-rw-8ot"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -255,7 +255,6 @@
                     <navigationItem key="navigationItem" title="Ayarlar" id="CeC-BF-u85"/>
                     <connections>
                         <outlet property="cardNumberLabel" destination="MSU-ea-Exk" id="0HN-s4-BXJ"/>
-                        <outlet property="cardNumberTitleCenterCons" destination="lz2-9n-I6S" id="GR3-As-CEX"/>
                         <outlet property="feedbackCell" destination="BWj-cN-D3f" id="CUQ-fE-W8c"/>
                         <outlet property="logoutCell" destination="VVU-Wc-bs8" id="fN5-85-HQO"/>
                         <outlet property="rateCell" destination="xf4-jh-lTX" id="d3y-aH-Yjs"/>
@@ -293,7 +292,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40w-T2-FtW" userLabel="Container" customClass="KKUIView" customModule="ulak_consumer" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40w-T2-FtW" userLabel="Container" customClass="KKUIView" customModule="ulak_kurye" customModuleProvider="target">
                                 <rect key="frame" x="16" y="125" width="382" height="377.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cv6-Ay-bKG">
@@ -413,7 +412,7 @@
                                             <constraint firstAttribute="height" constant="70" id="swh-yj-QDe"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Cm-C6-cw9" customClass="KKOutlinedTextField" customModule="ulak_consumer" customModuleProvider="target">
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Cm-C6-cw9" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="162" width="366" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="waX-gd-AOK"/>
@@ -443,7 +442,7 @@
                                             <action selector="saveTapped:" destination="jmF-14-6ra" eventType="touchUpInside" id="KWs-wA-ege"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s7n-mQ-eYI" customClass="KKOutlinedTextField" customModule="ulak_consumer" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s7n-mQ-eYI" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86" width="366" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="vcm-5d-GlS"/>

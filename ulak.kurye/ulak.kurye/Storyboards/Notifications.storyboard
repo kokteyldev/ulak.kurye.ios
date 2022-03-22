@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HUt-cn-KJE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HUt-cn-KJE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,18 +13,52 @@
         <!--Bildirimler-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="NotificationsVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BZP-e3-JZ2">
+                                <rect key="frame" x="24" y="104" width="366" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IYV-gJ-PSv"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" name="ulk-orange"/>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d7l-1E-x0f">
+                                <rect key="frame" x="0.0" y="152" width="414" height="744"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="VNc-fk-haT"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="jra-H9-um3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d7l-1E-x0f" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="B85-1K-haa"/>
+                            <constraint firstItem="d7l-1E-x0f" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="GYZ-f1-VvU"/>
+                            <constraint firstAttribute="bottom" secondItem="d7l-1E-x0f" secondAttribute="bottom" id="IVV-x6-Opm"/>
+                            <constraint firstItem="BZP-e3-JZ2" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="SMl-Gg-pnx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BZP-e3-JZ2" secondAttribute="trailing" constant="24" id="g93-5e-r64"/>
+                            <constraint firstItem="BZP-e3-JZ2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="vnv-5Q-lWB"/>
+                            <constraint firstItem="d7l-1E-x0f" firstAttribute="top" secondItem="BZP-e3-JZ2" secondAttribute="bottom" constant="8" id="y9f-X8-fzT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Bildirimler" id="MHI-tL-nWK"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="BZP-e3-JZ2" id="9lJ-GP-0ys"/>
+                        <outlet property="tableView" destination="d7l-1E-x0f" id="NsL-Vb-bpe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877" y="110"/>
+            <point key="canvasLocation" x="876.81159420289862" y="109.82142857142857"/>
         </scene>
         <!--BaseNC-->
         <scene sceneID="9V7-Qd-beh">
@@ -45,6 +80,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="ulk-orange">
+            <color red="1" green="0.62352941176470589" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

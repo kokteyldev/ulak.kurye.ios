@@ -11,7 +11,7 @@ final class HomeVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
     
     private var orderDataSource = OrderDataSource()
-    private var noDataView: NoDataView?
+    private var noDataView: HomeNoDataView?
     
     private var headerView = HomeHeaderView()
     private let headerAnimation = CABasicAnimation(keyPath: "opacity")
@@ -69,7 +69,7 @@ final class HomeVC: BaseVC {
     
     func setupNoDataView() {
         DispatchQueue.main.async {
-            self.noDataView = NoDataView(userState: Session.shared.userState)
+            self.noDataView = HomeNoDataView(userState: Session.shared.userState)
             self.tableView.reloadData()
         }
     }

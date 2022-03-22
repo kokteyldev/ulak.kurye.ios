@@ -101,12 +101,14 @@
 "settings_send_feedback_send" = "Gönder";
 "settings_feedback_sent" = "Geri bildiriminiz gönderildi.";
 "settings_ulak_card_popup_title" = "Ulak Kart Ekle";
+"settings_no_ulak_card" = "Ulak Kart eklemek için tıkla!";
 "settings_ulak_card_popup_input_title" = "Kart Numarası";
 
 // Wallet
 "wallet_title" = "Cüzdan";
 "wallet_balance" = "Bakiye";
 "wallet_transfer_balance" = "Bakiye Aktar";
+"wallet_no_wallet" = "İşlem bulunamadı.";
 
 // Profile
 "profile_mising_info" = "Girdiğiniz bilgileri kontrol edin!";
@@ -116,6 +118,11 @@
 "profile_login_surname" = "Soyad";
 "profile_login_phone" = "Telefon Numarası";
 "profile_title" = "Hesabım";
+
+// Notifications
+"notifications" = "Bildirimler";
+"announcements" = "Duyurular";
+"notifications_no_notification" = "Henüz bildirimin yok.";
 
 // General
 "location_permission_message" = "Uygulamayı kullanmaya devam etmek için konum izni vermelisin.";
