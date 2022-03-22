@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KokteylUtils
 
 final class WalletsVC: BaseVC {
     @IBOutlet weak var walletSegment: UISegmentedControl!
@@ -14,6 +15,7 @@ final class WalletsVC: BaseVC {
     @IBOutlet weak var transferBalanceButton: UIBarButtonItem!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var balanceContainerView: KKUIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var userWallets: [BaseWallet] = []
@@ -32,13 +34,12 @@ final class WalletsVC: BaseVC {
         setupUI()
 
         tableView.registerCell(type: WalletTVC.self)
-        
         setupSegmentedControl()
-        getWalletDetail()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getWalletDetail()
         
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
@@ -174,6 +175,9 @@ extension WalletsVC: NetworkRequestable {
     func prepareForLoading() {
         self.disableView()
         tableView.isHidden = true
+        balanceContainerView.isHidden = true
+        transferBalanceButton.isEnabled = false
+        transferBalanceButton.title = "";
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
     }
@@ -181,6 +185,10 @@ extension WalletsVC: NetworkRequestable {
     func resetAfterLoading() {
         self.enabledView()
         tableView.isHidden = false
+        balanceContainerView.isHidden = false
+        transferBalanceButton.isEnabled = true
+        transferBalanceButton.title = "wallet_transfer_balance".localized;
+
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
     }

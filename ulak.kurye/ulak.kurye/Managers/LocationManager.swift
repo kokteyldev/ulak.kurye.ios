@@ -30,6 +30,7 @@ final class LocationManager: NSObject {
     }
     
     private var timer: Timer?
+    private var lastUpdateTimestamp: TimeInterval?
     private let lm = CLLocationManager()
     
     // MARK: - Initializer
@@ -42,11 +43,17 @@ final class LocationManager: NSObject {
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: .UserStateChanged, object: nil)
+        timer?.invalidate()
     }
     
     // MARK: - Data
     private func updateLocation() {
-        //TODO: interval
+        if let lastUpdateTimestamp = lastUpdateTimestamp,
+           lastUpdateTimestamp + Constants.App.locationUpdateInterval >= Date().timeIntervalSince1970 {
+            return
+        }
+        
+        self.lastUpdateTimestamp = Date().timeIntervalSince1970
         
         let batteryLevel = Double(UIDevice.current.batteryLevel) * 100.0
         API.updateLocation(lat: location.latitude, lng: location.longitude, batteryLevel: batteryLevel, accuracy: 10.0) { result in
@@ -116,6 +123,7 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last?.coordinate else { return }
         self.location = newLocation
+        self.updateLocation()
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {

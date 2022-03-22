@@ -9,6 +9,7 @@ import UIKit
 
 final class HomeVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var refreshButton: UIButton!
     
     private var orderDataSource = OrderDataSource()
     private var noDataView: HomeNoDataView?
@@ -17,6 +18,7 @@ final class HomeVC: BaseVC {
     private let headerAnimation = CABasicAnimation(keyPath: "opacity")
     
     private var isNetworkRequestInProgress = false
+    private var lastOrderUpdateTimestamp: TimeInterval?
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -40,6 +42,11 @@ final class HomeVC: BaseVC {
         
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
+        if let lastOrderUpdateTimestamp = lastOrderUpdateTimestamp,
+           lastOrderUpdateTimestamp + Constants.App.orderUpdateInterval < Date().timeIntervalSince1970 {
+            getOrders()
         }
     }
     
@@ -76,11 +83,17 @@ final class HomeVC: BaseVC {
     
     // MARK: - Data
     func getOrders() {
+        if isNetworkRequestInProgress { return }
+        isNetworkRequestInProgress = true
+        
         prepareForLoading()
         
         OrderManager.shared.getOrders { result in
+            self.isNetworkRequestInProgress = false
+            
             switch result {
             case Result.success(_):
+                self.lastOrderUpdateTimestamp = Date().timeIntervalSince1970
                 self.orderDataSource.resetOrders()
                 self.resetAfterLoading()
                 self.tableView.reloadData()
@@ -132,6 +145,11 @@ final class HomeVC: BaseVC {
         }
     }
     
+    // MARK: - Actions
+    @IBAction func refreshTapped(_ sender: Any) {
+        getOrders()
+    }
+    
     // MARK: - Notifications
     @objc private func userStateChanged() {
         setupNoDataView()
@@ -171,6 +189,7 @@ extension HomeVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.backgroundView = orderDataSource.isBackgroundViewAvailable ? nil : noDataView
+        self.refreshButton.isHidden = !self.orderDataSource.isBackgroundViewAvailable
         return orderDataSource.tableView(numberOfRowsInSection: section)
     }
     
@@ -266,15 +285,13 @@ extension HomeVC: HeaderViewDelegate {
 extension HomeVC: NetworkRequestable {
     func prepareForLoading() {
         self.showLoading(isDark: false)
-        
-        self.headerView.isHidden = true
         self.tableView.isHidden = true
+        self.refreshButton.isHidden = true
     }
     
     func resetAfterLoading() {
         self.hideLoading()
-        
-        self.headerView.isHidden = false
         self.tableView.isHidden = false
+        self.refreshButton.isHidden = false
     }
 }

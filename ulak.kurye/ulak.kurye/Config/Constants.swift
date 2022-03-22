@@ -15,6 +15,7 @@ struct Constants {
         //TODO: Kurye başvuru adresi nedir?
         static let courierApplicationURL = "https://ulakapp.com/"
         static let locationUpdateInterval = 45.0
+        static let orderUpdateInterval = 60.0
     }
 
     struct API {

@@ -34,6 +34,18 @@
                                     <outlet property="delegate" destination="1cG-fb-psJ" id="9DO-lJ-bIk"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2t-GO-sF9">
+                                <rect key="frame" x="343" y="799" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="NNZ-hA-Ob1"/>
+                                    <constraint firstAttribute="height" constant="55" id="Znh-d6-1Ik"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ic-refresh"/>
+                                <connections>
+                                    <action selector="refreshTapped:" destination="1cG-fb-psJ" eventType="touchUpInside" id="7nx-kP-QVZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5NU-hJ-J3U"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -41,12 +53,15 @@
                             <constraint firstItem="5NU-hJ-J3U" firstAttribute="trailing" secondItem="36W-H1-J58" secondAttribute="trailing" id="0tL-6a-FUn"/>
                             <constraint firstItem="36W-H1-J58" firstAttribute="leading" secondItem="5NU-hJ-J3U" secondAttribute="leading" id="0uu-PU-D59"/>
                             <constraint firstItem="36W-H1-J58" firstAttribute="top" secondItem="5NU-hJ-J3U" secondAttribute="top" id="LjK-OT-GUg"/>
+                            <constraint firstItem="w2t-GO-sF9" firstAttribute="bottom" secondItem="5NU-hJ-J3U" secondAttribute="bottom" constant="-8" id="U4I-oP-eeo"/>
                             <constraint firstAttribute="bottom" secondItem="36W-H1-J58" secondAttribute="bottom" id="f10-x2-LvU"/>
+                            <constraint firstItem="5NU-hJ-J3U" firstAttribute="trailing" secondItem="w2t-GO-sF9" secondAttribute="trailing" constant="16" id="uoy-xx-YdE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ana Sayfa" id="UnH-hI-iVZ"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="refreshButton" destination="w2t-GO-sF9" id="Aos-MU-vAc"/>
                         <outlet property="tableView" destination="36W-H1-J58" id="hMT-4X-W5d"/>
                         <segue destination="xY0-xu-mZS" kind="show" identifier="OrderDetailVC" id="vIp-8N-PLI"/>
                         <segue destination="WhR-Nd-Ysc" kind="show" identifier="OrderPoolVC" id="gtY-rQ-MqM"/>
@@ -54,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngp-Y4-CxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780" y="153"/>
+            <point key="canvasLocation" x="779.71014492753625" y="152.67857142857142"/>
         </scene>
         <!--Order PoolVC-->
         <scene sceneID="94s-Ky-sic">
@@ -885,7 +900,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="P9w-v1-bRT"/>
+        <segue reference="vIp-8N-PLI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ic-address" width="18" height="18"/>
@@ -894,6 +909,7 @@
         <image name="ic-phone" width="20" height="24"/>
         <image name="ic-pin-orange" width="23" height="28"/>
         <image name="ic-pin-white" width="16" height="18"/>
+        <image name="ic-refresh" width="78" height="79"/>
         <image name="ic-time" width="16" height="16"/>
         <namedColor name="ulk-blue">
             <color red="0.42745098039215684" green="0.59999999999999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

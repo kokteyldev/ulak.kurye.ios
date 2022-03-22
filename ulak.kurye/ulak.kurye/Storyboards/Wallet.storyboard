@@ -111,6 +111,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="GKd-nb-Pcq" id="zAR-DG-fCJ"/>
+                        <outlet property="balanceContainerView" destination="PuK-m6-h5K" id="xGw-hz-wS2"/>
                         <outlet property="balanceLabel" destination="KFb-eB-PAt" id="3ww-j5-e9a"/>
                         <outlet property="segmentHeightCons" destination="5hB-y6-Qpg" id="fJ5-1T-HCl"/>
                         <outlet property="segmentTopCons" destination="qgv-H1-AAx" id="cQq-FL-ZiJ"/>
