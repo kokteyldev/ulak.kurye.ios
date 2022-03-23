@@ -14,8 +14,12 @@ final class SettingsVC: BaseTBLVC {
     @IBOutlet weak var feedbackCell: UITableViewCell!
     @IBOutlet weak var rateCell: UITableViewCell!
     @IBOutlet weak var logoutCell: UITableViewCell!
-    
     @IBOutlet weak var cardNumberLabel: UILabel!
+    
+    @IBOutlet weak var notificationSwitch: UISwitch!
+    @IBOutlet weak var poolNotificationSwitch: UISwitch!
+    @IBOutlet weak var notificationActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var poolNotificationActivityIndicator: UIActivityIndicatorView!
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -33,16 +37,23 @@ final class SettingsVC: BaseTBLVC {
         } else {
             cardNumberLabel.text = cardNumber
         }
+        
+        notificationSwitch.isOn = Session.shared.user?.isNotificationAllowed ?? true
+        poolNotificationSwitch.isOn = Session.shared.user?.isPoolNotificationAllowed ?? true
     }
     
     // MARK: - Data
     private func updateUlakCardNumber() {
+        prepareForLoading()
+        
         let qrInputVC = QRInputCodeVC.qrInputVC(title: "settings_ulak_card_popup_title".localized,
                                                 inputTitle: "settings_ulak_card_popup_input_title".localized,
                                                 qrCodeKey: nil)
         self.present(qrInputVC, animated: true, completion: nil)
         
         qrInputVC.dismissCallback = { code in
+            self.resetAfterLoading()
+            
             guard let code = code else { return }
             self.showLoading(message: "card_loading".localized, isFullscreen: true, isDark: true)
             
@@ -62,7 +73,66 @@ final class SettingsVC: BaseTBLVC {
         }
     }
     
+    private func updateUserSettings() {
+        API.updateUserSettings(isNotificationAllowed: self.notificationSwitch.isOn, isPoolNotificationAllowed: self.poolNotificationSwitch.isOn) { result in
+            self.resetAfterLoading()
+            
+            switch result {
+            case Result.success(_):
+                Session.shared.user?.isNotificationAllowed = self.notificationSwitch.isOn
+                Session.shared.user?.isPoolNotificationAllowed = self.poolNotificationSwitch.isOn
+                self.setupUI()
+                break
+            case Result.failure(let error):
+                self.view.showToast(.error, message: error.localizedDescription)
+                self.notificationSwitch.isOn = Session.shared.user?.isNotificationAllowed ?? true
+                self.poolNotificationSwitch.isOn = Session.shared.user?.isPoolNotificationAllowed ?? true
+                break
+            }
+        }
+    }
+    
+    // MARK: - Actions
+    @IBAction func notificationSwitchTapped(_ sender: Any) {
+        prepareForLoading()
+        notificationSwitch.isHidden = true
+        notificationActivityIndicator.startAnimating()
+        updateUserSettings()
+    }
+    
+    @IBAction func poolNotificationSwitchTapped(_ sender: Any) {
+        prepareForLoading()
+        poolNotificationSwitch.isHidden = true
+        poolNotificationActivityIndicator.startAnimating()
+        updateUserSettings()
+    }
+    
     // MARK: - UITableViewDelegate
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var title: String?
+        
+        if section == 0 {
+            title = "settings_account_settings".localized
+        } else if section == 1 {
+            title = "settings_notification_settings".localized
+        } else if section == 2 {
+            title = "settings_app_settings".localized
+        }
+        
+        if let title = title {
+            let headerView = TableSectionHeaderView(frame: .init(x: 0, y: 0, width: tableView.frame.size.width, height: 32.0))
+            headerView.titleLabel.text = title
+            headerView.titleLabel.textAlignment = .left
+            return headerView
+        }
+    
+        return nil
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 32.0
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)! as UITableViewCell
         
@@ -99,5 +169,19 @@ extension SettingsVC {
         } else {
             self.view.showToast(.error, message: "error_unknown".localized)
         }
+    }
+}
+
+extension SettingsVC: NetworkRequestable {
+    func prepareForLoading() {
+        disableView()
+    }
+    
+    func resetAfterLoading() {
+        enabledView()
+        notificationActivityIndicator.stopAnimating()
+        poolNotificationActivityIndicator.stopAnimating()
+        notificationSwitch.isHidden = false
+        poolNotificationSwitch.isHidden = false
     }
 }

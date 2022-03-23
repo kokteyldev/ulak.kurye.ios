@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aktif Siparişlerin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrX-QA-giM">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
+                    <rect key="frame" x="20" y="0.0" width="374" height="71"/>
                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                     <color key="textColor" name="ulk-input-title"/>
                     <nil key="highlightedColor"/>
@@ -34,10 +34,10 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" name="ulk-input-back"/>
             <constraints>
-                <constraint firstItem="rrX-QA-giM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3Wf-Dg-Qh2"/>
+                <constraint firstItem="rrX-QA-giM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="3Wf-Dg-Qh2"/>
                 <constraint firstItem="rrX-QA-giM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6wC-HQ-GRR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="rrX-QA-giM" secondAttribute="bottom" id="giA-rQ-WBt"/>
-                <constraint firstAttribute="trailing" secondItem="rrX-QA-giM" secondAttribute="trailing" id="qtg-70-XAo"/>
+                <constraint firstAttribute="trailing" secondItem="rrX-QA-giM" secondAttribute="trailing" constant="20" id="qtg-70-XAo"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="131.8840579710145" y="-150.33482142857142"/>

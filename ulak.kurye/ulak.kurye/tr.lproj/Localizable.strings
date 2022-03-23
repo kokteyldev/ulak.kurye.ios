@@ -111,6 +111,11 @@
 "settings_ulak_card_popup_input_title" = "Kart Numarası";
 "settings_logout" = "Çıkış Yap";
 "settings_logout_alert_title" = "Çıkış yapmak istediğine emin misin?";
+"settings_account_settings" = "HESAP AYARLARI";
+"settings_notification_settings" = "BİLDİRİM AYARLARI";
+"settings_app_settings" = "UYGULAMA AYARLARI";
+"settings_reminder_settings" = "Uyarı ve Hatırlatma Bildirimleri";
+"settings_pool_reminders" = "Havuz Bildirimleri";
 
 // Wallet
 "wallet_title" = "Cüzdan";
