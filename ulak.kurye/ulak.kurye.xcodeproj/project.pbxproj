@@ -98,6 +98,9 @@
 		9E8D66B727DCBA0500C1694A /* OrderPoolVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D66B627DCBA0500C1694A /* OrderPoolVC.swift */; };
 		9E8D66B927DCBBB100C1694A /* BaseTBLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D66B827DCBBB100C1694A /* BaseTBLVC.swift */; };
 		9EA1AA3E27EB377200BF018A /* UIColor+Ulak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA1AA3D27EB377200BF018A /* UIColor+Ulak.swift */; };
+		9EA1AA4627EB4E4E00BF018A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA1AA4527EB4E4E00BF018A /* NotificationService.swift */; };
+		9EA1AA4A27EB4E4E00BF018A /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9EA1AA4327EB4E4E00BF018A /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9EA1AA5327EB4F0700BF018A /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 9EA1AA5227EB4F0700BF018A /* OneSignal */; };
 		9EA443C427CCF4E800C4A47B /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA443C327CCF4E800C4A47B /* TableSectionHeaderView.swift */; };
 		9EA443C627CCF4EF00C4A47B /* TableSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EA443C527CCF4EF00C4A47B /* TableSectionHeaderView.xib */; };
 		9EA443C927CD1A4400C4A47B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA443C827CD1A4400C4A47B /* Order.swift */; };
@@ -149,7 +152,28 @@
 			remoteGlobalIDString = 9E3E2CFF27BE8F1600A17025;
 			remoteInfo = ulak.kurye;
 		};
+		9EA1AA4827EB4E4E00BF018A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E3E2CF827BE8F1600A17025 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9EA1AA4227EB4E4E00BF018A;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9EA1AA4B27EB4E4E00BF018A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9EA1AA4A27EB4E4E00BF018A /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		01B41E5C1725DFC21B05CE49 /* Pods-ulak.kurye-ulak.kuryeUITests.dev release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye-ulak.kuryeUITests.dev release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests.dev release.xcconfig"; sourceTree = "<group>"; };
@@ -250,6 +274,10 @@
 		9E8D66B627DCBA0500C1694A /* OrderPoolVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPoolVC.swift; sourceTree = "<group>"; };
 		9E8D66B827DCBBB100C1694A /* BaseTBLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTBLVC.swift; sourceTree = "<group>"; };
 		9EA1AA3D27EB377200BF018A /* UIColor+Ulak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ulak.swift"; sourceTree = "<group>"; };
+		9EA1AA4327EB4E4E00BF018A /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EA1AA4527EB4E4E00BF018A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		9EA1AA4727EB4E4E00BF018A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EA1AA5427EB4F8F00BF018A /* ulak.kurye.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ulak.kurye.entitlements; sourceTree = "<group>"; };
 		9EA443C327CCF4E800C4A47B /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
 		9EA443C527CCF4EF00C4A47B /* TableSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableSectionHeaderView.xib; sourceTree = "<group>"; };
 		9EA443C827CD1A4400C4A47B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -296,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E2CAC3127E880D900106FD1 /* PhoneNumberKit in Frameworks */,
+				9EA1AA5327EB4F0700BF018A /* OneSignal in Frameworks */,
 				9ECAAA9327C3BD4E00F583C4 /* Alamofire in Frameworks */,
 				9E3E2D3727BE927200A17025 /* FirebaseAnalytics in Frameworks */,
 				9ECAAACB27C3CC9200F583C4 /* KokteylUtils in Frameworks */,
@@ -318,6 +347,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3B5AD88CC0BE645CA10B9A6 /* Pods_ulak_kurye_ulak_kuryeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EA1AA4027EB4E4E00BF018A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +559,7 @@
 				9E3E2D0227BE8F1600A17025 /* ulak.kurye */,
 				9E3E2D1927BE8F1700A17025 /* ulak.kuryeTests */,
 				9E3E2D2327BE8F1700A17025 /* ulak.kuryeUITests */,
+				9EA1AA4427EB4E4E00BF018A /* OneSignalNotificationServiceExtension */,
 				9E3E2D0127BE8F1600A17025 /* Products */,
 				5D03C40658116864066EBA75 /* Pods */,
 				28A504BA3C7088E3B206D0B3 /* Frameworks */,
@@ -535,6 +572,7 @@
 				9E3E2D0027BE8F1600A17025 /* ulak.kurye.app */,
 				9E3E2D1627BE8F1700A17025 /* ulak.kuryeTests.xctest */,
 				9E3E2D2027BE8F1700A17025 /* ulak.kuryeUITests.xctest */,
+				9EA1AA4327EB4E4E00BF018A /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -542,6 +580,7 @@
 		9E3E2D0227BE8F1600A17025 /* ulak.kurye */ = {
 			isa = PBXGroup;
 			children = (
+				9EA1AA5427EB4F8F00BF018A /* ulak.kurye.entitlements */,
 				9E3E2D0327BE8F1600A17025 /* AppDelegate.swift */,
 				9ECAAA9427C3C40100F583C4 /* API */,
 				9ECAAA7227C393B200F583C4 /* Assets */,
@@ -612,6 +651,15 @@
 				9E896AB527D64B680041FFBD /* NetworkRequestable.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		9EA1AA4427EB4E4E00BF018A /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				9EA1AA4527EB4E4E00BF018A /* NotificationService.swift */,
+				9EA1AA4727EB4E4E00BF018A /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		9EA443C227CCF4C000C4A47B /* SectionHeader */ = {
@@ -774,10 +822,12 @@
 				9E3E2CFE27BE8F1600A17025 /* Resources */,
 				9E3E2D3C27BE92F800A17025 /* ShellScript */,
 				4907CF76E1ED0AECDE8FA714 /* [CP] Copy Pods Resources */,
+				9EA1AA4B27EB4E4E00BF018A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9EA1AA4927EB4E4E00BF018A /* PBXTargetDependency */,
 			);
 			name = ulak.kurye;
 			packageProductDependencies = (
@@ -787,6 +837,7 @@
 				9ECAAA9227C3BD4E00F583C4 /* Alamofire */,
 				9ECAAACA27C3CC9200F583C4 /* KokteylUtils */,
 				9E2CAC3027E880D900106FD1 /* PhoneNumberKit */,
+				9EA1AA5227EB4F0700BF018A /* OneSignal */,
 			);
 			productName = ulak.kurye;
 			productReference = 9E3E2D0027BE8F1600A17025 /* ulak.kurye.app */;
@@ -831,6 +882,23 @@
 			productReference = 9E3E2D2027BE8F1700A17025 /* ulak.kuryeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		9EA1AA4227EB4E4E00BF018A /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9EA1AA5027EB4E4E00BF018A /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				9EA1AA3F27EB4E4E00BF018A /* Sources */,
+				9EA1AA4027EB4E4E00BF018A /* Frameworks */,
+				9EA1AA4127EB4E4E00BF018A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 9EA1AA4327EB4E4E00BF018A /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -838,7 +906,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					9E3E2CFF27BE8F1600A17025 = {
@@ -851,6 +919,9 @@
 					9E3E2D1F27BE8F1700A17025 = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 9E3E2CFF27BE8F1600A17025;
+					};
+					9EA1AA4227EB4E4E00BF018A = {
+						CreatedOnToolsVersion = 13.3;
 					};
 				};
 			};
@@ -869,6 +940,7 @@
 				9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift" */,
 				9E2CAC2F27E880D800106FD1 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
+				9EA1AA5127EB4F0600BF018A /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
 			);
 			productRefGroup = 9E3E2D0127BE8F1600A17025 /* Products */;
 			projectDirPath = "";
@@ -877,6 +949,7 @@
 				9E3E2CFF27BE8F1600A17025 /* ulak.kurye */,
 				9E3E2D1527BE8F1700A17025 /* ulak.kuryeTests */,
 				9E3E2D1F27BE8F1700A17025 /* ulak.kuryeUITests */,
+				9EA1AA4227EB4E4E00BF018A /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -931,6 +1004,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9E3E2D1E27BE8F1700A17025 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EA1AA4127EB4E4E00BF018A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1165,6 +1245,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9EA1AA3F27EB4E4E00BF018A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EA1AA4627EB4E4E00BF018A /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1177,6 +1265,11 @@
 			isa = PBXTargetDependency;
 			target = 9E3E2CFF27BE8F1600A17025 /* ulak.kurye */;
 			targetProxy = 9E3E2D2127BE8F1700A17025 /* PBXContainerItemProxy */;
+		};
+		9EA1AA4927EB4E4E00BF018A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9EA1AA4227EB4E4E00BF018A /* OneSignalNotificationServiceExtension */;
+			targetProxy = 9EA1AA4827EB4E4E00BF018A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1333,8 +1426,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B99ABCBB43B1B85B66CAA4AA /* Pods-ulak.kurye.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ulak.kurye/ulak.kurye.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1371,8 +1466,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 998B7EE595C176694EAB6DFA /* Pods-ulak.kurye.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ulak.kurye/ulak.kurye.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4W45FP9GB6;
@@ -1484,6 +1581,110 @@
 			};
 			name = Release;
 		};
+		9EA1AA4C27EB4E4E00BF018A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4W45FP9GB6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulak.kurye.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9EA1AA4D27EB4E4E00BF018A /* Dev Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4W45FP9GB6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulak.kurye.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Dev Debug";
+		};
+		9EA1AA4E27EB4E4E00BF018A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4W45FP9GB6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulak.kurye.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9EA1AA4F27EB4E4E00BF018A /* Dev Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4W45FP9GB6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulak.kurye.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Dev Release";
+		};
 		9ECAAA8327C3B76E00F583C4 /* Dev Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9ECAAA7E27C395F600F583C4 /* Dev.xcconfig */;
@@ -1551,8 +1752,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E87250874FE5200880938E3 /* Pods-ulak.kurye.dev debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ulak.kurye/ulak.kurye.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1686,8 +1889,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F70742960D8C2DF30F38CC2A /* Pods-ulak.kurye.dev release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ulak.kurye/ulak.kurye.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4W45FP9GB6;
@@ -1806,6 +2011,17 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		9EA1AA5027EB4E4E00BF018A /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EA1AA4C27EB4E4E00BF018A /* Debug */,
+				9EA1AA4D27EB4E4E00BF018A /* Dev Debug */,
+				9EA1AA4E27EB4E4E00BF018A /* Release */,
+				9EA1AA4F27EB4E4E00BF018A /* Dev Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1823,6 +2039,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 8.0.0;
+			};
+		};
+		9EA1AA5127EB4F0600BF018A /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.10.0;
 			};
 		};
 		9ECAAA9127C3BD4E00F583C4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
@@ -1863,6 +2087,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9E3E2D3527BE927200A17025 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
+		};
+		9EA1AA5227EB4F0700BF018A /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EA1AA5127EB4F0600BF018A /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignal;
 		};
 		9ECAAA9227C3BD4E00F583C4 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

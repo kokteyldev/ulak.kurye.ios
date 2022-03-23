@@ -7,6 +7,7 @@
 
 import UIKit
 import UserNotifications
+import OneSignal
 
 final class NotificationManager: NSObject {
     public static let shared = NotificationManager()

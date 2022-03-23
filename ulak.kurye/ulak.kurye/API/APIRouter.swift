@@ -16,6 +16,8 @@ enum APIRouter {
     case updateProfile(name: String?, surname: String?)
     case updateCardNumber(cardNumber: String)
     case updateLocation(lat: Double, lng: Double, batteryLevel: Double, accuracy: Double)
+    case updateNotificationId(oneSignalId: String?)
+    case updateUserSettings(isNotificationAllowed: Bool, isPoolNotificationAllowed: Bool)
     case getOrder(orderUUID: String)
     case getOrders(status: String)
     case getPoolOrders(latitude: Double, longtitude: Double)
@@ -50,6 +52,8 @@ enum APIRouter {
              .updateProfile,
              .updateCardNumber,
              .updateLocation,
+             .updateNotificationId,
+             .updateUserSettings,
              .transferBalance,
              .sendFeedback:
             return .post
@@ -72,6 +76,10 @@ enum APIRouter {
             return "/ininal/update-card-number"
         case .updateLocation:
             return "/user/update-location"
+        case .updateNotificationId:
+            return "/user/update-notification-settings"
+        case .updateUserSettings:
+            return "/user/update-notification-settings"
         case .getOrder:
             return "/courier/order-search"
         case .getOrders:
@@ -150,6 +158,15 @@ enum APIRouter {
                 "battery_rate": batteryLevel,
                 "accuracy": accuracy
             ]
+        case .updateNotificationId(let oneSignalId):
+            return [
+                "onesignal_id": oneSignalId
+            ]
+        case .updateUserSettings(let isNotificationAllowed, let isPoolNotificationAllowed):
+            return [
+                "allow_notification": isNotificationAllowed,
+                "allow_pool_notification": isPoolNotificationAllowed
+            ]
         case .transferBalance(let walletUUID, let amount):
             return [
                 "wallet_uuid": walletUUID,
@@ -168,6 +185,8 @@ enum APIRouter {
              .updateProfile,
              .updateCardNumber,
              .updateLocation,
+             .updateNotificationId,
+             .updateUserSettings,
              .getOrder,
              .getOrders,
              .getPoolOrders,

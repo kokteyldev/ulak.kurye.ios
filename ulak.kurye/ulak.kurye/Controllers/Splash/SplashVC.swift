@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OneSignal
 
 final class SplashVC: BaseVC {
     @IBOutlet weak var loadingView: UIView!
@@ -76,6 +77,12 @@ final class SplashVC: BaseVC {
                 Session.shared.user = user
                 LocationManager.shared.start()
                 MainTabbarTC.presentAsRoot()
+                
+                OneSignal.setExternalUserId("\(user.id)", withSuccess: { results in
+                    Log.d("Onesignal id updated: \(results!.description)")
+                }, withFailure: {error in
+                    Log.e("Set external user id done with error: " + error.debugDescription)
+                })
             case .failure(_):
                 Session.shared.logout()
                 PreLoginVC.presentAsRoot()

@@ -8,6 +8,7 @@
 import Foundation
 
 struct User: Codable {
+    var id: Int
     var name: String?
     var surname: String?
     var email: String?
@@ -16,8 +17,12 @@ struct User: Codable {
     var maxOrderCount: Int
     var cardNumber: String?
     var wallets: [BaseWallet] = []
+    var oneSignalId: String?
+    var isNotificationAllowed: Bool = true
+    var isPoolNotificationAllowed: Bool = true
     
     enum CodingKeys: String, CodingKey {
+        case id = "id"
         case name = "name"
         case surname = "surname"
         case email = "email"
@@ -26,10 +31,15 @@ struct User: Codable {
         case maxOrderCount = "total_task_quotas"
         case cardNumber = "ininal_card_number"
         case wallets = "wallets"
+        case oneSignalId = "onesignal_id"
+        case isNotificationAllowed = "allow_notification"
+        case isPoolNotificationAllowed = "allow_pool_notification"
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        id = try container.decode (Int.self, forKey: .id)
         
         if container.contains(.name) {
             self.name = try? container.decode(String.self, forKey: .name)
@@ -56,6 +66,16 @@ struct User: Codable {
         
         if container.contains(.wallets) {
             self.wallets = try container.decode([BaseWallet].self, forKey: .wallets)
+        }
+        
+        self.oneSignalId = try? container.decode(String.self, forKey: .oneSignalId)
+        
+        if container.contains(.isNotificationAllowed) {
+            self.isNotificationAllowed = try container.decode(Bool.self, forKey: .isNotificationAllowed)
+        }
+        
+        if container.contains(.isPoolNotificationAllowed) {
+            self.isPoolNotificationAllowed = try container.decode(Bool.self, forKey: .isPoolNotificationAllowed)
         }
     }
 }

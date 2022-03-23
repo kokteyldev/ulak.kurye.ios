@@ -117,6 +117,32 @@ struct API {
         }
     }
     
+    static func updateNotificationId(oneSignalId: String?, completion:@escaping (Result<Bool, Error>) -> Void) {
+        performRequest(route: APIRouter.updateNotificationId(oneSignalId: oneSignalId)) { (result:(Result<Response<Bool?>, Error>)) in
+            switch result {
+            case Result.success(_):
+                completion(.success(true))
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
+    static func updateUserSettings(isNotificationAllowed: Bool, isPoolNotificationAllowed: Bool, completion:@escaping (Result<Bool, Error>) -> Void) {
+        performRequest(route: APIRouter.updateUserSettings(isNotificationAllowed: isNotificationAllowed, isPoolNotificationAllowed: isPoolNotificationAllowed)) { (result:(Result<Response<Bool?>, Error>)) in
+            switch result {
+            case Result.success(_):
+                completion(.success(true))
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
     // MARK: - Orders
     static func getOrder(orderUUID: String, completion:@escaping (Result<Order, Error>) -> Void) {
         performRequest(route: APIRouter.getOrder(orderUUID: orderUUID)) { (result:(Result<Response<[Order]?>, Error>)) in

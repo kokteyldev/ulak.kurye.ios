@@ -51,6 +51,13 @@ final class Session {
     var user: User? {
         didSet {
             checkUserState()
+            updateOnesignalId()
+        }
+    }
+    
+    var oneSignalId: String? {
+        didSet {
+            updateOnesignalId()
         }
     }
     
@@ -102,6 +109,24 @@ final class Session {
             if self.userState != newUserState {
                 self.userState = newUserState
                 NotificationCenter.default.post(name: NSNotification.Name.UserStateChanged, object: nil)
+            }
+        }
+    }
+    
+    private func updateOnesignalId() {
+        guard let user = user else { return }
+        if (user.oneSignalId == oneSignalId) { return }
+
+        
+        API.updateNotificationId(oneSignalId: oneSignalId) { result in
+            switch result {
+            case Result.success(_):
+                self.user?.oneSignalId = self.oneSignalId
+                Log.d("OnesignalId updated: \(self.oneSignalId)")
+                break
+            case Result.failure(let error):
+                Log.e("OnesignalId update error: \(error.localizedDescription)")
+                break
             }
         }
     }
