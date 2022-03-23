@@ -21,12 +21,21 @@ final class WalletsVC: BaseVC {
     private var userWallets: [BaseWallet] = []
     private var walletVM: WalletVM?
     private lazy var noDataView: UIView = {
-        let view = NoDataView(title: "wallet_no_wallet".localized,
+        let title = userWallets.count == 0 ? "wallet_no_wallet".localized : "wallet_no_transaction".localized
+        let view = NoDataView(title: title,
                               message: "",
                               image: .init(named: "ic-wallet")!)
         view.frame = tableView.bounds
         return view
     }()
+    
+    private var selectedSegmentIndex: Int {
+        if walletSegment.selectedSegmentIndex >= 0 {
+            return walletSegment.selectedSegmentIndex
+        }
+        
+        return 0
+    }
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -73,7 +82,12 @@ final class WalletsVC: BaseVC {
         }
         
         if userWallets.count == 0 {
-            //TODO: Hata göster ve retry butonu koy
+            segmentTopCons.constant = 0
+            segmentHeightCons.constant = 0
+            walletSegment.isHidden = true
+            balanceContainerView.alpha = transferContainerView.alpha
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
             return
         }
         
@@ -101,7 +115,7 @@ final class WalletsVC: BaseVC {
     
     // MARK: - Data
     func getWalletDetail() {
-        if userWallets.count < walletSegment.selectedSegmentIndex { return }
+        if userWallets.count == 0 { return }
         let userWallet = userWallets[walletSegment.selectedSegmentIndex]
         
         prepareForLoading()

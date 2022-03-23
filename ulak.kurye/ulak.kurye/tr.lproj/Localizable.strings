@@ -63,6 +63,7 @@
 "order_total_price" = "Tahmini Kazanç";
 "order_service_info" = "Servis Bilgileri";
 "order_task_code" = "Görev Kodu";
+"order_distance" = "Mesafe";
 "order_not_working_while_have_order_error" = "Aktif sipariş varken bu özellik kullanılamaz!";
 "order_qr_order_code_title" = "Teslimat Kodu Tarama";
 "order_qr_order_code_input_title" = "Teslimat Kodu";
@@ -81,6 +82,7 @@
 "pool_page_title" = "Havuz";
 "pool_task_take_alert_title" = "Görevi almak istiyor musun?";
 "pool_total_order" = "Toplam Sipariş";
+"pool_no_order" = "Havuzda sipariş bulunamadı.";
 
 // Order Action
 "picking_security_code_title" = "Teslimat kodunu girin.";
@@ -111,7 +113,8 @@
 "wallet_title" = "Cüzdan";
 "wallet_balance" = "Bakiye";
 "wallet_transfer_balance" = "Bakiye Aktar";
-"wallet_no_wallet" = "İşlem bulunamadı.";
+"wallet_no_wallet" = "Cüzdan bulunamadı.";
+"wallet_no_transaction" = "İşlem bulunamadı.";
 
 // Profile
 "profile_mising_info" = "Girdiğiniz bilgileri kontrol edin!";

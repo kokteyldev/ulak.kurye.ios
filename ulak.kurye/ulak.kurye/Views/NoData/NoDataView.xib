@@ -35,13 +35,13 @@
                     <color key="tintColor" name="ulk-orange"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kayıtlı Adres Bulunmamaktadır" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krY-P6-3ft">
-                    <rect key="frame" x="32" y="275" width="350" height="26"/>
+                    <rect key="frame" x="32" y="275" width="350" height="62"/>
                     <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="22"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henüz kayıtlı adresiniz bulunmamaktadır. Kurye çağrısı yapmadan önce yeni bir adres eklemelisiniz." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGN-fw-xfO">
-                    <rect key="frame" x="32" y="325" width="350" height="33"/>
+                    <rect key="frame" x="32" y="361" width="350" height="59"/>
                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                     <color key="textColor" name="ulk-subtitle"/>
                     <nil key="highlightedColor"/>

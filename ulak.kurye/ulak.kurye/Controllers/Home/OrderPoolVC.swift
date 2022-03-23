@@ -12,6 +12,14 @@ final class OrderPoolVC: BaseTBLVC {
     private var headerView: TableSectionHeaderView?
     private var activeOrderCount = 0
     
+    private lazy var noDataView: UIView = {
+        let view = NoDataView(title: "pool_no_order".localized,
+                              message: "",
+                              image: .init(named: "ic-package")!)
+        view.frame = tableView.bounds
+        return view
+    }()
+    
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,7 +136,7 @@ final class OrderPoolVC: BaseTBLVC {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //TODO: noDataview ekle
+        tableView.backgroundView = orderVMs.count > 0 ? nil : noDataView
         return orderVMs.count
     }
 
@@ -140,7 +148,7 @@ final class OrderPoolVC: BaseTBLVC {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return headerView
+        return orderVMs.count > 0 ? headerView : nil
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

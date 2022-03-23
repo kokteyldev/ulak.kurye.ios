@@ -84,7 +84,7 @@ class OrderVM {
             }
         }
         
-        if let imageURL = order.customer?.image {
+        if let imageURL = order.customer?.image, imageURL.length > 0 {
             var imageURLString = imageURL
             
             if imageURLString.contains("http") == false {

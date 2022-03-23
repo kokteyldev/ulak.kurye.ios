@@ -99,9 +99,19 @@ final class OrderManager {
     // MARK: - Util
     func updateOrder(order: Order) {
         if let row = activeOrders.firstIndex(where: {$0.uuid == order.uuid}) {
-            activeOrders[row] = order
+            if activeOrders[row].status == order.status {
+                activeOrders[row] = order
+            } else {
+                activeOrders.remove(at: row)
+                updateOrder(order: order)
+            }
         } else if let row = pastOrders.firstIndex(where: {$0.uuid == order.uuid}) {
-            pastOrders[row] = order
+            if pastOrders[row].status == order.status {
+                pastOrders[row] = order
+            } else {
+                pastOrders.remove(at: row)
+                updateOrder(order: order)
+            }
         } else {
             if order.status == .running {
                 activeOrders.insert(order, at: 0)
