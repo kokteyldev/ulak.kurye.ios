@@ -197,6 +197,16 @@ final class OrderActionsView: UIView {
 
         completion(nil)
     }
+    
+    // MARK: - Util
+    private func getConsentForAction(_ action: OrderAction) {
+        let alert = UIAlertController(title: action.consentMessage, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "yes".localized, style: .default, handler: { alertAction in
+            self.handleSelectedAction(action)
+        }))
+        alert.addAction(UIAlertAction(title: "no".localized, style: .cancel, handler: { action in }))
+        UIApplication.topViewController()?.present(alert, animated: true)
+    }
 }
 
 extension OrderActionsView: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -215,7 +225,13 @@ extension OrderActionsView: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        handleSelectedAction(actions[indexPath.row])
+        let action = actions[indexPath.row]
+        
+        if action.isConsentRequired {
+            getConsentForAction(action)
+        } else {
+            handleSelectedAction(actions[indexPath.row])
+        }
     }
 }
 

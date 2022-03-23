@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import KokteylUtils
 
 final class OrderActionCVC: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var containerView: KKUIView!
     
     // MARK: - View Lifecycle
     override func awakeFromNib() {
@@ -27,6 +29,7 @@ final class OrderActionCVC: UICollectionViewCell {
     // MARK: - Data
     func setAction(_ action: OrderAction) {
         titleLabel.text = action.title
-        //TODO: change background and textColor
+        containerView.backgroundColor = UIColor.init(hex: action.color) ?? .init(named: "ulk-red")!
+        titleLabel.textColor = UIColor.init(hex: action.textColor) ?? .white
     }
 }

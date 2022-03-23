@@ -97,6 +97,7 @@
 		9E896ABA27D65FFD0041FFBD /* OrderDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E896AB927D65FFD0041FFBD /* OrderDetailVM.swift */; };
 		9E8D66B727DCBA0500C1694A /* OrderPoolVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D66B627DCBA0500C1694A /* OrderPoolVC.swift */; };
 		9E8D66B927DCBBB100C1694A /* BaseTBLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D66B827DCBBB100C1694A /* BaseTBLVC.swift */; };
+		9EA1AA3E27EB377200BF018A /* UIColor+Ulak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA1AA3D27EB377200BF018A /* UIColor+Ulak.swift */; };
 		9EA443C427CCF4E800C4A47B /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA443C327CCF4E800C4A47B /* TableSectionHeaderView.swift */; };
 		9EA443C627CCF4EF00C4A47B /* TableSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EA443C527CCF4EF00C4A47B /* TableSectionHeaderView.xib */; };
 		9EA443C927CD1A4400C4A47B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA443C827CD1A4400C4A47B /* Order.swift */; };
@@ -248,6 +249,7 @@
 		9E896AB927D65FFD0041FFBD /* OrderDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVM.swift; sourceTree = "<group>"; };
 		9E8D66B627DCBA0500C1694A /* OrderPoolVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPoolVC.swift; sourceTree = "<group>"; };
 		9E8D66B827DCBBB100C1694A /* BaseTBLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTBLVC.swift; sourceTree = "<group>"; };
+		9EA1AA3D27EB377200BF018A /* UIColor+Ulak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ulak.swift"; sourceTree = "<group>"; };
 		9EA443C327CCF4E800C4A47B /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
 		9EA443C527CCF4EF00C4A47B /* TableSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableSectionHeaderView.xib; sourceTree = "<group>"; };
 		9EA443C827CD1A4400C4A47B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -599,6 +601,7 @@
 				9EE8C01A27D78E600050F37D /* UIStackView+KKUtils.swift */,
 				9E5BB61B27E3656200B6C0A0 /* KKUICollectionView.swift */,
 				9E2CAC3627E8A8DE00106FD1 /* String+Ulak.swift */,
+				9EA1AA3D27EB377200BF018A /* UIColor+Ulak.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1105,6 +1108,7 @@
 				9E246A7A27DF22FB00F10D77 /* Agreement.swift in Sources */,
 				9ECAAAE027C3DB0D00F583C4 /* LoadingView.swift in Sources */,
 				9ECAAAD327C3D07600F583C4 /* CustomError.swift in Sources */,
+				9EA1AA3E27EB377200BF018A /* UIColor+Ulak.swift in Sources */,
 				9EE8C01827D780950050F37D /* BreakpointTVC.swift in Sources */,
 				9ECAAA9927C3C41900F583C4 /* API.swift in Sources */,
 				9E2CAC3327E8995500106FD1 /* PhoneCodeVC.swift in Sources */,

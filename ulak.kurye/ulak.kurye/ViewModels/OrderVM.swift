@@ -21,6 +21,7 @@ class OrderVM {
     var priceTitle: String?
     var price: String?
     var serviceTitle: String?
+    var estimatedDistance: String
     var alpha = 1.0
 
     // MARK: Init
@@ -111,6 +112,11 @@ class OrderVM {
         }
         
         serviceTitle = order.service.title
+        
+        var distance: Double = (order.estimatedDistance ?? 0) / 1000
+        distance = Double(round(10 * distance) / 10)
+        estimatedDistance = "\(distance) km"
+        
         alpha = (order.status != .closed) ? 1.0 : 0.4
     }
 }

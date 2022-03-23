@@ -12,6 +12,13 @@ class NoDataView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var isLoading: Bool = false {
+        didSet {
+            setupUI()
+        }
+    }
     
     // MARK: - View Lifecycle
     convenience init(title: String, message: String, image: UIImage) {
@@ -33,6 +40,20 @@ class NoDataView: UIView {
     
     private func commonInit() {
         loadAndAttachView()
+    }
+    
+    // MARK: - Setup
+    func setupUI() {
+        self.titleLabel.isHidden = isLoading
+        self.messageLabel.isHidden = isLoading
+        self.imageView.isHidden = isLoading
+        self.activityIndicator.isHidden = !isLoading
+        
+        if isLoading {
+            self.activityIndicator.startAnimating()
+        } else {
+            self.activityIndicator.stopAnimating()
+        }
     }
 
 }

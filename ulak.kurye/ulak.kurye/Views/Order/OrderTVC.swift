@@ -22,6 +22,7 @@ final class OrderTVC: UITableViewCell {
     @IBOutlet weak var serviceLabel: UILabel!
     @IBOutlet weak var addButton: KKLoadingButton!
     @IBOutlet weak var detailArrowImage: UIImageView!
+    @IBOutlet weak var distanceLabel: UILabel!
     
     weak var delegate: OrderTVCDelegate?
     private var order: Order?
@@ -48,6 +49,7 @@ final class OrderTVC: UITableViewCell {
         self.priceTitleLabel.text = orderVM.priceTitle
         self.priceLabel.text = orderVM.price
         self.serviceLabel.text = orderVM.serviceTitle
+        self.distanceLabel.text = orderVM.estimatedDistance
         
         self.iconImageView.alpha = orderVM.alpha
         self.pickAddressLabel.alpha = orderVM.alpha
@@ -56,8 +58,8 @@ final class OrderTVC: UITableViewCell {
         self.deliverDetailLabel.alpha = orderVM.alpha
         self.priceLabel.alpha = orderVM.alpha
         self.serviceLabel.alpha = orderVM.alpha
+        self.distanceLabel.alpha = orderVM.alpha
         self.backgroundColor = orderVM.backgroundColor
-        
         self.detailArrowImage.isHidden = orderVM.isPoolOrder
         self.addButton.isHidden = !orderVM.isPoolOrder
     }

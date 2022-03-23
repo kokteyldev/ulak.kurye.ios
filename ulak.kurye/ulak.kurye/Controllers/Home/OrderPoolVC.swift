@@ -12,7 +12,7 @@ final class OrderPoolVC: BaseTBLVC {
     private var headerView: TableSectionHeaderView?
     private var activeOrderCount = 0
     
-    private lazy var noDataView: UIView = {
+    private lazy var noDataView: NoDataView = {
         let view = NoDataView(title: "pool_no_order".localized,
                               message: "",
                               image: .init(named: "ic-package")!)
@@ -179,11 +179,11 @@ final class OrderPoolVC: BaseTBLVC {
 extension OrderPoolVC: OrderTVCDelegate {
     func orderTVCAddTapped(_ orderTVC: OrderTVC, order: Order) {
         //TODO: tasarımdaki gibi bi alert yap.
-        let alert = UIAlertController(title: "pool_task_take_alert_title".localized, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "action_take_consent_message".localized, message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "yes".localized, style: .default, handler: { action in
             self.getOrderFromPool(orderTVC, order: order)
         }))
-        alert.addAction(UIAlertAction(title: "cancel".localized, style: .cancel, handler: { action in
+        alert.addAction(UIAlertAction(title: "no".localized, style: .cancel, handler: { action in
             orderTVC.stopLoading()
         }))
         self.present(alert, animated: true)
@@ -194,10 +194,14 @@ extension OrderPoolVC: OrderTVCDelegate {
 // MARK: - NetworkRequestable
 extension OrderPoolVC: NetworkRequestable {
     func prepareForLoading() {
+        noDataView.isLoading = true
+        self.tableView.backgroundView = noDataView
         self.showLoading(isDark: false)
     }
     
     func resetAfterLoading() {
+        noDataView.isLoading = false
+        self.tableView.backgroundView = nil
         self.hideLoading()
     }
 }

@@ -76,7 +76,7 @@ final class OrderDataSource {
         
         if section == 0 {
             let headerView = TableSectionHeaderView(frame: .init(x: 0, y: 0, width: tableView.frame.size.width, height: 32.0))
-            headerView.titleLabel.text = "home_active_orders".localized
+            headerView.titleLabel.text = "home_active_orders".localized + " \(OrderManager.shared.activeOrderCount) / \(Session.shared.maxOrderCount)"
             return headerView
         }
         

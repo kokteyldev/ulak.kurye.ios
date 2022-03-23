@@ -23,6 +23,11 @@ class OrderDetailVC: BaseVC {
     @IBOutlet weak var packageContentLabel: UILabel!
     @IBOutlet weak var courierNoteLabel: UILabel!
     
+    @IBOutlet weak var pickNameContainerView: UIView!
+    @IBOutlet weak var deliverNameContainerView: UIView!
+    @IBOutlet weak var ownerTitleContainerView: UIView!
+    @IBOutlet weak var ownerAddressContainerView: UIView!
+    
     @IBOutlet weak var pickMapButton: UIButton!
     @IBOutlet weak var deliverMapButton: UIButton!
     
@@ -147,6 +152,11 @@ class OrderDetailVC: BaseVC {
         pickCallButton.alpha = viewModel.mapButtonsAlpha
         deliverCallButton.alpha = viewModel.mapButtonsAlpha
         ownerCallButton.alpha = viewModel.mapButtonsAlpha
+        
+        pickNameContainerView.isHidden = viewModel.isDetailsHidden
+        deliverNameContainerView.isHidden = viewModel.isDetailsHidden
+        ownerTitleContainerView.isHidden = viewModel.isDetailsHidden
+        ownerAddressContainerView.isHidden = viewModel.isDetailsHidden
         
         packageContentTitleContainer.isHidden = viewModel.isPackageDetailHidden
         packageContentContainer.isHidden = viewModel.isPackageDetailHidden

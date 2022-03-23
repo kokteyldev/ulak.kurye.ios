@@ -9,6 +9,7 @@ import UIKit
 
 final class HomeVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var refreshButton: UIButton!
     
     private var orderDataSource = OrderDataSource()
@@ -285,12 +286,16 @@ extension HomeVC: HeaderViewDelegate {
 extension HomeVC: NetworkRequestable {
     func prepareForLoading() {
         self.showLoading(isDark: false)
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
         self.tableView.isHidden = true
         self.refreshButton.isHidden = true
     }
     
     func resetAfterLoading() {
         self.hideLoading()
+        self.activityIndicator.isHidden = true
+        self.activityIndicator.stopAnimating()
         self.tableView.isHidden = false
         self.refreshButton.isHidden = false
     }

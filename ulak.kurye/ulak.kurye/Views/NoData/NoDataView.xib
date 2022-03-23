@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoDataView" customModule="ulak_kurye" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="usS-BU-5pL" id="6U9-vw-Xzy"/>
                 <outlet property="imageView" destination="Qlk-bK-bjj" id="OtX-0R-BwA"/>
                 <outlet property="messageLabel" destination="tGN-fw-xfO" id="ZsO-nd-ijK"/>
                 <outlet property="titleLabel" destination="krY-P6-3ft" id="XTe-ta-K8n"/>
@@ -46,12 +47,17 @@
                     <color key="textColor" name="ulk-subtitle"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="usS-BU-5pL">
+                    <rect key="frame" x="188.5" y="330" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="usS-BU-5pL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="APr-mc-pl6"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tGN-fw-xfO" secondAttribute="bottom" constant="24" id="ID2-vI-xrO"/>
                 <constraint firstItem="tGN-fw-xfO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="Mcd-gC-VgR"/>
+                <constraint firstItem="usS-BU-5pL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Nt3-pd-mAa"/>
                 <constraint firstItem="krY-P6-3ft" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="b3k-g1-Cg0"/>
                 <constraint firstItem="krY-P6-3ft" firstAttribute="top" secondItem="Qlk-bK-bjj" secondAttribute="bottom" constant="16" id="brU-on-zYZ"/>
                 <constraint firstItem="Qlk-bK-bjj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="c32-2D-DKk"/>

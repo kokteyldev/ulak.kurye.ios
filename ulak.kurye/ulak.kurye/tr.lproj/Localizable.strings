@@ -58,7 +58,7 @@
 "order_minutes_late" = "dk gecikti";
 "order_hour_late" = "saat gecikti";
 "order_day_late" = "gün gecikti";
-"no_time_remaining" = "Teslimat gecikti";
+"no_time_remaining" = "Gecikti";
 "order_task_code" = "Görev Kodu";
 "order_total_price" = "Tahmini Kazanç";
 "order_service_info" = "Servis Bilgileri";
@@ -80,13 +80,14 @@
 
 // Pool
 "pool_page_title" = "Havuz";
-"pool_task_take_alert_title" = "Görevi almak istiyor musun?";
 "pool_total_order" = "Toplam Sipariş";
 "pool_no_order" = "Havuzda sipariş bulunamadı.";
 
 // Order Action
 "picking_security_code_title" = "Teslimat kodunu girin.";
 "picking_security_code_input_name" = "Teslimat Kodu";
+"action_take_consent_message" = "Görevi üzerine almak istediğine emin misin?";
+"action_abort_consent_message" = "Görevi iptal etmeye kabul edersen, cezai işlem uygulanabileceğini de kabul etmiş olursun. Görevi iptal etmek istediğine emin misin?";
 
 // QR
 "scan_qr_code" = "QR Kod Tarama";
@@ -108,6 +109,8 @@
 "settings_ulak_card_popup_title" = "Ulak Kart Ekle";
 "settings_no_ulak_card" = "Ulak Kart eklemek için tıkla!";
 "settings_ulak_card_popup_input_title" = "Kart Numarası";
+"settings_logout" = "Çıkış Yap";
+"settings_logout_alert_title" = "Çıkış yapmak istediğine emin misin?";
 
 // Wallet
 "wallet_title" = "Cüzdan";
@@ -145,6 +148,7 @@
 "working" = "Çalışıyorum";
 "yes" = "Evet";
 "cancel" = "İptal";
+"no" = "Hayır";
 "ok" = "Tamam";
 "picking_security_code" = "Teslimat Kodu";
 "send" = "Gönder";

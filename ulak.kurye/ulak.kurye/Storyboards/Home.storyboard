@@ -46,6 +46,9 @@
                                     <action selector="refreshTapped:" destination="1cG-fb-psJ" eventType="touchUpInside" id="7nx-kP-QVZ"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="TMs-wl-4ch">
+                                <rect key="frame" x="188.5" y="451.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5NU-hJ-J3U"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -54,13 +57,16 @@
                             <constraint firstItem="36W-H1-J58" firstAttribute="leading" secondItem="5NU-hJ-J3U" secondAttribute="leading" id="0uu-PU-D59"/>
                             <constraint firstItem="36W-H1-J58" firstAttribute="top" secondItem="5NU-hJ-J3U" secondAttribute="top" id="LjK-OT-GUg"/>
                             <constraint firstItem="w2t-GO-sF9" firstAttribute="bottom" secondItem="5NU-hJ-J3U" secondAttribute="bottom" constant="-8" id="U4I-oP-eeo"/>
+                            <constraint firstItem="TMs-wl-4ch" firstAttribute="centerX" secondItem="36W-H1-J58" secondAttribute="centerX" id="Z8U-2w-zef"/>
                             <constraint firstAttribute="bottom" secondItem="36W-H1-J58" secondAttribute="bottom" id="f10-x2-LvU"/>
+                            <constraint firstItem="TMs-wl-4ch" firstAttribute="centerY" secondItem="36W-H1-J58" secondAttribute="centerY" id="tsS-DS-aI2"/>
                             <constraint firstItem="5NU-hJ-J3U" firstAttribute="trailing" secondItem="w2t-GO-sF9" secondAttribute="trailing" constant="16" id="uoy-xx-YdE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ana Sayfa" id="UnH-hI-iVZ"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="TMs-wl-4ch" id="iQO-Ii-U4r"/>
                         <outlet property="refreshButton" destination="w2t-GO-sF9" id="Aos-MU-vAc"/>
                         <outlet property="tableView" destination="36W-H1-J58" id="hMT-4X-W5d"/>
                         <segue destination="xY0-xu-mZS" kind="show" identifier="OrderDetailVC" id="vIp-8N-PLI"/>
@@ -222,7 +228,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alım Noktası" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNn-xO-616">
-                                                        <rect key="frame" x="39" y="8" width="74" height="28"/>
+                                                        <rect key="frame" x="39" y="8" width="67.5" height="28"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -231,7 +237,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Ocak | 00:00 | 0 dk" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytx-Zd-RWy">
-                                                        <rect key="frame" x="282" y="8" width="116" height="28"/>
+                                                        <rect key="frame" x="287.5" y="8" width="110.5" height="28"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -375,7 +381,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teslim Noktası" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAl-gk-dLH">
-                                                        <rect key="frame" x="39" y="8" width="86" height="28"/>
+                                                        <rect key="frame" x="39" y="8" width="78" height="28"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -384,7 +390,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Ocak | 00:00 | 0 dk" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbH-L0-efU">
-                                                        <rect key="frame" x="282" y="8" width="116" height="28"/>
+                                                        <rect key="frame" x="287.5" y="8" width="110.5" height="28"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -620,7 +626,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paket İçeriği" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ex7-FX-wYr">
-                                                        <rect key="frame" x="39" y="8" width="72.5" height="26"/>
+                                                        <rect key="frame" x="39" y="8" width="66.5" height="26"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                         <color key="textColor" name="ulk-subtitle"/>
                                                         <nil key="highlightedColor"/>
@@ -690,7 +696,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kuryeye Not" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFX-3b-1a5">
-                                                        <rect key="frame" x="39" y="8" width="71.5" height="26"/>
+                                                        <rect key="frame" x="39" y="8" width="66.5" height="26"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                         <color key="textColor" name="ulk-subtitle"/>
                                                         <nil key="highlightedColor"/>
@@ -760,7 +766,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hareketlerim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5r-fq-Zzo">
-                                                        <rect key="frame" x="39" y="8" width="76.5" height="26"/>
+                                                        <rect key="frame" x="39" y="8" width="68" height="26"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                         <color key="textColor" name="ulk-subtitle"/>
                                                         <nil key="highlightedColor"/>
@@ -858,10 +864,13 @@
                         <outlet property="deliverCallButton" destination="64A-z2-vK6" id="3fp-LV-EIF"/>
                         <outlet property="deliverDateLabel" destination="mbH-L0-efU" id="8io-Jn-rfr"/>
                         <outlet property="deliverMapButton" destination="btI-y0-wst" id="aO9-mc-Qt3"/>
+                        <outlet property="deliverNameContainerView" destination="Mye-TD-gAU" id="5lk-BW-1kb"/>
                         <outlet property="mapView" destination="5CH-ax-TDw" id="Oww-zc-fh1"/>
                         <outlet property="orderCodeLabel" destination="izl-kS-VvX" id="k30-S9-SZi"/>
+                        <outlet property="ownerAddressContainerView" destination="uuT-jU-Jcm" id="ccr-WO-TnI"/>
                         <outlet property="ownerCallButton" destination="n9T-o5-H3B" id="HGQ-pS-tsO"/>
                         <outlet property="ownerNameLabel" destination="a5s-ld-4UW" id="eN0-MN-iH6"/>
+                        <outlet property="ownerTitleContainerView" destination="JRN-yr-t8H" id="a0I-KO-Rox"/>
                         <outlet property="packageContentContainer" destination="cfQ-FB-i46" id="YxG-vd-afG"/>
                         <outlet property="packageContentLabel" destination="GCE-c3-Mwi" id="y7l-Eb-2JN"/>
                         <outlet property="packageContentTitleContainer" destination="2t9-IF-EGd" id="YaP-ms-9wB"/>
@@ -869,6 +878,7 @@
                         <outlet property="pickCallButton" destination="nG1-iy-nqI" id="tyn-mh-0TS"/>
                         <outlet property="pickDateLabel" destination="Ytx-Zd-RWy" id="n2c-if-dGw"/>
                         <outlet property="pickMapButton" destination="J12-4n-Zjv" id="UqP-uK-u0P"/>
+                        <outlet property="pickNameContainerView" destination="1Fz-oU-VBi" id="u2q-Vf-DOy"/>
                         <outlet property="receiverNameLabel" destination="mwB-Vc-MOs" id="Es2-yG-JGg"/>
                         <outlet property="safeAreaView" destination="ETY-HX-NIT" id="kLu-Qu-dbi"/>
                         <outlet property="senderNameLabel" destination="Qh3-F1-KWd" id="bDF-nZ-2PD"/>
@@ -900,7 +910,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vIp-8N-PLI"/>
+        <segue reference="P9w-v1-bRT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ic-file" width="16" height="17"/>

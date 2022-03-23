@@ -39,6 +39,23 @@ struct OrderAction: Codable {
     var textColor: String
     var inputs: OrderActionInput
     
+    var isConsentRequired: Bool {
+        if self.name == "take" || self.name == "abort" {
+            return true
+        }
+        return false
+    }
+    
+    var consentMessage: String {
+        if self.name == "take" {
+            return "action_take_consent_message".localized
+        } else if self.name == "abort" {
+            return "action_abort_consent_message".localized
+        }
+        
+        return ""
+    }
+    
     enum CodingKeys: String, CodingKey {
         case name = "name"
         case title = "title"

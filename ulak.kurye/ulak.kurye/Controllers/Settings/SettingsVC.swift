@@ -78,8 +78,13 @@ final class SettingsVC: BaseTBLVC {
             guard let url = URL(string: Constants.App.appURL) else { return }
             UIApplication.shared.open(url)
         } else if cell.isEqual(logoutCell) {
-            Session.shared.logout()
-            PreLoginVC.presentAsRoot()
+            let alert = UIAlertController(title: "settings_logout_alert_title".localized, message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "settings_logout".localized, style: .destructive, handler: { action in
+                Session.shared.logout()
+                PreLoginVC.presentAsRoot()
+            }))
+            alert.addAction(UIAlertAction(title: "cancel".localized, style: .cancel, handler: { action in }))
+            self.present(alert, animated: true)
         }
     }
 }

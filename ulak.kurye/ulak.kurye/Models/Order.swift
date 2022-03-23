@@ -25,6 +25,7 @@ struct Order: Codable {
     var weight: Double
     var note: String?
     var cost: Double
+    var estimatedDistance: Double?
     var sender: OrderPerson
     var receiver: OrderPerson
     var owner: Owner?
@@ -48,6 +49,7 @@ struct Order: Codable {
         case weight = "volumetric_weight"
         case note = "note_for_courier"
         case cost = "cost"
+        case estimatedDistance = "estimated_distance"
         case sender = "sender"
         case receiver = "receiver"
         case owner = "owner"
