@@ -29,7 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSSubscriptionObserver {
         OneSignal.initWithLaunchOptions(launchOptions)
         OneSignal.setAppId("89994db6-4c19-4ed0-9218-5558dbd1ac43")
         OneSignal.add(self as OSSubscriptionObserver)
-          
+        Session.shared.oneSignalId = OneSignal.getDeviceState().userId
+        
         return true
     }
     

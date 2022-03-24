@@ -116,7 +116,6 @@ final class Session {
     private func updateOnesignalId() {
         guard let user = user else { return }
         if (user.oneSignalId == oneSignalId) { return }
-
         
         API.updateNotificationId(oneSignalId: oneSignalId) { result in
             switch result {

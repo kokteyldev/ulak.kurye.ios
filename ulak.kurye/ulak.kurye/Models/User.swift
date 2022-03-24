@@ -71,11 +71,15 @@ struct User: Codable {
         self.oneSignalId = try? container.decode(String.self, forKey: .oneSignalId)
         
         if container.contains(.isNotificationAllowed) {
-            self.isNotificationAllowed = try container.decode(Bool.self, forKey: .isNotificationAllowed)
+            // bu değer true false yerine 0-1 geliyor
+            let isNotificationAllowedInt = try container.decode(Int.self, forKey: .isNotificationAllowed)
+            self.isNotificationAllowed = isNotificationAllowedInt == 1 ? true : false
         }
         
         if container.contains(.isPoolNotificationAllowed) {
-            self.isPoolNotificationAllowed = try container.decode(Bool.self, forKey: .isPoolNotificationAllowed)
+            // bu değer true false yerine 0-1 geliyor
+            let isNotificationAllowedInt = try container.decode(Int.self, forKey: .isPoolNotificationAllowed)
+            self.isPoolNotificationAllowed = isNotificationAllowedInt == 1 ? true : false
         }
     }
 }
