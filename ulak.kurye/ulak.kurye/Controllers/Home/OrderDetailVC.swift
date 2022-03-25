@@ -52,7 +52,6 @@ class OrderDetailVC: BaseVC {
     @IBOutlet weak var actionsView: OrderActionsView!
     @IBOutlet weak var safeAreaView: UIView!
     @IBOutlet weak var actionsViewHeightCons: NSLayoutConstraint!
-   
     var order: Order?
     var orderUUID: String?
     
@@ -79,7 +78,6 @@ class OrderDetailVC: BaseVC {
         if order == nil || order!.status == .closed {
             actionsView.isHidden = true
             actionsViewHeightCons.constant = 0
-            safeAreaView.isHidden = true
             return
         }
         

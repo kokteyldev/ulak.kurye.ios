@@ -880,7 +880,7 @@
                         <outlet property="pickMapButton" destination="J12-4n-Zjv" id="UqP-uK-u0P"/>
                         <outlet property="pickNameContainerView" destination="1Fz-oU-VBi" id="u2q-Vf-DOy"/>
                         <outlet property="receiverNameLabel" destination="mwB-Vc-MOs" id="Es2-yG-JGg"/>
-                        <outlet property="safeAreaView" destination="ETY-HX-NIT" id="kLu-Qu-dbi"/>
+                        <outlet property="safeAreaView" destination="ETY-HX-NIT" id="DSe-5E-kjL"/>
                         <outlet property="senderNameLabel" destination="Qh3-F1-KWd" id="bDF-nZ-2PD"/>
                         <outlet property="serviceInfoLabel" destination="09a-EI-3kk" id="fhZ-pg-ZwZ"/>
                         <outlet property="stackView" destination="4Oe-b0-lfQ" id="0Rn-v7-XOr"/>
