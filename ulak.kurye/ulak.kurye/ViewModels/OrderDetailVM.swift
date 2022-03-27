@@ -36,6 +36,10 @@ final class OrderDetailVM: OrderVM {
         return isDetailsHidden || order.packageDetail == nil || order.packageDetail?.length == 0
     }
     
+    var isPackagePriceHidden: Bool {
+        return isDetailsHidden || order.package == nil
+    }
+    
     var isCourierNoteHidden: Bool {
         return isDetailsHidden || order.note == nil || order.note?.length == 0
     }

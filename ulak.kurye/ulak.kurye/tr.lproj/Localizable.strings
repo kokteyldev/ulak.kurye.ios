@@ -77,6 +77,11 @@
 "order_detail_courier_note" = "Kuryeye Not";
 "order_detail_breakpoints" = "Hareketlerim";
 "order_detail_get_picking_code_title" = "Teslimat Kodunu Gir";
+"order_detail_package_price" = "Ödeme Detayları";
+"order_detail_package_price_title" = "Paket Ücreti:";
+"order_detail_package_payment_method_title" = "Ödeme Yöntemi:";
+"order_detail_package_prepare_time_title" = "Hazırlanma Süreci:";
+"order_detail_package_prepare_time_remaining" = " dk.";
 
 // Pool
 "pool_page_title" = "Havuz";

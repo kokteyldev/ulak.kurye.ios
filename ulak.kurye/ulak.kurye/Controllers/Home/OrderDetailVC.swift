@@ -40,6 +40,20 @@ class OrderDetailVC: BaseVC {
     @IBOutlet weak var breakpointTableView: UITableView!
     @IBOutlet weak var breakpointHeightConst: NSLayoutConstraint!
     
+    @IBOutlet weak var packagePriceTitleContainer: UIView!
+    @IBOutlet weak var packagePriceContainer: UIView!
+    
+    @IBOutlet weak var packagePriceTitleLabel: UILabel!
+    @IBOutlet weak var packagePaymentMethodTitleLabel: UILabel!
+    @IBOutlet weak var packagePrepareTimeTitleLabel: UILabel!
+    @IBOutlet weak var packagePriceLabel: UILabel!
+    @IBOutlet weak var packagePaymentMethodLabel: UILabel!
+    @IBOutlet weak var packagePrepareTimeLabel: UILabel!
+    
+    
+    
+    
+    
     @IBOutlet weak var packageContentTitleContainer: UIView!
     @IBOutlet weak var packageContentContainer: UIView!
 
@@ -136,6 +150,10 @@ class OrderDetailVC: BaseVC {
         
         ownerNameLabel.text = viewModel.ownerName
         
+        packagePriceLabel.text = viewModel.packagePrice
+        packagePrepareTimeLabel.text = viewModel.packagePrepareTime
+        packagePaymentMethodLabel.text = viewModel.packagePaymentMethod
+        
         packageContentLabel.text = viewModel.packageDetail
         courierNoteLabel.text = viewModel.courierNote
         
@@ -155,6 +173,9 @@ class OrderDetailVC: BaseVC {
         deliverNameContainerView.isHidden = viewModel.isDetailsHidden
         ownerTitleContainerView.isHidden = viewModel.isDetailsHidden
         ownerAddressContainerView.isHidden = viewModel.isDetailsHidden
+        
+        packagePriceTitleContainer.isHidden = viewModel.isPackagePriceHidden
+        packagePriceContainer.isHidden = viewModel.isPackagePriceHidden
         
         packageContentTitleContainer.isHidden = viewModel.isPackageDetailHidden
         packageContentContainer.isHidden = viewModel.isPackageDetailHidden

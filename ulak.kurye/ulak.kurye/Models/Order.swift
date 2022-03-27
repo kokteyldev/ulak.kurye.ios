@@ -36,6 +36,7 @@ struct Order: Codable {
     var createdTime: String
     var startTime: String?
     var status: OrderStatus
+    var package: OrderPackage?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -60,6 +61,7 @@ struct Order: Codable {
         case createdTime = "created_at"
         case startTime = "start_time"
         case status = "app_status"
+        case package = "package"
     }
 }
 
@@ -138,5 +140,31 @@ struct OrderBreakpoint: Codable {
     enum CodingKeys: String, CodingKey {
         case name = "breakpoint_name"
         case date = "created_at"
+    }
+}
+
+struct OrderPackage: Codable {
+    var price: String
+    var prepareTime: String
+    var paymentMethod: String
+    var currency: String = "TRY"
+    
+    enum CodingKeys: String, CodingKey {
+        case price = "package_price"
+        case prepareTime = "package_prepare_time"
+        case paymentMethod = "package_payment_method"
+        case currency = "package_currency"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.price = try container.decode(String.self, forKey: .price)
+        self.prepareTime = try container.decode(String.self, forKey: .prepareTime)
+        self.paymentMethod = try container.decode(String.self, forKey: .paymentMethod)
+        
+        if container.contains(.currency) {
+            self.currency = try container.decode(String.self, forKey: .currency)
+        }
     }
 }
