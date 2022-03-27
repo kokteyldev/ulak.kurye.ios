@@ -60,7 +60,6 @@ class OrderDetailVC: BaseVC {
     @IBOutlet weak var breakpointsContainer: UIView!
     
     @IBOutlet weak var actionsView: OrderActionsView!
-    @IBOutlet weak var safeAreaView: UIView!
     @IBOutlet weak var actionsViewHeightCons: NSLayoutConstraint!
     var order: Order?
     var orderUUID: String?
@@ -183,9 +182,7 @@ class OrderDetailVC: BaseVC {
         breakpointsContainer.isHidden = viewModel.isBreakpointsHidden
         
         actionsViewHeightCons.constant = viewModel.isActionViewHeight
-        //TODO: kapalı sipaiş ise safeArea hiç olmasın, content aşağıya kadar insin
-        safeAreaView.isHidden = (viewModel.isActionViewHeight == 0)
-        
+            
         if !viewModel.isDetailsHidden {
             var bounds = GMSCoordinateBounds()
             

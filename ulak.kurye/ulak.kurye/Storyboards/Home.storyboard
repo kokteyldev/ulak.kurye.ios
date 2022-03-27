@@ -108,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMY-ou-9IP">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="792"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="826"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Oe-b0-lfQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="999.5"/>
@@ -950,31 +950,22 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfj-NO-fmb" userLabel="Action Container View" customClass="OrderActionsView" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="792" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="826" width="414" height="70"/>
                                 <color key="backgroundColor" name="ulk-input-back"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Djn-5v-Ipt"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETY-HX-NIT" userLabel="SafeArea Bottom View">
-                                <rect key="frame" x="0.0" y="862" width="414" height="34"/>
-                                <color key="backgroundColor" name="ulk-input-back"/>
-                            </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Acx-xJ-mLU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ETY-HX-NIT" secondAttribute="bottom" id="39D-fC-AJK"/>
-                            <constraint firstItem="QMY-ou-9IP" firstAttribute="leading" secondItem="Acx-xJ-mLU" secondAttribute="leading" id="3vO-Mn-esC"/>
-                            <constraint firstItem="QMY-ou-9IP" firstAttribute="trailing" secondItem="Acx-xJ-mLU" secondAttribute="trailing" id="46o-fv-QqP"/>
-                            <constraint firstItem="ETY-HX-NIT" firstAttribute="top" secondItem="vfj-NO-fmb" secondAttribute="bottom" id="Fy8-F4-daJ"/>
-                            <constraint firstItem="ETY-HX-NIT" firstAttribute="top" secondItem="Acx-xJ-mLU" secondAttribute="bottom" id="Q0r-gD-Buy"/>
-                            <constraint firstItem="vfj-NO-fmb" firstAttribute="leading" secondItem="Acx-xJ-mLU" secondAttribute="leading" id="Q52-fp-xpC"/>
+                            <constraint firstItem="QMY-ou-9IP" firstAttribute="leading" secondItem="lc0-t9-e7O" secondAttribute="leading" id="3vO-Mn-esC"/>
+                            <constraint firstItem="QMY-ou-9IP" firstAttribute="trailing" secondItem="lc0-t9-e7O" secondAttribute="trailing" id="46o-fv-QqP"/>
+                            <constraint firstAttribute="bottom" secondItem="vfj-NO-fmb" secondAttribute="bottom" id="C3h-JB-Ar8"/>
+                            <constraint firstItem="vfj-NO-fmb" firstAttribute="leading" secondItem="lc0-t9-e7O" secondAttribute="leading" id="Q52-fp-xpC"/>
                             <constraint firstItem="3RZ-ja-qFR" firstAttribute="height" secondItem="lc0-t9-e7O" secondAttribute="height" multiplier="0.13" id="RDk-o1-4zo"/>
                             <constraint firstItem="QMY-ou-9IP" firstAttribute="top" secondItem="lc0-t9-e7O" secondAttribute="top" id="UWs-2v-qGT"/>
-                            <constraint firstItem="ETY-HX-NIT" firstAttribute="leading" secondItem="lc0-t9-e7O" secondAttribute="leading" id="gGy-Yg-yrj"/>
-                            <constraint firstItem="vfj-NO-fmb" firstAttribute="trailing" secondItem="Acx-xJ-mLU" secondAttribute="trailing" id="typ-Gz-6wH"/>
-                            <constraint firstItem="Acx-xJ-mLU" firstAttribute="trailing" secondItem="ETY-HX-NIT" secondAttribute="trailing" id="wgq-q5-SxF"/>
+                            <constraint firstItem="vfj-NO-fmb" firstAttribute="trailing" secondItem="lc0-t9-e7O" secondAttribute="trailing" id="typ-Gz-6wH"/>
                             <constraint firstItem="vfj-NO-fmb" firstAttribute="top" secondItem="QMY-ou-9IP" secondAttribute="bottom" id="xMp-Bh-WZf"/>
                         </constraints>
                     </view>
@@ -1017,7 +1008,6 @@
                         <outlet property="pickMapButton" destination="J12-4n-Zjv" id="UqP-uK-u0P"/>
                         <outlet property="pickNameContainerView" destination="1Fz-oU-VBi" id="u2q-Vf-DOy"/>
                         <outlet property="receiverNameLabel" destination="mwB-Vc-MOs" id="Es2-yG-JGg"/>
-                        <outlet property="safeAreaView" destination="ETY-HX-NIT" id="DSe-5E-kjL"/>
                         <outlet property="senderNameLabel" destination="Qh3-F1-KWd" id="bDF-nZ-2PD"/>
                         <outlet property="serviceInfoLabel" destination="09a-EI-3kk" id="fhZ-pg-ZwZ"/>
                         <outlet property="stackView" destination="4Oe-b0-lfQ" id="0Rn-v7-XOr"/>

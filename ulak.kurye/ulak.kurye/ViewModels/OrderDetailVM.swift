@@ -56,7 +56,7 @@ final class OrderDetailVM: OrderVM {
         courierNote = order.note
         senderLocation = .init(latitude: order.sender.latitude, longitude: order.sender.longtitude)
         receiverLocation = .init(latitude: order.receiver.latitude, longitude: order.receiver.longtitude)
-        isActionViewHeight = (order.status == .closed) ? 0 : 72.0
+        isActionViewHeight = (order.status == .closed) ? 0 : 106.0
         isDetailsHidden = (order.status != .running)
         
         if isDetailsHidden {
