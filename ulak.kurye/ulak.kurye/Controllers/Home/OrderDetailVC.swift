@@ -50,10 +50,6 @@ class OrderDetailVC: BaseVC {
     @IBOutlet weak var packagePaymentMethodLabel: UILabel!
     @IBOutlet weak var packagePrepareTimeLabel: UILabel!
     
-    
-    
-    
-    
     @IBOutlet weak var packageContentTitleContainer: UIView!
     @IBOutlet weak var packageContentContainer: UIView!
 
