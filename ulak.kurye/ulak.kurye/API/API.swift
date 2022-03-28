@@ -257,14 +257,14 @@ struct API {
     }
     
     // MARK: - Wallets
-    static func getWallet(walletUUID: String, completion:@escaping (Result<WalletResponse, Error>) -> Void) {
+    static func getWallet(walletUUID: String, completion:@escaping (Result<WalletResponse?, Error>) -> Void) {
         performRequest(route: APIRouter.getWallet(walletUUID: walletUUID)) { (result:(Result<Response<WalletResponse?>, Error>)) in
             switch result {
             case Result.success(let response):
                 if let walletResponse = response.data {
-                    completion(.success(walletResponse!))
+                    completion(.success(walletResponse))
                 } else {
-                    completion(.failure(CustomError.noData.error))
+                    completion(.success(nil))
                 }
                 break
             case Result.failure(let error):

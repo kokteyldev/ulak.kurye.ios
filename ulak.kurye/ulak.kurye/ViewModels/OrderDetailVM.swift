@@ -36,6 +36,10 @@ final class OrderDetailVM: OrderVM {
         return isDetailsHidden || order.packageDetail == nil || order.packageDetail?.length == 0
     }
     
+    var isPackagePriceHidden: Bool {
+        return isPoolOrder || order.package == nil
+    }
+    
     var isCourierNoteHidden: Bool {
         return isDetailsHidden || order.note == nil || order.note?.length == 0
     }
@@ -52,7 +56,7 @@ final class OrderDetailVM: OrderVM {
         courierNote = order.note
         senderLocation = .init(latitude: order.sender.latitude, longitude: order.sender.longtitude)
         receiverLocation = .init(latitude: order.receiver.latitude, longitude: order.receiver.longtitude)
-        isActionViewHeight = (order.status == .closed) ? 0 : 72.0
+        isActionViewHeight = (order.status == .closed) ? 0 : 90
         isDetailsHidden = (order.status != .running)
         
         if isDetailsHidden {

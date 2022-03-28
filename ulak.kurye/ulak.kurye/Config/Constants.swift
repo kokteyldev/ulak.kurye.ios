@@ -38,6 +38,10 @@ struct Constants {
     }
     
     static var serverDateFormat: String {
+        return "yyyy-MM-dd HH:mm:ss"
+    }
+    
+    static var oldServerDateFormat: String {
         return "dd/MM/yyyy HH:mm:ss"
     }
     

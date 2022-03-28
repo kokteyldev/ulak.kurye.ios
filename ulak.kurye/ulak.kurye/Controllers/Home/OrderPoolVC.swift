@@ -11,6 +11,7 @@ final class OrderPoolVC: BaseTBLVC {
     private var orderVMs: [OrderVM] = []
     private var headerView: TableSectionHeaderView?
     private var activeOrderCount = 0
+    private var refreshButton = UIButton()
     
     private lazy var noDataView: NoDataView = {
         let view = NoDataView(title: "pool_no_order".localized,
@@ -43,11 +44,25 @@ final class OrderPoolVC: BaseTBLVC {
         self.title = "pool_page_title".localized
         NotificationCenter.default.addObserver(self, selector: #selector(userStateChanged), name: .UserStateChanged, object: nil)
         tableView.registerCell(type: OrderTVC.self)
+        setupRefreshButton()
     }
     
     func setupHeaderView() {
         headerView = TableSectionHeaderView(frame: .init(x: 0, y: 0, width: tableView.frame.size.width, height: 32.0))
         headerView?.titleLabel.text = "pool_total_order".localized + " - \(activeOrderCount) / \(Session.shared.maxOrderCount)"
+    }
+    
+    private func setupRefreshButton() {
+        refreshButton.setImage(UIImage(named: "ic-refresh.png"), for: .normal)
+        tableView.addSubview(refreshButton)
+        
+        refreshButton.translatesAutoresizingMaskIntoConstraints = false
+        refreshButton.frame = CGRect(x: 307, y: 600 , width: 55, height: 55)
+        refreshButton.rightAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.rightAnchor, constant: -12).isActive = true
+        refreshButton.bottomAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        refreshButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
+        refreshButton.widthAnchor.constraint(equalToConstant: 55).isActive = true
+        refreshButton.addTarget(self, action: #selector(refreshButtonTapped), for: .touchUpInside)
     }
     
     // MARK: - Data
@@ -169,6 +184,10 @@ final class OrderPoolVC: BaseTBLVC {
         }
     }
     
+    @objc private func refreshButtonTapped() {
+        getOrders()
+    }
+    
     // MARK: - Notifications
     @objc private func userStateChanged() {
         //TODO: check status and hide orders if needed.
@@ -187,7 +206,6 @@ extension OrderPoolVC: OrderTVCDelegate {
             orderTVC.stopLoading()
         }))
         self.present(alert, animated: true)
-        
     }
 }
 
@@ -197,11 +215,15 @@ extension OrderPoolVC: NetworkRequestable {
         noDataView.isLoading = true
         self.tableView.backgroundView = noDataView
         self.showLoading(isDark: false)
+        self.refreshButton.isHidden = true
+        self.orderVMs.removeAll()
+        self.tableView.reloadData()
     }
     
     func resetAfterLoading() {
         noDataView.isLoading = false
         self.tableView.backgroundView = nil
         self.hideLoading()
+        self.refreshButton.isHidden = false
     }
 }

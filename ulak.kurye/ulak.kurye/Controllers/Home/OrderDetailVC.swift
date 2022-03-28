@@ -40,6 +40,16 @@ class OrderDetailVC: BaseVC {
     @IBOutlet weak var breakpointTableView: UITableView!
     @IBOutlet weak var breakpointHeightConst: NSLayoutConstraint!
     
+    @IBOutlet weak var packagePriceTitleContainer: UIView!
+    @IBOutlet weak var packagePriceContainer: UIView!
+    
+    @IBOutlet weak var packagePriceTitleLabel: UILabel!
+    @IBOutlet weak var packagePaymentMethodTitleLabel: UILabel!
+    @IBOutlet weak var packagePrepareTimeTitleLabel: UILabel!
+    @IBOutlet weak var packagePriceLabel: UILabel!
+    @IBOutlet weak var packagePaymentMethodLabel: UILabel!
+    @IBOutlet weak var packagePrepareTimeLabel: UILabel!
+    
     @IBOutlet weak var packageContentTitleContainer: UIView!
     @IBOutlet weak var packageContentContainer: UIView!
 
@@ -50,9 +60,7 @@ class OrderDetailVC: BaseVC {
     @IBOutlet weak var breakpointsContainer: UIView!
     
     @IBOutlet weak var actionsView: OrderActionsView!
-    @IBOutlet weak var safeAreaView: UIView!
     @IBOutlet weak var actionsViewHeightCons: NSLayoutConstraint!
-   
     var order: Order?
     var orderUUID: String?
     
@@ -79,7 +87,6 @@ class OrderDetailVC: BaseVC {
         if order == nil || order!.status == .closed {
             actionsView.isHidden = true
             actionsViewHeightCons.constant = 0
-            safeAreaView.isHidden = true
             return
         }
         
@@ -138,6 +145,10 @@ class OrderDetailVC: BaseVC {
         
         ownerNameLabel.text = viewModel.ownerName
         
+        packagePriceLabel.text = viewModel.packagePrice
+        packagePrepareTimeLabel.text = viewModel.packagePrepareTime
+        packagePaymentMethodLabel.text = viewModel.packagePaymentMethod
+        
         packageContentLabel.text = viewModel.packageDetail
         courierNoteLabel.text = viewModel.courierNote
         
@@ -158,6 +169,9 @@ class OrderDetailVC: BaseVC {
         ownerTitleContainerView.isHidden = viewModel.isDetailsHidden
         ownerAddressContainerView.isHidden = viewModel.isDetailsHidden
         
+        packagePriceTitleContainer.isHidden = viewModel.isPackagePriceHidden
+        packagePriceContainer.isHidden = viewModel.isPackagePriceHidden
+        
         packageContentTitleContainer.isHidden = viewModel.isPackageDetailHidden
         packageContentContainer.isHidden = viewModel.isPackageDetailHidden
         
@@ -168,9 +182,7 @@ class OrderDetailVC: BaseVC {
         breakpointsContainer.isHidden = viewModel.isBreakpointsHidden
         
         actionsViewHeightCons.constant = viewModel.isActionViewHeight
-        //TODO: kapalı sipaiş ise safeArea hiç olmasın, content aşağıya kadar insin
-        safeAreaView.isHidden = (viewModel.isActionViewHeight == 0)
-        
+            
         if !viewModel.isDetailsHidden {
             var bounds = GMSCoordinateBounds()
             

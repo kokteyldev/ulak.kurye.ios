@@ -16,6 +16,11 @@ extension String {
             return date
         }
         
+        df.dateFormat = Constants.oldServerDateFormat
+        if let date = df.date(from: self) {
+            return date
+        }
+        
         df.dateFormat = Constants.longServerDateFormat
         return df.date(from: self)
     }
@@ -38,4 +43,13 @@ extension String {
        }
        return nil
    }
+    
+    // MARK: - Validation
+    var isValidName: Bool {
+        return self.count < 3
+    }
+    
+    var isValidSurname: Bool {
+        return self.count < 3
+    }
 }

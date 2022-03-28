@@ -25,7 +25,6 @@ final class HomeVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //TODO: Aktif sipariş varken çalışmıyoruma tıklarsa uyarı göster
         NotificationCenter.default.addObserver(self, selector: #selector(userStateChanged), name: .UserStateChanged, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadOrders), name: .ReloadOrders, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ordersUpdated), name: .OrdersUpdated, object: nil)

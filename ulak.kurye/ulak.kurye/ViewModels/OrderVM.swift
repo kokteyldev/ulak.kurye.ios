@@ -18,6 +18,9 @@ class OrderVM {
     var pickAddressDetail: String?
     var deliverAddress: String?
     var deliverAddressDetail: String?
+    var packagePrice: String?
+    var packagePrepareTime: String?
+    var packagePaymentMethod: String?
     var priceTitle: String?
     var price: String?
     var serviceTitle: String?
@@ -98,18 +101,17 @@ class OrderVM {
         
         pickAddress = "\(order.sender.hometown)/\(order.sender.district)/\(order.sender.city)"
         deliverAddress = "\(order.receiver.hometown)/\(order.receiver.district)/\(order.receiver.city)"
-        
-        if isPoolOrder {
-            priceTitle = "order_task_code".localized
-            price = order.code
-        } else {
-            let currencyFormatter = NumberFormatter()
-            currencyFormatter.numberStyle = .currency
-            currencyFormatter.locale = Locale.locale(from: order.service.currency)
-            
-            priceTitle = "order_total_price".localized
-            price = currencyFormatter.string(from: order.cost as NSNumber) ?? "-"
+   
+        if let package = order.package {
+            let priceDouble = Double(package.price)
+            let price = priceDouble?.currencyValue(package.currency)
+            packagePrice = "\(price ?? "0")"
+            packagePaymentMethod = order.package?.paymentMethod
+            packagePrepareTime = (order.package?.prepareTime ?? "") + "order_detail_package_prepare_time_remaining".localized
         }
+        
+        priceTitle = "order_task_code".localized
+        price = order.code
         
         serviceTitle = order.service.title
         

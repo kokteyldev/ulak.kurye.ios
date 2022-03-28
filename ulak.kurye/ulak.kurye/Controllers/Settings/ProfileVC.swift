@@ -61,14 +61,12 @@ final class ProfileVC: BaseVC {
     
     // MARK: - Data
     private func validateData() {
-        //TODO: isValidName ekle
-        if nameTextField.text == nil || nameTextField.text!.length < 3 {
+        if nameTextField.text == nil || nameTextField.text?.isValidName == false {
             saveButton.isActive = false
             return
         }
         
-        //TODO: isValidSurname ekle
-        if surnameTextField.text == nil || surnameTextField.text!.length < 3 {
+        if surnameTextField.text == nil || surnameTextField.text?.isValidSurname == false {
             saveButton.isActive = false
             return
         }
@@ -89,14 +87,13 @@ final class ProfileVC: BaseVC {
         var hasError = false
         
         let name = nameTextField.text
-        if name == nil || name!.length < 3 {
+        if name == nil || name?.isValidName == false {
             nameTextField.invalidate()
             hasError = true
         }
         
-        //TODO: bunlari ulak bireysel gibi bi extension'a taşı
         let surname = surnameTextField.text
-        if surname == nil || surname!.length < 3 {
+        if surname == nil || surname?.isValidSurname == false {
             surnameTextField.invalidate()
             hasError = true
         }
@@ -184,18 +181,6 @@ extension ProfileVC: NetworkRequestable {
     func resetAfterLoading() {
         saveButton.stopAnimation()
         self.enabledView()
-    }
-}
-
-//TODO: bunu kkutils'e taşı
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
     }
 }
 

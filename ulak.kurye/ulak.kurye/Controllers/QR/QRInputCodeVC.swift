@@ -59,12 +59,12 @@ final class QRInputCodeVC: BaseVC {
     
     @IBAction func cancelTapped(_ sender: Any) {
         self.codeTextfield.text = nil
-        closeVC()
+        self.dismiss(animated: true)
     }
     
     @objc func gestureTapped() {
         self.codeTextfield.text = nil
-        closeVC()
+        self.dismiss(animated: true)
     }
     
     // MARK: Util

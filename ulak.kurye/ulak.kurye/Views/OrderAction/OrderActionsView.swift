@@ -52,6 +52,7 @@ final class OrderActionsView: UIView {
             
         if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+            flowLayout.sectionInset = UIEdgeInsets(top: -12, left: 12, bottom: 0, right: 0)
         }
     }
     
