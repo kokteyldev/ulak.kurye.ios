@@ -109,7 +109,7 @@ final class WalletsVC: BaseVC {
     
     private func setupData() {
         balanceLabel.text = walletVM?.balance ?? "0"
-        transferContainerView.alpha = walletVM?.transferButtonAlpha ?? 1.0
+        transferContainerView.alpha = walletVM?.transferButtonAlpha ?? 0.5
         tableView.reloadData()
     }
     
@@ -119,12 +119,16 @@ final class WalletsVC: BaseVC {
         let userWallet = userWallets[walletSegment.selectedSegmentIndex]
         
         prepareForLoading()
+        walletVM = nil
+        
         API.getWallet(walletUUID: userWallet.uuid) { result in
             self.resetAfterLoading()
             
             switch result {
             case Result.success(let walletResponse):
-                self.walletVM = WalletVM(walletResponse: walletResponse)
+                if let walletResponse = walletResponse {
+                    self.walletVM = WalletVM(walletResponse: walletResponse)
+                }
                 self.setupData()
                 break
             case Result.failure(let error):
