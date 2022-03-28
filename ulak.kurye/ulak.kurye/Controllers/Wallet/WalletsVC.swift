@@ -132,7 +132,6 @@ final class WalletsVC: BaseVC {
                 break
             }
         }
-        
     }
     
     // MARK: - Actions

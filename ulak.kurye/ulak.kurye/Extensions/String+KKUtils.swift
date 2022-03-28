@@ -16,6 +16,11 @@ extension String {
             return date
         }
         
+        df.dateFormat = Constants.oldServerDateFormat
+        if let date = df.date(from: self) {
+            return date
+        }
+        
         df.dateFormat = Constants.longServerDateFormat
         return df.date(from: self)
     }

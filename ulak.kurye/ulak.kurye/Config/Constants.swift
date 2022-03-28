@@ -39,12 +39,14 @@ struct Constants {
     
     static var serverDateFormat: String {
         return "yyyy-MM-dd HH:mm:ss"
-//        "dd/MM/yyyy HH:mm:ss"
+    }
+    
+    static var oldServerDateFormat: String {
+        return "dd/MM/yyyy HH:mm:ss"
     }
     
     static var longServerDateFormat: String {
-        return "yyyy-MM-dd HH:mm:ss"
-//        "yyyy-MM-dd'T'HH:mm:ss.000000Z"
+        return "yyyy-MM-dd'T'HH:mm:ss.000000Z"
     }
     
     static let errorDomain = "com.ulak.kurye"

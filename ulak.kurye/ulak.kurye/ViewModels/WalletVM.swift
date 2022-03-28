@@ -9,7 +9,7 @@ import Foundation
 
 struct WalletVM {
     let uuid: String
-    let balance: String
+    var balance: String
     let payableBalance: Double
     let transactions: [WalletTransactionVM]
     let transferButtonAlpha: Double
@@ -22,6 +22,7 @@ struct WalletVM {
         uuid = walletResponse.wallet.uuid
         balance = walletResponse.wallet.balance
         payableBalance = Double(balance) ?? 0.0
+        balance = payableBalance.currencyValue(walletResponse.wallet.currency)
         
         if payableBalance == 0 {
             transferButtonAlpha = 0.5

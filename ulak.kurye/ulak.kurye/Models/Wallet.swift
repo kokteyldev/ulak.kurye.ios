@@ -10,10 +10,12 @@ import Foundation
 struct Wallet: Codable {
     var uuid: String
     var balance: String
+    var currency: String
     
     enum CodingKeys: String, CodingKey {
         case uuid = "uuid"
-        case balance = "balance"
+        case balance = "balanceFloat"
+        case currency = "currency"
     }
 }
 
