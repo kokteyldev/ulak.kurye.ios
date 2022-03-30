@@ -229,6 +229,19 @@ struct API {
         }
     }
     
+    static func talkTo(orderUUID: String, to: String, completion:@escaping (Result<Bool, Error>) -> Void) {
+        performRequest(route: APIRouter.talkTo(orderUUID: orderUUID, to: to)) { (result:(Result<Response<Bool?>, Error>)) in
+            switch result {
+            case Result.success(_):
+                completion(.success(true))
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
     // MARK: - Actions
     static func runTakeAction(orderUUID: String, agreementUUID: String, completion:@escaping (Result<Bool, Error>) -> Void) {
         performRequest(route: APIRouter.runTakeAction(orderUUID: orderUUID, agreementUUID: agreementUUID)) { (result:(Result<Response<Bool?>, Error>)) in

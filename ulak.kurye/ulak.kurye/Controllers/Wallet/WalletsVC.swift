@@ -140,17 +140,24 @@ final class WalletsVC: BaseVC {
     
     // MARK: - Actions
     @IBAction func transferBalanceTapped(_ sender: Any) {
+        //TODO: alert çıkartalım, xx TL yi hesaba aktarmak istediğine emin misin?
+        
         guard let walletVM = walletVM else { return }
         if walletVM.payableBalance == 0 { return }
         
-        prepareForLoading()
+        let button = sender as? KKLoadingButton
+        button?.startAnimation()
+        disableView()
+        
         API.transferBalance(walletUUID: walletVM.uuid, amount: walletVM.payableBalance) { result in
+            button?.stopAnimation()
+            self.enabledView()
+            
             switch result {
             case Result.success(_):
                 self.getWalletDetail()
                 break
             case Result.failure(let error):
-                self.resetAfterLoading()
                 self.view.showToast(.error, message: error.localizedDescription)
                 break
             }

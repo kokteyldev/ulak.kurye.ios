@@ -336,13 +336,13 @@
                                                             <constraint firstAttribute="height" constant="1" id="XO3-MP-vAw"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nG1-iy-nqI">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nG1-iy-nqI" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
                                                         <rect key="frame" x="356" y="0.0" width="58" height="57"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="58" id="oSf-UO-3Lz"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="ic-phone"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="ic-phone"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value=" "/>
                                                         </userDefinedRuntimeAttributes>
@@ -489,13 +489,13 @@
                                                             <constraint firstAttribute="height" constant="1" id="bDM-4B-6Is"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64A-z2-vK6">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64A-z2-vK6" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
                                                         <rect key="frame" x="356" y="0.0" width="58" height="57"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="58" id="aPc-4K-J0m"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="ic-phone"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="ic-phone"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value=" "/>
                                                         </userDefinedRuntimeAttributes>
@@ -577,16 +577,19 @@
                                                             <constraint firstAttribute="height" constant="1" id="ovj-7b-ibd"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9T-o5-H3B">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9T-o5-H3B" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
                                                         <rect key="frame" x="356" y="0.0" width="58" height="57"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="58" id="son-3L-W7Z"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="ic-phone"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="ic-phone"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value=" "/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="callOwnerTapped:" destination="xY0-xu-mZS" eventType="touchUpInside" id="qN7-T2-19b"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

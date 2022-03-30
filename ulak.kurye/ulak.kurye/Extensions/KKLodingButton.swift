@@ -12,10 +12,12 @@ final class KKLoadingButton: UIButton {
     private var originalButtonText: String?
     private var originalImage: UIImage?
     private var originalBackgroundImage: UIImage?
+    private var activityIndicator: UIActivityIndicatorView!
+    private var activityColor: UIColor = .white
     
-    var activityIndicator: UIActivityIndicatorView!
-    
-    func startAnimation() {
+    func startAnimation(activityColor: UIColor = .white) {
+        self.activityColor = activityColor
+        
         originalButtonText = self.titleLabel?.text
         originalImage = self.image(for: .normal)
         originalBackgroundImage = self.backgroundImage(for: .normal)
@@ -43,7 +45,7 @@ final class KKLoadingButton: UIButton {
     private func createActivityIndicator() -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.color = .white
+        activityIndicator.color = activityColor
         return activityIndicator
     }
     

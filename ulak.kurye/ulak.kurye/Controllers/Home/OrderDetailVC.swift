@@ -82,38 +82,6 @@ class OrderDetailVC: BaseVC {
         }
     }
     
-    // MARK: - Data
-    func getActions() {
-        if order == nil || order!.status == .closed {
-            actionsView.isHidden = true
-            actionsViewHeightCons.constant = 0
-            return
-        }
-        
-        actionsView.prepareForLoading()
-        actionsView.delegate = self
-        actionsView.setOrderUUID(order!.uuid)
-    }
-    
-    func getOrder(_ orderUUID: String) {
-        prepareForLoading()
-        API.getOrder(orderUUID: orderUUID) { result in
-            self.resetAfterLoading()
-            
-            switch result {
-            case Result.success(let order):
-                self.order = order
-                self.setupUI()
-                OrderManager.shared.updateOrder(order: order)
-                break
-            case Result.failure(let error):
-                //TODO: hata göster ve geri git
-                print(error.localizedDescription)
-                break
-            }
-        }
-    }
-    
     // MARK: - Setup
     func setupTableView() {
         breakpointTableView.registerCell(type: BreakpointTVC.self)
@@ -202,6 +170,64 @@ class OrderDetailVC: BaseVC {
         breakpointTableView.reloadData()
     }
     
+    // MARK: - Data
+    func getActions() {
+        if order == nil || order!.status == .closed {
+            actionsView.isHidden = true
+            actionsViewHeightCons.constant = 0
+            return
+        }
+        
+        actionsView.prepareForLoading()
+        actionsView.delegate = self
+        actionsView.setOrderUUID(order!.uuid)
+    }
+    
+    func getOrder(_ orderUUID: String) {
+        prepareForLoading()
+        API.getOrder(orderUUID: orderUUID) { result in
+            self.resetAfterLoading()
+            
+            switch result {
+            case Result.success(let order):
+                self.order = order
+                self.setupUI()
+                OrderManager.shared.updateOrder(order: order)
+                break
+            case Result.failure(let error):
+                //TODO: hata göster ve geri git
+                print(error.localizedDescription)
+                break
+            }
+        }
+    }
+    
+    func talkTo(sender: Any, to: String) {
+        let button = sender as? KKLoadingButton
+        button?.startAnimation(activityColor: .black)
+        disableView()
+        
+        API.talkTo(orderUUID: order!.uuid, to: to) { result in
+            button?.stopAnimation()
+            self.enabledView()
+            
+            switch result {
+            case Result.success(_):
+                let phoneNumber = Constants.App.courierTalkToNumber
+                guard let url = URL(string: "telprompt://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) else {
+                    self.view.showToast(.error, message: "error_unknown".localized)
+                    return
+                }
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                break
+            case Result.failure(let error):
+                self.view.showToast(.error, message: error.localizedDescription)
+                print(error.localizedDescription)
+                break
+            }
+        }
+    }
+    
     // MARK: - Actions
     @IBAction func mapTapped(_ sender: Any) {
         guard let viewModel = viewModel else { return }
@@ -220,16 +246,20 @@ class OrderDetailVC: BaseVC {
     }
     
     @IBAction func callSenderTapped(_ sender: Any) {
-        //TODO: Endpoint bekleniyor.
+        talkTo(sender: sender, to: "start_point")
+    }
+    
+    @IBAction func callReceiverTapped(_ sender: Any) {
+        talkTo(sender: sender, to: "end_point")
+    }
+    
+    @IBAction func callOwnerTapped(_ sender: Any) {
+        talkTo(sender: sender, to: "customer")
     }
     
     @IBAction func receiverLocationTapped(_ sender: Any) {
         guard let receiver = viewModel?.receiverLocation else { return }
         getMapDirections(receiver)
-    }
-    
-    @IBAction func callReceiverTapped(_ sender: Any) {
-        //TODO: Endpoint bekleniyor.
     }
     
     // MARK: - Observer

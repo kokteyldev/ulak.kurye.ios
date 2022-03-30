@@ -16,6 +16,7 @@ struct Constants {
         static let courierApplicationURL = "https://ulakapp.com/"
         static let locationUpdateInterval = 45.0
         static let orderUpdateInterval = 60.0
+        static let courierTalkToNumber = "+908508881474"
     }
 
     struct API {

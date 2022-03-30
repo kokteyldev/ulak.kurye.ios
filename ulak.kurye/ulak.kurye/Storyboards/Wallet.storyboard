@@ -87,18 +87,16 @@
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5VH-zH-3q6" userLabel="Transfer Container View" customClass="KKUIView" customModule="KokteylUtils">
                                 <rect key="frame" x="211" y="144" width="187" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bakiye Aktar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpd-A0-Hzr">
-                                        <rect key="frame" x="8" y="4" width="171" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3E-aa-tYg" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="40"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Bakiye Aktar">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="wallet_transfer_balance"/>
                                         </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3E-aa-tYg">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="40"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
                                             <action selector="transferBalanceTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nua-uR-XlV"/>
                                         </connections>
@@ -107,10 +105,6 @@
                                 <color key="backgroundColor" name="ulk-orange"/>
                                 <constraints>
                                     <constraint firstItem="P3E-aa-tYg" firstAttribute="leading" secondItem="5VH-zH-3q6" secondAttribute="leading" id="9vN-sg-azt"/>
-                                    <constraint firstAttribute="trailing" secondItem="lpd-A0-Hzr" secondAttribute="trailing" constant="8" id="N1w-55-8RD"/>
-                                    <constraint firstAttribute="bottom" secondItem="lpd-A0-Hzr" secondAttribute="bottom" constant="4" id="Of1-c1-zZv"/>
-                                    <constraint firstItem="lpd-A0-Hzr" firstAttribute="leading" secondItem="5VH-zH-3q6" secondAttribute="leading" constant="8" id="RwV-NW-QSs"/>
-                                    <constraint firstItem="lpd-A0-Hzr" firstAttribute="top" secondItem="5VH-zH-3q6" secondAttribute="top" constant="4" id="XcX-jd-0bj"/>
                                     <constraint firstAttribute="trailing" secondItem="P3E-aa-tYg" secondAttribute="trailing" id="dIX-az-ak5"/>
                                     <constraint firstAttribute="height" constant="40" id="jgF-bO-Ivs"/>
                                     <constraint firstItem="P3E-aa-tYg" firstAttribute="top" secondItem="5VH-zH-3q6" secondAttribute="top" id="rcG-ce-goG"/>

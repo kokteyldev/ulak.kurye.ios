@@ -46,7 +46,7 @@ class OrderVM {
         var remainingDeliverMinutes: Int?
         
         if isOrderActive && !isPackagePicked {
-            remainingPickMinutes = Date.minutesBetween(start: expectedStartDate, end: Date())
+            remainingPickMinutes = Date.minutesBetween(start: Date(), end: expectedStartDate)
             let remainingTimeString = remainingPickMinutes!.remainingTimeString
             
             let pickDistance = order.senderDistance.kilometers
@@ -58,7 +58,7 @@ class OrderVM {
         }
         
         if isOrderActive && !isPackagedDelivered {
-            remainingDeliverMinutes = Date.minutesBetween(start: expectedDeliverDate, end: Date())
+            remainingDeliverMinutes = Date.minutesBetween(start: Date(), end: expectedDeliverDate)
             let remainingDeliverTimeString = remainingDeliverMinutes!.remainingTimeString
             deliverAddressDetail = "\(endDateString) (\(remainingDeliverTimeString))"
         } else {

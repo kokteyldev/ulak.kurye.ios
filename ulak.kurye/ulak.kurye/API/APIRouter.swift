@@ -23,6 +23,7 @@ enum APIRouter {
     case getPoolOrders(latitude: Double, longtitude: Double)
     case getOrderAggrements(orderUUID: String)
     case getOrderActions(orderUUID: String, agreementUUID: String)
+    case talkTo(orderUUID: String, to: String)
     case runTakeAction(orderUUID: String, agreementUUID: String)
     case runOrderAction(actionName: String, parameters: [String: String])
     case getWallet(walletUUID: String)
@@ -42,6 +43,7 @@ enum APIRouter {
              .getOrders,
              .getOrderAggrements,
              .getOrderActions,
+             .talkTo,
              .getPoolOrders,
              .runTakeAction,
              .runOrderAction,
@@ -90,6 +92,8 @@ enum APIRouter {
             return "/actions/agreements"
         case .getOrderActions:
             return "/actions/available"
+        case .talkTo:
+            return "/order/talk"
         case .runTakeAction:
             return "/actions/run"
         case .runOrderAction:
@@ -122,6 +126,8 @@ enum APIRouter {
             return ["order_uuid": orderUUID]
         case .getOrderActions(let orderUUID, let agreementUUID):
             return ["order_uuid": orderUUID, "agreement_uuid": agreementUUID]
+        case .talkTo(let orderUUID, let to):
+            return ["order_uuid": orderUUID, "to": to]
         case .runTakeAction(let orderUUID, let agreementUUID):
             return ["action_name": "take", "order_uuid": orderUUID, "agreement_uuid": agreementUUID]
         case .runOrderAction(let actionName, let paramaters):
@@ -192,6 +198,7 @@ enum APIRouter {
              .getPoolOrders,
              .getOrderAggrements,
              .getOrderActions,
+             .talkTo,
              .runTakeAction,
              .runOrderAction,
              .getWallet,

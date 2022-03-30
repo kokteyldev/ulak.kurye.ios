@@ -26,11 +26,6 @@ extension Date {
     
     static func minutesBetween(start: Date, end: Date) -> Int {
         let diff = Calendar.current.dateComponents([.minute], from: start, to: end).minute ?? 0
-
-        if start.timeIntervalSince1970 < end.timeIntervalSince1970 {
-            return diff * -1
-        }
-        
         return diff
     }
 }
