@@ -102,8 +102,8 @@ class OrderVM {
         pickAddress = "\(order.sender.hometown)/\(order.sender.district)/\(order.sender.city)"
         deliverAddress = "\(order.receiver.hometown)/\(order.receiver.district)/\(order.receiver.city)"
    
-        if let package = order.package {
-            let priceDouble = Double(package.price)
+        if let package = order.package, let price = package.price {
+            let priceDouble = Double(price)
             let price = priceDouble?.currencyValue(package.currency)
             packagePrice = "\(price ?? "0")"
             packagePaymentMethod = order.package?.paymentMethod
