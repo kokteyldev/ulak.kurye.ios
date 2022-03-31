@@ -126,6 +126,7 @@
 "wallet_title" = "Wallet";
 "wallet_balance" = "Balance";
 "wallet_transfer_balance" = "Transfer Balance";
+"wallet_transfer_balance_message" = "Are you sure you want to transfer to account?";
 "wallet_no_wallet" = "No Wallet.";
 "wallet_no_transaction" = "No Transaction.";
 

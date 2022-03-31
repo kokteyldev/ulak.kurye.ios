@@ -17,6 +17,7 @@ final class QRInputCodeVC: BaseVC {
     var qrCodeKey: String?
     
     var dismissCallback: ((String?) -> Void)?
+    var cancelCallback: (() -> Void)?
     
     // MARK: - Init
     static func qrInputVC(title: String, inputTitle: String, qrCodeKey: String?) -> QRInputCodeVC {
@@ -58,13 +59,11 @@ final class QRInputCodeVC: BaseVC {
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
-        self.codeTextfield.text = nil
-        self.dismiss(animated: true)
+        cancelVC()
     }
     
     @objc func gestureTapped() {
-        self.codeTextfield.text = nil
-        self.dismiss(animated: true)
+        cancelVC()
     }
     
     // MARK: Util
@@ -72,6 +71,14 @@ final class QRInputCodeVC: BaseVC {
         self.dismiss(animated: true) {
             if let dismissCallback = self.dismissCallback {
                 dismissCallback(self.codeTextfield.text?.length == 0 ? nil : self.codeTextfield.text)
+            }
+        }
+    }
+    
+    private func cancelVC() {
+        self.dismiss(animated: true) {
+            if let cancelCallback = self.cancelCallback {
+                cancelCallback()
             }
         }
     }

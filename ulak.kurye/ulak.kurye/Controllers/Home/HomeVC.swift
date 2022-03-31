@@ -279,6 +279,12 @@ extension HomeVC: HeaderViewDelegate {
                 }
             }
         }
+        
+        qrInputVC.cancelCallback = {
+            self.enabledView()
+            self.hideLoading()
+            return
+        }
     }
 }
 

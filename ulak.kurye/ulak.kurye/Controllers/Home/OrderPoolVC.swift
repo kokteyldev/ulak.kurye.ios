@@ -191,6 +191,9 @@ final class OrderPoolVC: BaseTBLVC {
     // MARK: - Notifications
     @objc private func userStateChanged() {
         //TODO: check status and hide orders if needed.
+        if !Session.shared.isUserWorking {
+            
+        }
     }
 }
 
