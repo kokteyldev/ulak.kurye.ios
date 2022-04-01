@@ -229,6 +229,25 @@ struct API {
         }
     }
     
+    //MARK: - Notifications
+    static func getNotifications(page: Int, notification_type: Int, completion:@escaping (Result<NotificationsResponse, Error>) -> Void) {
+        performRequest(route: APIRouter.getNotifications(page: page, notification_type: notification_type)) {
+            (result:(Result<Response<NotificationsResponse>, Error>)) in
+            switch result {
+            case Result.success(let response):
+                if let notificationsResponse = response.data {
+                    completion(.success(notificationsResponse))
+                } else {
+                    completion(.failure(CustomError.noData.error))
+                }
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
     static func talkTo(orderUUID: String, to: String, completion:@escaping (Result<Bool, Error>) -> Void) {
         performRequest(route: APIRouter.talkTo(orderUUID: orderUUID, to: to)) { (result:(Result<Response<Bool?>, Error>)) in
             switch result {

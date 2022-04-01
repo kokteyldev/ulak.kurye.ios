@@ -48,8 +48,8 @@
 "tabbar_settings" = "Ayarlar";
 
 // Home
-"home_active_orders" = "AKTİF SİPARİŞLERİM";
-"home_past_orders" = "GEÇMİŞ SİPARİŞLERİM";
+"home_active_orders" = "AKTİF GÖREVLERİM";
+"home_past_orders" = "GEÇMİŞ GÖREVLERİM";
 
 // Order
 "remaining_minutes" = "dk kaldı";
@@ -85,7 +85,7 @@
 
 // Pool
 "pool_page_title" = "Havuz";
-"pool_total_order" = "Toplam Sipariş";
+"pool_total_order" = "Görev Kotası";
 "pool_no_order" = "Havuzda sipariş bulunamadı.";
 
 // Order Action

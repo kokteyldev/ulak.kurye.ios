@@ -11,7 +11,7 @@ final class NotificationsVC: BaseVC {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
-    private var notifications: [String] = []
+    private var notifications: [Notifications] = []
     private lazy var noDataView: UIView = {
         let view = NoDataView(title: "notifications_no_notification".localized,
                               message: "",
@@ -23,7 +23,8 @@ final class NotificationsVC: BaseVC {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        getNotifications()
+        tableView.registerCell(type: NotificationTVC.self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,8 +56,26 @@ final class NotificationsVC: BaseVC {
         segmentedControl.insertSegment(withTitle: "notifications".localized, at: 0, animated: false)
         segmentedControl.insertSegment(withTitle: "announcements".localized, at: 1, animated: false)
         segmentedControl.selectedSegmentIndex = 0
+        
+        tableView.reloadData()
     }
-
+    
+    // MARK: - Data
+    func getNotifications() {
+        API.getNotifications(page: 1, notification_type: 1) { result in
+            switch result {
+            case Result.success(let notificationsResponse):
+                if let notificationsResponse = notificationsResponse.notifications {
+                    self.notifications = notificationsResponse
+                }
+                self.setupUI()
+                break
+            case Result.failure(let error):
+                self.view.showToast(.error, message: error.localizedDescription)
+                break
+            }
+        }
+    }
 }
 
 // MARK: UITableViewDataSource
@@ -71,7 +90,8 @@ extension NotificationsVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTVC", for: indexPath) as! OrderTVC
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationTVC", for: indexPath) as! NotificationTVC
+        cell.setNotification(notifications[indexPath.row])
         return cell
     }
 }
