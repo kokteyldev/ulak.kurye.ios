@@ -12,10 +12,8 @@ struct Constants {
     struct App {
         static let appURL = "itms-apps://apple.com/app/id1610547130"
         static let googleMapsKey = "AIzaSyBa2-fRghCvB2VlhcVXwK37nyPC20RqsTQ"
-        static let courierApplicationURL = "\(Config.CodingKeys.newRegister)"
         static let locationUpdateInterval = 45.0
         static let orderUpdateInterval = 60.0
-        static let courierTalkToNumber = Config.CodingKeys.phoneNumber
     }
 
     struct API {

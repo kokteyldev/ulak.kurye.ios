@@ -11,7 +11,7 @@ struct Config: Codable {
     var latestVersion: String
     var kvvkURL: ServerURL?
     var phoneNumber: String
-    var newRegister: String
+    var registerURL: String?
     
     private var policies: [ServerURL]
     
@@ -21,14 +21,14 @@ struct Config: Codable {
         case appVersion = "app_version"
         case policyDict = "static_pages"
         case phoneNumber = "service_phone_number"
-        case newRegister = "courier_onboarding_link"
+        case registerURL = "courier_onboarding_link"
     }
     
     init() {
         self.latestVersion = "0"
         self.policies = []
         self.phoneNumber = ""
-        self.newRegister = ""
+        self.registerURL = ""
     }
     
     init(from decoder: Decoder) throws {
@@ -42,7 +42,7 @@ struct Config: Codable {
         policies = try container.decode([ServerURL].self, forKey: .policyDict)
         
         phoneNumber = try container.decode(String.self, forKey: .phoneNumber)
-        newRegister = try container.decode(String.self, forKey: .newRegister)
+        registerURL = try? container.decode(String.self, forKey: .registerURL)
         
         var kvkkURLModel: ServerURL?
         

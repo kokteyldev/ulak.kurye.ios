@@ -195,8 +195,9 @@ class OrderDetailVC: BaseVC {
                 OrderManager.shared.updateOrder(order: order)
                 break
             case Result.failure(let error):
-                //TODO: hata göster ve geri git
-                print(error.localizedDescription)
+                self.navigationController?.view.showToast(.error, message: error.localizedDescription)
+                Log.e(error.localizedDescription)
+                self.navigationController?.popToRootViewController(animated: true)
                 break
             }
         }
@@ -213,7 +214,7 @@ class OrderDetailVC: BaseVC {
             
             switch result {
             case Result.success(_):
-                let phoneNumber = Constants.App.courierTalkToNumber
+                let phoneNumber = Session.shared.config.phoneNumber
                 guard let url = URL(string: "telprompt://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) else {
                     self.view.showToast(.error, message: "error_unknown".localized)
                     return

@@ -9,12 +9,14 @@ import Foundation
 
 struct SystemNotification: Codable {
     var uuid: String
+    var objectUUID: String?
     var type: Int
     var data: SystemNotificationData
     var createdAt: String
 
     enum CodingKeys: String, CodingKey {
         case uuid = "uuid"
+        case objectUUID = "object_uuid"
         case type = "notification_type"
         case data = "data"
         case createdAt = "created_at"

@@ -39,6 +39,10 @@ final class NotificationsVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -136,10 +140,19 @@ final class NotificationsVC: BaseVC {
     @IBAction func segmentChanged(_ sender: Any) {
         getNotifications()
     }
+    
+    // MARK: - Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "OrderDetailVC" {
+            guard let orderUUID = sender as? String else { return }
+            let orderDetailVC = segue.destination as! OrderDetailVC
+            orderDetailVC.orderUUID = orderUUID
+        }
+    }
 }
 
 // MARK: UITableViewDataSource
-extension NotificationsVC: UITableViewDataSource {
+extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
@@ -159,6 +172,16 @@ extension NotificationsVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationTVC", for: indexPath) as! NotificationTVC
         cell.setNotification(notifications[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let orderUUID = notifications[indexPath.row].objectUUID {
+            performSegue(withIdentifier: "OrderDetailVC", sender: orderUUID)
+        } else {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
     }
 }
 
