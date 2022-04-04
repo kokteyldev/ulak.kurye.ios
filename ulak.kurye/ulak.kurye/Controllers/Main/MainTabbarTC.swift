@@ -13,6 +13,14 @@ final class MainTabbarTC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .white
+            tabBar.standardAppearance = appearance
+            tabBar.scrollEdgeAppearance = tabBar.standardAppearance
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(userStateChanged), name: .UserStateChanged, object: nil)
     }
     

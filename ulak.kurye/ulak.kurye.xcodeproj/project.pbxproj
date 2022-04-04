@@ -131,10 +131,14 @@
 		9ECAAAE027C3DB0D00F583C4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */; };
 		9ECAAAEA27C3E1FC00F583C4 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */; };
 		9EE8B45B27C915AA001E8CE6 /* HomeHeaderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE8B45A27C915AA001E8CE6 /* HomeHeaderVM.swift */; };
-		9EE8C01827D780950050F37D /* BreakpointTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE8C01627D780950050F37D /* BreakpointTVC.swift */; };
-		9EE8C01927D780950050F37D /* BreakpointTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EE8C01727D780950050F37D /* BreakpointTVC.xib */; };
+		9EE8C01827D780950050F37D /* CheckpointTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE8C01627D780950050F37D /* CheckpointTVC.swift */; };
+		9EE8C01927D780950050F37D /* CheckpointTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EE8C01727D780950050F37D /* CheckpointTVC.xib */; };
 		9EE8C01B27D78E600050F37D /* UIStackView+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE8C01A27D78E600050F37D /* UIStackView+KKUtils.swift */; };
 		C3B5AD88CC0BE645CA10B9A6 /* Pods_ulak_kurye_ulak_kuryeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D056A3DC22B8A343D361EDB /* Pods_ulak_kurye_ulak_kuryeUITests.framework */; };
+		E538FDE927F5F1B900EF58B8 /* SystemNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E538FDE827F5F1B900EF58B8 /* SystemNotification.swift */; };
+		E538FDEB27F5F1CA00EF58B8 /* SystemNotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E538FDEA27F5F1CA00EF58B8 /* SystemNotificationResponse.swift */; };
+		E55D381B27F6D4A9005592DB /* NotificationTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55D381A27F6D4A9005592DB /* NotificationTVC.xib */; };
+		E55D381D27F6D4C7005592DB /* NotificationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D381C27F6D4C7005592DB /* NotificationTVC.swift */; };
 		E569910F27EDA6320099E9D5 /* UIViewController+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -307,13 +311,17 @@
 		9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		9EE8B45A27C915AA001E8CE6 /* HomeHeaderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderVM.swift; sourceTree = "<group>"; };
-		9EE8C01627D780950050F37D /* BreakpointTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakpointTVC.swift; sourceTree = "<group>"; };
-		9EE8C01727D780950050F37D /* BreakpointTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreakpointTVC.xib; sourceTree = "<group>"; };
+		9EE8C01627D780950050F37D /* CheckpointTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointTVC.swift; sourceTree = "<group>"; };
+		9EE8C01727D780950050F37D /* CheckpointTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckpointTVC.xib; sourceTree = "<group>"; };
 		9EE8C01A27D78E600050F37D /* UIStackView+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+KKUtils.swift"; sourceTree = "<group>"; };
 		9F2141A96BE78FFC82CF9EC7 /* Pods-ulak.kurye-ulak.kuryeUITests.dev debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye-ulak.kuryeUITests.dev debug.xcconfig"; path = "Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests.dev debug.xcconfig"; sourceTree = "<group>"; };
 		B99ABCBB43B1B85B66CAA4AA /* Pods-ulak.kurye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye.debug.xcconfig"; path = "Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye.debug.xcconfig"; sourceTree = "<group>"; };
 		C1D478E1D7B12095363EB400 /* Pods-ulak.kuryeTests.dev release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.dev release.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.dev release.xcconfig"; sourceTree = "<group>"; };
 		C7EA48B1254F7D274D7337BE /* Pods-ulak.kuryeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.release.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.release.xcconfig"; sourceTree = "<group>"; };
+		E538FDE827F5F1B900EF58B8 /* SystemNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNotification.swift; sourceTree = "<group>"; };
+		E538FDEA27F5F1CA00EF58B8 /* SystemNotificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNotificationResponse.swift; sourceTree = "<group>"; };
+		E55D381A27F6D4A9005592DB /* NotificationTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTVC.xib; sourceTree = "<group>"; };
+		E55D381C27F6D4C7005592DB /* NotificationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTVC.swift; sourceTree = "<group>"; };
 		E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KKUtils.swift"; sourceTree = "<group>"; };
 		E71221419E2EBE301679F7A2 /* Pods-ulak.kuryeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.debug.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4BD9CB58C1323FCFDC3534B /* Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -473,8 +481,8 @@
 			children = (
 				9E3304A427C6748A00AAB135 /* OrderTVC.swift */,
 				9E3304A527C6748A00AAB135 /* OrderTVC.xib */,
-				9EE8C01627D780950050F37D /* BreakpointTVC.swift */,
-				9EE8C01727D780950050F37D /* BreakpointTVC.xib */,
+				9EE8C01627D780950050F37D /* CheckpointTVC.swift */,
+				9EE8C01727D780950050F37D /* CheckpointTVC.xib */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -769,6 +777,8 @@
 				9E2CAC3B27E8C65E00106FD1 /* BaseWallet.swift */,
 				9E2CAC3D27E8C9FA00106FD1 /* Wallet.swift */,
 				9E2CAC3F27E8CD4100106FD1 /* WalletResponse.swift */,
+				E538FDE827F5F1B900EF58B8 /* SystemNotification.swift */,
+				E538FDEA27F5F1CA00EF58B8 /* SystemNotificationResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -789,6 +799,7 @@
 			children = (
 				9EA443C227CCF4C000C4A47B /* SectionHeader */,
 				9E3304AC27C7825F00AAB135 /* NoData */,
+				E55D381727F6D466005592DB /* Notification */,
 				9E3304A327C6747600AAB135 /* Order */,
 				9E246A8527DF72F400F10D77 /* OrderAction */,
 				9E33049E27C66B9400AAB135 /* Onboarding */,
@@ -810,6 +821,15 @@
 				9E4E204B27E90E290035B057 /* WalletVM.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E55D381727F6D466005592DB /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				E55D381C27F6D4C7005592DB /* NotificationTVC.swift */,
+				E55D381A27F6D4A9005592DB /* NotificationTVC.xib */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -982,9 +1002,10 @@
 				9E33049B27C661DA00AAB135 /* HomeHeaderView.xib in Resources */,
 				9E3D435927C520B800B6D5C5 /* PolicyVC.xib in Resources */,
 				9E3E2D3427BE901200A17025 /* GoogleService-Info.plist in Resources */,
+				E55D381B27F6D4A9005592DB /* NotificationTVC.xib in Resources */,
 				9ECAAA7D27C393DD00F583C4 /* Poppins-Regular.ttf in Resources */,
 				9ECAAA8127C395F600F583C4 /* Release.xcconfig in Resources */,
-				9EE8C01927D780950050F37D /* BreakpointTVC.xib in Resources */,
+				9EE8C01927D780950050F37D /* CheckpointTVC.xib in Resources */,
 				9ECAAA7C27C393DD00F583C4 /* Poppins-Bold.ttf in Resources */,
 				9E3E2D0D27BE8F1700A17025 /* Assets.xcassets in Resources */,
 				9E23ECB327E9B211002463C9 /* NoDataView.xib in Resources */,
@@ -1180,6 +1201,7 @@
 				9E2CAC4027E8CD4100106FD1 /* WalletResponse.swift in Sources */,
 				9E3D434727C4E27200B6D5C5 /* PreLoginVC.swift in Sources */,
 				9E3304A627C6748A00AAB135 /* OrderTVC.swift in Sources */,
+				E55D381D27F6D4C7005592DB /* NotificationTVC.swift in Sources */,
 				9E6D2F7127C8C43B00BAA261 /* UIImage+KKUtils.swift in Sources */,
 				9E3E2D0427BE8F1600A17025 /* AppDelegate.swift in Sources */,
 				9E43A1FB27CF8DA000077288 /* Double+KKUtils.swift in Sources */,
@@ -1192,12 +1214,13 @@
 				9ECAAAE027C3DB0D00F583C4 /* LoadingView.swift in Sources */,
 				9ECAAAD327C3D07600F583C4 /* CustomError.swift in Sources */,
 				9EA1AA3E27EB377200BF018A /* UIColor+Ulak.swift in Sources */,
-				9EE8C01827D780950050F37D /* BreakpointTVC.swift in Sources */,
+				9EE8C01827D780950050F37D /* CheckpointTVC.swift in Sources */,
 				9ECAAA9927C3C41900F583C4 /* API.swift in Sources */,
 				9E2CAC3327E8995500106FD1 /* PhoneCodeVC.swift in Sources */,
 				9ECAAA9027C3B9DA00F583C4 /* SplashVC.swift in Sources */,
 				9E3D434C27C4E2D800B6D5C5 /* BaseNC.swift in Sources */,
 				9E43A1FD27CF908800077288 /* Int+KKUtils.swift in Sources */,
+				E538FDEB27F5F1CA00EF58B8 /* SystemNotificationResponse.swift in Sources */,
 				9E3D434527C4DFAA00B6D5C5 /* OnboardingView.swift in Sources */,
 				9E2CAC2327E8757F00106FD1 /* FeedBackVC.swift in Sources */,
 				9EA443C427CCF4E800C4A47B /* TableSectionHeaderView.swift in Sources */,
@@ -1206,6 +1229,7 @@
 				9E896ABA27D65FFD0041FFBD /* OrderDetailVM.swift in Sources */,
 				9E3D435127C508E900B6D5C5 /* KKLodingButton.swift in Sources */,
 				9E6D2F7327C8D71600BAA261 /* UITableView+KKUtils.swift in Sources */,
+				E538FDE927F5F1B900EF58B8 /* SystemNotification.swift in Sources */,
 				9ECAAA9A27C3C41900F583C4 /* Response.swift in Sources */,
 				9E246A8427DF436200F10D77 /* OrderManager.swift in Sources */,
 				9ECAAAD027C3CF9A00F583C4 /* ServerURL.swift in Sources */,

@@ -48,8 +48,8 @@
 "tabbar_settings" = "Settings";
 
 // Home
-"home_active_orders" = "ACTIVE ORDERS";
-"home_past_orders" = "PAST ORDERS";
+"home_active_orders" = "ACTIVE MISSION";
+"home_past_orders" = "PAST MISSION";
 
 // Order
 "remaining_minutes" = "m left";
@@ -75,7 +75,7 @@
 "order_detail_package_detail" = "Package Content";
 "order_detail_owner_point" = "Sipariş Sahibi";
 "order_detail_courier_note" = "Courier Note";
-"order_detail_breakpoints" = "Hareketlerim";
+"order_detail_checkpoints" = "Hareketlerim";
 "order_detail_get_picking_code_title" = "Teslimat Kodunu Gir";
 "order_detail_package_price" = "Payment Details";
 "order_detail_package_price_title" = "Package Price:";
@@ -85,7 +85,7 @@
 
 // Pool
 "pool_page_title" = "Pool";
-"pool_total_order" = "Total Order";
+"pool_total_order" = "Mission Quota";
 "pool_no_order" = "Havuzda sipariş bulunamadı.";
 
 // Order Action

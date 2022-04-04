@@ -84,8 +84,10 @@ final class HomeNoDataView: UIView {
         case .notificationPermissionRequired:
             NotificationManager.shared.getNotificationConsent()
         case .accountNotVerified:
-            let url = URL(string: Constants.App.courierApplicationURL)!
-            UIApplication.shared.open(url)
+            if let urlSring = Session.shared.config.registerURL {
+                let url = URL(string: urlSring)!
+                UIApplication.shared.open(url)
+            }
         case .notWorking:
             Session.shared.isUserWorking = true
         case .working:

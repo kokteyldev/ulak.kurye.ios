@@ -56,8 +56,8 @@ class OrderDetailVC: BaseVC {
     @IBOutlet weak var courierNoteTitleContainer: UIView!
     @IBOutlet weak var courierNoteContainer: UIView!
     
-    @IBOutlet weak var breakpointsTitleContainer: UIView!
-    @IBOutlet weak var breakpointsContainer: UIView!
+    @IBOutlet weak var checkpointsTitleContainer: UIView!
+    @IBOutlet weak var checkpointsContainer: UIView!
     
     @IBOutlet weak var actionsView: OrderActionsView!
     @IBOutlet weak var actionsViewHeightCons: NSLayoutConstraint!
@@ -84,7 +84,7 @@ class OrderDetailVC: BaseVC {
     
     // MARK: - Setup
     func setupTableView() {
-        breakpointTableView.registerCell(type: BreakpointTVC.self)
+        breakpointTableView.registerCell(type: CheckpointTVC.self)
         breakpointTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
     
@@ -146,8 +146,8 @@ class OrderDetailVC: BaseVC {
         courierNoteTitleContainer.isHidden = viewModel.isCourierNoteHidden
         courierNoteContainer.isHidden = viewModel.isCourierNoteHidden
 
-        breakpointsTitleContainer.isHidden = viewModel.isBreakpointsHidden
-        breakpointsContainer.isHidden = viewModel.isBreakpointsHidden
+        checkpointsTitleContainer.isHidden = viewModel.isCheckpointsHidden
+        checkpointsContainer.isHidden = viewModel.isCheckpointsHidden
         
         actionsViewHeightCons.constant = viewModel.isActionViewHeight
             
@@ -195,8 +195,9 @@ class OrderDetailVC: BaseVC {
                 OrderManager.shared.updateOrder(order: order)
                 break
             case Result.failure(let error):
-                //TODO: hata göster ve geri git
-                print(error.localizedDescription)
+                self.navigationController?.view.showToast(.error, message: error.localizedDescription)
+                Log.e(error.localizedDescription)
+                self.navigationController?.popToRootViewController(animated: true)
                 break
             }
         }
@@ -213,7 +214,7 @@ class OrderDetailVC: BaseVC {
             
             switch result {
             case Result.success(_):
-                let phoneNumber = Constants.App.courierTalkToNumber
+                let phoneNumber = Session.shared.config.phoneNumber
                 guard let url = URL(string: "telprompt://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) else {
                     self.view.showToast(.error, message: "error_unknown".localized)
                     return
@@ -285,14 +286,14 @@ extension OrderDetailVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.breakpoints.count ?? 0
+        viewModel?.checkpoints.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BreakpointTVC", for: indexPath) as! BreakpointTVC
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CheckpointTVC", for: indexPath) as! CheckpointTVC
         
-        if let breakpoint = viewModel?.breakpoints[indexPath.row] {
-            cell.setBreakpoint(breakpoint)
+        if let breakpoint = viewModel?.checkpoints[indexPath.row] {
+            cell.setCheckpoint(breakpoint)
         }
         
         return cell

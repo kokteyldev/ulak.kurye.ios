@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 
 final class KKLoadingButton: UIButton {
     private var originalButtonText: String?

@@ -20,8 +20,8 @@ final class OrderDetailVM: OrderVM {
     let isActionViewHeight: CGFloat
     let isDetailsHidden: Bool
     
-    var breakpoints: [OrderBreakpoint] {
-        return order.breakpoints ?? []
+    var checkpoints: [OrderCheckpoint] {
+        return order.checkpoints ?? []
     }
     
     var isMapButtonsActive: Bool {
@@ -44,8 +44,8 @@ final class OrderDetailVM: OrderVM {
         return isDetailsHidden || order.note == nil || order.note?.length == 0
     }
     
-    var isBreakpointsHidden: Bool {
-        return breakpoints.count == 0 || order.status == .active
+    var isCheckpointsHidden: Bool {
+        return checkpoints.count == 0 || order.status == .active
     }
     
     // MARK: Init
