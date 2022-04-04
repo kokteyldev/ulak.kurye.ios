@@ -230,9 +230,9 @@ struct API {
     }
     
     //MARK: - Notifications
-    static func getNotifications(page: Int, notification_type: Int, completion:@escaping (Result<NotificationsResponse, Error>) -> Void) {
+    static func getNotifications(page: Int, notification_type: Int, completion:@escaping (Result<SystemNotificationResponse, Error>) -> Void) {
         performRequest(route: APIRouter.getNotifications(page: page, notification_type: notification_type)) {
-            (result:(Result<Response<NotificationsResponse>, Error>)) in
+            (result:(Result<Response<SystemNotificationResponse>, Error>)) in
             switch result {
             case Result.success(let response):
                 if let notificationsResponse = response.data {

@@ -7,14 +7,13 @@
 
 import UIKit
 
-class NotificationTVC: UITableViewCell {
+final class NotificationTVC: UITableViewCell {
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var notificationTimeLabel: UILabel!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var detailLabel: UILabel!
     
+    // MARK: - View Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -23,7 +22,10 @@ class NotificationTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setNotification(_ notificationModel: Notifications) {
-        self.titleLabel.text = notificationModel.uuid
+    // MARK: - Data
+    func setNotification(_ notificationModel: SystemNotification) {
+        self.titleLabel.text = notificationModel.data.body.title
+        self.detailLabel.text = notificationModel.data.body.body
+        self.dateLabel.text = notificationModel.createdAt.serverDate?.shortDateString
     }
 }

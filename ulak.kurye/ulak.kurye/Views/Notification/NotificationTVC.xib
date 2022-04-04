@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +20,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationTVC" customModule="ulak_kurye" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NotificationTVC" customModule="ulak_kurye" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="648" height="247"/>
+            <rect key="frame" x="0.0" y="0.0" width="648" height="172"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-notification" translatesAutoresizingMaskIntoConstraints="NO" id="Hqh-7t-N8U">
@@ -37,14 +36,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 13, 5:08-11:45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duZ-Li-XFZ">
-                    <rect key="frame" x="64" y="53" width="568" height="20"/>
-                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Başlangıç Noktası: Libadiye Mh. Libadiye Cd. No:8 Üsküdar / İstanbul" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcw-9E-l3Z">
-                    <rect key="frame" x="64" y="81" width="568" height="76"/>
+                    <rect key="frame" x="64" y="61" width="568" height="53"/>
                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -55,62 +48,34 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQb-hu-cg1">
-                    <rect key="frame" x="64" y="173" width="207.5" height="50"/>
-                    <color key="backgroundColor" name="ulk-orange"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="nWg-8R-kFz"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Onayla">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="5"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Zcw-9E-l3Z" firstAttribute="leading" secondItem="xEM-Bb-FM6" secondAttribute="leading" id="04b-Vb-DDY"/>
-                <constraint firstItem="FQb-hu-cg1" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-24" id="3dq-xB-Mxd"/>
-                <constraint firstItem="FQb-hu-cg1" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.32" id="3tM-cO-rha"/>
                 <constraint firstItem="xEM-Bb-FM6" firstAttribute="leading" secondItem="Hqh-7t-N8U" secondAttribute="trailing" constant="16" id="4yN-4e-eK3"/>
                 <constraint firstItem="xEM-Bb-FM6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="7G1-p0-76h"/>
-                <constraint firstItem="FQb-hu-cg1" firstAttribute="leading" secondItem="xEM-Bb-FM6" secondAttribute="leading" id="Hv8-cI-Xoa"/>
                 <constraint firstItem="cUA-u9-TsS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="OpD-iP-OML"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Zcw-9E-l3Z" secondAttribute="trailing" constant="16" id="RQ2-FY-dgw"/>
                 <constraint firstAttribute="trailing" secondItem="cUA-u9-TsS" secondAttribute="trailing" constant="16" id="S5E-AJ-GCh"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="duZ-Li-XFZ" secondAttribute="trailing" constant="16" id="TJX-NA-2zw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Zcw-9E-l3Z" secondAttribute="bottom" constant="24" id="SgJ-kt-O7g"/>
                 <constraint firstItem="cUA-u9-TsS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xEM-Bb-FM6" secondAttribute="trailing" constant="8" id="TgY-1S-Ry3"/>
-                <constraint firstItem="Zcw-9E-l3Z" firstAttribute="top" secondItem="duZ-Li-XFZ" secondAttribute="bottom" constant="8" id="dAw-pj-Oqo"/>
+                <constraint firstItem="Zcw-9E-l3Z" firstAttribute="top" secondItem="xEM-Bb-FM6" secondAttribute="bottom" constant="16" id="irq-Hv-0mI"/>
                 <constraint firstItem="Hqh-7t-N8U" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="rN8-9n-aK2"/>
-                <constraint firstItem="duZ-Li-XFZ" firstAttribute="top" secondItem="xEM-Bb-FM6" secondAttribute="bottom" constant="8" id="rXl-mm-B1o"/>
                 <constraint firstItem="Hqh-7t-N8U" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="uoP-ZR-o2M"/>
-                <constraint firstItem="duZ-Li-XFZ" firstAttribute="leading" secondItem="xEM-Bb-FM6" secondAttribute="leading" id="vqd-NX-lHb"/>
-                <constraint firstItem="FQb-hu-cg1" firstAttribute="top" secondItem="Zcw-9E-l3Z" secondAttribute="bottom" constant="16" id="xHK-qd-0IG"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="addressLabel" destination="Zcw-9E-l3Z" id="qSW-rG-hhT"/>
-                <outlet property="button" destination="FQb-hu-cg1" id="8Gs-KN-8Kj"/>
-                <outlet property="dateLabel" destination="duZ-Li-XFZ" id="upS-X1-oLx"/>
+                <outlet property="dateLabel" destination="cUA-u9-TsS" id="yfZ-PO-Znx"/>
+                <outlet property="detailLabel" destination="Zcw-9E-l3Z" id="qSW-rG-hhT"/>
                 <outlet property="iconView" destination="Hqh-7t-N8U" id="K4V-l3-fmT"/>
-                <outlet property="notificationTimeLabel" destination="cUA-u9-TsS" id="LDZ-pe-3Qg"/>
                 <outlet property="titleLabel" destination="xEM-Bb-FM6" id="OOe-EA-aif"/>
             </connections>
-            <point key="canvasLocation" x="65.217391304347828" y="45.870535714285715"/>
+            <point key="canvasLocation" x="65.217391304347828" y="20.758928571428569"/>
         </view>
     </objects>
     <resources>
         <image name="ic-notification" width="29" height="30"/>
-        <namedColor name="ulk-orange">
-            <color red="1" green="0.62352941176470589" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

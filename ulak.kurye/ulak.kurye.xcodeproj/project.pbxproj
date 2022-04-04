@@ -135,8 +135,8 @@
 		9EE8C01927D780950050F37D /* CheckpointTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EE8C01727D780950050F37D /* CheckpointTVC.xib */; };
 		9EE8C01B27D78E600050F37D /* UIStackView+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE8C01A27D78E600050F37D /* UIStackView+KKUtils.swift */; };
 		C3B5AD88CC0BE645CA10B9A6 /* Pods_ulak_kurye_ulak_kuryeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D056A3DC22B8A343D361EDB /* Pods_ulak_kurye_ulak_kuryeUITests.framework */; };
-		E538FDE927F5F1B900EF58B8 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E538FDE827F5F1B900EF58B8 /* Notifications.swift */; };
-		E538FDEB27F5F1CA00EF58B8 /* NotificationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E538FDEA27F5F1CA00EF58B8 /* NotificationsResponse.swift */; };
+		E538FDE927F5F1B900EF58B8 /* SystemNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E538FDE827F5F1B900EF58B8 /* SystemNotification.swift */; };
+		E538FDEB27F5F1CA00EF58B8 /* SystemNotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E538FDEA27F5F1CA00EF58B8 /* SystemNotificationResponse.swift */; };
 		E55D381B27F6D4A9005592DB /* NotificationTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55D381A27F6D4A9005592DB /* NotificationTVC.xib */; };
 		E55D381D27F6D4C7005592DB /* NotificationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D381C27F6D4C7005592DB /* NotificationTVC.swift */; };
 		E569910F27EDA6320099E9D5 /* UIViewController+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */; };
@@ -318,8 +318,8 @@
 		B99ABCBB43B1B85B66CAA4AA /* Pods-ulak.kurye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye.debug.xcconfig"; path = "Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye.debug.xcconfig"; sourceTree = "<group>"; };
 		C1D478E1D7B12095363EB400 /* Pods-ulak.kuryeTests.dev release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.dev release.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.dev release.xcconfig"; sourceTree = "<group>"; };
 		C7EA48B1254F7D274D7337BE /* Pods-ulak.kuryeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.release.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.release.xcconfig"; sourceTree = "<group>"; };
-		E538FDE827F5F1B900EF58B8 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		E538FDEA27F5F1CA00EF58B8 /* NotificationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsResponse.swift; sourceTree = "<group>"; };
+		E538FDE827F5F1B900EF58B8 /* SystemNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNotification.swift; sourceTree = "<group>"; };
+		E538FDEA27F5F1CA00EF58B8 /* SystemNotificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNotificationResponse.swift; sourceTree = "<group>"; };
 		E55D381A27F6D4A9005592DB /* NotificationTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTVC.xib; sourceTree = "<group>"; };
 		E55D381C27F6D4C7005592DB /* NotificationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTVC.swift; sourceTree = "<group>"; };
 		E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KKUtils.swift"; sourceTree = "<group>"; };
@@ -777,8 +777,8 @@
 				9E2CAC3B27E8C65E00106FD1 /* BaseWallet.swift */,
 				9E2CAC3D27E8C9FA00106FD1 /* Wallet.swift */,
 				9E2CAC3F27E8CD4100106FD1 /* WalletResponse.swift */,
-				E538FDE827F5F1B900EF58B8 /* Notifications.swift */,
-				E538FDEA27F5F1CA00EF58B8 /* NotificationsResponse.swift */,
+				E538FDE827F5F1B900EF58B8 /* SystemNotification.swift */,
+				E538FDEA27F5F1CA00EF58B8 /* SystemNotificationResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1220,7 +1220,7 @@
 				9ECAAA9027C3B9DA00F583C4 /* SplashVC.swift in Sources */,
 				9E3D434C27C4E2D800B6D5C5 /* BaseNC.swift in Sources */,
 				9E43A1FD27CF908800077288 /* Int+KKUtils.swift in Sources */,
-				E538FDEB27F5F1CA00EF58B8 /* NotificationsResponse.swift in Sources */,
+				E538FDEB27F5F1CA00EF58B8 /* SystemNotificationResponse.swift in Sources */,
 				9E3D434527C4DFAA00B6D5C5 /* OnboardingView.swift in Sources */,
 				9E2CAC2327E8757F00106FD1 /* FeedBackVC.swift in Sources */,
 				9EA443C427CCF4E800C4A47B /* TableSectionHeaderView.swift in Sources */,
@@ -1229,7 +1229,7 @@
 				9E896ABA27D65FFD0041FFBD /* OrderDetailVM.swift in Sources */,
 				9E3D435127C508E900B6D5C5 /* KKLodingButton.swift in Sources */,
 				9E6D2F7327C8D71600BAA261 /* UITableView+KKUtils.swift in Sources */,
-				E538FDE927F5F1B900EF58B8 /* Notifications.swift in Sources */,
+				E538FDE927F5F1B900EF58B8 /* SystemNotification.swift in Sources */,
 				9ECAAA9A27C3C41900F583C4 /* Response.swift in Sources */,
 				9E246A8427DF436200F10D77 /* OrderManager.swift in Sources */,
 				9ECAAAD027C3CF9A00F583C4 /* ServerURL.swift in Sources */,
