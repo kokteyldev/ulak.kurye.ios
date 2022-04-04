@@ -1,5 +1,5 @@
 //
-//  BreakpointTVC.swift
+//  CheckpointTVC.swift
 //  ulak.kurye
 //
 //  Created by Mehmet Karagöz on 8.03.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BreakpointTVC: UITableViewCell {
+final class CheckpointTVC: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -21,8 +21,8 @@ final class BreakpointTVC: UITableViewCell {
     }
  
     // MARK: - Data
-    func setBreakpoint(_ breakpoint: OrderBreakpoint) {
-        self.titleLabel.text = breakpoint.name
-        self.dateLabel.text = breakpoint.date.serverDate?.shortDateString
+    func setCheckpoint(_ checkpoint: OrderCheckpoint) {
+        self.titleLabel.text = checkpoint.message
+        self.dateLabel.text = checkpoint.date.serverDate?.shortDateString
     }
 }

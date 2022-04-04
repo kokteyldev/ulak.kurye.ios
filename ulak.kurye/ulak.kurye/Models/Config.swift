@@ -10,6 +10,8 @@ import Foundation
 struct Config: Codable {
     var latestVersion: String
     var kvvkURL: ServerURL?
+    var phoneNumber: String
+    var newRegister: String
     
     private var policies: [ServerURL]
     
@@ -18,11 +20,15 @@ struct Config: Codable {
         case courier = "courier"
         case appVersion = "app_version"
         case policyDict = "static_pages"
+        case phoneNumber = "service_phone_number"
+        case newRegister = "courier_onboarding_link"
     }
     
     init() {
         self.latestVersion = "0"
         self.policies = []
+        self.phoneNumber = ""
+        self.newRegister = ""
     }
     
     init(from decoder: Decoder) throws {
@@ -34,6 +40,9 @@ struct Config: Codable {
         latestVersion = try courier.decode (String.self, forKey: .latestVersion)
         
         policies = try container.decode([ServerURL].self, forKey: .policyDict)
+        
+        phoneNumber = try container.decode(String.self, forKey: .phoneNumber)
+        newRegister = try container.decode(String.self, forKey: .newRegister)
         
         var kvkkURLModel: ServerURL?
         

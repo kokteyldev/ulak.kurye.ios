@@ -879,7 +879,7 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="z3D-vp-giA"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ht0-NV-g81" userLabel="Breakpoints Title View">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ht0-NV-g81" userLabel="Checkpoints Title View">
                                                 <rect key="frame" x="0.0" y="955.5" width="414" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-time" translatesAutoresizingMaskIntoConstraints="NO" id="Bh0-9p-vNI">
@@ -903,7 +903,7 @@
                                                         <color key="textColor" name="ulk-subtitle"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="order_detail_breakpoints"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="order_detail_checkpoints"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
@@ -920,7 +920,7 @@
                                                     <constraint firstItem="Q5r-fq-Zzo" firstAttribute="top" secondItem="ht0-NV-g81" secondAttribute="top" constant="8" id="s40-nG-KhW"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="We3-ZQ-hHt" userLabel="Breakpoints View">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="We3-ZQ-hHt" userLabel="checkpoints View">
                                                 <rect key="frame" x="0.0" y="999.5" width="414" height="0.0"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4rW-55-nf0">
@@ -979,8 +979,8 @@
                         <outlet property="actionsViewHeightCons" destination="Djn-5v-Ipt" id="ZlL-hB-9ZH"/>
                         <outlet property="breakpointHeightConst" destination="aip-FM-Lbw" id="5Wt-GU-HWV"/>
                         <outlet property="breakpointTableView" destination="4rW-55-nf0" id="frc-yX-jVC"/>
-                        <outlet property="breakpointsContainer" destination="We3-ZQ-hHt" id="W6H-DY-FxW"/>
-                        <outlet property="breakpointsTitleContainer" destination="ht0-NV-g81" id="hcg-uq-4DA"/>
+                        <outlet property="checkpointsContainer" destination="We3-ZQ-hHt" id="W6H-DY-FxW"/>
+                        <outlet property="checkpointsTitleContainer" destination="ht0-NV-g81" id="hcg-uq-4DA"/>
                         <outlet property="courierNoteContainer" destination="NnP-3P-OGn" id="zwq-gm-gXx"/>
                         <outlet property="courierNoteLabel" destination="E2t-dz-t5g" id="ITb-hr-Rtu"/>
                         <outlet property="courierNoteTitleContainer" destination="CnI-b0-biS" id="942-7G-iPh"/>

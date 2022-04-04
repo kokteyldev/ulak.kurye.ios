@@ -15,7 +15,7 @@ extension UIColor {
             let start = hex.index(hex.startIndex, offsetBy: 1)
             let hexColor = String(hex[start...])
             
-            if hexColor.count == 8 {
+            if hexColor.count == 6 {
                 let scanner = Scanner(string: hexColor)
                 var hexNumber: UInt64 = 0
                 

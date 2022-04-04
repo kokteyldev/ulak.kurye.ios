@@ -32,7 +32,7 @@ struct Order: Codable {
     var customer: Customer?
     var senderDistance: OrderDistance
     var receiverDistance: OrderDistance
-    var breakpoints: [OrderBreakpoint]?
+    var checkpoints: [OrderCheckpoint]?
     var createdTime: String
     var startTime: String?
     var status: OrderStatus
@@ -57,7 +57,7 @@ struct Order: Codable {
         case customer = "customer"
         case senderDistance = "sender_distance"
         case receiverDistance = "receiver_distance"
-        case breakpoints = "breakpoints"
+        case checkpoints = "checkpoints"
         case createdTime = "created_at"
         case startTime = "start_time"
         case status = "app_status"
@@ -133,13 +133,15 @@ struct OrderDistance: Codable {
     }
 }
 
-struct OrderBreakpoint: Codable {
-    var name: String
+struct OrderCheckpoint: Codable {
+    var tag: String
     var date: String
+    var message: String
     
     enum CodingKeys: String, CodingKey {
-        case name = "breakpoint_name"
+        case tag = "tag"
         case date = "created_at"
+        case message = "message"
     }
 }
 
