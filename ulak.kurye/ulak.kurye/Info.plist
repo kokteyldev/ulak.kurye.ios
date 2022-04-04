@@ -4,6 +4,8 @@
 <dict>
 	<key>API_URL</key>
 	<string>$(ULK_API_URL)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>googlechromes</string>
@@ -22,7 +24,5 @@
 		<string>location</string>
 		<string>remote-notification</string>
 	</array>
-    <key>ITSAppUsesNonExemptEncryption</key>
-    <false/>
 </dict>
 </plist>

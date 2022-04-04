@@ -30,19 +30,15 @@ final class OrderPoolVC: BaseTBLVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        Session.shared.checkUserState()
         activeOrderCount = OrderManager.shared.activeOrderCount
         setupHeaderView()
         getOrders()
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: .UserStateChanged, object: nil)
-    }
-    
     // MARK: - Setup
     func setupUI() {
         self.title = "pool_page_title".localized
-        NotificationCenter.default.addObserver(self, selector: #selector(userStateChanged), name: .UserStateChanged, object: nil)
         tableView.registerCell(type: OrderTVC.self)
         setupRefreshButton()
     }
@@ -186,11 +182,6 @@ final class OrderPoolVC: BaseTBLVC {
     
     @objc private func refreshButtonTapped() {
         getOrders()
-    }
-    
-    // MARK: - Notifications
-    @objc private func userStateChanged() {
-        //TODO: check status and hide orders if needed.
     }
 }
 

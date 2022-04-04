@@ -126,6 +126,7 @@
 "wallet_title" = "Cüzdan";
 "wallet_balance" = "Bakiye";
 "wallet_transfer_balance" = "Bakiye Aktar";
+"wallet_transfer_balance_message" = "hesaba aktarmak istediğine emin misin?";
 "wallet_no_wallet" = "Cüzdan bulunamadı.";
 "wallet_no_transaction" = "İşlem bulunamadı.";
 

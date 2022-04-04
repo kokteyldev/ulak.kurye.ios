@@ -144,9 +144,9 @@ struct OrderBreakpoint: Codable {
 }
 
 struct OrderPackage: Codable {
-    var price: String
-    var prepareTime: String
-    var paymentMethod: String
+    var price: String?
+    var prepareTime: String?
+    var paymentMethod: String?
     var currency: String = "TRY"
     
     enum CodingKeys: String, CodingKey {
@@ -159,9 +159,9 @@ struct OrderPackage: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.price = try container.decode(String.self, forKey: .price)
-        self.prepareTime = try container.decode(String.self, forKey: .prepareTime)
-        self.paymentMethod = try container.decode(String.self, forKey: .paymentMethod)
+        self.price = try? container.decode(String.self, forKey: .price)
+        self.prepareTime = try? container.decode(String.self, forKey: .prepareTime)
+        self.paymentMethod = try? container.decode(String.self, forKey: .paymentMethod)
         
         if container.contains(.currency) {
             self.currency = try container.decode(String.self, forKey: .currency)

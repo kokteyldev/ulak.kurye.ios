@@ -153,6 +153,12 @@ final class HomeVC: BaseVC {
     // MARK: - Notifications
     @objc private func userStateChanged() {
         setupNoDataView()
+        
+        if !Session.shared.isPoolAvailable {
+            DispatchQueue.main.async {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        }
     }
     
     @objc private func reloadOrders() {
@@ -278,6 +284,12 @@ extension HomeVC: HeaderViewDelegate {
                     break
                 }
             }
+        }
+        
+        qrInputVC.cancelCallback = {
+            self.enabledView()
+            self.hideLoading()
+            return
         }
     }
 }

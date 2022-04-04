@@ -43,6 +43,10 @@ final class Session {
         return user?.isVerifiedAccount ?? false
     }
     
+    var isPoolAvailable: Bool {
+        return userState == .working
+    }
+    
     //TODO: bu tarz user bilgilerini userManager yapıp oraya taşı
     var maxOrderCount: Int {
         return user?.maxOrderCount ?? 0
@@ -121,7 +125,7 @@ final class Session {
             switch result {
             case Result.success(_):
                 self.user?.oneSignalId = self.oneSignalId
-                Log.d("OnesignalId updated: \(self.oneSignalId)")
+                Log.d("OnesignalId updated: \(self.oneSignalId ?? "")")
                 break
             case Result.failure(let error):
                 Log.e("OnesignalId update error: \(error.localizedDescription)")

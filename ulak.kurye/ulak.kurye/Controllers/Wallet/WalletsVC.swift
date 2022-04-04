@@ -140,8 +140,6 @@ final class WalletsVC: BaseVC {
     
     // MARK: - Actions
     @IBAction func transferBalanceTapped(_ sender: Any) {
-        //TODO: alert çıkartalım, xx TL yi hesaba aktarmak istediğine emin misin?
-        
         guard let walletVM = walletVM else { return }
         if walletVM.payableBalance == 0 { return }
         
@@ -149,19 +147,27 @@ final class WalletsVC: BaseVC {
         button?.startAnimation()
         disableView()
         
-        API.transferBalance(walletUUID: walletVM.uuid, amount: walletVM.payableBalance) { result in
-            button?.stopAnimation()
-            self.enabledView()
-            
-            switch result {
-            case Result.success(_):
-                self.getWalletDetail()
-                break
-            case Result.failure(let error):
-                self.view.showToast(.error, message: error.localizedDescription)
-                break
+        let alert = UIAlertController(title: "\(walletVM.balance) " + "wallet_transfer_balance_message".localized, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "yes".localized, style: .default, handler: { action in
+            API.transferBalance(walletUUID: walletVM.uuid, amount: walletVM.payableBalance) { result in
+                button?.stopAnimation()
+                self.enabledView()
+                
+                switch result {
+                case Result.success(_):
+                    self.getWalletDetail()
+                    break
+                case Result.failure(let error):
+                    self.view.showToast(.error, message: error.localizedDescription)
+                    break
+                }
             }
-        }
+        }))
+        alert.addAction(UIAlertAction(title: "no".localized, style: .cancel, handler: { action in
+            self.enabledView()
+            button?.stopAnimation()
+        }))
+        self.present(alert, animated: true)
     }
     
     @IBAction func segmentChanged(_ sender: Any) {

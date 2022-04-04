@@ -177,7 +177,12 @@ final class OrderActionsView: UIView {
                     return
                 }
             }
+            
+            qrInputVC.cancelCallback = {
+                self.resetAfterLoading()
+            }
             return
+            
         } else if rule == .deliverSecurityCode {
             let qrInputVC = QRInputCodeVC.qrInputVC(title: "picking_security_code_title".localized,
                                                     inputTitle: "picking_security_code_input_name".localized,
@@ -192,9 +197,12 @@ final class OrderActionsView: UIView {
                     return
                 }
             }
+            
+            qrInputVC.cancelCallback = {
+                self.resetAfterLoading()
+            }
             return
         }
-
 
         completion(nil)
     }
