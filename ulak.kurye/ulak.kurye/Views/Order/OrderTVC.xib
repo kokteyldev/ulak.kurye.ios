@@ -36,10 +36,14 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-arrow-right-orange" translatesAutoresizingMaskIntoConstraints="NO" id="9Ro-Bd-ZQl">
                         <rect key="frame" x="524" y="16" width="18" height="9"/>
                     </imageView>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yM-v7-KlL" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yM-v7-KlL" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
                         <rect key="frame" x="486" y="8" width="72" height="62"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="ic-add"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="62" id="0lN-Oh-y4U"/>
+                            <constraint firstAttribute="width" constant="72" id="KsM-RC-JIx"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="ic-add"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value=" "/>
                         </userDefinedRuntimeAttributes>

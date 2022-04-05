@@ -156,7 +156,12 @@ final class HomeVC: BaseVC {
         
         if !Session.shared.isPoolAvailable {
             DispatchQueue.main.async {
+                self.tableView.isScrollEnabled = false
                 self.navigationController?.popToRootViewController(animated: true)
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.tableView.isScrollEnabled = true
             }
         }
     }

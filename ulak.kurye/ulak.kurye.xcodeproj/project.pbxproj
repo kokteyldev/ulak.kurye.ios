@@ -1459,12 +1459,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ulak.kurye/ulak.kurye.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 4W45FP9GB6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ulak.kurye/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ULAK;
+				INFOPLIST_KEY_CFBundleDisplayName = "ULAK Sürücü";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Sipariş kodlarını okumak için kamera izni vermelisin.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Sipariş takibi için konum izni vermelisin.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Sipariş takibi için konum izni vermelisin.";
@@ -1486,7 +1486,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1499,11 +1499,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ulak.kurye/ulak.kurye.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 4W45FP9GB6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ulak.kurye/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ULAK;
+				INFOPLIST_KEY_CFBundleDisplayName = "ULAK Sürücü";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Sipariş kodlarını okumak için kamera izni vermelisin.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Sipariş takibi için konum izni vermelisin.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Sipariş takibi için konum izni vermelisin.";
@@ -1525,7 +1525,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1613,7 +1613,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 4W45FP9GB6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
@@ -1639,7 +1639,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 4W45FP9GB6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
@@ -1665,7 +1665,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 4W45FP9GB6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
@@ -1691,7 +1691,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 4W45FP9GB6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
@@ -1785,12 +1785,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ulak.kurye/ulak.kurye.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 4W45FP9GB6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ulak.kurye/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ULAK;
+				INFOPLIST_KEY_CFBundleDisplayName = "ULAK Sürücü";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Sipariş kodlarını okumak için kamera izni vermelisin.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Sipariş takibi için konum izni vermelisin.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Sipariş takibi için konum izni vermelisin.";
@@ -1812,7 +1812,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Dev Debug";
 		};
@@ -1922,11 +1922,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ulak.kurye/ulak.kurye.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 4W45FP9GB6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ulak.kurye/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ULAK;
+				INFOPLIST_KEY_CFBundleDisplayName = "ULAK Sürücü";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Sipariş kodlarını okumak için kamera izni vermelisin.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Sipariş takibi için konum izni vermelisin.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Sipariş takibi için konum izni vermelisin.";
@@ -1948,7 +1948,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Dev Release";
 		};

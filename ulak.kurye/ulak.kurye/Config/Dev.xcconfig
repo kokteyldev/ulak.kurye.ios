@@ -9,7 +9,7 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 // App Settings
-ULK_APP_NAME = ULAK Dev
+ULK_APP_NAME = ULAK Sürücü Dev
 
 //API
 ULK_API_URL = https:/$()/dev-api.ulakapp.com/api/v1

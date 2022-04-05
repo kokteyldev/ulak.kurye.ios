@@ -130,6 +130,7 @@ final class OrderPoolVC: BaseTBLVC {
                         let indexPath = IndexPath(row: index, section: 0)
                         self.tableView.deleteRows(at: [indexPath], with: .left)
                     }
+                    self.getOrders()
                     break
                 case Result.failure(let error):
                     self.resetAfterLoading()
