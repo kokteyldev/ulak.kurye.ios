@@ -65,7 +65,10 @@ final class OrderActionsView: UIView {
         API.getOrderAgreements(orderUUID: orderUUID) { result in
             switch result {
             case Result.success(let agreementResponse):
-                //TODO: hiç agreement yoksa hata göster.
+                if agreementResponse.aggrements.count == 0 {
+                    UIApplication.topViewController()?.view.showToast(.error, message: "action_no_agreement".localized)
+                    return
+                }
                 
                 if let agreement = agreementResponse.curentAggrements.first {
                     self.agreement = agreement
@@ -75,9 +78,9 @@ final class OrderActionsView: UIView {
                 
                 group.leave()
                 break
-            case Result.failure(_):
+            case Result.failure(let error):
                 self.resetAfterLoading()
-                //TODO: show error
+                UIApplication.topViewController()?.view.showToast(.error, message: error.localizedDescription)
                 group.leave()
                 break
             }
@@ -86,7 +89,7 @@ final class OrderActionsView: UIView {
         group.notify(queue: .main) {
             guard self.agreement != nil else {
                 self.resetAfterLoading()
-                //TODO: show error
+                UIApplication.topViewController()?.view.showToast(.error, message: "action_no_agreement".localized)
                 return
             }
             
@@ -103,8 +106,7 @@ final class OrderActionsView: UIView {
                 self.collectionView.reloadData()
                 break
             case Result.failure(let error):
-                //TODO: bu view'in içinde bi hata mesajı göster
-                print(error.localizedDescription)
+                UIApplication.topViewController()?.view.showToast(.error, message: error.localizedDescription)
                 break
             }
         }

@@ -11,6 +11,7 @@ import GoogleMaps
 class OrderDetailVC: BaseVC {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var orderCodeLabel: UILabel!
     @IBOutlet weak var serviceInfoLabel: UILabel!
@@ -94,7 +95,6 @@ class OrderDetailVC: BaseVC {
     }
     
     func setupUI() {
-        //TODO: show no order alert and go back if order is nil
         guard let order = order else { return }
         
         viewModel = OrderDetailVM(order: order)
@@ -181,6 +181,7 @@ class OrderDetailVC: BaseVC {
         actionsView.prepareForLoading()
         actionsView.delegate = self
         actionsView.setOrderUUID(order!.uuid)
+        actionsView.isHidden = false
     }
     
     func getOrder(_ orderUUID: String) {
@@ -192,6 +193,7 @@ class OrderDetailVC: BaseVC {
             case Result.success(let order):
                 self.order = order
                 self.setupUI()
+                self.getActions()
                 OrderManager.shared.updateOrder(order: order)
                 break
             case Result.failure(let error):
@@ -315,10 +317,12 @@ extension OrderDetailVC: NetworkRequestable {
     func prepareForLoading() {
         self.showLoading(isDark: false)
         self.stackView.isHidden = true
+        activityIndicator.startAnimating()
     }
     
     func resetAfterLoading() {
         self.hideLoading()
         self.stackView.isHidden = false
+        activityIndicator.stopAnimating()
     }
 }

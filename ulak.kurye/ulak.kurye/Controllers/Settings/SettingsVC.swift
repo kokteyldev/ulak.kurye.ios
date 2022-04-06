@@ -71,6 +71,12 @@ final class SettingsVC: BaseTBLVC {
                 }
             }
         }
+        
+        qrInputVC.cancelCallback = {
+            self.enabledView()
+            self.hideLoading()
+            return
+        }
     }
     
     private func updateUserSettings() {

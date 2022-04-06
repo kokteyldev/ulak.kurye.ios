@@ -82,6 +82,7 @@
 "order_detail_package_payment_method_title" = "Ödeme Yöntemi:";
 "order_detail_package_prepare_time_title" = "Hazırlanma Süreci:";
 "order_detail_package_prepare_time_remaining" = " dk.";
+"order_detail_no_order" = "Hiç Sipariş Bulunamadı!";
 
 // Pool
 "pool_page_title" = "Havuz";
@@ -93,6 +94,7 @@
 "picking_security_code_input_name" = "Teslimat Kodu";
 "action_take_consent_message" = "Görevi üzerine almak istediğine emin misin?";
 "action_abort_consent_message" = "Görevi iptal etmeye kabul edersen, cezai işlem uygulanabileceğini de kabul etmiş olursun. Görevi iptal etmek istediğine emin misin?";
+"action_no_agreement" = "Anlaşma Bulunamadı!";
 
 // QR
 "scan_qr_code" = "QR Kod Tarama";

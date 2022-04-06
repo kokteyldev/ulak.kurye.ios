@@ -82,6 +82,7 @@
 "order_detail_package_payment_method_title" = "Payment Method:";
 "order_detail_package_prepare_time_title" = "Prepate Time:";
 "order_detail_package_prepare_time_remaining" = " m.";
+"order_detail_no_order" = "Order Not Found!";
 
 // Pool
 "pool_page_title" = "Pool";
@@ -93,6 +94,7 @@
 "picking_security_code_input_name" = "Teslimat Kodu";
 "action_take_consent_message" = "Görevi üzerine almak istediğine emin misin?";
 "action_abort_consent_message" = "Görevi iptal etmeye kabul edersen, cezai işlem uygulanabileceğini de kabul etmiş olursun. Görevi iptal etmek istediğine emin misin?";
+"action_no_agreement" = "No Agreement!";
 
 // QR
 "scan_qr_code" = "Scan QR Code";
