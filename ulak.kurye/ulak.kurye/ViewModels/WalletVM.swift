@@ -47,7 +47,7 @@ struct WalletTransactionVM {
     let balance: String
     let type: String
     let date: String
-    let orderUUID: String
+    let orderUUID: String?
     
     init(transaction: WalletTransaction, earning: WalletTransactionEarning) {
         balance = earning.value.currencyValue(earning.currency)

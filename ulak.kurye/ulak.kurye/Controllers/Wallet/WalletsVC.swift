@@ -187,8 +187,10 @@ final class WalletsVC: BaseVC {
 // MARK: UITableViewDelegate
 extension WalletsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let transaction = walletVM?.transactions[indexPath.row] {
-            performSegue(withIdentifier: "OrderDetailVC", sender: transaction.orderUUID)
+        if let orderUUID = walletVM?.transactions[indexPath.row].orderUUID {
+            performSegue(withIdentifier: "OrderDetailVC", sender: orderUUID)
+        } else {
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     }
 }

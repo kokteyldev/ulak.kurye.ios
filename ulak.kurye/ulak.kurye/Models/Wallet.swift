@@ -34,7 +34,7 @@ struct WalletTransaction: Codable {
 }
 
 struct WalletTransactionMeta: Codable {
-    var orderUUID: String
+    var orderUUID: String?
     var prepayEarning: WalletTransactionEarning?
     var earning: WalletTransactionEarning?
     
