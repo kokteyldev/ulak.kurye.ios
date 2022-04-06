@@ -89,7 +89,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMN-Sm-Ijx" userLabel="PoolContainerView" customClass="KKUIView" customModule="KokteylUtils">
                             <rect key="frame" x="315.5" y="0.0" width="182" height="182"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-pool-new" translatesAutoresizingMaskIntoConstraints="NO" id="zP6-Ij-Vn9">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-pool" translatesAutoresizingMaskIntoConstraints="NO" id="zP6-Ij-Vn9">
                                     <rect key="frame" x="45.5" y="23" width="91" height="91"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -219,7 +219,7 @@
         </view>
     </objects>
     <resources>
-        <image name="ic-pool-new" width="220" height="243"/>
+        <image name="ic-pool" width="220" height="243"/>
         <image name="ic-qrcode" width="36" height="36"/>
         <namedColor name="ulk-green">
             <color red="0.23529411764705882" green="0.70588235294117652" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

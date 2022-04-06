@@ -29,6 +29,7 @@ final class HomeVC: BaseVC {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadOrders), name: .ReloadOrders, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ordersUpdated), name: .OrdersUpdated, object: nil)
 
+        tableView.alwaysBounceVertical = false
         tableView.registerCell(type: OrderTVC.self)
         
         setupHeaderView()
@@ -156,12 +157,7 @@ final class HomeVC: BaseVC {
         
         if !Session.shared.isPoolAvailable {
             DispatchQueue.main.async {
-                self.tableView.isScrollEnabled = false
                 self.navigationController?.popToRootViewController(animated: true)
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.tableView.isScrollEnabled = true
             }
         }
     }
