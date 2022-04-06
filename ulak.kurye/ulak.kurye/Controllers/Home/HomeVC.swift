@@ -29,6 +29,7 @@ final class HomeVC: BaseVC {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadOrders), name: .ReloadOrders, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ordersUpdated), name: .OrdersUpdated, object: nil)
 
+        tableView.alwaysBounceVertical = false
         tableView.registerCell(type: OrderTVC.self)
         
         setupHeaderView()

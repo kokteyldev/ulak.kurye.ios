@@ -10,7 +10,7 @@
 
 
 // App Settings
-ULK_APP_NAME = ULAK
+ULK_APP_NAME = ULAK Sürücü
 
 //API
 ULK_API_URL = https:/$()/api.ulakapp.com/api/v1

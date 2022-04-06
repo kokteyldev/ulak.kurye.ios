@@ -134,14 +134,19 @@ struct OrderDistance: Codable {
 }
 
 struct OrderCheckpoint: Codable {
-    var tag: String
-    var date: String
-    var message: String
+    var date: String?
+    var message: String?
     
     enum CodingKeys: String, CodingKey {
-        case tag = "tag"
         case date = "created_at"
         case message = "message"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.date = try container.decode(String.self, forKey: .date)
+        self.message = try container.decode(String.self, forKey: .message)
     }
 }
 

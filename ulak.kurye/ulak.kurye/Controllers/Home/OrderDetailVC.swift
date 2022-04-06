@@ -11,6 +11,7 @@ import GoogleMaps
 class OrderDetailVC: BaseVC {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var orderCodeLabel: UILabel!
     @IBOutlet weak var serviceInfoLabel: UILabel!
@@ -37,7 +38,7 @@ class OrderDetailVC: BaseVC {
     @IBOutlet weak var ownerNameLabel: UILabel!
     @IBOutlet weak var ownerCallButton: UIButton!
     
-    @IBOutlet weak var breakpointTableView: UITableView!
+    @IBOutlet weak var checkpointTableView: UITableView!
     @IBOutlet weak var breakpointHeightConst: NSLayoutConstraint!
     
     @IBOutlet weak var packagePriceTitleContainer: UIView!
@@ -84,8 +85,8 @@ class OrderDetailVC: BaseVC {
     
     // MARK: - Setup
     func setupTableView() {
-        breakpointTableView.registerCell(type: CheckpointTVC.self)
-        breakpointTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        checkpointTableView.registerCell(type: CheckpointTVC.self)
+        checkpointTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
     
     private func setupMap() {
@@ -94,7 +95,6 @@ class OrderDetailVC: BaseVC {
     }
     
     func setupUI() {
-        //TODO: show no order alert and go back if order is nil
         guard let order = order else { return }
         
         viewModel = OrderDetailVM(order: order)
@@ -167,7 +167,7 @@ class OrderDetailVC: BaseVC {
             mapView.animate(with: GMSCameraUpdate.fit(bounds, with: .init(top: 38, left: 20, bottom: 2, right: 20)))
         }
         
-        breakpointTableView.reloadData()
+        checkpointTableView.reloadData()
     }
     
     // MARK: - Data
@@ -181,6 +181,7 @@ class OrderDetailVC: BaseVC {
         actionsView.prepareForLoading()
         actionsView.delegate = self
         actionsView.setOrderUUID(order!.uuid)
+        actionsView.isHidden = false
     }
     
     func getOrder(_ orderUUID: String) {
@@ -192,6 +193,7 @@ class OrderDetailVC: BaseVC {
             case Result.success(let order):
                 self.order = order
                 self.setupUI()
+                self.getActions()
                 OrderManager.shared.updateOrder(order: order)
                 break
             case Result.failure(let error):
@@ -266,7 +268,7 @@ class OrderDetailVC: BaseVC {
     // MARK: - Observer
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if (keyPath == "contentSize") {
-            breakpointHeightConst?.constant = breakpointTableView.contentSize.height
+            breakpointHeightConst?.constant = checkpointTableView.contentSize.height
         }
     }
     
@@ -315,10 +317,12 @@ extension OrderDetailVC: NetworkRequestable {
     func prepareForLoading() {
         self.showLoading(isDark: false)
         self.stackView.isHidden = true
+        activityIndicator.startAnimating()
     }
     
     func resetAfterLoading() {
         self.hideLoading()
         self.stackView.isHidden = false
+        activityIndicator.stopAnimating()
     }
 }

@@ -46,10 +46,10 @@ extension String {
     
     // MARK: - Validation
     var isValidName: Bool {
-        return self.count < 3
+        return self.count >= 3
     }
     
     var isValidSurname: Bool {
-        return self.count < 3
+        return self.count >= 3
     }
 }

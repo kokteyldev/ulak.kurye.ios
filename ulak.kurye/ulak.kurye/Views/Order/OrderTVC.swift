@@ -66,16 +66,15 @@ final class OrderTVC: UITableViewCell {
     
     // MARK: - Utils
     func stopLoading() {
-//        DispatchQueue.main.async {
-//            self.addButton.hideLoading()
-//        }
+        DispatchQueue.main.async {
+            self.addButton.stopAnimation()
+        }
     }
     
     // MARK: - Actions
     @IBAction func addTapped(_ sender: Any) {
         if let order = order {
-            //TODO: show loading çalışmıyor
-//            addButton.showLoading()
+            addButton.startAnimation(activityColor: .black)
             delegate?.orderTVCAddTapped(self, order: order)
         }
     }

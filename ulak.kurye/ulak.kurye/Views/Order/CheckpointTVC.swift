@@ -23,6 +23,6 @@ final class CheckpointTVC: UITableViewCell {
     // MARK: - Data
     func setCheckpoint(_ checkpoint: OrderCheckpoint) {
         self.titleLabel.text = checkpoint.message
-        self.dateLabel.text = checkpoint.date.serverDate?.shortDateString
+        self.dateLabel.text = checkpoint.date?.serverDate?.shortDateString
     }
 }

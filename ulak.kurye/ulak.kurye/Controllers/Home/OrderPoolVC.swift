@@ -87,20 +87,21 @@ final class OrderPoolVC: BaseTBLVC {
     
     // MARK: - Data - Order
     func getOrderFromPool(_ orderTVC: OrderTVC, order: Order) {
-        prepareForLoading()
+        disableView()
         
         let group = DispatchGroup()
         var agreement: Agreement?
         
         group.enter()
         API.getOrderAgreements(orderUUID: order.uuid) { result in
+            self.enabledView()
+            
             switch result {
             case Result.success(let agreementResponse):
                 agreement = agreementResponse.aggrements.first
                 group.leave()
                 break
             case Result.failure(let error):
-                self.resetAfterLoading()
                 orderTVC.stopLoading()
                 self.view.showToast(.error, message: error.localizedDescription)
                 break
@@ -118,6 +119,8 @@ final class OrderPoolVC: BaseTBLVC {
             API.runTakeAction(orderUUID: order.uuid, agreementUUID: agreement.uuid) { result in
                 switch result {
                 case Result.success(_):
+                    orderTVC.stopLoading()
+                    
                     self.resetAfterLoading()
                     OrderManager.shared.didTakeAction(order: order)
                     self.activeOrderCount += 1
@@ -207,8 +210,6 @@ extension OrderPoolVC: NetworkRequestable {
         self.tableView.backgroundView = noDataView
         self.showLoading(isDark: false)
         self.refreshButton.isHidden = true
-        self.orderVMs.removeAll()
-        self.tableView.reloadData()
     }
     
     func resetAfterLoading() {

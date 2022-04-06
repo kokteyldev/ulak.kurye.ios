@@ -110,6 +110,9 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMY-ou-9IP">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="826"/>
                                 <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="rV3-6O-V2D">
+                                        <rect key="frame" x="188.5" y="394.5" width="37" height="37"/>
+                                    </activityIndicatorView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Oe-b0-lfQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="999.5"/>
                                         <subviews>
@@ -945,8 +948,10 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="rV3-6O-V2D" firstAttribute="centerX" secondItem="QMY-ou-9IP" secondAttribute="centerX" id="1Ce-J1-Fgk"/>
                                     <constraint firstItem="4Oe-b0-lfQ" firstAttribute="width" secondItem="QMY-ou-9IP" secondAttribute="width" id="1Ok-kK-hzd"/>
                                     <constraint firstItem="4Oe-b0-lfQ" firstAttribute="leading" secondItem="QMY-ou-9IP" secondAttribute="leading" id="9VG-Ki-vUh"/>
+                                    <constraint firstItem="rV3-6O-V2D" firstAttribute="centerY" secondItem="QMY-ou-9IP" secondAttribute="centerY" id="Y8t-hn-spV"/>
                                     <constraint firstAttribute="bottom" secondItem="4Oe-b0-lfQ" secondAttribute="bottom" id="aPT-P3-57p"/>
                                     <constraint firstAttribute="trailing" secondItem="4Oe-b0-lfQ" secondAttribute="trailing" id="jOc-Qa-KcD"/>
                                     <constraint firstItem="4Oe-b0-lfQ" firstAttribute="top" secondItem="QMY-ou-9IP" secondAttribute="top" id="pVn-zx-KsY"/>
@@ -977,8 +982,9 @@
                     <connections>
                         <outlet property="actionsView" destination="vfj-NO-fmb" id="GcT-gg-WKt"/>
                         <outlet property="actionsViewHeightCons" destination="Djn-5v-Ipt" id="ZlL-hB-9ZH"/>
+                        <outlet property="activityIndicator" destination="rV3-6O-V2D" id="h8F-mV-ZL6"/>
                         <outlet property="breakpointHeightConst" destination="aip-FM-Lbw" id="5Wt-GU-HWV"/>
-                        <outlet property="breakpointTableView" destination="4rW-55-nf0" id="frc-yX-jVC"/>
+                        <outlet property="checkpointTableView" destination="4rW-55-nf0" id="frc-yX-jVC"/>
                         <outlet property="checkpointsContainer" destination="We3-ZQ-hHt" id="W6H-DY-FxW"/>
                         <outlet property="checkpointsTitleContainer" destination="ht0-NV-g81" id="hcg-uq-4DA"/>
                         <outlet property="courierNoteContainer" destination="NnP-3P-OGn" id="zwq-gm-gXx"/>
@@ -1041,7 +1047,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vIp-8N-PLI"/>
+        <segue reference="P9w-v1-bRT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ic-file" width="16" height="17"/>
