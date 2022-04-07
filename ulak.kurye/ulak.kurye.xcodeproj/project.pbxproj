@@ -135,6 +135,8 @@
 		9EE8C01927D780950050F37D /* CheckpointTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EE8C01727D780950050F37D /* CheckpointTVC.xib */; };
 		9EE8C01B27D78E600050F37D /* UIStackView+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE8C01A27D78E600050F37D /* UIStackView+KKUtils.swift */; };
 		C3B5AD88CC0BE645CA10B9A6 /* Pods_ulak_kurye_ulak_kuryeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D056A3DC22B8A343D361EDB /* Pods_ulak_kurye_ulak_kuryeUITests.framework */; };
+		E531703B27FDCB230022D005 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E531703A27FDCB230022D005 /* CustomAlertView.swift */; };
+		E531703D27FDCB2A0022D005 /* CustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E531703C27FDCB2A0022D005 /* CustomAlertView.xib */; };
 		E538FDE927F5F1B900EF58B8 /* SystemNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E538FDE827F5F1B900EF58B8 /* SystemNotification.swift */; };
 		E538FDEB27F5F1CA00EF58B8 /* SystemNotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E538FDEA27F5F1CA00EF58B8 /* SystemNotificationResponse.swift */; };
 		E55D381B27F6D4A9005592DB /* NotificationTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55D381A27F6D4A9005592DB /* NotificationTVC.xib */; };
@@ -318,6 +320,8 @@
 		B99ABCBB43B1B85B66CAA4AA /* Pods-ulak.kurye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye.debug.xcconfig"; path = "Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye.debug.xcconfig"; sourceTree = "<group>"; };
 		C1D478E1D7B12095363EB400 /* Pods-ulak.kuryeTests.dev release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.dev release.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.dev release.xcconfig"; sourceTree = "<group>"; };
 		C7EA48B1254F7D274D7337BE /* Pods-ulak.kuryeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.release.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.release.xcconfig"; sourceTree = "<group>"; };
+		E531703A27FDCB230022D005 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		E531703C27FDCB2A0022D005 /* CustomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertView.xib; sourceTree = "<group>"; };
 		E538FDE827F5F1B900EF58B8 /* SystemNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNotification.swift; sourceTree = "<group>"; };
 		E538FDEA27F5F1CA00EF58B8 /* SystemNotificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNotificationResponse.swift; sourceTree = "<group>"; };
 		E55D381A27F6D4A9005592DB /* NotificationTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTVC.xib; sourceTree = "<group>"; };
@@ -808,6 +812,8 @@
 				9E3D435627C520B100B6D5C5 /* Policy */,
 				9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */,
 				9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */,
+				E531703A27FDCB230022D005 /* CustomAlertView.swift */,
+				E531703C27FDCB2A0022D005 /* CustomAlertView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1008,6 +1014,7 @@
 				9EE8C01927D780950050F37D /* CheckpointTVC.xib in Resources */,
 				9ECAAA7C27C393DD00F583C4 /* Poppins-Bold.ttf in Resources */,
 				9E3E2D0D27BE8F1700A17025 /* Assets.xcassets in Resources */,
+				E531703D27FDCB2A0022D005 /* CustomAlertView.xib in Resources */,
 				9E23ECB327E9B211002463C9 /* NoDataView.xib in Resources */,
 				9E2CAC2A27E87FFD00106FD1 /* PhoneCodeView.xib in Resources */,
 				9ECAAA7A27C393DD00F583C4 /* Poppins-SemiBold.ttf in Resources */,
@@ -1248,6 +1255,7 @@
 				E569910F27EDA6320099E9D5 /* UIViewController+KKUtils.swift in Sources */,
 				9E4E204C27E90E290035B057 /* WalletVM.swift in Sources */,
 				9E4BF8C227C92F5E004FE73E /* OrderDataSource.swift in Sources */,
+				E531703B27FDCB230022D005 /* CustomAlertView.swift in Sources */,
 				9E2CAC2527E87A3200106FD1 /* ProfileVC.swift in Sources */,
 				9E5BB61827E328C900B6C0A0 /* QRInputCodeVC.swift in Sources */,
 				9E3D436127C5356100B6D5C5 /* MainTabbarTC.swift in Sources */,
