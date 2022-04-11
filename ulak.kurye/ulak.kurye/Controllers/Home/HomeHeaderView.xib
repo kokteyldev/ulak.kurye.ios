@@ -30,30 +30,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-mU-1W3" userLabel="Header Container View">
-                    <rect key="frame" x="24" y="60" width="752" height="486"/>
+                    <rect key="frame" x="24" y="60" width="752" height="182"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBX-dm-58m" userLabel="WorkContainerView" customClass="KKUIView" customModule="KokteylUtils">
-                            <rect key="frame" x="0.0" y="0.0" width="810" height="486"/>
+                            <rect key="frame" x="0.0" y="0.0" width="303.5" height="182"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çalışıyorum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V3s-TM-TKW">
-                                    <rect key="frame" x="16" y="209" width="778" height="25.5"/>
+                                    <rect key="frame" x="16" y="57" width="271.5" height="25.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" name="ulk-green"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="boO-J3-buO">
-                                    <rect key="frame" x="380.5" y="243.5" width="51" height="31"/>
+                                    <rect key="frame" x="127" y="91.5" width="51" height="31"/>
                                     <color key="tintColor" name="ulk-green"/>
                                 </switch>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PV2-72-ggR" userLabel="Seperator">
-                                    <rect key="frame" x="0.0" y="242.5" width="810" height="1"/>
+                                    <rect key="frame" x="0.0" y="90.5" width="303.5" height="1"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="KiW-Ld-CPz"/>
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3r-xP-9Jt">
-                                    <rect key="frame" x="0.0" y="0.0" width="810" height="486"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="303.5" height="182"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain"/>
                                     <userDefinedRuntimeAttributes>
@@ -87,17 +87,17 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMN-Sm-Ijx" userLabel="PoolContainerView" customClass="KKUIView" customModule="KokteylUtils">
-                            <rect key="frame" x="822" y="0.0" width="486" height="486"/>
+                            <rect key="frame" x="315.5" y="0.0" width="182" height="182"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-pool" translatesAutoresizingMaskIntoConstraints="NO" id="zP6-Ij-Vn9">
-                                    <rect key="frame" x="121.5" y="61" width="243" height="243"/>
+                                    <rect key="frame" x="45.5" y="23" width="91" height="91"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="zP6-Ij-Vn9" secondAttribute="height" multiplier="1:1" id="AtJ-iY-qCI"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Havuz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ppU-JV-bpZ">
-                                    <rect key="frame" x="0.0" y="308" width="486" height="22.5"/>
+                                    <rect key="frame" x="0.0" y="118" width="182" height="22.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -106,7 +106,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJA-az-trY">
-                                    <rect key="frame" x="0.0" y="0.0" width="486" height="486"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain"/>
                                     <userDefinedRuntimeAttributes>
@@ -138,16 +138,16 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Be2-bb-dxf" userLabel="QRContainerView" customClass="KKUIView" customModule="KokteylUtils">
-                            <rect key="frame" x="1320" y="0.0" width="486" height="486"/>
+                            <rect key="frame" x="509.5" y="0.0" width="182" height="182"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-qrcode" translatesAutoresizingMaskIntoConstraints="NO" id="z5B-JT-GI0">
-                                    <rect key="frame" x="121.5" y="61" width="243" height="243"/>
+                                    <rect key="frame" x="45.5" y="23" width="91" height="91"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="z5B-JT-GI0" secondAttribute="height" multiplier="1:1" id="Rua-qr-s1p"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR Kod" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="i7o-Cg-fpa">
-                                    <rect key="frame" x="0.0" y="308" width="486" height="22.5"/>
+                                    <rect key="frame" x="0.0" y="118" width="182" height="22.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -156,7 +156,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC3-Z6-phu">
-                                    <rect key="frame" x="0.0" y="0.0" width="486" height="486"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain"/>
                                     <userDefinedRuntimeAttributes>
