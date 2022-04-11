@@ -95,8 +95,10 @@ class OrderVM {
                 imageURLString = "https://dev-api.ulakapp.com\(imageURLString)"
             }
             
-            let data = try? Data(contentsOf: URL(string: imageURLString)!)
-            iconImage = UIImage(data: data!)
+            if let url =  URL(string: imageURLString),
+               let data = try? Data(contentsOf: url) {
+                iconImage = UIImage(data: data)
+            }
         }
         
         pickAddress = "\(order.sender.hometown)/\(order.sender.district)/\(order.sender.city)"
