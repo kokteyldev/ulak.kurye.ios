@@ -23,12 +23,14 @@ struct WalletTransaction: Codable {
     var uuid: String
     var meta: WalletTransactionMeta
     var type: String
+    var amount: String
     var createdAt: String
     
     enum CodingKeys: String, CodingKey {
         case uuid = "uuid"
         case meta = "meta"
         case type = "type"
+        case amount = "amount"
         case createdAt = "created_at"
     }
 }

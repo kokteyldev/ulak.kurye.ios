@@ -25,10 +25,8 @@ class CustomAlertView: BaseVC {
     
     @IBAction func cancelTapped(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
-        orderTVC.stopLoading()
     }
     
     @IBAction func acceptTapped(_ sender: Any) {
-        getOrderFromPool(orderTVC, order: order)
     }
 }

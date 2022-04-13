@@ -46,12 +46,14 @@ struct WalletVM {
 struct WalletTransactionVM {
     let balance: String
     let type: String
+    let amount: String
     let date: String
     let orderUUID: String?
     
     init(transaction: WalletTransaction, earning: WalletTransactionEarning) {
         balance = earning.value.currencyValue(earning.currency)
         type = transaction.type.localized
+        amount = "\((Double(transaction.amount) ?? 0.0) / 100)"
         date = transaction.createdAt.serverDate?.longDateString ?? "-"
         orderUUID = transaction.meta.orderUUID
     }

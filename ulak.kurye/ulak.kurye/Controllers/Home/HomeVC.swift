@@ -78,6 +78,7 @@ final class HomeVC: BaseVC {
     func setupNoDataView() {
         DispatchQueue.main.async {
             self.noDataView = HomeNoDataView(userState: Session.shared.userState)
+            self.noDataView?.delegate = self
             self.tableView.reloadData()
         }
     }
@@ -292,6 +293,12 @@ extension HomeVC: HeaderViewDelegate {
             self.hideLoading()
             return
         }
+    }
+}
+
+extension HomeVC: HomeNoDataViewDelegate {
+    func goToPool() {
+        self.performSegue(withIdentifier: "OrderPoolVC", sender: self)
     }
 }
 
