@@ -49,6 +49,7 @@
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-wallet-mark" translatesAutoresizingMaskIntoConstraints="NO" id="Ckh-A2-qGQ">
                         <rect key="frame" x="16" y="50.5" width="6" height="9"/>
+                        <color key="tintColor" name="ulk-red-bold"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="6" id="fH0-2P-XP4"/>
                             <constraint firstAttribute="height" constant="9" id="g3k-Zf-KMv"/>
@@ -74,6 +75,7 @@
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="amountLabel" destination="n0Q-RH-qL9" id="9Jg-XA-z1z"/>
+                <outlet property="arrowImage" destination="Ckh-A2-qGQ" id="fAT-6L-lXo"/>
                 <outlet property="dateLabel" destination="2py-ON-ipY" id="X0Y-ty-DMN"/>
                 <outlet property="typeLabel" destination="XWO-8G-RjO" id="WTM-4h-1OC"/>
             </connections>
@@ -82,6 +84,9 @@
     </objects>
     <resources>
         <image name="ic-wallet-mark" width="4" height="6"/>
+        <namedColor name="ulk-red-bold">
+            <color red="0.94117647058823528" green="0.30196078431372547" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="ulk-subtitle">
             <color red="0.52941176470588236" green="0.54509803921568623" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

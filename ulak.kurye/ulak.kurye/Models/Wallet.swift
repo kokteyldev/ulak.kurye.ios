@@ -23,37 +23,39 @@ struct WalletTransaction: Codable {
     var uuid: String
     var meta: WalletTransactionMeta
     var type: String
+    var amount: String
+    var currency: String = "TRY"
     var createdAt: String
     
     enum CodingKeys: String, CodingKey {
         case uuid = "uuid"
         case meta = "meta"
         case type = "type"
+        case amount = "amount"
+        case currency = "currency"
         case createdAt = "created_at"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.uuid = try container.decode(String.self, forKey: .uuid)
+        self.meta = try container.decode(WalletTransactionMeta.self, forKey: .meta)
+        self.type = try container.decode(String.self, forKey: .type)
+        self.amount = try container.decode(String.self, forKey: .amount)
+        
+        if container.contains(.currency) {
+            self.currency = try container.decode(String.self, forKey: .currency)
+        }
+        
+        self.createdAt = try container.decode(String.self, forKey: .createdAt)
     }
 }
 
 struct WalletTransactionMeta: Codable {
     var orderUUID: String?
-    var prepayEarning: WalletTransactionEarning?
-    var earning: WalletTransactionEarning?
     
     enum CodingKeys: String, CodingKey {
         case orderUUID = "order_uuid"
-        case prepayEarning = "courier_prepay_earning"
-        case earning = "courier_pay_earning"
-    }
-}
-
-struct WalletTransactionEarning: Codable {
-    var value: Double
-    var currency: String
-    var isVisible: Bool
-    
-    enum CodingKeys: String, CodingKey {
-        case value = "value"
-        case currency = "currency"
-        case isVisible = "visible"
-        //TODO: status'a bakmak gerekli mi?
     }
 }

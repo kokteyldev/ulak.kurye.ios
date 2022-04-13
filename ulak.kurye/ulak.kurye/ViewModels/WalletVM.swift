@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct WalletVM {
     let uuid: String
@@ -32,10 +33,8 @@ struct WalletVM {
         
         var tempTransactions: [WalletTransactionVM] = []
         for transaction in walletResponse.transactions {
-            if let earning = transaction.meta.earning, earning.isVisible == true, earning.value > 0 {
-                tempTransactions.append(WalletTransactionVM(transaction: transaction, earning: earning))
-            } else if let preEarning = transaction.meta.prepayEarning, preEarning.isVisible == true, preEarning.value > 0 {
-                tempTransactions.append(WalletTransactionVM(transaction: transaction, earning: preEarning))
+            if Double(transaction.amount) != 0 {
+                tempTransactions.append(WalletTransactionVM(transaction: transaction))
             }
         }
         
@@ -44,15 +43,26 @@ struct WalletVM {
 }
 
 struct WalletTransactionVM {
-    let balance: String
     let type: String
+    let amount: String
     let date: String
     let orderUUID: String?
+    let imageTintColor: UIColor
     
-    init(transaction: WalletTransaction, earning: WalletTransactionEarning) {
-        balance = earning.value.currencyValue(earning.currency)
+    init(transaction: WalletTransaction) {
         type = transaction.type.localized
+        
+        var doubleAmount = Double(transaction.amount) ?? 0
+        doubleAmount = doubleAmount / 100.0
+        amount = doubleAmount.currencyValue(transaction.currency)
+
         date = transaction.createdAt.serverDate?.longDateString ?? "-"
         orderUUID = transaction.meta.orderUUID
+        
+        if type == "withdraw" {
+            imageTintColor = .init(named: "ulk-red-bold")!
+        } else {
+            imageTintColor = .init(named: "ulk-green")!
+        }
     }
 }

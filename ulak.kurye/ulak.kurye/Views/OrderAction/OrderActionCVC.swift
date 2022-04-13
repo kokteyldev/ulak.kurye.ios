@@ -29,7 +29,7 @@ final class OrderActionCVC: UICollectionViewCell {
     // MARK: - Data
     func setAction(_ action: OrderAction) {
         titleLabel.text = action.title
-        containerView.backgroundColor = UIColor.init(hex: action.color) ?? .init(named: "ulk-red")!
-        titleLabel.textColor = UIColor.init(hex: action.textColor) ?? .white
+        containerView.backgroundColor = UIColor(hexValue: action.color, alpha: 1.0)
+        titleLabel.textColor = UIColor(hexValue: action.textColor, alpha: 1.0)
     }
 }
