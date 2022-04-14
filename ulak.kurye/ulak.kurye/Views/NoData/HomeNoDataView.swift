@@ -54,10 +54,6 @@ final class HomeNoDataView: UIView {
             image = .init(named: "ic-location")
             message = "location_permission_message".localized
             buttonTitle = "give_location_permission".localized
-        case .notificationPermissionRequired:
-            image = .init(named: "ic-notification")
-            message = "notification_permission_message".localized
-            buttonTitle = "give_notification_permission".localized
         case .accountNotVerified:
             image = .init(named: "logo-orange")
             message = "waiting_for_account_verification".localized
@@ -81,8 +77,6 @@ final class HomeNoDataView: UIView {
         switch userState {
         case .locationPermissionRequired:
             LocationManager.shared.getLocationConsent()
-        case .notificationPermissionRequired:
-            NotificationManager.shared.getNotificationConsent()
         case .accountNotVerified:
             if let urlSring = Session.shared.config.registerURL {
                 let url = URL(string: urlSring)!

@@ -248,12 +248,62 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="61" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="66" id="Bhk-Yb-KSg">
+                                        <rect key="frame" x="0.0" y="429.5" width="414" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bhk-Yb-KSg" id="LZB-7Z-6Jl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uygulama Bildirimleri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUX-DH-JJt">
+                                                    <rect key="frame" x="61" y="24" width="276" height="18.5"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="settings_app_reminders"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-notifications" translatesAutoresizingMaskIntoConstraints="NO" id="tdV-6m-mJq">
+                                                    <rect key="frame" x="20" y="20.5" width="25" height="25"/>
+                                                    <color key="tintColor" name="ulk-orange"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="Jja-pd-Opq"/>
+                                                        <constraint firstAttribute="height" constant="25" id="eh7-4a-a40"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifD-QA-TH5">
+                                                    <rect key="frame" x="345" y="17.5" width="51" height="31"/>
+                                                    <color key="onTintColor" name="ulk-green"/>
+                                                    <connections>
+                                                        <action selector="appNotificationSwitchTapped:" destination="fUv-O2-gI7" eventType="valueChanged" id="Buj-gp-UbZ"/>
+                                                        <action selector="poolNotificationSwitchTapped:" destination="fUv-O2-gI7" eventType="valueChanged" id="Vn1-uA-LQq"/>
+                                                    </connections>
+                                                </switch>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="QuW-0n-jiW">
+                                                    <rect key="frame" x="359.5" y="23" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ifD-QA-TH5" firstAttribute="leading" secondItem="xUX-DH-JJt" secondAttribute="trailing" constant="8" id="8P0-p4-shc"/>
+                                                <constraint firstItem="xUX-DH-JJt" firstAttribute="leading" secondItem="tdV-6m-mJq" secondAttribute="trailing" constant="16" id="CuJ-8R-0iE"/>
+                                                <constraint firstItem="QuW-0n-jiW" firstAttribute="centerY" secondItem="ifD-QA-TH5" secondAttribute="centerY" id="MfM-UW-gUD"/>
+                                                <constraint firstItem="QuW-0n-jiW" firstAttribute="centerX" secondItem="ifD-QA-TH5" secondAttribute="centerX" id="RUx-L4-gNy"/>
+                                                <constraint firstItem="xUX-DH-JJt" firstAttribute="centerY" secondItem="LZB-7Z-6Jl" secondAttribute="centerY" id="bEc-tm-ln1"/>
+                                                <constraint firstItem="ifD-QA-TH5" firstAttribute="centerY" secondItem="LZB-7Z-6Jl" secondAttribute="centerY" id="kek-bi-aGG"/>
+                                                <constraint firstItem="tdV-6m-mJq" firstAttribute="leading" secondItem="LZB-7Z-6Jl" secondAttribute="leadingMargin" id="mEK-fx-Awh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ifD-QA-TH5" secondAttribute="trailing" id="r3u-5E-253"/>
+                                                <constraint firstItem="tdV-6m-mJq" firstAttribute="centerY" secondItem="xUX-DH-JJt" secondAttribute="centerY" id="svy-V0-2xJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="61" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Uygulama Ayarları" id="Q5e-aE-Onl">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="66" id="scU-bX-lC0">
-                                        <rect key="frame" x="0.0" y="479.5" width="414" height="66"/>
+                                        <rect key="frame" x="0.0" y="545.5" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="scU-bX-lC0" id="MQD-Dy-ub0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
@@ -286,7 +336,7 @@
                                         <inset key="separatorInset" minX="61" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="66" id="I6l-hS-XtG">
-                                        <rect key="frame" x="0.0" y="545.5" width="414" height="66"/>
+                                        <rect key="frame" x="0.0" y="611.5" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I6l-hS-XtG" id="XcN-OW-nx7">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
@@ -319,7 +369,7 @@
                                         <inset key="separatorInset" minX="61" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="66" id="jpC-fj-hB3">
-                                        <rect key="frame" x="0.0" y="611.5" width="414" height="66"/>
+                                        <rect key="frame" x="0.0" y="677.5" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jpC-fj-hB3" id="XxH-qr-676">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
@@ -361,14 +411,19 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Ayarlar" id="CeC-BF-u85"/>
                     <connections>
+                        <outlet property="appNotificationActivityIndicator" destination="QuW-0n-jiW" id="D4S-7g-MZY"/>
+                        <outlet property="appNotificationSwitch" destination="ifD-QA-TH5" id="6cP-Tw-fAf"/>
                         <outlet property="cardNumberLabel" destination="MSU-ea-Exk" id="0HN-s4-BXJ"/>
                         <outlet property="feedbackCell" destination="scU-bX-lC0" id="AH9-YF-6M0"/>
                         <outlet property="logoutCell" destination="jpC-fj-hB3" id="ryh-dG-BM8"/>
                         <outlet property="notificationActivityIndicator" destination="RPY-oB-fNj" id="MHQ-HX-G4g"/>
+                        <outlet property="notificationCell" destination="Bhk-Yb-KSg" id="Efo-Pr-9bV"/>
                         <outlet property="notificationSwitch" destination="WKC-7U-hTa" id="otQ-ff-cQ0"/>
                         <outlet property="poolNotificationActivityIndicator" destination="AFj-3f-Mn0" id="nIN-5u-wHh"/>
                         <outlet property="poolNotificationSwitch" destination="oli-EH-dZf" id="5KG-qJ-c7K"/>
+                        <outlet property="poolReminderCell" destination="yJm-ic-oXH" id="Br4-nm-Fml"/>
                         <outlet property="rateCell" destination="I6l-hS-XtG" id="j8A-iw-9JQ"/>
+                        <outlet property="reminderCell" destination="Tun-sO-vZz" id="7z7-br-7vu"/>
                         <outlet property="termOfUseCell" destination="kfS-oA-yKa" id="J0I-sD-Ued"/>
                         <outlet property="ulakCardCell" destination="o0k-WU-ym8" id="GKY-KH-yk4"/>
                     </connections>

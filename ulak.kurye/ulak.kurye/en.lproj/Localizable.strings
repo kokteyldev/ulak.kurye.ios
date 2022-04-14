@@ -20,13 +20,13 @@
 // Onboarding
 "onboarding_pass" = "SKIP";
 "onboarding_1_title" = "Hello!";
-"onboarding_1_desc" = "Ulak Kurye uygulamasına hoş geldin. Dilediğin zaman çalış, para kazan.";
-"onboarding_2_title" = "Çoklu Teslimat";
-"onboarding_2_desc" = "Bölgesel çoklu teslimat avantjı ile maksimum gelir imkanı.";
-"onboarding_3_title" = "Anında Kazanç";
-"onboarding_3_desc" = "Günlük, haftalık değil anlık ödeme; teslimatı tamamladığın gibi hak edişin hesabında.";
-"onboarding_4_title" = "Sürprizler";
-"onboarding_4_desc" = "Bonuslar, sürpriz hediyeler ve primler ile ayrıcaklıklı bir dünya...";
+"onboarding_1_desc" = "Welcome to the ULAK Courier application. Work whenever you want, earn money.";
+"onboarding_2_title" = "Multiple Delivery";
+"onboarding_2_desc" = "Maximum income opportunity with regional multi-delivery advantage.";
+"onboarding_3_title" = "Instant Earnings";
+"onboarding_3_desc" = "Instant payment, not daily, weekly; in your progress payment account as you complete the delivery.";
+"onboarding_4_title" = "Surprises";
+"onboarding_4_desc" = "A privileged world with bonuses, surprise gifts and premiums...";
 
 // Auth
 "preLogin_title" = "Sign in with your phone number";
@@ -59,24 +59,24 @@
 "order_hour_late" = "hour late";
 "order_day_late" = "day late";
 "no_time_remaining" = "Late";
-"order_task_code" = "Görev Kodu";
-"order_total_price" = "Tahmini Kazanç";
-"order_service_info" = "Servis Bilgileri";
-"order_task_code" = "Görev Kodu";
+"order_task_code" = "Mission Code";
+"order_total_price" = "Estimated Earnings";
+"order_service_info" = "Service Information";
+"order_task_code" = "Order Code";
 "order_distance" = "Distance";
-"order_not_working_while_have_order_error" = "Aktif sipariş varken bu özellik kullanılamaz!";
-"order_qr_order_code_title" = "Teslimat Kodu Tarama";
-"order_qr_order_code_input_title" = "Teslimat Kodu";
+"order_not_working_while_have_order_error" = "This feature is not available while there is an active order!";
+"order_qr_order_code_title" = "Delivery Code Scan";
+"order_qr_order_code_input_title" = "Delivery Code";
 
 // Order Detail
 "order_detail_title" = "Delivery Details";
 "order_detail_pick_point" = "Pick up Point";
 "order_detail_deliver_point" = "Delivery Point";
 "order_detail_package_detail" = "Package Content";
-"order_detail_owner_point" = "Sipariş Sahibi";
+"order_detail_owner_point" = "Order Owner";
 "order_detail_courier_note" = "Courier Note";
-"order_detail_checkpoints" = "Hareketlerim";
-"order_detail_get_picking_code_title" = "Teslimat Kodunu Gir";
+"order_detail_checkpoints" = "Checkpoints";
+"order_detail_get_picking_code_title" = "Enter Delivery Code";
 "order_detail_package_price" = "Payment Details";
 "order_detail_package_price_title" = "Package Price:";
 "order_detail_package_payment_method_title" = "Payment Method:";
@@ -87,18 +87,18 @@
 // Pool
 "pool_page_title" = "Pool";
 "pool_total_order" = "Mission Quota";
-"pool_no_order" = "Havuzda sipariş bulunamadı.";
+"pool_no_order" = "No order found in the pool.";
 
 // Order Action
-"picking_security_code_title" = "Teslimat kodunu girin.";
-"picking_security_code_input_name" = "Teslimat Kodu";
-"action_take_consent_message" = "Görevi üzerine almak istediğine emin misin?";
-"action_abort_consent_message" = "Görevi iptal etmeye kabul edersen, cezai işlem uygulanabileceğini de kabul etmiş olursun. Görevi iptal etmek istediğine emin misin?";
+"picking_security_code_title" = "Enter the delivery code.";
+"picking_security_code_input_name" = "Devivery Code";
+"action_take_consent_message" = "Are you sure you want to take on the mission?";
+"action_abort_consent_message" = "If you agree to cancel the quest, you also agree that criminal action may be taken. Are you sure you want to cancel the mission?";
 "action_no_agreement" = "No Agreement!";
 
 // QR
 "scan_qr_code" = "Scan QR Code";
-"scan_not_supported_error" = "Telefon tarama için uygun değil!";
+"scan_not_supported_error" = "Phone not suitable for scanning!";
 "scan_error" = "Code Not Found!";
 
 // Settings
@@ -114,15 +114,16 @@
 "settings_send_feedback_send" = "Send";
 "settings_feedback_sent" = "Your feedback has sent.";
 "settings_ulak_card_popup_title" = "Add ULAK Card";
-"settings_no_ulak_card" = "Ulak Kart eklemek için tıkla!";
+"settings_no_ulak_card" = "Click to add ULAK Card!";
 "settings_ulak_card_popup_input_title" = "Card Number";
 "settings_logout" = "Log Out";
-"settings_logout_alert_title" = "Çıkış yapmak istediğine emin misin?";
+"settings_logout_alert_title" = "Are you sure you want to log out?";
 "settings_account_settings" = "ACCOUNT SETTINGS";
 "settings_notification_settings" = "NOTIFICATIONS SETTINGS";
 "settings_app_settings" = "APP SETTINGS";
-"settings_reminder_settings" = "Uyarı ve Hatırlatma Bildirimleri";
+"settings_reminder_settings" = "Warning and Reminder Notifications";
 "settings_pool_reminders" = "Pool Reminders";
+"settings_app_reminders" = "App Reminders";
 
 // Wallet
 "wallet_title" = "Wallet";
@@ -133,7 +134,7 @@
 "wallet_no_transaction" = "No Transaction.";
 
 // Profile
-"profile_mising_info" = "Girdiğiniz bilgileri kontrol edin!";
+"profile_mising_info" = "Check the information you entered!";
 "profile_updated_success" = "Profile has been updated successfully.";
 "profile_change_password_save" = "Change and Save";
 "profile_login_name" = "Name";
@@ -147,15 +148,16 @@
 "notifications_no_notification" = "No Notifications";
 
 // General
-"location_permission_message" = "Uygulamayı kullanmaya devam etmek için konum izni vermelisin.";
-"notification_permission_message" = "Uygulamayı kullanmaya devam etmek için bildirim izni vermelisin.";
-"working_message" = "Henüz atanmış ve onay bekleyen bir görevin bulunmuyor. Havuz sayfasından kendine en uygun rotayı oluşturabilirsin.";
-"waiting_for_account_verification" = "Üyelik Onayı Bekleniyor.";
-"give_notification_permission" = "Bildirim İzni Ver";
-"give_location_permission" = "Konum İzni Ver";
-"start_work" = "Çalışmaya Başla";
-"see_pool" = "Havuzu Görüntüle";
-"go_to_application_site" = "Başvurunu Tamamla";
+"location_permission_message" = "You must grant location permission to continue using the app..";
+"notification_permission_message" = "To continue using the application, you must give notification permission.";
+"working_message" = "You do not have a task assigned and awaiting approval yet. You can create the most suitable route for you from the pool page.";
+"waiting_for_account_verification" = "Awaiting Membership Approval.
+Support line: 08508852686";
+"give_notification_permission" = "Allow Notification.";
+"give_location_permission" = "Allow Location.";
+"start_work" = "Start Working";
+"see_pool" = "Pool";
+"go_to_application_site" = "Complete Application";
 "pool" = "Pool";
 "qr-code" = "QR Code";
 "working" = "Working";
@@ -163,9 +165,10 @@
 "cancel" = "Cancel";
 "no" = "No";
 "ok" = "Ok";
-"picking_security_code" = "Teslimat Kodu";
+"picking_security_code" = "Delivery Code";
 "send" = "Send";
 "code" = "Code";
 "country_phone_code" = "Select Country Code";
-"card_loading" = "Kart bilgileri güncelleniyor..";
-"deposit" = "Kazanç";
+"card_loading" = "Updating card information..";
+"deposit" = "Earning";
+"withdraw" = "Withdraw";

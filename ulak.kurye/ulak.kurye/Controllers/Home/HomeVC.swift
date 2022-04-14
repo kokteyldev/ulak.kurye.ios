@@ -35,6 +35,8 @@ final class HomeVC: BaseVC {
         setupHeaderView()
         setupNoDataView()
         getOrders()
+        
+        NotificationManager.shared.getNotificationConsent()
     }
     
     override func viewWillAppear(_ animated: Bool) {
