@@ -971,10 +971,10 @@
                             <constraint firstItem="QMY-ou-9IP" firstAttribute="leading" secondItem="lc0-t9-e7O" secondAttribute="leading" id="3vO-Mn-esC"/>
                             <constraint firstItem="QMY-ou-9IP" firstAttribute="trailing" secondItem="lc0-t9-e7O" secondAttribute="trailing" id="46o-fv-QqP"/>
                             <constraint firstAttribute="bottom" secondItem="vfj-NO-fmb" secondAttribute="bottom" id="C3h-JB-Ar8"/>
-                            <constraint firstItem="vfj-NO-fmb" firstAttribute="leading" secondItem="lc0-t9-e7O" secondAttribute="leading" id="Q52-fp-xpC"/>
+                            <constraint firstItem="vfj-NO-fmb" firstAttribute="leading" secondItem="y1z-Y7-xhM" secondAttribute="leading" id="Q52-fp-xpC"/>
                             <constraint firstItem="3RZ-ja-qFR" firstAttribute="height" secondItem="lc0-t9-e7O" secondAttribute="height" multiplier="0.13" id="RDk-o1-4zo"/>
                             <constraint firstItem="QMY-ou-9IP" firstAttribute="top" secondItem="lc0-t9-e7O" secondAttribute="top" id="UWs-2v-qGT"/>
-                            <constraint firstItem="vfj-NO-fmb" firstAttribute="trailing" secondItem="lc0-t9-e7O" secondAttribute="trailing" id="typ-Gz-6wH"/>
+                            <constraint firstItem="vfj-NO-fmb" firstAttribute="trailing" secondItem="y1z-Y7-xhM" secondAttribute="trailing" id="typ-Gz-6wH"/>
                             <constraint firstItem="vfj-NO-fmb" firstAttribute="top" secondItem="QMY-ou-9IP" secondAttribute="bottom" id="xMp-Bh-WZf"/>
                         </constraints>
                     </view>

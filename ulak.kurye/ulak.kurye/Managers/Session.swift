@@ -9,7 +9,6 @@ import UIKit
 
 enum UserState {
     case locationPermissionRequired
-    case notificationPermissionRequired
     case accountNotVerified
     case notWorking
     case working
@@ -18,7 +17,7 @@ enum UserState {
 final class Session {
     public static let shared = Session()
     
-    var userState: UserState = .notificationPermissionRequired
+    var userState: UserState = .locationPermissionRequired
     
     var token: String? {
         didSet {
@@ -105,15 +104,9 @@ final class Session {
             newUserState = .notWorking
         }
         
-        NotificationManager.shared.isLocationPermissionRequired { isRequired in
-            if isRequired {
-                newUserState = .notificationPermissionRequired
-            }
-            
-            if self.userState != newUserState {
-                self.userState = newUserState
-                NotificationCenter.default.post(name: NSNotification.Name.UserStateChanged, object: nil)
-            }
+        if self.userState != newUserState {
+            self.userState = newUserState
+            NotificationCenter.default.post(name: NSNotification.Name.UserStateChanged, object: nil)
         }
     }
     

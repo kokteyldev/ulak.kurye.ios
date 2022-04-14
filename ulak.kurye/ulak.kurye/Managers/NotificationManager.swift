@@ -26,14 +26,11 @@ final class NotificationManager: NSObject {
                 UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
                     Session.shared.checkUserState()
                 }
-                return
             }
-            
-            self.openAppNotificationSettings()
         }
     }
     
-    func isLocationPermissionRequired(completion: @escaping(Bool) -> Void) {
+    func isNotificationPermissionRequired(completion: @escaping(Bool) -> Void) {
         UNUserNotificationCenter.current().getNotificationSettings { (notificationSettings) in
             self.authState = notificationSettings.authorizationStatus
             
@@ -46,7 +43,7 @@ final class NotificationManager: NSObject {
         }
     }
     
-    private func shouldAskNotificationPermission(completion: @escaping(Bool) -> Void) {
+    func shouldAskNotificationPermission(completion: @escaping(Bool) -> Void) {
         UNUserNotificationCenter.current().getNotificationSettings { (notificationSettings) in
             self.authState = notificationSettings.authorizationStatus
             

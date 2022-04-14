@@ -16,9 +16,14 @@ final class SettingsVC: BaseTBLVC {
     @IBOutlet weak var logoutCell: UITableViewCell!
     @IBOutlet weak var cardNumberLabel: UILabel!
     
+    @IBOutlet weak var reminderCell: UITableViewCell!
+    @IBOutlet weak var poolReminderCell: UITableViewCell!
+    @IBOutlet weak var notificationCell: UITableViewCell!
+    
     @IBOutlet weak var notificationSwitch: UISwitch!
     @IBOutlet weak var poolNotificationSwitch: UISwitch!
     @IBOutlet weak var appNotificationSwitch: UISwitch!
+    
     @IBOutlet weak var notificationActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var poolNotificationActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var appNotificationActivityIndicator: UIActivityIndicatorView!
@@ -26,7 +31,16 @@ final class SettingsVC: BaseTBLVC {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupUI()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     // MARK: - Setup
@@ -42,8 +56,16 @@ final class SettingsVC: BaseTBLVC {
         
         notificationSwitch.isOn = Session.shared.user?.isNotificationAllowed ?? true
         poolNotificationSwitch.isOn = Session.shared.user?.isPoolNotificationAllowed ?? true
-        //TODO: appNotification kontrol et
-        appNotificationSwitch.isOn = Session.shared.user?.isPoolNotificationAllowed ?? true
+        
+        NotificationManager.shared.isNotificationPermissionRequired { isRequired in
+            DispatchQueue.main.async {
+                self.reminderCell.isHidden = isRequired
+                self.poolReminderCell.isHidden = isRequired
+                self.notificationCell.isHidden = !isRequired
+                self.appNotificationSwitch.isOn = !isRequired
+                self.tableView.reloadData()
+            }
+        }
     }
     
     // MARK: - Data
@@ -118,11 +140,13 @@ final class SettingsVC: BaseTBLVC {
     }
     
     @IBAction func appNotificationSwitchTapped(_ sender: Any) {
-        prepareForLoading()
-        appNotificationSwitch.isHidden = true
-        appNotificationActivityIndicator.startAnimating()
-        //TODO: Control Update User Settings for App Notification
-        updateUserSettings()
+        NotificationManager.shared.shouldAskNotificationPermission { shouldAsk in
+            if shouldAsk {
+                NotificationManager.shared.getNotificationConsent()
+            } else {
+                NotificationManager.shared.openAppNotificationSettings()
+            }
+        }
     }
     
     // MARK: - UITableViewDelegate
@@ -151,6 +175,16 @@ final class SettingsVC: BaseTBLVC {
         return 32.0
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        
+        if cell.isHidden {
+            return 0
+        } else {
+            return super.tableView(tableView, heightForRowAt: indexPath)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)! as UITableViewCell
         
@@ -174,6 +208,11 @@ final class SettingsVC: BaseTBLVC {
             alert.addAction(UIAlertAction(title: "cancel".localized, style: .cancel, handler: { action in }))
             self.present(alert, animated: true)
         }
+    }
+    
+    // MARK: - Notifications
+    @objc private func didBecomeActive() {
+        setupUI()
     }
 }
 

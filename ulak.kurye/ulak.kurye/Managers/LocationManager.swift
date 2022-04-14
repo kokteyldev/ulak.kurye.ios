@@ -15,9 +15,9 @@ final class LocationManager: NSObject {
     
     var isLocationPermissionRequired: Bool {
         if #available(iOS 14.0, *) {
-            return lm.authorizationStatus != .authorizedAlways
+            return lm.authorizationStatus != .authorizedAlways && lm.authorizationStatus != .authorizedWhenInUse
         } else {
-            return CLLocationManager.authorizationStatus() != .authorizedAlways
+            return CLLocationManager.authorizationStatus() != .authorizedAlways && CLLocationManager.authorizationStatus() != .authorizedWhenInUse
         }
     }
     

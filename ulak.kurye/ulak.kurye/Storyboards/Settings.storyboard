@@ -417,10 +417,13 @@
                         <outlet property="feedbackCell" destination="scU-bX-lC0" id="AH9-YF-6M0"/>
                         <outlet property="logoutCell" destination="jpC-fj-hB3" id="ryh-dG-BM8"/>
                         <outlet property="notificationActivityIndicator" destination="RPY-oB-fNj" id="MHQ-HX-G4g"/>
+                        <outlet property="notificationCell" destination="Bhk-Yb-KSg" id="Efo-Pr-9bV"/>
                         <outlet property="notificationSwitch" destination="WKC-7U-hTa" id="otQ-ff-cQ0"/>
                         <outlet property="poolNotificationActivityIndicator" destination="AFj-3f-Mn0" id="nIN-5u-wHh"/>
                         <outlet property="poolNotificationSwitch" destination="oli-EH-dZf" id="5KG-qJ-c7K"/>
+                        <outlet property="poolReminderCell" destination="yJm-ic-oXH" id="Br4-nm-Fml"/>
                         <outlet property="rateCell" destination="I6l-hS-XtG" id="j8A-iw-9JQ"/>
+                        <outlet property="reminderCell" destination="Tun-sO-vZz" id="7z7-br-7vu"/>
                         <outlet property="termOfUseCell" destination="kfS-oA-yKa" id="J0I-sD-Ued"/>
                         <outlet property="ulakCardCell" destination="o0k-WU-ym8" id="GKY-KH-yk4"/>
                     </connections>
