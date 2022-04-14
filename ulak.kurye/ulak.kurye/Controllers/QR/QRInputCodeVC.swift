@@ -84,7 +84,6 @@ final class QRInputCodeVC: BaseVC {
     }
 }
 
-//TODO: Error mesajını düzelt.
 extension QRInputCodeVC: ScannerDelegate {
     func didScanCode(code: String) {
         if qrCodeKey == nil {
