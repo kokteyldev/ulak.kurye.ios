@@ -123,6 +123,7 @@
 "settings_app_settings" = "APP SETTINGS";
 "settings_reminder_settings" = "Uyarı ve Hatırlatma Bildirimleri";
 "settings_pool_reminders" = "Pool Reminders";
+"settings_app_reminders" = "App Reminders";
 
 // Wallet
 "wallet_title" = "Wallet";
@@ -150,7 +151,8 @@
 "location_permission_message" = "Uygulamayı kullanmaya devam etmek için konum izni vermelisin.";
 "notification_permission_message" = "Uygulamayı kullanmaya devam etmek için bildirim izni vermelisin.";
 "working_message" = "Henüz atanmış ve onay bekleyen bir görevin bulunmuyor. Havuz sayfasından kendine en uygun rotayı oluşturabilirsin.";
-"waiting_for_account_verification" = "Üyelik Onayı Bekleniyor.";
+"waiting_for_account_verification" = "Üyelik Onayı Bekleniyor.
+Destek hattı: 08508852686";
 "give_notification_permission" = "Bildirim İzni Ver";
 "give_location_permission" = "Konum İzni Ver";
 "start_work" = "Çalışmaya Başla";
@@ -169,3 +171,4 @@
 "country_phone_code" = "Select Country Code";
 "card_loading" = "Kart bilgileri güncelleniyor..";
 "deposit" = "Kazanç";
+"withdraw" = "Karta Çekim";

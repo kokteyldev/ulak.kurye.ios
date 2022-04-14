@@ -18,8 +18,10 @@ final class SettingsVC: BaseTBLVC {
     
     @IBOutlet weak var notificationSwitch: UISwitch!
     @IBOutlet weak var poolNotificationSwitch: UISwitch!
+    @IBOutlet weak var appNotificationSwitch: UISwitch!
     @IBOutlet weak var notificationActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var poolNotificationActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var appNotificationActivityIndicator: UIActivityIndicatorView!
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -40,6 +42,8 @@ final class SettingsVC: BaseTBLVC {
         
         notificationSwitch.isOn = Session.shared.user?.isNotificationAllowed ?? true
         poolNotificationSwitch.isOn = Session.shared.user?.isPoolNotificationAllowed ?? true
+        //TODO: appNotification kontrol et
+        appNotificationSwitch.isOn = Session.shared.user?.isPoolNotificationAllowed ?? true
     }
     
     // MARK: - Data
@@ -110,6 +114,14 @@ final class SettingsVC: BaseTBLVC {
         prepareForLoading()
         poolNotificationSwitch.isHidden = true
         poolNotificationActivityIndicator.startAnimating()
+        updateUserSettings()
+    }
+    
+    @IBAction func appNotificationSwitchTapped(_ sender: Any) {
+        prepareForLoading()
+        appNotificationSwitch.isHidden = true
+        appNotificationActivityIndicator.startAnimating()
+        //TODO: Control Update User Settings for App Notification
         updateUserSettings()
     }
     
@@ -187,7 +199,9 @@ extension SettingsVC: NetworkRequestable {
         enabledView()
         notificationActivityIndicator.stopAnimating()
         poolNotificationActivityIndicator.stopAnimating()
+        appNotificationActivityIndicator.stopAnimating()
         notificationSwitch.isHidden = false
         poolNotificationSwitch.isHidden = false
+        appNotificationSwitch.isHidden = false
     }
 }
