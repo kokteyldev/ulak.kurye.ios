@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalletTVC" rowHeight="82" id="KGk-i7-Jjw" customClass="WalletTVC" customModule="ulak_kurye" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0Q-RH-qL9">
+                        <rect key="frame" x="16" y="16" width="288" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="OqS-75-rLC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kazanç" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWO-8G-RjO">
+                        <rect key="frame" x="26" y="44" width="51.5" height="22"/>
+                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                        <color key="textColor" name="ulk-subtitle"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01.01.1999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2py-ON-ipY">
+                        <rect key="frame" x="245" y="44" width="59" height="22"/>
+                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
+                        <color key="textColor" name="ulk-subtitle"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-wallet-mark" translatesAutoresizingMaskIntoConstraints="NO" id="Ckh-A2-qGQ">
+                        <rect key="frame" x="16" y="50.5" width="6" height="9"/>
+                        <color key="tintColor" name="ulk-red-bold"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="6" id="fH0-2P-XP4"/>
+                            <constraint firstAttribute="height" constant="9" id="g3k-Zf-KMv"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XWO-8G-RjO" firstAttribute="top" secondItem="n0Q-RH-qL9" secondAttribute="bottom" constant="8" id="68c-Vk-3Yg"/>
+                    <constraint firstAttribute="bottom" secondItem="XWO-8G-RjO" secondAttribute="bottom" constant="16" id="HXj-fx-HgA"/>
+                    <constraint firstItem="n0Q-RH-qL9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IRj-HS-bqw"/>
+                    <constraint firstItem="Ckh-A2-qGQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Mfo-9B-VzK"/>
+                    <constraint firstItem="n0Q-RH-qL9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Pq9-xO-6SB"/>
+                    <constraint firstItem="Ckh-A2-qGQ" firstAttribute="centerY" secondItem="XWO-8G-RjO" secondAttribute="centerY" id="Skq-mb-PwJ"/>
+                    <constraint firstItem="2py-ON-ipY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XWO-8G-RjO" secondAttribute="trailing" constant="8" id="g4Z-Rm-RrH"/>
+                    <constraint firstItem="XWO-8G-RjO" firstAttribute="leading" secondItem="Ckh-A2-qGQ" secondAttribute="trailing" constant="4" id="hjA-dj-4at"/>
+                    <constraint firstItem="2py-ON-ipY" firstAttribute="top" secondItem="n0Q-RH-qL9" secondAttribute="bottom" constant="8" symbolic="YES" id="jnC-RG-0co"/>
+                    <constraint firstAttribute="bottom" secondItem="2py-ON-ipY" secondAttribute="bottom" constant="16" id="qQW-o3-IcY"/>
+                    <constraint firstAttribute="trailing" secondItem="n0Q-RH-qL9" secondAttribute="trailing" constant="16" id="sSi-9z-BTp"/>
+                    <constraint firstAttribute="trailing" secondItem="2py-ON-ipY" secondAttribute="trailing" constant="16" id="uGS-sn-ltd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="amountLabel" destination="n0Q-RH-qL9" id="9Jg-XA-z1z"/>
+                <outlet property="arrowImage" destination="Ckh-A2-qGQ" id="fAT-6L-lXo"/>
+                <outlet property="dateLabel" destination="2py-ON-ipY" id="X0Y-ty-DMN"/>
+                <outlet property="typeLabel" destination="XWO-8G-RjO" id="WTM-4h-1OC"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="112.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic-wallet-mark" width="4" height="6"/>
+        <namedColor name="ulk-red-bold">
+            <color red="0.94117647058823528" green="0.30196078431372547" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ulk-subtitle">
+            <color red="0.52941176470588236" green="0.54509803921568623" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

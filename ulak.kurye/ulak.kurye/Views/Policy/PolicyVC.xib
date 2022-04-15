@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PolicyVC" customModule="ulak_kurye" customModuleProvider="target">
+            <connections>
+                <outlet property="acceptButton" destination="Oc1-hq-mEJ" id="04L-kM-52E"/>
+                <outlet property="titleLabel" destination="GQj-nX-Yee" id="bt8-8e-Tf6"/>
+                <outlet property="view" destination="0MY-ub-7kr" id="ohz-Oa-Qq5"/>
+                <outlet property="webView" destination="Jw1-x6-bha" id="uup-Z8-AMC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0MY-ub-7kr">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84K-yC-Au5" userLabel="Container" customClass="KKUIView" customModule="ulak_kurye" customModuleProvider="target">
+                    <rect key="frame" x="16" y="120" width="382" height="656"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKk-cl-CE2">
+                            <rect key="frame" x="344" y="18" width="22" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="22" id="ADg-Sq-2Fe"/>
+                                <constraint firstAttribute="height" constant="22" id="KMf-hX-ZKi"/>
+                            </constraints>
+                            <state key="normal" image="ic-close"/>
+                            <connections>
+                                <action selector="dismissTapped:" destination="-1" eventType="touchUpInside" id="fCJ-MK-qaZ"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KVKK Metni" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GQj-nX-Yee" userLabel="Katılım Koşulları">
+                            <rect key="frame" x="16" y="50" width="350" height="31"/>
+                            <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="22"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="preLogin_kvvk_title"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oc1-hq-mEJ">
+                            <rect key="frame" x="50" y="580.5" width="282" height="59.5"/>
+                            <color key="backgroundColor" name="ulk-orange"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="59.5" id="XKk-6k-Jz8"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
+                            <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                            <state key="normal" title="Okudum ve Kabul Ediyorum"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="preLogin_policy_read_accept"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="acceptTapped:" destination="-1" eventType="touchUpInside" id="MbN-Cz-90V"/>
+                            </connections>
+                        </button>
+                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jw1-x6-bha">
+                            <rect key="frame" x="16" y="93" width="350" height="479.5"/>
+                            <wkWebViewConfiguration key="configuration">
+                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                <wkPreferences key="preferences"/>
+                            </wkWebViewConfiguration>
+                        </wkWebView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="GQj-nX-Yee" secondAttribute="trailing" constant="16" id="2rK-WW-Wuu"/>
+                        <constraint firstAttribute="trailing" secondItem="IKk-cl-CE2" secondAttribute="trailing" constant="16" id="4UW-24-LCM"/>
+                        <constraint firstItem="GQj-nX-Yee" firstAttribute="top" secondItem="84K-yC-Au5" secondAttribute="top" constant="50" id="6je-zZ-IZr"/>
+                        <constraint firstItem="Jw1-x6-bha" firstAttribute="leading" secondItem="84K-yC-Au5" secondAttribute="leading" constant="16" id="Axg-0u-Amr"/>
+                        <constraint firstItem="Jw1-x6-bha" firstAttribute="top" secondItem="GQj-nX-Yee" secondAttribute="bottom" constant="12" id="E6B-lD-G98"/>
+                        <constraint firstItem="Oc1-hq-mEJ" firstAttribute="centerX" secondItem="84K-yC-Au5" secondAttribute="centerX" id="IAb-mo-wqG"/>
+                        <constraint firstAttribute="bottom" secondItem="Oc1-hq-mEJ" secondAttribute="bottom" constant="16" id="LO2-rk-8YE"/>
+                        <constraint firstItem="Oc1-hq-mEJ" firstAttribute="leading" secondItem="84K-yC-Au5" secondAttribute="leading" constant="50" id="SZD-Sb-fqE"/>
+                        <constraint firstAttribute="trailing" secondItem="Jw1-x6-bha" secondAttribute="trailing" constant="16" id="Zoe-Po-xA8"/>
+                        <constraint firstItem="IKk-cl-CE2" firstAttribute="top" secondItem="84K-yC-Au5" secondAttribute="top" constant="18" id="cON-hn-gkQ"/>
+                        <constraint firstItem="Oc1-hq-mEJ" firstAttribute="top" secondItem="Jw1-x6-bha" secondAttribute="bottom" constant="8" id="deo-4r-UTa"/>
+                        <constraint firstItem="GQj-nX-Yee" firstAttribute="leading" secondItem="84K-yC-Au5" secondAttribute="leading" constant="16" id="wzy-9e-o6m"/>
+                        <constraint firstAttribute="trailing" secondItem="Oc1-hq-mEJ" secondAttribute="trailing" constant="50" id="zl2-fr-jAb"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="GgT-KR-DFC"/>
+            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="84K-yC-Au5" firstAttribute="leading" secondItem="GgT-KR-DFC" secondAttribute="leading" constant="16" id="3Oc-qJ-t98"/>
+                <constraint firstItem="84K-yC-Au5" firstAttribute="top" secondItem="GgT-KR-DFC" secondAttribute="top" constant="76" id="HGX-Di-xcT"/>
+                <constraint firstItem="84K-yC-Au5" firstAttribute="centerY" secondItem="0MY-ub-7kr" secondAttribute="centerY" multiplier="0.7" constant="134.40000000000003" id="Hdm-xk-uez"/>
+                <constraint firstItem="GgT-KR-DFC" firstAttribute="trailing" secondItem="84K-yC-Au5" secondAttribute="trailing" constant="16" id="sKV-zz-QZe"/>
+            </constraints>
+            <point key="canvasLocation" x="1079.7101449275362" y="553.125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic-close" width="19" height="20"/>
+        <namedColor name="ulk-orange">
+            <color red="1" green="0.62352941176470589" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

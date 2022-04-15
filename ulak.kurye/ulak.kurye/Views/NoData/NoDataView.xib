@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoDataView" customModule="ulak_kurye" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="usS-BU-5pL" id="6U9-vw-Xzy"/>
+                <outlet property="imageView" destination="Qlk-bK-bjj" id="OtX-0R-BwA"/>
+                <outlet property="messageLabel" destination="tGN-fw-xfO" id="ZsO-nd-ijK"/>
+                <outlet property="titleLabel" destination="krY-P6-3ft" id="XTe-ta-K8n"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="697"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-notification" translatesAutoresizingMaskIntoConstraints="NO" id="Qlk-bK-bjj">
+                    <rect key="frame" x="83" y="229" width="248" height="30"/>
+                    <color key="tintColor" name="ulk-orange"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kayıtlı Adres Bulunmamaktadır" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krY-P6-3ft">
+                    <rect key="frame" x="32" y="275" width="350" height="62"/>
+                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="22"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henüz kayıtlı adresiniz bulunmamaktadır. Kurye çağrısı yapmadan önce yeni bir adres eklemelisiniz." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGN-fw-xfO">
+                    <rect key="frame" x="32" y="361" width="350" height="59"/>
+                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                    <color key="textColor" name="ulk-subtitle"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="usS-BU-5pL">
+                    <rect key="frame" x="188.5" y="330" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="usS-BU-5pL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="APr-mc-pl6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tGN-fw-xfO" secondAttribute="bottom" constant="24" id="ID2-vI-xrO"/>
+                <constraint firstItem="tGN-fw-xfO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="Mcd-gC-VgR"/>
+                <constraint firstItem="usS-BU-5pL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Nt3-pd-mAa"/>
+                <constraint firstItem="krY-P6-3ft" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="b3k-g1-Cg0"/>
+                <constraint firstItem="krY-P6-3ft" firstAttribute="top" secondItem="Qlk-bK-bjj" secondAttribute="bottom" constant="16" id="brU-on-zYZ"/>
+                <constraint firstItem="Qlk-bK-bjj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="c32-2D-DKk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tGN-fw-xfO" secondAttribute="trailing" constant="32" id="mcZ-wc-0e0"/>
+                <constraint firstItem="Qlk-bK-bjj" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="pVK-pZ-jdE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="krY-P6-3ft" secondAttribute="trailing" constant="32" id="pfN-3E-AHL"/>
+                <constraint firstItem="tGN-fw-xfO" firstAttribute="top" secondItem="krY-P6-3ft" secondAttribute="bottom" constant="24" id="qmG-mK-Wpq"/>
+                <constraint firstItem="Qlk-bK-bjj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.7" id="yMS-Gg-3tF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="59.263392857142854"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic-notification" width="29" height="30"/>
+        <namedColor name="ulk-orange">
+            <color red="1" green="0.62352941176470589" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ulk-subtitle">
+            <color red="0.52941176470588236" green="0.54509803921568623" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

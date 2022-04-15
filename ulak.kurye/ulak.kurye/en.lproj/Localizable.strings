@@ -1,0 +1,174 @@
+/* 
+  Localizable.strings
+  ulak.kurye
+
+  Created by Mehmet Karagöz on 22.02.2022.
+  
+*/
+
+// Error codes
+"error_unknown" = "Unknown Error.";
+"error_no_response" = "Unknown Error. (No Response)";
+"error_invalid_data" = "Unknown Error. (Invalid Data)";
+"error_no_data" = "Unknown Error. (No Data)";
+"error_no_agreement" = "No valid agreement found.";
+
+// Force update
+"force_update_message" = "To continue using the application, you must update.";
+"force_update_button_title" = "Update";
+
+// Onboarding
+"onboarding_pass" = "SKIP";
+"onboarding_1_title" = "Hello!";
+"onboarding_1_desc" = "Welcome to the ULAK Courier application. Work whenever you want, earn money.";
+"onboarding_2_title" = "Multiple Delivery";
+"onboarding_2_desc" = "Maximum income opportunity with regional multi-delivery advantage.";
+"onboarding_3_title" = "Instant Earnings";
+"onboarding_3_desc" = "Instant payment, not daily, weekly; in your progress payment account as you complete the delivery.";
+"onboarding_4_title" = "Surprises";
+"onboarding_4_desc" = "A privileged world with bonuses, surprise gifts and premiums...";
+
+// Auth
+"preLogin_title" = "Sign in with your phone number";
+"preLogin_title_desc" = "A verification code will be sent to the phone number you entered.";
+"preLogin_phone_number" = "Phone Number.";
+"preLogin_mising_info" = "Invalid Phone Number!";
+"preLogin_kvkk_title" = "I Agree with KVKK Conditions";
+"preLogin_kvvk_title" = "KVKK Conditions";
+"preLogin_policy_read_accept" = "Read and Accept";
+"login_title" = "Enter verification code";
+"login_title_desc" = "Enter the 4-digit code sent to your phone as an SMS.";
+"login_code" = "Enter Code";
+"login_mising_info" = "Invalid code or phone number!";
+
+// Tabbar
+"tabbar_home" = "Home";
+"tabbar_notification" = "Notifications";
+"tabbar_wallet" = "Wallet";
+"tabbar_settings" = "Settings";
+
+// Home
+"home_active_orders" = "ACTIVE MISSION";
+"home_past_orders" = "PAST MISSION";
+
+// Order
+"remaining_minutes" = "m left";
+"remaining_hours" = "hour left";
+"remaining_days" = "day left";
+"order_minutes_late" = "m late";
+"order_hour_late" = "hour late";
+"order_day_late" = "day late";
+"no_time_remaining" = "Late";
+"order_task_code" = "Mission Code";
+"order_total_price" = "Estimated Earnings";
+"order_service_info" = "Service Information";
+"order_task_code" = "Order Code";
+"order_distance" = "Distance";
+"order_not_working_while_have_order_error" = "This feature is not available while there is an active order!";
+"order_qr_order_code_title" = "Delivery Code Scan";
+"order_qr_order_code_input_title" = "Delivery Code";
+
+// Order Detail
+"order_detail_title" = "Delivery Details";
+"order_detail_pick_point" = "Pick up Point";
+"order_detail_deliver_point" = "Delivery Point";
+"order_detail_package_detail" = "Package Content";
+"order_detail_owner_point" = "Order Owner";
+"order_detail_courier_note" = "Courier Note";
+"order_detail_checkpoints" = "Checkpoints";
+"order_detail_get_picking_code_title" = "Enter Delivery Code";
+"order_detail_package_price" = "Payment Details";
+"order_detail_package_price_title" = "Package Price:";
+"order_detail_package_payment_method_title" = "Payment Method:";
+"order_detail_package_prepare_time_title" = "Prepate Time:";
+"order_detail_package_prepare_time_remaining" = " m.";
+"order_detail_no_order" = "Order Not Found!";
+
+// Pool
+"pool_page_title" = "Pool";
+"pool_total_order" = "Mission Quota";
+"pool_no_order" = "No order found in the pool.";
+
+// Order Action
+"picking_security_code_title" = "Enter the delivery code.";
+"picking_security_code_input_name" = "Devivery Code";
+"action_take_consent_message" = "Are you sure you want to take on the mission?";
+"action_abort_consent_message" = "If you agree to cancel the quest, you also agree that criminal action may be taken. Are you sure you want to cancel the mission?";
+"action_no_agreement" = "No Agreement!";
+
+// QR
+"scan_qr_code" = "Scan QR Code";
+"scan_not_supported_error" = "Phone not suitable for scanning!";
+"scan_error" = "Code Not Found!";
+
+// Settings
+"settings_title" = "Settings";
+"settings_my_account" = "Account";
+"settings_privacy_policy" = "Privacy Policy";
+"settings_feedback" = "Send Feedback";
+"settings_app_star" = "Rate ULAK APP";
+"settings_ulak_card" = "Ulak Card";
+"settings_logout" = "Log Out";
+"settings_send_feedback" = "Send Feedback";
+"settings_send_feedback_desc" = "Please write your feedback that you would like to give us in the field below.";
+"settings_send_feedback_send" = "Send";
+"settings_feedback_sent" = "Your feedback has sent.";
+"settings_ulak_card_popup_title" = "Add ULAK Card";
+"settings_no_ulak_card" = "Click to add ULAK Card!";
+"settings_ulak_card_popup_input_title" = "Card Number";
+"settings_logout" = "Log Out";
+"settings_logout_alert_title" = "Are you sure you want to log out?";
+"settings_account_settings" = "ACCOUNT SETTINGS";
+"settings_notification_settings" = "NOTIFICATIONS SETTINGS";
+"settings_app_settings" = "APP SETTINGS";
+"settings_reminder_settings" = "Warning and Reminder Notifications";
+"settings_pool_reminders" = "Pool Reminders";
+"settings_app_reminders" = "App Reminders";
+
+// Wallet
+"wallet_title" = "Wallet";
+"wallet_balance" = "Balance";
+"wallet_transfer_balance" = "Transfer Balance";
+"wallet_transfer_balance_message" = "Are you sure you want to transfer to account?";
+"wallet_no_wallet" = "No Wallet.";
+"wallet_no_transaction" = "No Transaction.";
+
+// Profile
+"profile_mising_info" = "Check the information you entered!";
+"profile_updated_success" = "Profile has been updated successfully.";
+"profile_change_password_save" = "Change and Save";
+"profile_login_name" = "Name";
+"profile_login_surname" = "Surname";
+"profile_login_phone" = "Phone Number";
+"profile_title" = "Account";
+
+// Notifications
+"notifications" = "Notifications";
+"announcements" = "Announcements";
+"notifications_no_notification" = "No Notifications";
+
+// General
+"location_permission_message" = "You must grant location permission to continue using the app..";
+"notification_permission_message" = "To continue using the application, you must give notification permission.";
+"working_message" = "You do not have a task assigned and awaiting approval yet. You can create the most suitable route for you from the pool page.";
+"waiting_for_account_verification" = "Awaiting Membership Approval.
+Support line: 08508852686";
+"give_notification_permission" = "Allow Notification.";
+"give_location_permission" = "Allow Location.";
+"start_work" = "Start Working";
+"see_pool" = "Pool";
+"go_to_application_site" = "Complete Application";
+"pool" = "Pool";
+"qr-code" = "QR Code";
+"working" = "Working";
+"yes" = "Yes";
+"cancel" = "Cancel";
+"no" = "No";
+"ok" = "Ok";
+"picking_security_code" = "Delivery Code";
+"send" = "Send";
+"code" = "Code";
+"country_phone_code" = "Select Country Code";
+"card_loading" = "Updating card information..";
+"deposit" = "Earning";
+"withdraw" = "Withdraw";
