@@ -8,8 +8,13 @@
 import UIKit
 
 class LoginVC: BaseVC {
-    @IBOutlet weak var codeTextField: KKOutlinedTextField!
     @IBOutlet weak var loginButton: KKLoadingButton!
+    
+    @IBOutlet weak var otpFirst: KKOutlinedTextField!
+    @IBOutlet weak var otpSecond: KKOutlinedTextField!
+    @IBOutlet weak var otpThird: KKOutlinedTextField!
+    @IBOutlet weak var otpFourth: KKOutlinedTextField!
+    
     
     private var feedBackGenerator: UINotificationFeedbackGenerator?
     private var activeTextField : UITextField?
@@ -23,6 +28,11 @@ class LoginVC: BaseVC {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+        otpFirst.addTarget(self, action: #selector(self.textDidChange(textfield:)), for: UIControl.Event.editingChanged)
+        otpSecond.addTarget(self, action: #selector(self.textDidChange(textfield:)), for: UIControl.Event.editingChanged)
+        otpThird.addTarget(self, action: #selector(self.textDidChange(textfield:)), for: UIControl.Event.editingChanged)
+        otpFourth.addTarget(self, action: #selector(self.textDidChange(textfield:)), for: UIControl.Event.editingChanged)
+        
         setupUI()
         validateData()
     }
@@ -32,23 +42,32 @@ class LoginVC: BaseVC {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        otpFirst.becomeFirstResponder()
+        validateData()
+    }
+    
     // MARK: - UI
     private func setupUI() {
         navigationController?.setNavigationBarTransparent(true)
-        
-        codeTextField.delegate = self
-        
         feedBackGenerator = UINotificationFeedbackGenerator()
         feedBackGenerator?.prepare()
     }
     
     // MARK: - Data
     private func validateData() {
-        if codeTextField.text?.length != 4 {
+        let codeOne = otpFirst.text
+        let codeTwo = otpSecond.text
+        let codeThree = otpThird.text
+        let codeFour = otpFourth.text
+        
+        let code = codeOne! + codeTwo! + codeThree! + codeFour!
+        if code.length != 4 {
             loginButton.isActive = false
             return
         }
-        
+
         loginButton.isActive = true
     }
     
@@ -58,9 +77,32 @@ class LoginVC: BaseVC {
         
         var hasError = false
         
-        let code = codeTextField.text
-        if code == nil || code?.length != 4 {
-            codeTextField.invalidate()
+        let codeOne = otpFirst.text
+        if codeOne == nil || codeOne?.length != 1 {
+            otpFirst.invalidate()
+            hasError = true
+        }
+        
+        let codeTwo = otpSecond.text
+        if codeTwo == nil || codeTwo?.length != 1 {
+            otpSecond.invalidate()
+            hasError = true
+        }
+        
+        let codeThree = otpThird.text
+        if codeThree == nil || codeThree?.length != 1 {
+            otpThird.invalidate()
+            hasError = true
+        }
+        
+        let codeFour = otpFourth.text
+        if codeFour == nil || codeFour?.length != 1 {
+            otpFourth.invalidate()
+            hasError = true
+        }
+        
+        let code = codeOne! + codeTwo! + codeThree! + codeFour!
+        if code.length != 4 {
             hasError = true
         }
         
@@ -77,7 +119,7 @@ class LoginVC: BaseVC {
         loginButton.startAnimation()
         self.disableView()
         
-        API.login(code: code!, phoneNumber: phoneNumber!) { result in
+        API.login(code: code, phoneNumber: phoneNumber!) { result in
             self.enabledView()
             self.loginButton.stopAnimation()
             
@@ -138,5 +180,47 @@ extension LoginVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return true
+    }
+    
+    @objc func textDidChange(textfield: UITextField) {
+        let text = textfield.text
+        
+        if text?.utf16.count == 1 {
+            switch textfield {
+            case otpFirst:
+                otpSecond.becomeFirstResponder()
+                break
+            case otpSecond:
+                otpThird.becomeFirstResponder()
+                break
+            case otpThird:
+                otpFourth.becomeFirstResponder()
+                break
+            case otpFourth:
+                otpFourth.resignFirstResponder()
+                break
+            default:
+                break
+            }
+        }
+        
+        if text?.utf16.count == 0 {
+            switch textfield {
+            case otpFirst:
+                otpFirst.becomeFirstResponder()
+                break
+            case otpSecond:
+                otpFirst.becomeFirstResponder()
+                break
+            case otpThird:
+                otpSecond.becomeFirstResponder()
+                break
+            case otpFourth:
+                otpThird.becomeFirstResponder()
+                break
+            default:
+                break
+            }
+        }
     }
 }
