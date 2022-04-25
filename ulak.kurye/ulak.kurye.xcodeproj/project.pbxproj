@@ -142,6 +142,8 @@
 		E55D381B27F6D4A9005592DB /* NotificationTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55D381A27F6D4A9005592DB /* NotificationTVC.xib */; };
 		E55D381D27F6D4C7005592DB /* NotificationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D381C27F6D4C7005592DB /* NotificationTVC.swift */; };
 		E569910F27EDA6320099E9D5 /* UIViewController+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */; };
+		E57B4FC3280E9E600097BE10 /* OtpCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57B4FC2280E9E600097BE10 /* OtpCodeView.xib */; };
+		E57B4FC7280EA0E40097BE10 /* OtpCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B4FC6280EA0E40097BE10 /* OtpCodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -327,6 +329,8 @@
 		E55D381A27F6D4A9005592DB /* NotificationTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTVC.xib; sourceTree = "<group>"; };
 		E55D381C27F6D4C7005592DB /* NotificationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTVC.swift; sourceTree = "<group>"; };
 		E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KKUtils.swift"; sourceTree = "<group>"; };
+		E57B4FC2280E9E600097BE10 /* OtpCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtpCodeView.xib; sourceTree = "<group>"; };
+		E57B4FC6280EA0E40097BE10 /* OtpCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpCodeView.swift; sourceTree = "<group>"; };
 		E71221419E2EBE301679F7A2 /* Pods-ulak.kuryeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.debug.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4BD9CB58C1323FCFDC3534B /* Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F70742960D8C2DF30F38CC2A /* Pods-ulak.kurye.dev release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye.dev release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye.dev release.xcconfig"; sourceTree = "<group>"; };
@@ -807,6 +811,7 @@
 				9E3304A327C6747600AAB135 /* Order */,
 				9E246A8527DF72F400F10D77 /* OrderAction */,
 				9E33049E27C66B9400AAB135 /* Onboarding */,
+				E57B4FC1280E9E250097BE10 /* OtpCode */,
 				9E2CAC2627E87FE800106FD1 /* PhoneCode */,
 				9E2CAC4127E8D0F000106FD1 /* Wallet */,
 				9E3D435627C520B100B6D5C5 /* Policy */,
@@ -836,6 +841,15 @@
 				E55D381A27F6D4A9005592DB /* NotificationTVC.xib */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		E57B4FC1280E9E250097BE10 /* OtpCode */ = {
+			isa = PBXGroup;
+			children = (
+				E57B4FC2280E9E600097BE10 /* OtpCodeView.xib */,
+				E57B4FC6280EA0E40097BE10 /* OtpCodeView.swift */,
+			);
+			path = OtpCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -992,6 +1006,7 @@
 				9EC177D727E4BB0D0005FA8E /* ScannerVC.xib in Resources */,
 				9E2CAC4527E8D11100106FD1 /* WalletTVC.xib in Resources */,
 				9E3D436527C5366200B6D5C5 /* Wallet.storyboard in Resources */,
+				E57B4FC3280E9E600097BE10 /* OtpCodeView.xib in Resources */,
 				9E3D433827C4CBDE00B6D5C5 /* Localizable.strings in Resources */,
 				9EA443C627CCF4EF00C4A47B /* TableSectionHeaderView.xib in Resources */,
 				9E3E2D1027BE8F1700A17025 /* LaunchScreen.storyboard in Resources */,
@@ -1220,6 +1235,7 @@
 				9E246A7A27DF22FB00F10D77 /* Agreement.swift in Sources */,
 				9ECAAAE027C3DB0D00F583C4 /* LoadingView.swift in Sources */,
 				9ECAAAD327C3D07600F583C4 /* CustomError.swift in Sources */,
+				E57B4FC7280EA0E40097BE10 /* OtpCodeView.swift in Sources */,
 				9EA1AA3E27EB377200BF018A /* UIColor+Ulak.swift in Sources */,
 				9EE8C01827D780950050F37D /* CheckpointTVC.swift in Sources */,
 				9ECAAA9927C3C41900F583C4 /* API.swift in Sources */,

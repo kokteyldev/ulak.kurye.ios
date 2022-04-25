@@ -181,8 +181,14 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="login_title_desc"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKL-Gx-fWC" customClass="OtpCodeView" customModule="ulak_kurye" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="330" width="414" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="vAy-IX-OmX"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbb-VW-e4F" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="224.5" y="414" width="165.5" height="63.5"/>
+                                <rect key="frame" x="224.5" y="438" width="165.5" height="63.5"/>
                                 <color key="backgroundColor" name="ulk-orange"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Gbb-VW-e4F" secondAttribute="height" multiplier="157:60" id="EI1-uz-Ueq"/>
@@ -197,80 +203,30 @@
                                     <action selector="loginTapped:" destination="6Ew-1L-Otk" eventType="touchUpInside" id="1EY-7d-pZg"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3LW-Ku-lde" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="55" y="338" width="70" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="fJ7-i4-xE5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <connections>
-                                    <action selector="textfieldDidChange:" destination="6Ew-1L-Otk" eventType="editingDidEnd" id="b3U-8V-sf6"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0VC-ft-vT1" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="133" y="338" width="70" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <connections>
-                                    <action selector="textfieldDidChange:" destination="6Ew-1L-Otk" eventType="editingDidEnd" id="XmL-gy-nIK"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hgd-4w-gXn" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="211" y="338" width="70" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <connections>
-                                    <action selector="textfieldDidChange:" destination="6Ew-1L-Otk" eventType="editingDidEnd" id="WjZ-q0-ApU"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aGp-jo-y8Q" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="289" y="338" width="70" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <connections>
-                                    <action selector="textfieldDidChange:" destination="6Ew-1L-Otk" eventType="editingDidEnd" id="o3l-4D-9sS"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FYx-Bb-RCu"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="Gbb-VW-e4F" secondAttribute="trailing" constant="24" id="23B-gv-zYO"/>
-                            <constraint firstItem="3LW-Ku-lde" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" constant="55" id="36E-bo-Mqn"/>
+                            <constraint firstItem="tKL-Gx-fWC" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" id="66X-CT-WdR"/>
                             <constraint firstItem="xN5-1e-W9e" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" constant="24" id="6PU-Fl-dQH"/>
                             <constraint firstItem="xN5-1e-W9e" firstAttribute="top" secondItem="Ri8-hw-tqH" secondAttribute="bottom" constant="32" id="7Wz-pr-PQ1"/>
-                            <constraint firstItem="0VC-ft-vT1" firstAttribute="top" secondItem="4Xv-ht-2GH" secondAttribute="bottom" constant="16" id="ABH-Yk-f88"/>
-                            <constraint firstItem="Hgd-4w-gXn" firstAttribute="width" secondItem="3LW-Ku-lde" secondAttribute="width" id="CDR-Zs-Tw5"/>
-                            <constraint firstItem="Hgd-4w-gXn" firstAttribute="top" secondItem="4Xv-ht-2GH" secondAttribute="bottom" constant="16" id="Ccz-Dc-hi9"/>
-                            <constraint firstItem="Gbb-VW-e4F" firstAttribute="top" secondItem="Hgd-4w-gXn" secondAttribute="bottom" constant="16" id="DTb-3O-W7B"/>
                             <constraint firstItem="4Xv-ht-2GH" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" constant="24" id="E8u-N9-qwm"/>
                             <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="xN5-1e-W9e" secondAttribute="trailing" constant="24" id="HZT-RZ-Yph"/>
-                            <constraint firstItem="3LW-Ku-lde" firstAttribute="top" secondItem="4Xv-ht-2GH" secondAttribute="bottom" constant="16" id="PCs-jP-tpx"/>
-                            <constraint firstItem="Hgd-4w-gXn" firstAttribute="leading" secondItem="0VC-ft-vT1" secondAttribute="trailing" constant="8" symbolic="YES" id="TQg-G6-kp8"/>
+                            <constraint firstItem="tKL-Gx-fWC" firstAttribute="top" secondItem="4Xv-ht-2GH" secondAttribute="bottom" constant="8" id="Nmc-aW-2j4"/>
+                            <constraint firstItem="tKL-Gx-fWC" firstAttribute="trailing" secondItem="FYx-Bb-RCu" secondAttribute="trailing" id="P1i-bs-305"/>
                             <constraint firstItem="Gbb-VW-e4F" firstAttribute="width" secondItem="214-QG-HO0" secondAttribute="width" multiplier="0.4" id="UIH-fH-hF4"/>
                             <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="4Xv-ht-2GH" secondAttribute="trailing" constant="24" id="UYP-x1-7Yy"/>
-                            <constraint firstItem="0VC-ft-vT1" firstAttribute="width" secondItem="3LW-Ku-lde" secondAttribute="width" id="V1Z-5V-Eae"/>
                             <constraint firstItem="Ri8-hw-tqH" firstAttribute="centerX" secondItem="214-QG-HO0" secondAttribute="centerX" id="cih-dG-sva"/>
-                            <constraint firstItem="aGp-jo-y8Q" firstAttribute="height" secondItem="3LW-Ku-lde" secondAttribute="height" id="fhp-9T-vfE"/>
-                            <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="aGp-jo-y8Q" secondAttribute="trailing" constant="55" id="iRI-Ch-iAg"/>
-                            <constraint firstItem="aGp-jo-y8Q" firstAttribute="width" secondItem="3LW-Ku-lde" secondAttribute="width" id="jJs-TY-6RV"/>
-                            <constraint firstItem="0VC-ft-vT1" firstAttribute="height" secondItem="3LW-Ku-lde" secondAttribute="height" id="jXj-Ti-TOd"/>
                             <constraint firstItem="Ri8-hw-tqH" firstAttribute="top" secondItem="FYx-Bb-RCu" secondAttribute="top" constant="16" id="kOm-Lb-yme"/>
-                            <constraint firstItem="aGp-jo-y8Q" firstAttribute="leading" secondItem="Hgd-4w-gXn" secondAttribute="trailing" constant="8" symbolic="YES" id="mue-GS-JcJ"/>
                             <constraint firstItem="4Xv-ht-2GH" firstAttribute="top" secondItem="xN5-1e-W9e" secondAttribute="bottom" constant="8" id="oPt-51-MHS"/>
-                            <constraint firstItem="aGp-jo-y8Q" firstAttribute="top" secondItem="4Xv-ht-2GH" secondAttribute="bottom" constant="16" id="wSp-Z0-qNV"/>
-                            <constraint firstItem="Hgd-4w-gXn" firstAttribute="height" secondItem="3LW-Ku-lde" secondAttribute="height" id="xBl-sf-wiF"/>
-                            <constraint firstItem="0VC-ft-vT1" firstAttribute="leading" secondItem="3LW-Ku-lde" secondAttribute="trailing" constant="8" symbolic="YES" id="zip-hP-4EM"/>
+                            <constraint firstItem="Gbb-VW-e4F" firstAttribute="top" secondItem="tKL-Gx-fWC" secondAttribute="bottom" constant="16" id="ubp-hc-l2v"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vvL-ql-cqn"/>
                     <connections>
                         <outlet property="loginButton" destination="Gbb-VW-e4F" id="ulk-6a-V8D"/>
-                        <outlet property="otpFirst" destination="3LW-Ku-lde" id="PL2-dn-889"/>
-                        <outlet property="otpFourth" destination="aGp-jo-y8Q" id="6aQ-Gh-VdT"/>
-                        <outlet property="otpSecond" destination="0VC-ft-vT1" id="vD4-Iz-UZQ"/>
-                        <outlet property="otpThird" destination="Hgd-4w-gXn" id="rrt-XX-nko"/>
+                        <outlet property="otpCodeView" destination="tKL-Gx-fWC" id="BYV-45-INb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0IC-2D-BWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

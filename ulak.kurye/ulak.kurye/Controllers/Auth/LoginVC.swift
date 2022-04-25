@@ -9,13 +9,8 @@ import UIKit
 
 class LoginVC: BaseVC {
     @IBOutlet weak var loginButton: KKLoadingButton!
-    
-    @IBOutlet weak var otpFirst: KKOutlinedTextField!
-    @IBOutlet weak var otpSecond: KKOutlinedTextField!
-    @IBOutlet weak var otpThird: KKOutlinedTextField!
-    @IBOutlet weak var otpFourth: KKOutlinedTextField!
-    
-    
+    @IBOutlet weak var otpCodeView: OtpCodeView!
+
     private var feedBackGenerator: UINotificationFeedbackGenerator?
     private var activeTextField : UITextField?
     
@@ -28,11 +23,6 @@ class LoginVC: BaseVC {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        otpFirst.addTarget(self, action: #selector(self.textDidChange(textfield:)), for: UIControl.Event.editingChanged)
-        otpSecond.addTarget(self, action: #selector(self.textDidChange(textfield:)), for: UIControl.Event.editingChanged)
-        otpThird.addTarget(self, action: #selector(self.textDidChange(textfield:)), for: UIControl.Event.editingChanged)
-        otpFourth.addTarget(self, action: #selector(self.textDidChange(textfield:)), for: UIControl.Event.editingChanged)
-        
         setupUI()
         validateData()
     }
@@ -44,7 +34,6 @@ class LoginVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        otpFirst.becomeFirstResponder()
         validateData()
     }
     
@@ -53,17 +42,14 @@ class LoginVC: BaseVC {
         navigationController?.setNavigationBarTransparent(true)
         feedBackGenerator = UINotificationFeedbackGenerator()
         feedBackGenerator?.prepare()
+        
+        otpCodeView?.delegate = self
     }
     
     // MARK: - Data
     private func validateData() {
-        let codeOne = otpFirst.text
-        let codeTwo = otpSecond.text
-        let codeThree = otpThird.text
-        let codeFour = otpFourth.text
-        
-        let code = codeOne! + codeTwo! + codeThree! + codeFour!
-        if code.length != 4 {
+        let code = otpCodeView.code
+        if code?.length != 4 || code == nil {
             loginButton.isActive = false
             return
         }
@@ -77,32 +63,8 @@ class LoginVC: BaseVC {
         
         var hasError = false
         
-        let codeOne = otpFirst.text
-        if codeOne == nil || codeOne?.length != 1 {
-            otpFirst.invalidate()
-            hasError = true
-        }
-        
-        let codeTwo = otpSecond.text
-        if codeTwo == nil || codeTwo?.length != 1 {
-            otpSecond.invalidate()
-            hasError = true
-        }
-        
-        let codeThree = otpThird.text
-        if codeThree == nil || codeThree?.length != 1 {
-            otpThird.invalidate()
-            hasError = true
-        }
-        
-        let codeFour = otpFourth.text
-        if codeFour == nil || codeFour?.length != 1 {
-            otpFourth.invalidate()
-            hasError = true
-        }
-        
-        let code = codeOne! + codeTwo! + codeThree! + codeFour!
-        if code.length != 4 {
+        let code = otpCodeView.code
+        if code?.length != 4 || code == nil {
             hasError = true
         }
         
@@ -119,7 +81,7 @@ class LoginVC: BaseVC {
         loginButton.startAnimation()
         self.disableView()
         
-        API.login(code: code, phoneNumber: phoneNumber!) { result in
+        API.login(code: code!, phoneNumber: phoneNumber!) { result in
             self.enabledView()
             self.loginButton.stopAnimation()
             
@@ -135,6 +97,7 @@ class LoginVC: BaseVC {
                 }
                 break
             case .failure(let error):
+                self.otpCodeView.invalidate()
                 self.navigationController?.view.showToast(.error, message: error.localizedDescription)
             }
         }
@@ -181,46 +144,10 @@ extension LoginVC: UITextFieldDelegate {
         view.endEditing(true)
         return true
     }
-    
-    @objc func textDidChange(textfield: UITextField) {
-        let text = textfield.text
-        
-        if text?.utf16.count == 1 {
-            switch textfield {
-            case otpFirst:
-                otpSecond.becomeFirstResponder()
-                break
-            case otpSecond:
-                otpThird.becomeFirstResponder()
-                break
-            case otpThird:
-                otpFourth.becomeFirstResponder()
-                break
-            case otpFourth:
-                otpFourth.resignFirstResponder()
-                break
-            default:
-                break
-            }
-        }
-        
-        if text?.utf16.count == 0 {
-            switch textfield {
-            case otpFirst:
-                otpFirst.becomeFirstResponder()
-                break
-            case otpSecond:
-                otpFirst.becomeFirstResponder()
-                break
-            case otpThird:
-                otpSecond.becomeFirstResponder()
-                break
-            case otpFourth:
-                otpThird.becomeFirstResponder()
-                break
-            default:
-                break
-            }
-        }
+}
+
+extension LoginVC: OtpCodeViewDelegate {
+    func didChangeOtpCode(_ otpCodeView: OtpCodeView) {
+        validateData()
     }
 }
