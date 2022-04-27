@@ -30,11 +30,15 @@ struct API {
     }
     
     // MARK: - Auth
-    static func preLogin(phoneNumber: String, completion:@escaping (Result<Bool, Error>) -> Void) {
-        performRequest(route: APIRouter.preLogin(phoneNumber: phoneNumber)) { (result:(Result<Response<Bool?>, Error>)) in
+    static func preLogin(phoneNumber: String, completion:@escaping (Result<Login, Error>) -> Void) {
+        performRequest(route: APIRouter.preLogin(phoneNumber: phoneNumber)) { (result:(Result<Response<Login>, Error>)) in
             switch result {
-            case Result.success(_):
-                completion(.success(true))
+            case Result.success(let response):
+                if let loginResponse = response.data {
+                    completion(.success(loginResponse))
+                } else {
+                    completion(.failure(CustomError.noData.error))
+                }
                 break
             case Result.failure(let error):
                 completion(.failure(error))

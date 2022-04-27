@@ -16,6 +16,9 @@
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--BaseNC-->
@@ -233,6 +236,101 @@
             </objects>
             <point key="canvasLocation" x="1324.6376811594205" y="115.84821428571428"/>
         </scene>
+        <!--RegisterVC-->
+        <scene sceneID="oXc-rY-Sf1">
+            <objects>
+                <viewController storyboardIdentifier="RegisterVC" id="2Sf-MN-RxY" customClass="RegisterVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m2Z-3W-TxI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbb-0Z-dXw" customClass="PhoneCodeView" customModule="ulak_kurye" customModuleProvider="target">
+                                <rect key="frame" x="24" y="225" width="366" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="rAt-iv-gTa"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="62S-z3-Fva" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
+                                <rect key="frame" x="24" y="387" width="366" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Hb0-wz-w4O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="family-name"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedTitleKey" value="profile_login_surname"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiI-Gf-NeE" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
+                                <rect key="frame" x="24" y="463" width="366" height="60"/>
+                                <color key="backgroundColor" name="ulk-orange"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="UpY-ES-Hh5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
+                                <state key="normal" title="Devam Et"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isActive" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveTapped:" destination="2Sf-MN-RxY" eventType="touchUpInside" id="4G7-ZN-ggG"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oyR-Rx-b8d" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
+                                <rect key="frame" x="24" y="311" width="366" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3nt-0Y-ipK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="given-name"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedTitleKey" value="profile_login_name"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kayıt Ol" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcP-Ug-rRl">
+                                <rect key="frame" x="24" y="160" width="188" height="45"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ICU-TJ-09B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ICU-TJ-09B" firstAttribute="trailing" secondItem="TcP-Ug-rRl" secondAttribute="trailing" constant="202" id="2IU-mE-nLw"/>
+                            <constraint firstItem="62S-z3-Fva" firstAttribute="trailing" secondItem="BiI-Gf-NeE" secondAttribute="trailing" id="2v9-tV-vjZ"/>
+                            <constraint firstItem="TcP-Ug-rRl" firstAttribute="leading" secondItem="Xbb-0Z-dXw" secondAttribute="leading" id="5hK-bU-ita"/>
+                            <constraint firstItem="Xbb-0Z-dXw" firstAttribute="top" secondItem="TcP-Ug-rRl" secondAttribute="bottom" constant="20" id="B8q-HF-e7q"/>
+                            <constraint firstItem="BiI-Gf-NeE" firstAttribute="top" secondItem="62S-z3-Fva" secondAttribute="bottom" constant="16" id="Bzy-1i-Nly"/>
+                            <constraint firstItem="62S-z3-Fva" firstAttribute="leading" secondItem="BiI-Gf-NeE" secondAttribute="leading" id="Jcl-bH-u7g"/>
+                            <constraint firstItem="62S-z3-Fva" firstAttribute="top" secondItem="oyR-Rx-b8d" secondAttribute="bottom" constant="16" id="MI3-PN-56W"/>
+                            <constraint firstItem="Xbb-0Z-dXw" firstAttribute="centerX" secondItem="m2Z-3W-TxI" secondAttribute="centerX" id="P9J-Cz-zgj"/>
+                            <constraint firstItem="TcP-Ug-rRl" firstAttribute="leading" secondItem="ICU-TJ-09B" secondAttribute="leading" constant="24" id="QBJ-4V-fde"/>
+                            <constraint firstItem="TcP-Ug-rRl" firstAttribute="top" secondItem="ICU-TJ-09B" secondAttribute="top" constant="116" id="Y6j-KB-rov"/>
+                            <constraint firstItem="Xbb-0Z-dXw" firstAttribute="trailing" secondItem="oyR-Rx-b8d" secondAttribute="trailing" id="eAX-Xt-ryb"/>
+                            <constraint firstItem="Xbb-0Z-dXw" firstAttribute="leading" secondItem="oyR-Rx-b8d" secondAttribute="leading" id="geM-mZ-HKD"/>
+                            <constraint firstItem="oyR-Rx-b8d" firstAttribute="leading" secondItem="62S-z3-Fva" secondAttribute="leading" id="h2S-0J-2no"/>
+                            <constraint firstItem="oyR-Rx-b8d" firstAttribute="top" secondItem="Xbb-0Z-dXw" secondAttribute="bottom" constant="16" id="ow6-WP-Bi4"/>
+                            <constraint firstItem="oyR-Rx-b8d" firstAttribute="trailing" secondItem="62S-z3-Fva" secondAttribute="trailing" id="t7D-UD-Ok8"/>
+                            <constraint firstItem="62S-z3-Fva" firstAttribute="height" secondItem="oyR-Rx-b8d" secondAttribute="height" id="vQO-gY-oud"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KON-rw-8pL"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="oyR-Rx-b8d" id="WfC-G8-j3Y"/>
+                        <outlet property="phoneCodeView" destination="Xbb-0Z-dXw" id="dfR-b0-9gq"/>
+                        <outlet property="saveButton" destination="BiI-Gf-NeE" id="inR-rh-Grp"/>
+                        <outlet property="surnameTextField" destination="62S-z3-Fva" id="M65-Pj-Exm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1VV-JA-mfB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2069.5652173913045" y="115.84821428571428"/>
+        </scene>
         <!--Phone CodeVC-->
         <scene sceneID="4XV-EC-Bwx">
             <objects>
@@ -270,20 +368,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PhoneCodeTVC" id="I3H-X5-1mc" customClass="PhoneCodeTVC" customModule="ulak_kurye" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I3H-X5-1mc" id="zgk-Ox-ey9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeR-P8-tU8">
-                                                    <rect key="frame" x="20" y="11" width="33" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="33" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turkey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-mr-TAf">
-                                                    <rect key="frame" x="58" y="11" width="200" height="21"/>
+                                                    <rect key="frame" x="58" y="11" width="200" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="oUf-lS-oP7"/>
                                                     </constraints>
@@ -292,7 +390,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+90" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DT-vu-nE3">
-                                                    <rect key="frame" x="283" y="11" width="96" height="21"/>
+                                                    <rect key="frame" x="283" y="11" width="96" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

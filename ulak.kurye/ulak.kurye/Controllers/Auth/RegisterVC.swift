@@ -1,22 +1,22 @@
 //
-//  ProfileVC.swift
+//  RegisterVC.swift
 //  ulak.kurye
 //
-//  Created by Mehmet Karagöz on 21.03.2022.
+//  Created by Melih Cüneyter on 26.04.2022.
 //
 
 import UIKit
 
-final class ProfileVC: BaseVC {
-    @IBOutlet weak var saveButton: KKLoadingButton!
+final class RegisterVC: BaseVC {
+    @IBOutlet weak var phoneCodeView: PhoneCodeView!
     @IBOutlet weak var nameTextField: KKOutlinedTextField!
     @IBOutlet weak var surnameTextField: KKOutlinedTextField!
-    @IBOutlet weak var phoneCodeView: PhoneCodeView!
+    @IBOutlet weak var saveButton: KKLoadingButton!
     
     private var activeTextField : UITextField?
     private var feedBackGenerator: UINotificationFeedbackGenerator?
+    private var phoneNumber: String!
     
-    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,8 +37,7 @@ final class ProfileVC: BaseVC {
     }
     
     // MARK: - Setup
-    func setupUI() {
-        self.title = "profile_title".localized
+    private func setupUI() {
         self.navigationController?.navigationBar.topItem?.backButtonTitle = ""
         
         nameTextField.delegate = self
@@ -50,12 +49,7 @@ final class ProfileVC: BaseVC {
     }
     
     private func setupProfile() {
-        nameTextField.text = Session.shared.user?.name
-        surnameTextField.text = Session.shared.user?.surname
-        
-        if let phone = Session.shared.user?.phoneNumber {
-            phoneCodeView.setFullPhoneNumber(phone)
-        }
+        phoneCodeView.setFullPhoneNumber(phoneNumber)
     }
     
     // MARK: - Data
@@ -70,16 +64,9 @@ final class ProfileVC: BaseVC {
             return
         }
         
-        if nameTextField.text == Session.shared.user?.name &&
-            surnameTextField.text == Session.shared.user?.surname {
-            saveButton.isActive = false
-            return
-        }
-        
         saveButton.isActive = true
     }
     
-    // MARK: - Actions
     @IBAction func saveTapped(_ sender: Any) {
         view.endEditing(true)
         
@@ -114,14 +101,29 @@ final class ProfileVC: BaseVC {
                 Session.shared.user?.name = name
                 Session.shared.user?.surname = surname
                 self.saveButton.isActive = false
+                MainTabbarTC.presentAsRoot()
             case .failure(let error):
                 self.navigationController?.view.showToast(.error, message: error.localizedDescription)
             }
         }
     }
-    
+        
     @IBAction func textfieldDidChange(_ sender: Any) {
         validateData()
+    }
+    
+    // MARK: - Presenter
+    static func present(fromVC: UIViewController, phoneNumber: String) {
+        DispatchQueue.main.async {
+            let sb = UIStoryboard(name: "Auth", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "RegisterVC") as! RegisterVC
+        
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            vc.phoneNumber = phoneNumber
+
+            fromVC.present(vc, animated: true, completion: nil)
+        }
     }
     
     //MARK: - Utils
@@ -146,7 +148,7 @@ final class ProfileVC: BaseVC {
 }
 
 // MARK: - UITextFieldDelegate
-extension ProfileVC: UITextFieldDelegate {
+extension RegisterVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         activeTextField = textField
         
@@ -171,7 +173,7 @@ extension ProfileVC: UITextFieldDelegate {
     }
 }
 
-extension ProfileVC: NetworkRequestable {
+extension RegisterVC: NetworkRequestable {
     func prepareForLoading() {
         saveButton.startAnimation()
         self.disableView()
@@ -182,4 +184,3 @@ extension ProfileVC: NetworkRequestable {
         self.enabledView()
     }
 }
-

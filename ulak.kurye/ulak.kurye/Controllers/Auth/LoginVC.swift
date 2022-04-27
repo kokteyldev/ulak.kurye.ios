@@ -15,6 +15,7 @@ class LoginVC: BaseVC {
     private var activeTextField : UITextField?
     
     var phoneNumber: String?
+    var isRegistered: Bool!
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -49,7 +50,7 @@ class LoginVC: BaseVC {
     // MARK: - Data
     private func validateData() {
         let code = otpCodeView.code
-        if code?.length != 4 || code == nil {
+        if code == nil || code?.length != 4 {
             loginButton.isActive = false
             return
         }
@@ -64,7 +65,7 @@ class LoginVC: BaseVC {
         var hasError = false
         
         let code = otpCodeView.code
-        if code?.length != 4 || code == nil {
+        if code == nil || code?.length != 4 {
             hasError = true
         }
         
@@ -88,8 +89,9 @@ class LoginVC: BaseVC {
             switch result {
             case .success(let loginResponse):
                 Session.shared.token = loginResponse.tokenString
-                
-                if loginResponse.user != nil {
+                if self.isRegistered {
+                    RegisterVC.present(fromVC: self, phoneNumber: self.phoneNumber!)
+                } else if loginResponse.user != nil {
                     Session.shared.user = loginResponse.user
                     MainTabbarTC.presentAsRoot()
                 } else {
