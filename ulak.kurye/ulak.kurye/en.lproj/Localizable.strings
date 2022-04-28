@@ -83,6 +83,7 @@
 "order_detail_package_prepare_time_title" = "Prepate Time:";
 "order_detail_package_prepare_time_remaining" = " m.";
 "order_detail_no_order" = "Order Not Found!";
+"order_detail_restaurant_title" = "Restaurant";
 
 // Pool
 "pool_page_title" = "Pool";

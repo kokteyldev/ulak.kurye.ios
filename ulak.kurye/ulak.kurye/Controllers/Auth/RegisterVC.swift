@@ -97,11 +97,10 @@ final class RegisterVC: BaseVC {
             
             switch result {
             case .success(_):
-                self.view.showToast(.success, message: "profile_updated_success".localized)
                 Session.shared.user?.name = name
                 Session.shared.user?.surname = surname
                 self.saveButton.isActive = false
-                MainTabbarTC.presentAsRoot()
+                SplashVC.checkProfile()
             case .failure(let error):
                 self.navigationController?.view.showToast(.error, message: error.localizedDescription)
             }

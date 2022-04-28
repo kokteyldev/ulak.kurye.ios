@@ -114,7 +114,7 @@
                                         <rect key="frame" x="188.5" y="394.5" width="37" height="37"/>
                                     </activityIndicatorView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Oe-b0-lfQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="999.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1101.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lip-7H-aXP" userLabel="Header Container Viewe">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -613,8 +613,87 @@
                                                     <constraint firstAttribute="trailing" secondItem="O1D-M3-rd3" secondAttribute="trailing" id="xT6-Kh-sE1"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSV-hX-cjT" userLabel="Package Price Title View">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQD-o7-XLx" userLabel="Restaurant Title">
                                                 <rect key="frame" x="0.0" y="611.5" width="414" height="44"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-file" translatesAutoresizingMaskIntoConstraints="NO" id="I4e-1g-GX7">
+                                                        <rect key="frame" x="16" y="13" width="15" height="18"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="15" id="Bop-b2-4Bl"/>
+                                                            <constraint firstAttribute="height" constant="18" id="hru-Ul-gPi"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ND5-E3-0YA" userLabel="Bottom Seperator">
+                                                        <rect key="frame" x="0.0" y="43" width="414" height="1"/>
+                                                        <color key="backgroundColor" name="ulk-input-border"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="9HS-Ad-Xro"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restoran" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbF-mL-n2d">
+                                                        <rect key="frame" x="39" y="8" width="53.5" height="26"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                                        <color key="textColor" name="ulk-subtitle"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="order_detail_restaurant_title"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="NbF-mL-n2d" firstAttribute="top" secondItem="QQD-o7-XLx" secondAttribute="top" constant="8" id="2zO-fZ-TQp"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ND5-E3-0YA" secondAttribute="bottom" id="34a-bf-M6v"/>
+                                                    <constraint firstAttribute="height" constant="44" id="7tJ-Qi-b43"/>
+                                                    <constraint firstItem="ND5-E3-0YA" firstAttribute="top" secondItem="NbF-mL-n2d" secondAttribute="bottom" constant="9" id="9On-lE-mCa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ND5-E3-0YA" secondAttribute="trailing" id="BKO-wr-uFn"/>
+                                                    <constraint firstItem="I4e-1g-GX7" firstAttribute="leading" secondItem="QQD-o7-XLx" secondAttribute="leading" constant="16" id="QX2-dw-VGQ"/>
+                                                    <constraint firstItem="I4e-1g-GX7" firstAttribute="centerY" secondItem="QQD-o7-XLx" secondAttribute="centerY" id="TkU-Gh-4Vn"/>
+                                                    <constraint firstItem="NbF-mL-n2d" firstAttribute="leading" secondItem="I4e-1g-GX7" secondAttribute="trailing" constant="8" symbolic="YES" id="dDg-2y-OKt"/>
+                                                    <constraint firstItem="ND5-E3-0YA" firstAttribute="leading" secondItem="QQD-o7-XLx" secondAttribute="leading" id="hOY-0Z-gyl"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wj9-Ei-FBi" userLabel="Restaurant Detail">
+                                                <rect key="frame" x="0.0" y="655.5" width="414" height="58"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ULAK" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QzB-L2-5N5">
+                                                        <rect key="frame" x="91" y="12" width="307" height="33"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wz1-Ys-JOx" userLabel="Bottom Seperator">
+                                                        <rect key="frame" x="0.0" y="57" width="414" height="1"/>
+                                                        <color key="backgroundColor" name="ulk-input-border"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="2jI-ji-kEh"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WPI-ju-4qW">
+                                                        <rect key="frame" x="39" y="11" width="36" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="36" id="Zje-Fg-d8h"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="wz1-Ys-JOx" secondAttribute="trailing" id="0BG-AF-yhK"/>
+                                                    <constraint firstItem="wz1-Ys-JOx" firstAttribute="top" secondItem="WPI-ju-4qW" secondAttribute="bottom" constant="10" id="3g2-Aq-b8X"/>
+                                                    <constraint firstItem="WPI-ju-4qW" firstAttribute="top" secondItem="Wj9-Ei-FBi" secondAttribute="top" constant="11" id="GeY-mG-Yzj"/>
+                                                    <constraint firstAttribute="bottom" secondItem="wz1-Ys-JOx" secondAttribute="bottom" id="H7G-j9-JoJ"/>
+                                                    <constraint firstItem="wz1-Ys-JOx" firstAttribute="top" secondItem="QzB-L2-5N5" secondAttribute="bottom" constant="12" id="Rdh-lK-q1u"/>
+                                                    <constraint firstItem="QzB-L2-5N5" firstAttribute="leading" secondItem="WPI-ju-4qW" secondAttribute="trailing" constant="16" id="YIL-ju-cXl"/>
+                                                    <constraint firstItem="wz1-Ys-JOx" firstAttribute="leading" secondItem="Wj9-Ei-FBi" secondAttribute="leading" id="aog-tU-j7q"/>
+                                                    <constraint firstAttribute="trailing" secondItem="QzB-L2-5N5" secondAttribute="trailing" constant="16" id="klz-yt-Hj5"/>
+                                                    <constraint firstItem="QzB-L2-5N5" firstAttribute="top" secondItem="Wj9-Ei-FBi" secondAttribute="top" constant="12" id="mK0-fY-l6u"/>
+                                                    <constraint firstAttribute="height" constant="58" id="oVm-9a-kvP"/>
+                                                    <constraint firstItem="WPI-ju-4qW" firstAttribute="leading" secondItem="Wj9-Ei-FBi" secondAttribute="leading" constant="39" id="yVB-CP-VLL"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSV-hX-cjT" userLabel="Package Price Title View">
+                                                <rect key="frame" x="0.0" y="713.5" width="414" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-file" translatesAutoresizingMaskIntoConstraints="NO" id="MEW-bI-MeJ">
                                                         <rect key="frame" x="16" y="13" width="15" height="18"/>
@@ -655,7 +734,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJc-dP-gU9" userLabel="Package Price View">
-                                                <rect key="frame" x="0.0" y="655.5" width="414" height="96"/>
+                                                <rect key="frame" x="0.0" y="757.5" width="414" height="96"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paket Ücreti:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyR-sK-Crq">
                                                         <rect key="frame" x="39" y="10" width="140" height="20"/>
@@ -743,7 +822,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2t9-IF-EGd" userLabel="Package Detail Title View">
-                                                <rect key="frame" x="0.0" y="751.5" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="853.5" width="414" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-file" translatesAutoresizingMaskIntoConstraints="NO" id="l1F-3N-AZx">
                                                         <rect key="frame" x="16" y="13" width="15" height="18"/>
@@ -784,7 +863,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfQ-FB-i46" userLabel="Package Detail View">
-                                                <rect key="frame" x="0.0" y="795.5" width="414" height="58"/>
+                                                <rect key="frame" x="0.0" y="897.5" width="414" height="58"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İçli köfte ve ayran" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GCE-c3-Mwi">
                                                         <rect key="frame" x="39" y="12" width="359" height="33"/>
@@ -813,7 +892,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnI-b0-biS" userLabel="Courier Note Title View">
-                                                <rect key="frame" x="0.0" y="853.5" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="955.5" width="414" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-note" translatesAutoresizingMaskIntoConstraints="NO" id="Kcu-j5-RM8">
                                                         <rect key="frame" x="16" y="13" width="15" height="18"/>
@@ -854,7 +933,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnP-3P-OGn" userLabel="Courier Note View">
-                                                <rect key="frame" x="0.0" y="897.5" width="414" height="58"/>
+                                                <rect key="frame" x="0.0" y="999.5" width="414" height="58"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paket içerisinde sıcak yemek var." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="E2t-dz-t5g">
                                                         <rect key="frame" x="39" y="12" width="359" height="33"/>
@@ -883,7 +962,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ht0-NV-g81" userLabel="Checkpoints Title View">
-                                                <rect key="frame" x="0.0" y="955.5" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="1057.5" width="414" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-time" translatesAutoresizingMaskIntoConstraints="NO" id="Bh0-9p-vNI">
                                                         <rect key="frame" x="16" y="13" width="15" height="18"/>
@@ -924,7 +1003,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="We3-ZQ-hHt" userLabel="checkpoints View">
-                                                <rect key="frame" x="0.0" y="999.5" width="414" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="1101.5" width="414" height="0.0"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4rW-55-nf0">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
@@ -1018,6 +1097,10 @@
                         <outlet property="pickMapButton" destination="J12-4n-Zjv" id="UqP-uK-u0P"/>
                         <outlet property="pickNameContainerView" destination="1Fz-oU-VBi" id="u2q-Vf-DOy"/>
                         <outlet property="receiverNameLabel" destination="mwB-Vc-MOs" id="Es2-yG-JGg"/>
+                        <outlet property="restaurantDetailContainer" destination="Wj9-Ei-FBi" id="A8t-zS-PWB"/>
+                        <outlet property="restaurantIcon" destination="WPI-ju-4qW" id="j4Z-vc-Bmy"/>
+                        <outlet property="restaurantNameLabel" destination="QzB-L2-5N5" id="1P7-4b-fr2"/>
+                        <outlet property="restaurantTitleContainer" destination="QQD-o7-XLx" id="kGc-g8-Opu"/>
                         <outlet property="senderNameLabel" destination="Qh3-F1-KWd" id="bDF-nZ-2PD"/>
                         <outlet property="serviceInfoLabel" destination="09a-EI-3kk" id="fhZ-pg-ZwZ"/>
                         <outlet property="stackView" destination="4Oe-b0-lfQ" id="0Rn-v7-XOr"/>

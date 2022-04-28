@@ -36,6 +36,10 @@ final class OrderDetailVM: OrderVM {
         return isDetailsHidden || order.packageDetail == nil || order.packageDetail?.length == 0
     }
     
+    var isRestaurantDetailHidden: Bool {
+        return order.customer?.brand == nil || order.customer?.image == nil
+    }
+    
     var isPackagePriceHidden: Bool {
         return isPoolOrder || order.package == nil
     }

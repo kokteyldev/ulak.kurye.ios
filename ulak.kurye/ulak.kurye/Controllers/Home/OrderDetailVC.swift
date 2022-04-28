@@ -41,6 +41,12 @@ class OrderDetailVC: BaseVC {
     @IBOutlet weak var checkpointTableView: UITableView!
     @IBOutlet weak var breakpointHeightConst: NSLayoutConstraint!
     
+    @IBOutlet weak var restaurantTitleContainer: UIView!
+    @IBOutlet weak var restaurantDetailContainer: UIView!
+    
+    @IBOutlet weak var restaurantNameLabel: UILabel!
+    @IBOutlet weak var restaurantIcon: UIImageView!
+    
     @IBOutlet weak var packagePriceTitleContainer: UIView!
     @IBOutlet weak var packagePriceContainer: UIView!
     
@@ -113,6 +119,9 @@ class OrderDetailVC: BaseVC {
         
         ownerNameLabel.text = viewModel.ownerName
         
+        restaurantNameLabel.text = viewModel.order.customer?.brand
+        restaurantIcon.image = viewModel.iconImage
+        
         packagePriceLabel.text = viewModel.packagePrice
         packagePrepareTimeLabel.text = viewModel.packagePrepareTime
         packagePaymentMethodLabel.text = viewModel.packagePaymentMethod
@@ -136,6 +145,9 @@ class OrderDetailVC: BaseVC {
         deliverNameContainerView.isHidden = viewModel.isDetailsHidden
         ownerTitleContainerView.isHidden = viewModel.isDetailsHidden
         ownerAddressContainerView.isHidden = viewModel.isDetailsHidden
+        
+        restaurantTitleContainer.isHidden = viewModel.isRestaurantDetailHidden
+        restaurantDetailContainer.isHidden = viewModel.isRestaurantDetailHidden
         
         packagePriceTitleContainer.isHidden = viewModel.isPackagePriceHidden
         packagePriceContainer.isHidden = viewModel.isPackagePriceHidden
