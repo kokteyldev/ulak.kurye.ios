@@ -84,7 +84,7 @@ final class SplashVC: BaseVC {
                     Log.e("Set external user id done with error: " + error.debugDescription)
                 })
             case .failure(let error):
-                Log.e("checkProfile Error: \(error.localizedDescription)")
+                UIApplication.topViewController()?.view.showToast(.error, message: error.localizedDescription)
                 Session.shared.logout()
                 PreLoginVC.presentAsRoot()
             }

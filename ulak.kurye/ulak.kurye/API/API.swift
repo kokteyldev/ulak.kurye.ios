@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 struct API {
     static let baseURL: String = Constants.API.apiURL
@@ -354,7 +355,7 @@ extension API {
                 Log.d("Response status code: \(response.response?.statusCode ?? 0)")
                 
                 if response.response?.statusCode == 401 {
-                    completion(Result.failure("Server Error" as! Error))
+                    UIApplication.topViewController()?.view.showToast(.error, message: response.error!.localizedDescription)
                     Session.shared.logout()
                     PreLoginVC.presentAsRoot()
                     return
