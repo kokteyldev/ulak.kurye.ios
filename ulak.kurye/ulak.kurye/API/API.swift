@@ -354,6 +354,7 @@ extension API {
                 Log.d("Response status code: \(response.response?.statusCode ?? 0)")
                 
                 if response.response?.statusCode == 401 {
+                    completion(Result.failure("Server Error" as! Error))
                     Session.shared.logout()
                     PreLoginVC.presentAsRoot()
                     return

@@ -51,6 +51,7 @@ final class PhoneCodeView: UIView {
         
         country = PhoneHelper.defaultCountry()
         setupPhoneNumber()
+        phoneTextField.becomeFirstResponder()
         addDoneButtonOnNumpad(textField: phoneTextField)
     }
     
