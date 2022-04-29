@@ -355,7 +355,7 @@ extension API {
                 Log.d("Response status code: \(response.response?.statusCode ?? 0)")
                 
                 if response.response?.statusCode == 401 {
-                    UIApplication.topViewController()?.view.showToast(.error, message: response.error!.localizedDescription)
+                    UIApplication.topViewController()?.view.showToast(.error, message: "error_no_response".localized, autoHide: true)
                     Session.shared.logout()
                     PreLoginVC.presentAsRoot()
                     return
