@@ -15,6 +15,7 @@ class OrderDetailVC: BaseVC {
     
     @IBOutlet weak var orderCodeLabel: UILabel!
     @IBOutlet weak var serviceInfoLabel: UILabel!
+    @IBOutlet weak var orderDistanceLabel: UILabel!
     @IBOutlet weak var pickDateLabel: UILabel!
     @IBOutlet weak var pickAddressLabel: UILabel!
     @IBOutlet weak var senderNameLabel: UILabel!
@@ -108,6 +109,7 @@ class OrderDetailVC: BaseVC {
         
         orderCodeLabel.text = viewModel.orderCode
         serviceInfoLabel.text = viewModel.serviceTitle
+        orderDistanceLabel.text = viewModel.estimatedDistance
         
         pickDateLabel.text = viewModel.pickAddressDetail
         pickAddressLabel.text = viewModel.pickAddress
@@ -163,7 +165,7 @@ class OrderDetailVC: BaseVC {
         
         actionsViewHeightCons.constant = viewModel.isActionViewHeight
             
-        if !viewModel.isDetailsHidden {
+        if viewModel.isPastOrder {
             var bounds = GMSCoordinateBounds()
             
             let senderMarker = GMSMarker(position: viewModel.senderLocation)
@@ -246,7 +248,7 @@ class OrderDetailVC: BaseVC {
     // MARK: - Actions
     @IBAction func mapTapped(_ sender: Any) {
         guard let viewModel = viewModel else { return }
-        if viewModel.isDetailsHidden { return }
+        if !viewModel.isPastOrder { return }
 
         if viewModel.isPackagePicked {
             getMapDirections(viewModel.receiverLocation)

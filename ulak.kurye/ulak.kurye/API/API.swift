@@ -31,8 +31,8 @@ struct API {
     }
     
     // MARK: - Auth
-    static func preLogin(phoneNumber: String, completion:@escaping (Result<Login, Error>) -> Void) {
-        performRequest(route: APIRouter.preLogin(phoneNumber: phoneNumber)) { (result:(Result<Response<Login>, Error>)) in
+    static func preLogin(phoneNumber: String, completion:@escaping (Result<preLoginResponse, Error>) -> Void) {
+        performRequest(route: APIRouter.preLogin(phoneNumber: phoneNumber)) { (result:(Result<Response<preLoginResponse>, Error>)) in
             switch result {
             case Result.success(let response):
                 if let loginResponse = response.data {

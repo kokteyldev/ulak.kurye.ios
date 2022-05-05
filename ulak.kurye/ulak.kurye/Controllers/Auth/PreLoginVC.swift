@@ -17,7 +17,7 @@ final class PreLoginVC: BaseVC {
     private var activeTextField : UITextField?
     private var termOfUseVC: PolicyVC?
     
-    var isRegistered: Bool!
+    var isRegistered: Bool = true
         
     // MARK: - View Lifecycle
     override func viewDidLoad() {

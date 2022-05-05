@@ -145,7 +145,7 @@
 		E57B4FC3280E9E600097BE10 /* OtpCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57B4FC2280E9E600097BE10 /* OtpCodeView.xib */; };
 		E57B4FC7280EA0E40097BE10 /* OtpCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B4FC6280EA0E40097BE10 /* OtpCodeView.swift */; };
 		E5CCEE5D281817C30014F353 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CCEE5C281817C30014F353 /* RegisterVC.swift */; };
-		E5CCEE5F28183DF50014F353 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CCEE5E28183DF50014F353 /* Login.swift */; };
+		E5CCEE5F28183DF50014F353 /* preLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CCEE5E28183DF50014F353 /* preLoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -334,7 +334,7 @@
 		E57B4FC2280E9E600097BE10 /* OtpCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtpCodeView.xib; sourceTree = "<group>"; };
 		E57B4FC6280EA0E40097BE10 /* OtpCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpCodeView.swift; sourceTree = "<group>"; };
 		E5CCEE5C281817C30014F353 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
-		E5CCEE5E28183DF50014F353 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		E5CCEE5E28183DF50014F353 /* preLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preLoginResponse.swift; sourceTree = "<group>"; };
 		E71221419E2EBE301679F7A2 /* Pods-ulak.kuryeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.debug.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4BD9CB58C1323FCFDC3534B /* Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F70742960D8C2DF30F38CC2A /* Pods-ulak.kurye.dev release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye.dev release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye.dev release.xcconfig"; sourceTree = "<group>"; };
@@ -779,7 +779,7 @@
 				9ECAAACD27C3CE9000F583C4 /* Config.swift */,
 				9ECAAACF27C3CF9A00F583C4 /* ServerURL.swift */,
 				9ECAAAD627C3D16500F583C4 /* Auth.swift */,
-				E5CCEE5E28183DF50014F353 /* Login.swift */,
+				E5CCEE5E28183DF50014F353 /* preLoginResponse.swift */,
 				9ECAAADA27C3D3DD00F583C4 /* User.swift */,
 				9EA443C827CD1A4400C4A47B /* Order.swift */,
 				9E246A8A27DF762D00F10D77 /* OrderAction.swift */,
@@ -1209,7 +1209,7 @@
 				9E2CAC4427E8D11100106FD1 /* WalletTVC.swift in Sources */,
 				9ECAAAEA27C3E1FC00F583C4 /* ToastView.swift in Sources */,
 				9E5BB61C27E3656200B6C0A0 /* KKUICollectionView.swift in Sources */,
-				E5CCEE5F28183DF50014F353 /* Login.swift in Sources */,
+				E5CCEE5F28183DF50014F353 /* preLoginResponse.swift in Sources */,
 				9E33049727C6546000AAB135 /* HomeVC.swift in Sources */,
 				9E246A7C27DF275100F10D77 /* GetOrderResponse.swift in Sources */,
 				9E23ECB027E9AD85002463C9 /* NotificationsVC.swift in Sources */,

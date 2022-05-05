@@ -14,6 +14,7 @@ final class CustomAlertView: BaseVC {
     var acceptCallback: (() -> Void)?
     var cancelCallback: (() -> Void)?
     
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +30,7 @@ final class CustomAlertView: BaseVC {
         return vc
     }
     
+    // MARK: - Actions
     @IBAction func cancelTapped(_ sender: Any) {
         cancelVC()
     }

@@ -19,17 +19,18 @@ final class OrderDetailVM: OrderVM {
     let receiverLocation: CLLocationCoordinate2D
     let isActionViewHeight: CGFloat
     let isDetailsHidden: Bool
+    let isPastOrder: Bool
     
     var checkpoints: [OrderCheckpoint] {
         return order.checkpoints ?? []
     }
     
     var isMapButtonsActive: Bool {
-        return !isDetailsHidden
+        return isPastOrder
     }
     
     var mapButtonsAlpha: CGFloat {
-        return (isDetailsHidden == true) ? 0.5 : 1.0
+        return (isPastOrder == false) ? 0.5 : 1.0
     }
     
     var isPackageDetailHidden: Bool {
@@ -62,6 +63,7 @@ final class OrderDetailVM: OrderVM {
         receiverLocation = .init(latitude: order.receiver.latitude, longitude: order.receiver.longtitude)
         isActionViewHeight = (order.status == .closed) ? 0 : 90
         isDetailsHidden = (order.status != .running)
+        isPastOrder = (order.status != .closed)
         
         if isDetailsHidden {
             senderName = order.sender.name.encrypted + " " + (order.sender.surname?.encrypted ?? "")
@@ -75,7 +77,7 @@ final class OrderDetailVM: OrderVM {
         
         super.init(order: order)
         
-        if !isDetailsHidden {
+        if isPastOrder {
             pickAddress = order.sender.address
             if let adressDetail = order.sender.addressDetail {
                 pickAddress = "\(pickAddress ?? "") (\(adressDetail))"
