@@ -131,10 +131,10 @@
                         <rect key="frame" x="68" y="250" width="466" height="31"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w14-T5-rY2" userLabel="PriceContainerView">
-                                <rect key="frame" x="0.0" y="0.0" width="191.5" height="31"/>
+                                <rect key="frame" x="0.0" y="0.0" width="79.5" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tahmini Kazanç" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="azC-hq-cea">
-                                        <rect key="frame" x="0.0" y="0.0" width="191.5" height="14"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="14" id="V8P-rS-V9I"/>
                                         </constraints>
@@ -146,7 +146,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 ₺" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="twM-ss-9wO">
-                                        <rect key="frame" x="0.0" y="14" width="191.5" height="17"/>
+                                        <rect key="frame" x="0.0" y="14" width="79.5" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="cKm-za-GYR"/>
                                         </constraints>
@@ -167,19 +167,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oT-Ha-bdc" userLabel="ServiceContainerView">
-                                <rect key="frame" x="199.5" y="0.0" width="67" height="31"/>
+                                <rect key="frame" x="200" y="0.0" width="90" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İst. Gündüz Bireysel" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dFi-a9-yxh">
-                                        <rect key="frame" x="0.0" y="14" width="67" height="17"/>
+                                        <rect key="frame" x="0.0" y="14" width="90" height="17"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="yZU-Ax-nwp"/>
+                                            <constraint firstAttribute="width" constant="90" id="cKW-ft-A4A"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="12"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servis Bilgileri" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1sC-fh-IAI">
-                                        <rect key="frame" x="0.0" y="0.0" width="67" height="14"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="14" id="LII-aR-Sb3"/>
                                         </constraints>
@@ -194,12 +194,12 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="1sC-fh-IAI" firstAttribute="leading" secondItem="3oT-Ha-bdc" secondAttribute="leading" id="4Y0-oa-nau"/>
+                                    <constraint firstAttribute="bottom" secondItem="dFi-a9-yxh" secondAttribute="bottom" id="8ef-SA-Uqx"/>
                                     <constraint firstAttribute="trailing" secondItem="1sC-fh-IAI" secondAttribute="trailing" id="9jI-5h-2Qc"/>
-                                    <constraint firstAttribute="trailing" secondItem="dFi-a9-yxh" secondAttribute="trailing" id="HqP-VV-1Dv"/>
-                                    <constraint firstItem="dFi-a9-yxh" firstAttribute="top" secondItem="1sC-fh-IAI" secondAttribute="bottom" id="LP2-0S-SCm"/>
-                                    <constraint firstItem="dFi-a9-yxh" firstAttribute="leading" secondItem="3oT-Ha-bdc" secondAttribute="leading" id="kgD-LL-0Br"/>
+                                    <constraint firstItem="dFi-a9-yxh" firstAttribute="leading" secondItem="1sC-fh-IAI" secondAttribute="leading" id="mwG-Gr-bw6"/>
+                                    <constraint firstItem="dFi-a9-yxh" firstAttribute="trailing" secondItem="1sC-fh-IAI" secondAttribute="trailing" id="nTC-dj-c6b"/>
                                     <constraint firstItem="1sC-fh-IAI" firstAttribute="top" secondItem="3oT-Ha-bdc" secondAttribute="top" id="qCK-EZ-gda"/>
-                                    <constraint firstAttribute="bottom" secondItem="dFi-a9-yxh" secondAttribute="bottom" id="sSD-N3-Fdx"/>
+                                    <constraint firstItem="dFi-a9-yxh" firstAttribute="top" secondItem="1sC-fh-IAI" secondAttribute="bottom" id="xgx-XY-6ZV"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Llz-Nz-jMe" userLabel="DistanceContainerView">
@@ -248,7 +248,7 @@
                             <constraint firstItem="w14-T5-rY2" firstAttribute="top" secondItem="C1c-iX-qnG" secondAttribute="top" id="aX5-8E-kwm"/>
                             <constraint firstItem="Llz-Nz-jMe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3oT-Ha-bdc" secondAttribute="trailing" constant="8" id="diV-gs-gQr"/>
                             <constraint firstItem="Llz-Nz-jMe" firstAttribute="top" secondItem="C1c-iX-qnG" secondAttribute="top" id="eP3-Z5-oke"/>
-                            <constraint firstItem="3oT-Ha-bdc" firstAttribute="centerX" secondItem="C1c-iX-qnG" secondAttribute="centerX" id="eiM-xT-ddg"/>
+                            <constraint firstItem="3oT-Ha-bdc" firstAttribute="centerX" secondItem="C1c-iX-qnG" secondAttribute="centerX" constant="12" id="eiM-xT-ddg"/>
                             <constraint firstItem="3oT-Ha-bdc" firstAttribute="top" secondItem="C1c-iX-qnG" secondAttribute="top" id="ggy-E8-d4n"/>
                             <constraint firstAttribute="bottom" secondItem="w14-T5-rY2" secondAttribute="bottom" id="hDS-5L-qUa"/>
                             <constraint firstAttribute="height" constant="31" id="w1v-G0-prH"/>
@@ -291,7 +291,7 @@
                 <outlet property="priceTitleLabel" destination="azC-hq-cea" id="IYD-0n-kMO"/>
                 <outlet property="serviceLabel" destination="dFi-a9-yxh" id="7qo-pt-JoM"/>
             </connections>
-            <point key="canvasLocation" x="210" y="84"/>
+            <point key="canvasLocation" x="208.69565217391306" y="83.370535714285708"/>
         </tableViewCell>
     </objects>
     <resources>
