@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct preLoginResponse: Codable {
+struct PreLoginResponse: Codable {
     var isRegistered: Bool
     
     enum CodingKeys: String, CodingKey {
