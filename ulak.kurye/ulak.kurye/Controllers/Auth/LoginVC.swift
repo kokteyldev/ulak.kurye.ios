@@ -90,7 +90,7 @@ class LoginVC: BaseVC {
             case .success(let loginResponse):
                 Session.shared.token = loginResponse.tokenString
                 if self.isRegistered {
-                    RegisterVC.present(fromVC: self, phoneNumber: self.phoneNumber!)
+                    ProfileVC.present(fromVC: self, phoneNumber: self.phoneNumber!, isFirstLogin: true)
                 } else if loginResponse.user != nil {
                     Session.shared.user = loginResponse.user
                     MainTabbarTC.presentAsRoot()

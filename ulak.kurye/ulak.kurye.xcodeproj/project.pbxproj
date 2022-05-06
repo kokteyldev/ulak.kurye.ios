@@ -144,7 +144,6 @@
 		E569910F27EDA6320099E9D5 /* UIViewController+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */; };
 		E57B4FC3280E9E600097BE10 /* OtpCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57B4FC2280E9E600097BE10 /* OtpCodeView.xib */; };
 		E57B4FC7280EA0E40097BE10 /* OtpCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B4FC6280EA0E40097BE10 /* OtpCodeView.swift */; };
-		E5CCEE5D281817C30014F353 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CCEE5C281817C30014F353 /* RegisterVC.swift */; };
 		E5CCEE5F28183DF50014F353 /* preLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CCEE5E28183DF50014F353 /* preLoginResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -333,7 +332,6 @@
 		E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KKUtils.swift"; sourceTree = "<group>"; };
 		E57B4FC2280E9E600097BE10 /* OtpCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtpCodeView.xib; sourceTree = "<group>"; };
 		E57B4FC6280EA0E40097BE10 /* OtpCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpCodeView.swift; sourceTree = "<group>"; };
-		E5CCEE5C281817C30014F353 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		E5CCEE5E28183DF50014F353 /* preLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preLoginResponse.swift; sourceTree = "<group>"; };
 		E71221419E2EBE301679F7A2 /* Pods-ulak.kuryeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.debug.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4BD9CB58C1323FCFDC3534B /* Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -516,7 +514,6 @@
 				9E3D434627C4E27200B6D5C5 /* PreLoginVC.swift */,
 				9E3D435227C5115D00B6D5C5 /* LoginVC.swift */,
 				9E2CAC3227E8995500106FD1 /* PhoneCodeVC.swift */,
-				E5CCEE5C281817C30014F353 /* RegisterVC.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -1290,7 +1287,6 @@
 				9E2CAC2527E87A3200106FD1 /* ProfileVC.swift in Sources */,
 				9E5BB61827E328C900B6C0A0 /* QRInputCodeVC.swift in Sources */,
 				9E3D436127C5356100B6D5C5 /* MainTabbarTC.swift in Sources */,
-				E5CCEE5D281817C30014F353 /* RegisterVC.swift in Sources */,
 				9E43A1F727CF686300077288 /* OrderVM.swift in Sources */,
 				9E2CAC2127E872AF00106FD1 /* SettingsVC.swift in Sources */,
 			);

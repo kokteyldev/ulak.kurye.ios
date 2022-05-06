@@ -173,3 +173,5 @@ Destek hattı: 08508852686";
 "card_loading" = "Kart bilgileri güncelleniyor..";
 "deposit" = "Kazanç";
 "withdraw" = "Karta Çekim";
+"register" = "Kayıt Ol";
+"done" = "Devam Et";
