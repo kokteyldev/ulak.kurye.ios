@@ -13,18 +13,15 @@ protocol OtpCodeViewDelegate: AnyObject {
 
 final class OtpCodeView: UIView {
     @IBOutlet var otpCodeView: UIView!
-    @IBOutlet weak var otpFirst: KKOutlinedTextField!
-    @IBOutlet weak var otpSecond: KKOutlinedTextField!
-    @IBOutlet weak var otpThird: KKOutlinedTextField!
-    @IBOutlet weak var otpFourth: KKOutlinedTextField!
-    @IBOutlet weak var otpCodeTextfield: KKOutlinedTextField!
+    @IBOutlet weak var firstLabel: UILabel!
+    @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var thirdLabel: UILabel!
+    @IBOutlet weak var fourthLabel: UILabel!
     
-    private var fullCode: String!
+    private var textField: UITextField?
+    
+    var passcode: String?
     weak var delegate: OtpCodeViewDelegate?
-
-    var code: String? {
-        return self.fullCode
-    }
     
     // MARK: - View Lifecycle
     override init(frame: CGRect) {
@@ -38,82 +35,61 @@ final class OtpCodeView: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("OtpCodeView", owner: self, options: nil)
-        addSubview(otpCodeView)
-        otpCodeView.frame = self.bounds
-        otpCodeView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        otpFirst.becomeFirstResponder()
-        
+        loadAndAttachView()
         setupUI()
     }
     
+    // MARK: - Setup
     func setupUI() {
-        otpFirst.addTarget(self, action: #selector(self.textDidChange(textfield:)), for: UIControl.Event.editingChanged)
-        otpSecond.addTarget(self, action: #selector(self.textDidChange(textfield:)), for: UIControl.Event.editingChanged)
-        otpThird.addTarget(self, action: #selector(self.textDidChange(textfield:)), for: UIControl.Event.editingChanged)
-        otpFourth.addTarget(self, action: #selector(self.textDidChange(textfield:)), for: UIControl.Event.editingChanged)
-    }
-    
-    func validateData() {
-        let codeOne = otpFirst.text
-        let codeTwo = otpSecond.text
-        let codeThree = otpThird.text
-        let codeFour = otpFourth.text
+        textField = UITextField()
+        textField?.addTarget(self, action: #selector(self.textDidChange(textfield:)), for: UIControl.Event.editingChanged)
+        textField?.isHidden = true
+        textField?.delegate = self
+        textField?.keyboardType = .numberPad
+        textField?.textContentType = .oneTimeCode
 
-        self.fullCode = codeOne! + codeTwo! + codeThree! + codeFour!
-        otpCodeTextfield.text = fullCode
-    
-        delegate?.didChangeOtpCode(self)
+        addSubview(textField!)
+        textField?.becomeFirstResponder()
     }
     
-    func invalidate() {
-        otpFirst.invalidate()
-        otpSecond.invalidate()
-        otpThird.invalidate()
-        otpFourth.invalidate()
+    // MARK: - Actions
+    @IBAction func buttonTapped(_ sender: Any) {
+        textField?.becomeFirstResponder()
     }
     
     @objc func textDidChange(textfield: UITextField) {
         let text = textfield.text
+        let tempSubstring = text?.suffix(4)
+        let tempPasscode = "\(tempSubstring ?? "")"
         
-        if text?.utf16.count == 1 {
-            switch textfield {
-            case otpFirst:
-                otpSecond.becomeFirstResponder()
-                break
-            case otpSecond:
-                otpThird.becomeFirstResponder()
-                break
-            case otpThird:
-                otpFourth.becomeFirstResponder()
-                break
-            case otpFourth:
-                otpFourth.resignFirstResponder()
-                break
-            default:
-                break
-            }
-        }
-        
-        if text?.utf16.count == 0 {
-            switch textfield {
-            case otpFirst:
-                otpFirst.becomeFirstResponder()
-                break
-            case otpSecond:
-                otpFirst.becomeFirstResponder()
-                break
-            case otpThird:
-                otpSecond.becomeFirstResponder()
-                break
-            case otpFourth:
-                otpThird.becomeFirstResponder()
-                break
-            default:
-                break
-            }
-        }
+        firstLabel.text = tempPasscode.character(atIndex: 0)
+        secondLabel.text = tempPasscode.character(atIndex: 1)
+        thirdLabel.text = tempPasscode.character(atIndex: 2)
+        fourthLabel.text = tempPasscode.character(atIndex: 3)
+    
         validateData()
+    }
+    
+    func validateData() {
+        passcode = nil
+        firstLabel.validate()
+        secondLabel.validate()
+        thirdLabel.validate()
+        fourthLabel.validate()
+        
+        if textField?.text?.length != 4 { return }
+        passcode = textField?.text
+        
+        delegate?.didChangeOtpCode(self)
+    }
+    
+    func invalidate() {
+        firstLabel.invalidate()
+        secondLabel.invalidate()
+        thirdLabel.invalidate()
+        fourthLabel.invalidate()
+        
+        textField?.becomeFirstResponder()
     }
 }
 
@@ -125,6 +101,6 @@ extension OtpCodeView: UITextFieldDelegate {
         }
         let substringToReplace = textFieldText[rangeOfTextToReplace]
         let count = textFieldText.count - substringToReplace.count + string.count
-        return count <= 1
+        return count <= 4
     }
 }

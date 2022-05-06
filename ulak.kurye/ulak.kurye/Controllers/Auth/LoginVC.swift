@@ -49,7 +49,7 @@ final class LoginVC: BaseVC {
     
     // MARK: - Data
     private func validateData() {
-        let code = otpCodeView.code
+        let code = otpCodeView.passcode
         if code == nil || code?.length != 4 {
             loginButton.isActive = false
             return
@@ -64,12 +64,14 @@ final class LoginVC: BaseVC {
         
         var hasError = false
         
-        let code = otpCodeView.code
+        let code = otpCodeView.passcode
         if code == nil || code?.length != 4 {
+            otpCodeView.invalidate()
             hasError = true
         }
         
         if phoneNumber == nil || phoneNumber?.isValidPhoneNumber == false {
+            otpCodeView.invalidate()
             hasError = true
         }
         

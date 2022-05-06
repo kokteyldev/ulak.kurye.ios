@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		26BB7F6847CD336D7C3BB6DE /* Pods_ulak_kurye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9464C032556AE790D022802A /* Pods_ulak_kurye.framework */; };
 		402068E0D9A9EC19D18F316E /* Pods_ulak_kuryeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB9DEDCECBF640EEF71AAA8 /* Pods_ulak_kuryeTests.framework */; };
+		9E1361FB2825666800ADB0CF /* UILabel+Ulak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1361FA2825666800ADB0CF /* UILabel+Ulak.swift */; };
 		9E23ECB027E9AD85002463C9 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E23ECAF27E9AD85002463C9 /* NotificationsVC.swift */; };
 		9E23ECB327E9B211002463C9 /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E23ECB127E9B211002463C9 /* NoDataView.xib */; };
 		9E23ECB427E9B211002463C9 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E23ECB227E9B211002463C9 /* NoDataView.swift */; };
@@ -194,6 +195,7 @@
 		5D056A3DC22B8A343D361EDB /* Pods_ulak_kurye_ulak_kuryeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ulak_kurye_ulak_kuryeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9464C032556AE790D022802A /* Pods_ulak_kurye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ulak_kurye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		998B7EE595C176694EAB6DFA /* Pods-ulak.kurye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye.release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye.release.xcconfig"; sourceTree = "<group>"; };
+		9E1361FA2825666800ADB0CF /* UILabel+Ulak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ulak.swift"; sourceTree = "<group>"; };
 		9E23ECAF27E9AD85002463C9 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
 		9E23ECB127E9B211002463C9 /* NoDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
 		9E23ECB227E9B211002463C9 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 				9E2CAC3627E8A8DE00106FD1 /* String+Ulak.swift */,
 				9EA1AA3D27EB377200BF018A /* UIColor+Ulak.swift */,
 				E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */,
+				9E1361FA2825666800ADB0CF /* UILabel+Ulak.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1245,6 +1248,7 @@
 				9ECAAA9E27C3C42D00F583C4 /* Session.swift in Sources */,
 				9E3304AF27C7826700AAB135 /* HomeNoDataView.swift in Sources */,
 				9E246A7A27DF22FB00F10D77 /* Agreement.swift in Sources */,
+				9E1361FB2825666800ADB0CF /* UILabel+Ulak.swift in Sources */,
 				9ECAAAE027C3DB0D00F583C4 /* LoadingView.swift in Sources */,
 				9ECAAAD327C3D07600F583C4 /* CustomError.swift in Sources */,
 				E57B4FC7280EA0E40097BE10 /* OtpCodeView.swift in Sources */,
@@ -1507,7 +1511,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Sipariş takibi için konum izni vermelisin.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
+				INFOPLIST_KEY_UIMainStoryboardFile = Auth;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -1546,7 +1550,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Sipariş takibi için konum izni vermelisin.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
+				INFOPLIST_KEY_UIMainStoryboardFile = Auth;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -1833,7 +1837,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Sipariş takibi için konum izni vermelisin.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
+				INFOPLIST_KEY_UIMainStoryboardFile = Auth;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -1969,7 +1973,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Sipariş takibi için konum izni vermelisin.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
+				INFOPLIST_KEY_UIMainStoryboardFile = Auth;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
