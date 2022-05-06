@@ -15,7 +15,7 @@ final class LoginVC: BaseVC {
     private var activeTextField : UITextField?
     
     var phoneNumber: String?
-    var isRegistered: Bool!
+    var isRegistered: Bool = true
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
