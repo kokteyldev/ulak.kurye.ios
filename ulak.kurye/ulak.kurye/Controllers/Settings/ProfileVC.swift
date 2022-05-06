@@ -130,16 +130,13 @@ final class ProfileVC: BaseVC {
             switch result {
             case .success(_):
                 if self.isFirstLogin {
-                    Session.shared.user?.name = name
-                    Session.shared.user?.surname = surname
-                    self.saveButton.isActive = false
                     SplashVC.checkProfile()
                 } else {
                     self.view.showToast(.success, message: "profile_updated_success".localized)
-                    Session.shared.user?.name = name
-                    Session.shared.user?.surname = surname
-                    self.saveButton.isActive = false
                 }
+                Session.shared.user?.name = name
+                Session.shared.user?.surname = surname
+                self.saveButton.isActive = false
             case .failure(let error):
                 self.navigationController?.view.showToast(.error, message: error.localizedDescription)
             }

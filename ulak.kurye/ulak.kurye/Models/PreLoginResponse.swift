@@ -8,7 +8,7 @@
 import Foundation
 
 struct PreLoginResponse: Codable {
-    var isRegistered: Bool
+    var isRegistered: Bool = true
     
     enum CodingKeys: String, CodingKey {
         case isRegistered = "registered"

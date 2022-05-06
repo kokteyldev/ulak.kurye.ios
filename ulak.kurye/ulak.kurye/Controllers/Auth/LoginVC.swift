@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginVC: BaseVC {
+final class LoginVC: BaseVC {
     @IBOutlet weak var loginButton: KKLoadingButton!
     @IBOutlet weak var otpCodeView: OtpCodeView!
 
