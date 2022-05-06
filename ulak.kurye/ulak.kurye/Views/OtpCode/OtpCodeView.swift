@@ -17,7 +17,8 @@ final class OtpCodeView: UIView {
     @IBOutlet weak var otpSecond: KKOutlinedTextField!
     @IBOutlet weak var otpThird: KKOutlinedTextField!
     @IBOutlet weak var otpFourth: KKOutlinedTextField!
-        
+    @IBOutlet weak var otpCodeTextfield: KKOutlinedTextField!
+    
     private var fullCode: String!
     weak var delegate: OtpCodeViewDelegate?
 
@@ -60,7 +61,8 @@ final class OtpCodeView: UIView {
         let codeFour = otpFourth.text
 
         self.fullCode = codeOne! + codeTwo! + codeThree! + codeFour!
-
+        otpCodeTextfield.text = fullCode
+    
         delegate?.didChangeOtpCode(self)
     }
     

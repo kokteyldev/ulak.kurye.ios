@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OtpCodeView" customModule="ulak_kurye" customModuleProvider="target">
             <connections>
+                <outlet property="otpCodeTextfield" destination="jH7-71-Fdk" id="9An-S0-tVF"/>
                 <outlet property="otpCodeView" destination="iN0-l3-epB" id="lmb-dl-2G6"/>
                 <outlet property="otpFirst" destination="2zS-67-rwW" id="vRZ-pr-iSE"/>
                 <outlet property="otpFourth" destination="9dO-Uc-aBP" id="BIb-YJ-u2s"/>
@@ -23,6 +24,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jH7-71-Fdk" userLabel="Otp Code TextField" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="59y-4A-y1X"/>
+                    </connections>
+                </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2zS-67-rwW" userLabel="Otp First" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
                     <rect key="frame" x="55" y="16" width="70" height="60"/>
                     <constraints>
@@ -62,24 +71,32 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="jH7-71-Fdk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2SI-ZQ-LrB"/>
                 <constraint firstItem="WxU-ml-QJS" firstAttribute="leading" secondItem="2zS-67-rwW" secondAttribute="trailing" constant="8" symbolic="YES" id="2Xm-Dt-vf8"/>
                 <constraint firstItem="9dO-Uc-aBP" firstAttribute="height" secondItem="2zS-67-rwW" secondAttribute="height" id="5Eo-dH-gAN"/>
                 <constraint firstItem="45Z-oY-Dkj" firstAttribute="centerY" secondItem="2zS-67-rwW" secondAttribute="centerY" id="5VR-Nk-zuZ"/>
                 <constraint firstItem="9dO-Uc-aBP" firstAttribute="leading" secondItem="45Z-oY-Dkj" secondAttribute="trailing" constant="8" symbolic="YES" id="Ahz-3F-5Lu"/>
                 <constraint firstItem="2zS-67-rwW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="N2h-Rg-o89"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="jH7-71-Fdk" secondAttribute="bottom" id="OOb-UQ-pHR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="2zS-67-rwW" secondAttribute="bottom" constant="16" id="RAl-qJ-dXX"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9dO-Uc-aBP" secondAttribute="bottom" constant="16" id="VlS-sj-jG0"/>
                 <constraint firstItem="9dO-Uc-aBP" firstAttribute="centerY" secondItem="2zS-67-rwW" secondAttribute="centerY" id="Wnl-7e-Bl7"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9dO-Uc-aBP" secondAttribute="trailing" constant="55" id="XE0-RR-8yr"/>
+                <constraint firstItem="jH7-71-Fdk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dXg-1Y-9Th"/>
                 <constraint firstItem="2zS-67-rwW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="55" id="f4E-Wd-5VG"/>
                 <constraint firstItem="WxU-ml-QJS" firstAttribute="centerY" secondItem="2zS-67-rwW" secondAttribute="centerY" id="gfh-yC-jeR"/>
                 <constraint firstItem="9dO-Uc-aBP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="hNZ-Q1-AKN"/>
                 <constraint firstItem="WxU-ml-QJS" firstAttribute="width" secondItem="2zS-67-rwW" secondAttribute="width" id="iKv-ER-BUL"/>
+                <constraint firstItem="jH7-71-Fdk" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="jCf-QI-bg6"/>
                 <constraint firstItem="WxU-ml-QJS" firstAttribute="height" secondItem="2zS-67-rwW" secondAttribute="height" id="jvW-bs-1nX"/>
+                <constraint firstItem="jH7-71-Fdk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ldq-4C-BkR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jH7-71-Fdk" secondAttribute="trailing" id="phx-Ae-v53"/>
                 <constraint firstItem="9dO-Uc-aBP" firstAttribute="width" secondItem="2zS-67-rwW" secondAttribute="width" id="s9M-R3-c20"/>
                 <constraint firstItem="45Z-oY-Dkj" firstAttribute="height" secondItem="2zS-67-rwW" secondAttribute="height" id="sNf-ry-ack"/>
                 <constraint firstItem="45Z-oY-Dkj" firstAttribute="width" secondItem="2zS-67-rwW" secondAttribute="width" id="vlH-Qd-o5l"/>
+                <constraint firstItem="jH7-71-Fdk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xOC-Sk-vgf"/>
                 <constraint firstItem="45Z-oY-Dkj" firstAttribute="leading" secondItem="WxU-ml-QJS" secondAttribute="trailing" constant="8" symbolic="YES" id="xOZ-Js-fDy"/>
+                <constraint firstItem="jH7-71-Fdk" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="xZf-Zx-Yld"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="129" y="-84"/>
