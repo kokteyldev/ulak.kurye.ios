@@ -181,23 +181,14 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="login_title_desc"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A5s-TN-tup" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="24" y="338" width="366" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKL-Gx-fWC" customClass="OtpCodeView" customModule="ulak_kurye" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="330" width="414" height="92"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="ejX-fi-LKH"/>
+                                    <constraint firstAttribute="height" constant="92" id="vAy-IX-OmX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Kodu girin"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedTitleKey" value="login_code"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="textfieldDidChange:" destination="6Ew-1L-Otk" eventType="editingChanged" id="Wc2-sT-Bom"/>
-                                </connections>
-                            </textField>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbb-VW-e4F" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="224.5" y="414" width="165.5" height="63.5"/>
+                                <rect key="frame" x="224.5" y="438" width="165.5" height="63.5"/>
                                 <color key="backgroundColor" name="ulk-orange"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Gbb-VW-e4F" secondAttribute="height" multiplier="157:60" id="EI1-uz-Ueq"/>
@@ -217,30 +208,30 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="Gbb-VW-e4F" secondAttribute="trailing" constant="24" id="23B-gv-zYO"/>
+                            <constraint firstItem="tKL-Gx-fWC" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" id="66X-CT-WdR"/>
                             <constraint firstItem="xN5-1e-W9e" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" constant="24" id="6PU-Fl-dQH"/>
                             <constraint firstItem="xN5-1e-W9e" firstAttribute="top" secondItem="Ri8-hw-tqH" secondAttribute="bottom" constant="32" id="7Wz-pr-PQ1"/>
                             <constraint firstItem="4Xv-ht-2GH" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" constant="24" id="E8u-N9-qwm"/>
-                            <constraint firstItem="A5s-TN-tup" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" constant="24" id="Gjk-gv-2dX"/>
                             <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="xN5-1e-W9e" secondAttribute="trailing" constant="24" id="HZT-RZ-Yph"/>
-                            <constraint firstItem="Gbb-VW-e4F" firstAttribute="top" secondItem="A5s-TN-tup" secondAttribute="bottom" constant="16" id="Ipl-J7-3i0"/>
+                            <constraint firstItem="tKL-Gx-fWC" firstAttribute="top" secondItem="4Xv-ht-2GH" secondAttribute="bottom" constant="8" id="Nmc-aW-2j4"/>
+                            <constraint firstItem="tKL-Gx-fWC" firstAttribute="trailing" secondItem="FYx-Bb-RCu" secondAttribute="trailing" id="P1i-bs-305"/>
                             <constraint firstItem="Gbb-VW-e4F" firstAttribute="width" secondItem="214-QG-HO0" secondAttribute="width" multiplier="0.4" id="UIH-fH-hF4"/>
                             <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="4Xv-ht-2GH" secondAttribute="trailing" constant="24" id="UYP-x1-7Yy"/>
                             <constraint firstItem="Ri8-hw-tqH" firstAttribute="centerX" secondItem="214-QG-HO0" secondAttribute="centerX" id="cih-dG-sva"/>
-                            <constraint firstItem="A5s-TN-tup" firstAttribute="top" secondItem="4Xv-ht-2GH" secondAttribute="bottom" constant="16" id="f3S-Yc-t4U"/>
                             <constraint firstItem="Ri8-hw-tqH" firstAttribute="top" secondItem="FYx-Bb-RCu" secondAttribute="top" constant="16" id="kOm-Lb-yme"/>
                             <constraint firstItem="4Xv-ht-2GH" firstAttribute="top" secondItem="xN5-1e-W9e" secondAttribute="bottom" constant="8" id="oPt-51-MHS"/>
-                            <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="A5s-TN-tup" secondAttribute="trailing" constant="24" id="uKk-oo-UjY"/>
+                            <constraint firstItem="Gbb-VW-e4F" firstAttribute="top" secondItem="tKL-Gx-fWC" secondAttribute="bottom" constant="16" id="ubp-hc-l2v"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vvL-ql-cqn"/>
                     <connections>
-                        <outlet property="codeTextField" destination="A5s-TN-tup" id="hZr-al-2gv"/>
                         <outlet property="loginButton" destination="Gbb-VW-e4F" id="ulk-6a-V8D"/>
+                        <outlet property="otpCodeView" destination="tKL-Gx-fWC" id="BYV-45-INb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0IC-2D-BWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1326" y="116"/>
+            <point key="canvasLocation" x="1324.6376811594205" y="115.84821428571428"/>
         </scene>
         <!--Phone CodeVC-->
         <scene sceneID="4XV-EC-Bwx">
@@ -279,20 +270,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PhoneCodeTVC" id="I3H-X5-1mc" customClass="PhoneCodeTVC" customModule="ulak_kurye" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I3H-X5-1mc" id="zgk-Ox-ey9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeR-P8-tU8">
-                                                    <rect key="frame" x="20" y="11" width="33" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="33" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turkey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-mr-TAf">
-                                                    <rect key="frame" x="58" y="11" width="200" height="21"/>
+                                                    <rect key="frame" x="58" y="11" width="200" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="oUf-lS-oP7"/>
                                                     </constraints>
@@ -301,7 +292,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+90" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DT-vu-nE3">
-                                                    <rect key="frame" x="283" y="11" width="96" height="21"/>
+                                                    <rect key="frame" x="283" y="11" width="96" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

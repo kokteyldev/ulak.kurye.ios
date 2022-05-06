@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 struct API {
     static let baseURL: String = Constants.API.apiURL
@@ -30,11 +31,15 @@ struct API {
     }
     
     // MARK: - Auth
-    static func preLogin(phoneNumber: String, completion:@escaping (Result<Bool, Error>) -> Void) {
-        performRequest(route: APIRouter.preLogin(phoneNumber: phoneNumber)) { (result:(Result<Response<Bool?>, Error>)) in
+    static func preLogin(phoneNumber: String, completion:@escaping (Result<PreLoginResponse, Error>) -> Void) {
+        performRequest(route: APIRouter.preLogin(phoneNumber: phoneNumber)) { (result:(Result<Response<PreLoginResponse>, Error>)) in
             switch result {
-            case Result.success(_):
-                completion(.success(true))
+            case Result.success(let response):
+                if let loginResponse = response.data {
+                    completion(.success(loginResponse))
+                } else {
+                    completion(.failure(CustomError.noData.error))
+                }
                 break
             case Result.failure(let error):
                 completion(.failure(error))
@@ -350,6 +355,7 @@ extension API {
                 Log.d("Response status code: \(response.response?.statusCode ?? 0)")
                 
                 if response.response?.statusCode == 401 {
+                    UIApplication.topViewController()?.view.showToast(.error, message: "error_no_response".localized, autoHide: true)
                     Session.shared.logout()
                     PreLoginVC.presentAsRoot()
                     return

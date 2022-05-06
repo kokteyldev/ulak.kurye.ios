@@ -7,14 +7,15 @@
 
 import UIKit
 
-class LoginVC: BaseVC {
-    @IBOutlet weak var codeTextField: KKOutlinedTextField!
+final class LoginVC: BaseVC {
     @IBOutlet weak var loginButton: KKLoadingButton!
-    
+    @IBOutlet weak var otpCodeView: OtpCodeView!
+
     private var feedBackGenerator: UINotificationFeedbackGenerator?
     private var activeTextField : UITextField?
     
     var phoneNumber: String?
+    var isRegistered: Bool = true
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -32,23 +33,28 @@ class LoginVC: BaseVC {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        validateData()
+    }
+    
     // MARK: - UI
     private func setupUI() {
         navigationController?.setNavigationBarTransparent(true)
-        
-        codeTextField.delegate = self
-        
         feedBackGenerator = UINotificationFeedbackGenerator()
         feedBackGenerator?.prepare()
+        
+        otpCodeView?.delegate = self
     }
     
     // MARK: - Data
     private func validateData() {
-        if codeTextField.text?.length != 4 {
+        let code = otpCodeView.code
+        if code == nil || code?.length != 4 {
             loginButton.isActive = false
             return
         }
-        
+
         loginButton.isActive = true
     }
     
@@ -58,9 +64,8 @@ class LoginVC: BaseVC {
         
         var hasError = false
         
-        let code = codeTextField.text
+        let code = otpCodeView.code
         if code == nil || code?.length != 4 {
-            codeTextField.invalidate()
             hasError = true
         }
         
@@ -84,8 +89,9 @@ class LoginVC: BaseVC {
             switch result {
             case .success(let loginResponse):
                 Session.shared.token = loginResponse.tokenString
-                
-                if loginResponse.user != nil {
+                if self.isRegistered {
+                    ProfileVC.present(fromVC: self, phoneNumber: self.phoneNumber!, isFirstLogin: true)
+                } else if loginResponse.user != nil {
                     Session.shared.user = loginResponse.user
                     MainTabbarTC.presentAsRoot()
                 } else {
@@ -93,6 +99,7 @@ class LoginVC: BaseVC {
                 }
                 break
             case .failure(let error):
+                self.otpCodeView.invalidate()
                 self.navigationController?.view.showToast(.error, message: error.localizedDescription)
             }
         }
@@ -138,5 +145,11 @@ extension LoginVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return true
+    }
+}
+
+extension LoginVC: OtpCodeViewDelegate {
+    func didChangeOtpCode(_ otpCodeView: OtpCodeView) {
+        validateData()
     }
 }

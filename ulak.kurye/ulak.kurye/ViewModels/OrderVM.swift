@@ -112,8 +112,12 @@ class OrderVM {
             packagePrepareTime = (order.package?.prepareTime ?? "") + "order_detail_package_prepare_time_remaining".localized
         }
         
-        priceTitle = "order_task_code".localized
-        price = order.code
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale.locale(from: order.service.currency)
+        
+        priceTitle = "order_total_price".localized
+        price = currencyFormatter.string(from: order.cost as NSNumber) ?? "-"
         
         serviceTitle = order.service.title
         
