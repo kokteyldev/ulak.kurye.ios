@@ -77,7 +77,6 @@ final class OtpCodeView: UIView {
         thirdLabel.validate()
         fourthLabel.validate()
         
-        if textField?.text?.length != 4 { return }
         passcode = textField?.text
         
         delegate?.didChangeOtpCode(self)
