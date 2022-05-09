@@ -66,24 +66,24 @@ class OrderVM {
         }
         
         backgroundColor = .white
-        iconImage = .init(named: "ic-package")!
+        iconImage = .init(named: "ic-restaurant")!
         
         if isOrderActive && !isPackagedDelivered {
             if isPackagePicked {
                 if remainingDeliverMinutes ?? 0 < 0 {
                     backgroundColor = .init(named: "ulk-red")!.withAlphaComponent(0.22)
-                    iconImage = .init(named: "ic-package-passed")!
+                    iconImage = .init(named: "ic-restaurant")!
                 } else if remainingDeliverMinutes ?? 0 < 5 {
                     backgroundColor = .init(named: "ulk-orange")!.withAlphaComponent(0.22)
-                    iconImage = .init(named: "ic-package-passed")!
+                    iconImage = .init(named: "ic-restaurant")!
                 }
             } else {
                 if remainingPickMinutes ?? 0 < 0 {
                     backgroundColor = .init(named: "ulk-red")!.withAlphaComponent(0.22)
-                    iconImage = .init(named: "ic-package-passed")!
+                    iconImage = .init(named: "ic-restaurant")!
                 } else if remainingPickMinutes ?? 0 < 5 {
                     backgroundColor = .init(named: "ulk-orange")!.withAlphaComponent(0.22)
-                    iconImage = .init(named: "ic-package-passed")!
+                    iconImage = .init(named: "ic-restaurant")!
                 }
             }
         }

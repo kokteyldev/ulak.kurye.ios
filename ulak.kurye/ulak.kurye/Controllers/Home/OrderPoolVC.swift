@@ -16,7 +16,7 @@ final class OrderPoolVC: BaseTBLVC {
     private lazy var noDataView: NoDataView = {
         let view = NoDataView(title: "pool_no_order".localized,
                               message: "",
-                              image: .init(named: "ic-package")!)
+                              image: .init(named: "ic-restaurant")!)
         view.frame = tableView.bounds
         return view
     }()

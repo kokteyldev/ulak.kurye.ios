@@ -705,8 +705,9 @@
                                                             <constraint firstAttribute="height" constant="1" id="2jI-ji-kEh"/>
                                                         </constraints>
                                                     </view>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WPI-ju-4qW">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="WPI-ju-4qW">
                                                         <rect key="frame" x="39" y="11" width="36" height="36"/>
+                                                        <color key="tintColor" name="ulk-orange"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="36" id="Zje-Fg-d8h"/>
                                                         </constraints>
@@ -1175,6 +1176,7 @@
         <image name="ic-pin-orange" width="23" height="28"/>
         <image name="ic-pin-white" width="16" height="18"/>
         <image name="ic-refresh" width="78" height="79"/>
+        <image name="ic-restaurant" width="29" height="40"/>
         <image name="ic-time" width="16" height="16"/>
         <image name="ic-user" width="512" height="512"/>
         <namedColor name="ulk-blue">
