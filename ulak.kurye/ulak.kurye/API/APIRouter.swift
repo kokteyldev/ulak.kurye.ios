@@ -19,7 +19,7 @@ enum APIRouter {
     case updateNotificationId(oneSignalId: String?)
     case updateUserSettings(isNotificationAllowed: Bool, isPoolNotificationAllowed: Bool)
     case getOrder(orderUUID: String)
-    case getOrders(status: String)
+    case getOrders(status: String, page: Int)
     case getPoolOrders(latitude: Double, longtitude: Double)
     case getOrderAggrements(orderUUID: String)
     case getOrderActions(orderUUID: String, agreementUUID: String)
@@ -122,8 +122,8 @@ enum APIRouter {
         switch self {
         case .getOrder(let orderUUID):
             return ["query": orderUUID]
-        case .getOrders(let status):
-            return ["app_status": status]
+        case .getOrders(let status, let page):
+            return ["app_status": status, "page": page]
         case .getPoolOrders(let latitude, let longtitude):
             return ["lat": latitude, "lng": longtitude]
         case .getOrderAggrements(let orderUUID):

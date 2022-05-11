@@ -14,6 +14,7 @@ final class OrderManager {
     var pastOrders: [Order] = []
     
     private var pastPaginate: Paginate = Paginate()
+    private var currentPage: Int = 1
     
     var activeOrderCount: Int {
         return activeOrders.count
@@ -31,9 +32,10 @@ final class OrderManager {
         activeOrders.removeAll()
         pastOrders.removeAll()
         pastPaginate = Paginate()
+        currentPage = pastPaginate.page
         
         group.enter()
-        API.getOrders(status: OrderStatus.running.rawValue) { result in
+        API.getOrders(status: OrderStatus.running.rawValue, page: currentPage) { result in
             switch result {
             case Result.success(let orderResponse):
                 self.activeOrders = orderResponse.orders
@@ -47,11 +49,12 @@ final class OrderManager {
         }
         
         group.enter()
-        API.getOrders(status: OrderStatus.closed.rawValue) { result in
+        API.getOrders(status: OrderStatus.closed.rawValue, page: currentPage) { result in
             switch result {
             case Result.success(let orderResponse):
                 self.pastPaginate = orderResponse.paginate
                 self.pastOrders = orderResponse.orders
+                self.currentPage += 1
                 group.leave()
                 break
             case Result.failure(let error):
@@ -76,11 +79,12 @@ final class OrderManager {
             return
         }
         
-        API.getOrders(status: OrderStatus.closed.rawValue) { result in
+        API.getOrders(status: OrderStatus.closed.rawValue, page: currentPage) { result in
             switch result {
             case Result.success(let orderResponse):
                 self.pastPaginate = orderResponse.paginate
                 self.pastOrders.append(contentsOf: orderResponse.orders)
+                self.currentPage += 1
                 completion(.success(orderResponse.orders))
                 break
             case Result.failure(let error):
