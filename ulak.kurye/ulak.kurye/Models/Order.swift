@@ -119,9 +119,11 @@ struct Owner: Codable {
 
 struct Customer: Codable {
     var image: String?
+    var brand: String?
     
     enum CodingKeys: String, CodingKey {
         case image = "image"
+        case brand = "brand"
     }
 }
 
