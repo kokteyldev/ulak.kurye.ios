@@ -15,6 +15,7 @@ final class OrderManager {
     
     private var pastPaginate: Paginate = Paginate()
     private var currentPage: Int = 1
+    private var constantPage: Int = 1
     
     var activeOrderCount: Int {
         return activeOrders.count
@@ -35,7 +36,7 @@ final class OrderManager {
         currentPage = pastPaginate.page
         
         group.enter()
-        API.getOrders(status: OrderStatus.running.rawValue, page: currentPage) { result in
+        API.getOrders(status: OrderStatus.running.rawValue, page: constantPage) { result in
             switch result {
             case Result.success(let orderResponse):
                 self.activeOrders = orderResponse.orders
