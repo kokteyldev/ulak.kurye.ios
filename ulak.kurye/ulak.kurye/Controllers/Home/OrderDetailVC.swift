@@ -288,9 +288,12 @@ class OrderDetailVC: BaseVC {
     
     // MARK: - Utils
     private func getMapDirections(_ location: CLLocationCoordinate2D) {
-        let url = URL(string: "comgooglemaps://?saddr=&daddr=\(location.latitude),\(location.longitude)&directionsmode=driving")
-        if UIApplication.shared.canOpenURL(url!) {
-            UIApplication.shared.open(url!)
+        let appleMapsUrl = URL(string: "http://maps.apple.com/maps?saddr=&daddr=\(location.latitude),\(location.longitude)")
+        let googleMapsUrl = URL(string: "comgooglemaps://?saddr=&daddr=\(location.latitude),\(location.longitude)&directionsmode=driving")
+        if UIApplication.shared.canOpenURL(googleMapsUrl!) {
+            UIApplication.shared.open(googleMapsUrl!)
+        } else if UIApplication.shared.canOpenURL(appleMapsUrl!) {
+            UIApplication.shared.open(appleMapsUrl!)
         }
     }
 }
