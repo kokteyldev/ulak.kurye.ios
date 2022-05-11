@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		26BB7F6847CD336D7C3BB6DE /* Pods_ulak_kurye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9464C032556AE790D022802A /* Pods_ulak_kurye.framework */; };
 		402068E0D9A9EC19D18F316E /* Pods_ulak_kuryeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB9DEDCECBF640EEF71AAA8 /* Pods_ulak_kuryeTests.framework */; };
-		9E1361FB2825666800ADB0CF /* UILabel+Ulak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1361FA2825666800ADB0CF /* UILabel+Ulak.swift */; };
 		9E23ECB027E9AD85002463C9 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E23ECAF27E9AD85002463C9 /* NotificationsVC.swift */; };
 		9E23ECB327E9B211002463C9 /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E23ECB127E9B211002463C9 /* NoDataView.xib */; };
 		9E23ECB427E9B211002463C9 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E23ECB227E9B211002463C9 /* NoDataView.swift */; };
@@ -143,9 +142,6 @@
 		E55D381B27F6D4A9005592DB /* NotificationTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55D381A27F6D4A9005592DB /* NotificationTVC.xib */; };
 		E55D381D27F6D4C7005592DB /* NotificationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D381C27F6D4C7005592DB /* NotificationTVC.swift */; };
 		E569910F27EDA6320099E9D5 /* UIViewController+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */; };
-		E57B4FC3280E9E600097BE10 /* OtpCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57B4FC2280E9E600097BE10 /* OtpCodeView.xib */; };
-		E57B4FC7280EA0E40097BE10 /* OtpCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B4FC6280EA0E40097BE10 /* OtpCodeView.swift */; };
-		E5CCEE5F28183DF50014F353 /* PreLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CCEE5E28183DF50014F353 /* PreLoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,7 +191,6 @@
 		5D056A3DC22B8A343D361EDB /* Pods_ulak_kurye_ulak_kuryeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ulak_kurye_ulak_kuryeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9464C032556AE790D022802A /* Pods_ulak_kurye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ulak_kurye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		998B7EE595C176694EAB6DFA /* Pods-ulak.kurye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye.release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye.release.xcconfig"; sourceTree = "<group>"; };
-		9E1361FA2825666800ADB0CF /* UILabel+Ulak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ulak.swift"; sourceTree = "<group>"; };
 		9E23ECAF27E9AD85002463C9 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
 		9E23ECB127E9B211002463C9 /* NoDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
 		9E23ECB227E9B211002463C9 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
@@ -332,9 +327,6 @@
 		E55D381A27F6D4A9005592DB /* NotificationTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTVC.xib; sourceTree = "<group>"; };
 		E55D381C27F6D4C7005592DB /* NotificationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTVC.swift; sourceTree = "<group>"; };
 		E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KKUtils.swift"; sourceTree = "<group>"; };
-		E57B4FC2280E9E600097BE10 /* OtpCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtpCodeView.xib; sourceTree = "<group>"; };
-		E57B4FC6280EA0E40097BE10 /* OtpCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpCodeView.swift; sourceTree = "<group>"; };
-		E5CCEE5E28183DF50014F353 /* PreLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoginResponse.swift; sourceTree = "<group>"; };
 		E71221419E2EBE301679F7A2 /* Pods-ulak.kuryeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kuryeTests.debug.xcconfig"; path = "Target Support Files/Pods-ulak.kuryeTests/Pods-ulak.kuryeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4BD9CB58C1323FCFDC3534B /* Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye-ulak.kuryeUITests/Pods-ulak.kurye-ulak.kuryeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F70742960D8C2DF30F38CC2A /* Pods-ulak.kurye.dev release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ulak.kurye.dev release.xcconfig"; path = "Target Support Files/Pods-ulak.kurye/Pods-ulak.kurye.dev release.xcconfig"; sourceTree = "<group>"; };
@@ -664,7 +656,6 @@
 				9E2CAC3627E8A8DE00106FD1 /* String+Ulak.swift */,
 				9EA1AA3D27EB377200BF018A /* UIColor+Ulak.swift */,
 				E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */,
-				9E1361FA2825666800ADB0CF /* UILabel+Ulak.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -779,7 +770,6 @@
 				9ECAAACD27C3CE9000F583C4 /* Config.swift */,
 				9ECAAACF27C3CF9A00F583C4 /* ServerURL.swift */,
 				9ECAAAD627C3D16500F583C4 /* Auth.swift */,
-				E5CCEE5E28183DF50014F353 /* PreLoginResponse.swift */,
 				9ECAAADA27C3D3DD00F583C4 /* User.swift */,
 				9EA443C827CD1A4400C4A47B /* Order.swift */,
 				9E246A8A27DF762D00F10D77 /* OrderAction.swift */,
@@ -811,19 +801,19 @@
 		9ECAAADE27C3DAFC00F583C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E5CCEE5B2817ECFF0014F353 /* CustomAlert */,
 				9EA443C227CCF4C000C4A47B /* SectionHeader */,
 				9E3304AC27C7825F00AAB135 /* NoData */,
 				E55D381727F6D466005592DB /* Notification */,
 				9E3304A327C6747600AAB135 /* Order */,
 				9E246A8527DF72F400F10D77 /* OrderAction */,
 				9E33049E27C66B9400AAB135 /* Onboarding */,
-				E57B4FC1280E9E250097BE10 /* OtpCode */,
 				9E2CAC2627E87FE800106FD1 /* PhoneCode */,
 				9E2CAC4127E8D0F000106FD1 /* Wallet */,
 				9E3D435627C520B100B6D5C5 /* Policy */,
 				9ECAAADF27C3DB0D00F583C4 /* LoadingView.swift */,
 				9ECAAAE927C3E1FC00F583C4 /* ToastView.swift */,
+				E531703A27FDCB230022D005 /* CustomAlertView.swift */,
+				E531703C27FDCB2A0022D005 /* CustomAlertView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -846,24 +836,6 @@
 				E55D381A27F6D4A9005592DB /* NotificationTVC.xib */,
 			);
 			path = Notification;
-			sourceTree = "<group>";
-		};
-		E57B4FC1280E9E250097BE10 /* OtpCode */ = {
-			isa = PBXGroup;
-			children = (
-				E57B4FC2280E9E600097BE10 /* OtpCodeView.xib */,
-				E57B4FC6280EA0E40097BE10 /* OtpCodeView.swift */,
-			);
-			path = OtpCode;
-			sourceTree = "<group>";
-		};
-		E5CCEE5B2817ECFF0014F353 /* CustomAlert */ = {
-			isa = PBXGroup;
-			children = (
-				E531703A27FDCB230022D005 /* CustomAlertView.swift */,
-				E531703C27FDCB2A0022D005 /* CustomAlertView.xib */,
-			);
-			path = CustomAlert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1020,7 +992,6 @@
 				9EC177D727E4BB0D0005FA8E /* ScannerVC.xib in Resources */,
 				9E2CAC4527E8D11100106FD1 /* WalletTVC.xib in Resources */,
 				9E3D436527C5366200B6D5C5 /* Wallet.storyboard in Resources */,
-				E57B4FC3280E9E600097BE10 /* OtpCodeView.xib in Resources */,
 				9E3D433827C4CBDE00B6D5C5 /* Localizable.strings in Resources */,
 				9EA443C627CCF4EF00C4A47B /* TableSectionHeaderView.xib in Resources */,
 				9E3E2D1027BE8F1700A17025 /* LaunchScreen.storyboard in Resources */,
@@ -1209,7 +1180,6 @@
 				9E2CAC4427E8D11100106FD1 /* WalletTVC.swift in Sources */,
 				9ECAAAEA27C3E1FC00F583C4 /* ToastView.swift in Sources */,
 				9E5BB61C27E3656200B6C0A0 /* KKUICollectionView.swift in Sources */,
-				E5CCEE5F28183DF50014F353 /* PreLoginResponse.swift in Sources */,
 				9E33049727C6546000AAB135 /* HomeVC.swift in Sources */,
 				9E246A7C27DF275100F10D77 /* GetOrderResponse.swift in Sources */,
 				9E23ECB027E9AD85002463C9 /* NotificationsVC.swift in Sources */,
@@ -1248,10 +1218,8 @@
 				9ECAAA9E27C3C42D00F583C4 /* Session.swift in Sources */,
 				9E3304AF27C7826700AAB135 /* HomeNoDataView.swift in Sources */,
 				9E246A7A27DF22FB00F10D77 /* Agreement.swift in Sources */,
-				9E1361FB2825666800ADB0CF /* UILabel+Ulak.swift in Sources */,
 				9ECAAAE027C3DB0D00F583C4 /* LoadingView.swift in Sources */,
 				9ECAAAD327C3D07600F583C4 /* CustomError.swift in Sources */,
-				E57B4FC7280EA0E40097BE10 /* OtpCodeView.swift in Sources */,
 				9EA1AA3E27EB377200BF018A /* UIColor+Ulak.swift in Sources */,
 				9EE8C01827D780950050F37D /* CheckpointTVC.swift in Sources */,
 				9ECAAA9927C3C41900F583C4 /* API.swift in Sources */,

@@ -16,8 +16,6 @@ final class PreLoginVC: BaseVC {
     private var feedBackGenerator: UINotificationFeedbackGenerator?
     private var activeTextField : UITextField?
     private var termOfUseVC: PolicyVC?
-    
-    var isRegistered: Bool = true
         
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -108,8 +106,7 @@ final class PreLoginVC: BaseVC {
             self.loginButton.stopAnimation()
             
             switch result {
-            case .success(let preLoginResponse):
-                self.isRegistered = preLoginResponse.isRegistered
+            case .success(_):
                 self.performSegue(withIdentifier: "login", sender: phoneNumber)
                 break
             case .failure(let error):
@@ -124,7 +121,6 @@ final class PreLoginVC: BaseVC {
             guard let phoneNumber = sender as? String else { return }
             let loginVC = segue.destination as! LoginVC
             loginVC.phoneNumber = phoneNumber
-            loginVC.isRegistered = self.isRegistered
         }
     }
     

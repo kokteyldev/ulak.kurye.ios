@@ -15,7 +15,6 @@ class OrderDetailVC: BaseVC {
     
     @IBOutlet weak var orderCodeLabel: UILabel!
     @IBOutlet weak var serviceInfoLabel: UILabel!
-    @IBOutlet weak var orderDistanceLabel: UILabel!
     @IBOutlet weak var pickDateLabel: UILabel!
     @IBOutlet weak var pickAddressLabel: UILabel!
     @IBOutlet weak var senderNameLabel: UILabel!
@@ -41,12 +40,6 @@ class OrderDetailVC: BaseVC {
     
     @IBOutlet weak var checkpointTableView: UITableView!
     @IBOutlet weak var breakpointHeightConst: NSLayoutConstraint!
-    
-    @IBOutlet weak var restaurantTitleContainer: UIView!
-    @IBOutlet weak var restaurantDetailContainer: UIView!
-    
-    @IBOutlet weak var restaurantNameLabel: UILabel!
-    @IBOutlet weak var restaurantIcon: UIImageView!
     
     @IBOutlet weak var packagePriceTitleContainer: UIView!
     @IBOutlet weak var packagePriceContainer: UIView!
@@ -109,7 +102,6 @@ class OrderDetailVC: BaseVC {
         
         orderCodeLabel.text = viewModel.orderCode
         serviceInfoLabel.text = viewModel.serviceTitle
-        orderDistanceLabel.text = viewModel.estimatedDistance
         
         pickDateLabel.text = viewModel.pickAddressDetail
         pickAddressLabel.text = viewModel.pickAddress
@@ -120,9 +112,6 @@ class OrderDetailVC: BaseVC {
         receiverNameLabel.text = viewModel.receiverName
         
         ownerNameLabel.text = viewModel.ownerName
-        
-        restaurantNameLabel.text = viewModel.order.customer?.brand
-        restaurantIcon.image = viewModel.iconImage
         
         packagePriceLabel.text = viewModel.packagePrice
         packagePrepareTimeLabel.text = viewModel.packagePrepareTime
@@ -148,9 +137,6 @@ class OrderDetailVC: BaseVC {
         ownerTitleContainerView.isHidden = viewModel.isDetailsHidden
         ownerAddressContainerView.isHidden = viewModel.isDetailsHidden
         
-        restaurantTitleContainer.isHidden = viewModel.isRestaurantDetailHidden
-        restaurantDetailContainer.isHidden = viewModel.isRestaurantDetailHidden
-        
         packagePriceTitleContainer.isHidden = viewModel.isPackagePriceHidden
         packagePriceContainer.isHidden = viewModel.isPackagePriceHidden
         
@@ -165,7 +151,7 @@ class OrderDetailVC: BaseVC {
         
         actionsViewHeightCons.constant = viewModel.isActionViewHeight
             
-        if viewModel.isPastOrder {
+        if !viewModel.isDetailsHidden {
             var bounds = GMSCoordinateBounds()
             
             let senderMarker = GMSMarker(position: viewModel.senderLocation)
@@ -248,7 +234,7 @@ class OrderDetailVC: BaseVC {
     // MARK: - Actions
     @IBAction func mapTapped(_ sender: Any) {
         guard let viewModel = viewModel else { return }
-        if !viewModel.isPastOrder { return }
+        if viewModel.isDetailsHidden { return }
 
         if viewModel.isPackagePicked {
             getMapDirections(viewModel.receiverLocation)

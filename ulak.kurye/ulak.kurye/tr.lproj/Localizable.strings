@@ -83,7 +83,6 @@
 "order_detail_package_prepare_time_title" = "Hazırlanma Süreci:";
 "order_detail_package_prepare_time_remaining" = " dk.";
 "order_detail_no_order" = "Hiç Sipariş Bulunamadı!";
-"order_detail_restaurant_title" = "Restoran";
 
 // Pool
 "pool_page_title" = "Havuz";
@@ -173,5 +172,3 @@ Destek hattı: 08508852686";
 "card_loading" = "Kart bilgileri güncelleniyor..";
 "deposit" = "Kazanç";
 "withdraw" = "Karta Çekim";
-"register" = "Kayıt Ol";
-"done" = "Devam Et";

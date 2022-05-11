@@ -51,8 +51,6 @@ final class PhoneCodeView: UIView {
         
         country = PhoneHelper.defaultCountry()
         setupPhoneNumber()
-        phoneTextField.becomeFirstResponder()
-        addDoneButtonOnNumpad(textField: phoneTextField)
     }
     
     // MARK: - Setup
@@ -80,17 +78,6 @@ final class PhoneCodeView: UIView {
         phoneCodeButton.isUserInteractionEnabled = false
         phoneCodeButton.alpha = 0.7
         phoneTextField.disableView()
-    }
-    
-    func addDoneButtonOnNumpad(textField: UITextField) {
-        let keypadToolbar: UIToolbar = UIToolbar()
-        
-        keypadToolbar.items=[
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: textField, action: #selector(UITextField.resignFirstResponder))
-        ]
-        keypadToolbar.sizeToFit()
-        textField.inputAccessoryView = keypadToolbar
     }
 
     // MARK: - Actions

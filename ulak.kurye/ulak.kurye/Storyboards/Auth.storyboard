@@ -181,14 +181,23 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="login_title_desc"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKL-Gx-fWC" customClass="OtpCodeView" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="56" y="346" width="302" height="60"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A5s-TN-tup" customClass="KKOutlinedTextField" customModule="ulak_kurye" customModuleProvider="target">
+                                <rect key="frame" x="24" y="338" width="366" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="vAy-IX-OmX"/>
+                                    <constraint firstAttribute="height" constant="60" id="ejX-fi-LKH"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Kodu girin"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedTitleKey" value="login_code"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="textfieldDidChange:" destination="6Ew-1L-Otk" eventType="editingChanged" id="Wc2-sT-Bom"/>
+                                </connections>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbb-VW-e4F" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="224.5" y="430" width="165.5" height="63.5"/>
+                                <rect key="frame" x="224.5" y="414" width="165.5" height="63.5"/>
                                 <color key="backgroundColor" name="ulk-orange"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Gbb-VW-e4F" secondAttribute="height" multiplier="157:60" id="EI1-uz-Ueq"/>
@@ -208,30 +217,30 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="Gbb-VW-e4F" secondAttribute="trailing" constant="24" id="23B-gv-zYO"/>
-                            <constraint firstItem="tKL-Gx-fWC" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" constant="56" id="66X-CT-WdR"/>
                             <constraint firstItem="xN5-1e-W9e" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" constant="24" id="6PU-Fl-dQH"/>
                             <constraint firstItem="xN5-1e-W9e" firstAttribute="top" secondItem="Ri8-hw-tqH" secondAttribute="bottom" constant="32" id="7Wz-pr-PQ1"/>
                             <constraint firstItem="4Xv-ht-2GH" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" constant="24" id="E8u-N9-qwm"/>
+                            <constraint firstItem="A5s-TN-tup" firstAttribute="leading" secondItem="FYx-Bb-RCu" secondAttribute="leading" constant="24" id="Gjk-gv-2dX"/>
                             <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="xN5-1e-W9e" secondAttribute="trailing" constant="24" id="HZT-RZ-Yph"/>
-                            <constraint firstItem="tKL-Gx-fWC" firstAttribute="top" secondItem="4Xv-ht-2GH" secondAttribute="bottom" constant="24" id="Nmc-aW-2j4"/>
-                            <constraint firstItem="tKL-Gx-fWC" firstAttribute="trailing" secondItem="FYx-Bb-RCu" secondAttribute="trailing" constant="-56" id="P1i-bs-305"/>
+                            <constraint firstItem="Gbb-VW-e4F" firstAttribute="top" secondItem="A5s-TN-tup" secondAttribute="bottom" constant="16" id="Ipl-J7-3i0"/>
                             <constraint firstItem="Gbb-VW-e4F" firstAttribute="width" secondItem="214-QG-HO0" secondAttribute="width" multiplier="0.4" id="UIH-fH-hF4"/>
                             <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="4Xv-ht-2GH" secondAttribute="trailing" constant="24" id="UYP-x1-7Yy"/>
                             <constraint firstItem="Ri8-hw-tqH" firstAttribute="centerX" secondItem="214-QG-HO0" secondAttribute="centerX" id="cih-dG-sva"/>
+                            <constraint firstItem="A5s-TN-tup" firstAttribute="top" secondItem="4Xv-ht-2GH" secondAttribute="bottom" constant="16" id="f3S-Yc-t4U"/>
                             <constraint firstItem="Ri8-hw-tqH" firstAttribute="top" secondItem="FYx-Bb-RCu" secondAttribute="top" constant="16" id="kOm-Lb-yme"/>
                             <constraint firstItem="4Xv-ht-2GH" firstAttribute="top" secondItem="xN5-1e-W9e" secondAttribute="bottom" constant="8" id="oPt-51-MHS"/>
-                            <constraint firstItem="Gbb-VW-e4F" firstAttribute="top" secondItem="tKL-Gx-fWC" secondAttribute="bottom" constant="24" id="ubp-hc-l2v"/>
+                            <constraint firstItem="FYx-Bb-RCu" firstAttribute="trailing" secondItem="A5s-TN-tup" secondAttribute="trailing" constant="24" id="uKk-oo-UjY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vvL-ql-cqn"/>
                     <connections>
+                        <outlet property="codeTextField" destination="A5s-TN-tup" id="hZr-al-2gv"/>
                         <outlet property="loginButton" destination="Gbb-VW-e4F" id="ulk-6a-V8D"/>
-                        <outlet property="otpCodeView" destination="tKL-Gx-fWC" id="BYV-45-INb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0IC-2D-BWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1555" y="116"/>
+            <point key="canvasLocation" x="1326" y="116"/>
         </scene>
         <!--Phone CodeVC-->
         <scene sceneID="4XV-EC-Bwx">

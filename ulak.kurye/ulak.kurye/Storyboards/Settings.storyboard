@@ -563,7 +563,7 @@
         <!--ProfileVC-->
         <scene sceneID="uGW-rC-zxj">
             <objects>
-                <viewController storyboardIdentifier="ProfileVC" id="jmF-14-6ra" customClass="ProfileVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jmF-14-6ra" customClass="ProfileVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EPB-pf-rsm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -656,7 +656,6 @@
                         <outlet property="phoneCodeView" destination="dam-j3-diw" id="Kcw-cD-F7y"/>
                         <outlet property="saveButton" destination="KNC-Tr-jEV" id="dRM-Vf-w95"/>
                         <outlet property="surnameTextField" destination="2Cm-C6-cw9" id="vch-E7-5kU"/>
-                        <outlet property="topConstraint" destination="sLt-ah-jPF" id="opJ-WZ-ZO6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4q-F4-P77" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

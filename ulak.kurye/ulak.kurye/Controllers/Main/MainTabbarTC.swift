@@ -54,6 +54,7 @@ final class MainTabbarTC: UITabBarController {
         DispatchQueue.main.async {
             self.tabBar.items?[1].isEnabled = Session.shared.isAccountVerified
             self.tabBar.items?[2].isEnabled = Session.shared.isAccountVerified
+            self.tabBar.items?[3].isEnabled = Session.shared.isAccountVerified
         }
     }
     

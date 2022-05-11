@@ -13,12 +13,4 @@ extension String {
         let pnkit = PhoneNumberKit()
         return pnkit.isValidPhoneNumber(self)
     }
-    
-    func character(atIndex: Int) -> String? {
-        if self.length > 0 && atIndex < self.length {
-            return String(self[index(startIndex, offsetBy: atIndex)])
-        }
-        
-        return nil
-    }
 }

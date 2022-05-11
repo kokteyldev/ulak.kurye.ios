@@ -12,12 +12,10 @@ final class ProfileVC: BaseVC {
     @IBOutlet weak var nameTextField: KKOutlinedTextField!
     @IBOutlet weak var surnameTextField: KKOutlinedTextField!
     @IBOutlet weak var phoneCodeView: PhoneCodeView!
-    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     private var activeTextField : UITextField?
     private var feedBackGenerator: UINotificationFeedbackGenerator?
-    private var phoneNumber: String!
-    private var isFirstLogin: Bool = false
+    private var phoneCode: String!
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -41,16 +39,8 @@ final class ProfileVC: BaseVC {
     
     // MARK: - Setup
     func setupUI() {
-        if isFirstLogin {
-            let screenSize: CGRect = UIScreen.main.bounds
-            let screenSizeHeight: CGFloat = screenSize.height
-            self.topConstraint.constant = screenSizeHeight / 5
-            self.saveButton.setTitle("done".localized, for: .normal)
-        } else {
-            self.title = "profile_title".localized
-            self.navigationController?.navigationBar.topItem?.backButtonTitle = ""
-            self.saveButton.setTitle("profile_change_password_save".localized, for: .normal)
-        }
+        self.title = "profile_title".localized
+        self.navigationController?.navigationBar.topItem?.backButtonTitle = ""
         
         nameTextField.delegate = self
         surnameTextField.delegate = self
@@ -61,17 +51,11 @@ final class ProfileVC: BaseVC {
     }
     
     private func setupProfile() {
-        if isFirstLogin {
-            if let phone = self.phoneNumber {
-                phoneCodeView.setFullPhoneNumber(phone)
-            }
-        } else {
-            nameTextField.text = Session.shared.user?.name
-            surnameTextField.text = Session.shared.user?.surname
-            
-            if let phone = Session.shared.user?.phoneNumber {
-                phoneCodeView.setFullPhoneNumber(phone)
-            }
+        nameTextField.text = Session.shared.user?.name
+        surnameTextField.text = Session.shared.user?.surname
+        
+        if let phone = Session.shared.user?.phoneNumber {
+            phoneCodeView.setFullPhoneNumber(phone)
         }
     }
     
@@ -87,12 +71,10 @@ final class ProfileVC: BaseVC {
             return
         }
         
-        if !isFirstLogin {
-            if nameTextField.text == Session.shared.user?.name &&
-                surnameTextField.text == Session.shared.user?.surname {
-                saveButton.isActive = false
-                return
-            }
+        if nameTextField.text == Session.shared.user?.name &&
+            surnameTextField.text == Session.shared.user?.surname {
+            saveButton.isActive = false
+            return
         }
         
         saveButton.isActive = true
@@ -129,11 +111,7 @@ final class ProfileVC: BaseVC {
             
             switch result {
             case .success(_):
-                if self.isFirstLogin {
-                    SplashVC.checkProfile()
-                } else {
-                    self.view.showToast(.success, message: "profile_updated_success".localized)
-                }
+                self.view.showToast(.success, message: "profile_updated_success".localized)
                 Session.shared.user?.name = name
                 Session.shared.user?.surname = surname
                 self.saveButton.isActive = false
@@ -165,21 +143,6 @@ final class ProfileVC: BaseVC {
     
     @objc func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
-    }
-    
-    // MARK: - Presenter
-    static func present(fromVC: UIViewController, phoneNumber: String, isFirstLogin: Bool) {
-        DispatchQueue.main.async {
-            let sb = UIStoryboard(name: "Settings", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
-        
-            vc.modalPresentationStyle = .overFullScreen
-            vc.modalTransitionStyle = .crossDissolve
-            vc.phoneNumber = phoneNumber
-            vc.isFirstLogin = isFirstLogin
-
-            fromVC.present(vc, animated: true, completion: nil)
-        }
     }
 }
 

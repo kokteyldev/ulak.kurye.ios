@@ -66,24 +66,24 @@ class OrderVM {
         }
         
         backgroundColor = .white
-        iconImage = .init(named: "ic-restaurant")!
+        iconImage = .init(named: "ic-package")!
         
         if isOrderActive && !isPackagedDelivered {
             if isPackagePicked {
                 if remainingDeliverMinutes ?? 0 < 0 {
                     backgroundColor = .init(named: "ulk-red")!.withAlphaComponent(0.22)
-                    iconImage = .init(named: "ic-restaurant")!
+                    iconImage = .init(named: "ic-package-passed")!
                 } else if remainingDeliverMinutes ?? 0 < 5 {
                     backgroundColor = .init(named: "ulk-orange")!.withAlphaComponent(0.22)
-                    iconImage = .init(named: "ic-restaurant")!
+                    iconImage = .init(named: "ic-package-passed")!
                 }
             } else {
                 if remainingPickMinutes ?? 0 < 0 {
                     backgroundColor = .init(named: "ulk-red")!.withAlphaComponent(0.22)
-                    iconImage = .init(named: "ic-restaurant")!
+                    iconImage = .init(named: "ic-package-passed")!
                 } else if remainingPickMinutes ?? 0 < 5 {
                     backgroundColor = .init(named: "ulk-orange")!.withAlphaComponent(0.22)
-                    iconImage = .init(named: "ic-restaurant")!
+                    iconImage = .init(named: "ic-package-passed")!
                 }
             }
         }
@@ -112,12 +112,8 @@ class OrderVM {
             packagePrepareTime = (order.package?.prepareTime ?? "") + "order_detail_package_prepare_time_remaining".localized
         }
         
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = Locale.locale(from: order.service.currency)
-        
-        priceTitle = "order_total_price".localized
-        price = currencyFormatter.string(from: order.cost as NSNumber) ?? "-"
+        priceTitle = "order_task_code".localized
+        price = order.code
         
         serviceTitle = order.service.title
         

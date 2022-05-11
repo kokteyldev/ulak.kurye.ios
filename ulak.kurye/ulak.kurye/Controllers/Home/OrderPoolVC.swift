@@ -16,7 +16,7 @@ final class OrderPoolVC: BaseTBLVC {
     private lazy var noDataView: NoDataView = {
         let view = NoDataView(title: "pool_no_order".localized,
                               message: "",
-                              image: .init(named: "ic-restaurant")!)
+                              image: .init(named: "ic-package")!)
         view.frame = tableView.bounds
         return view
     }()
@@ -191,17 +191,15 @@ final class OrderPoolVC: BaseTBLVC {
 // MARK: - OrderTVCDelegate
 extension OrderPoolVC: OrderTVCDelegate {
     func orderTVCAddTapped(_ orderTVC: OrderTVC, order: Order) {
-        let customAlertView = CustomAlertView.customAlertView()
-        
-        customAlertView.acceptCallback = {
+        //TODO: tasarımdaki gibi bi alert yap.
+        let alert = UIAlertController(title: "action_take_consent_message".localized, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "yes".localized, style: .default, handler: { action in
             self.getOrderFromPool(orderTVC, order: order)
-        }
-        
-        customAlertView.cancelCallback = {
+        }))
+        alert.addAction(UIAlertAction(title: "no".localized, style: .cancel, handler: { action in
             orderTVC.stopLoading()
-        }
-        
-        self.present(customAlertView, animated: true)
+        }))
+        self.present(alert, animated: true)
     }
 }
 
