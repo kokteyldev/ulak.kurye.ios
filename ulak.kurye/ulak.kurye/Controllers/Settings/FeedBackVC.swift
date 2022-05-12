@@ -23,6 +23,7 @@ final class FeedBackVC: BaseVC {
         feedbackTextField.layer.borderWidth = 2
         feedbackTextField.layer.cornerRadius = 5
         feedbackTextField.layer.borderColor = UIColor(named: "ulk-input-border")?.cgColor
+        feedbackTextField.becomeFirstResponder()
     }
     
     // MARK: Actions

@@ -10,13 +10,13 @@ import Foundation
 extension Date {
     var shortDateString: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM, hh:mm"
+        dateFormatter.dateFormat = "dd MMM, hh:mm a"
         return dateFormatter.string(from: self)
     }
     
     var longDateString: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM yyyy | hh:mm"
+        dateFormatter.dateFormat = "dd MMM yyyy | hh:mm a"
         return dateFormatter.string(from: self)
     }
     

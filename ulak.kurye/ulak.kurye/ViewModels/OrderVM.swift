@@ -88,13 +88,8 @@ class OrderVM {
             }
         }
         
-        if let imageURL = order.customer?.image, imageURL.length > 0 {
-            var imageURLString = imageURL
-            
-            if imageURLString.contains("http") == false {
-                imageURLString = "https://dev-api.ulakapp.com\(imageURLString)"
-            }
-            
+        if let imageURL = order.customer?.imageURL {
+            let imageURLString = imageURL
             if let url =  URL(string: imageURLString),
                let data = try? Data(contentsOf: url) {
                 iconImage = UIImage(data: data)
