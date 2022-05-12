@@ -120,10 +120,12 @@ struct Owner: Codable {
 struct Customer: Codable {
     var image: String?
     var brand: String?
+    var imageURL: String?
     
     enum CodingKeys: String, CodingKey {
         case image = "image"
         case brand = "brand"
+        case imageURL = "image_url"
     }
 }
 
