@@ -89,8 +89,7 @@ class OrderVM {
         }
         
         if let imageURL = order.customer?.imageURL {
-            let imageURLString = imageURL
-            if let url =  URL(string: imageURLString),
+            if let url =  URL(string: imageURL),
                let data = try? Data(contentsOf: url) {
                 iconImage = UIImage(data: data)
             }
