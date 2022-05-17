@@ -83,4 +83,17 @@ struct PhoneHelper {
         }
         return (Constants.currentCountry, "")
     }
+    
+    static func phoneNumber(_ string: String) -> String? {
+        let phoneNumberKit = PhoneNumberKit()
+        do {
+            let phoneNumber = try phoneNumberKit.parse(string)
+            return String(phoneNumber.nationalNumber)
+        }
+        catch {
+            print("Generic parser error")
+        }
+        
+        return nil
+    }
 }

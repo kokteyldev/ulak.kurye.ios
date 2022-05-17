@@ -1,9 +1,11 @@
- platform :ios, '12.4'
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '12.4'
 
 target 'ulak.kurye' do
   use_frameworks!
 
-  pod 'GoogleMaps', '6.0.1'
+  pod 'GoogleMaps', '~> 6.2'
 
   target 'ulak.kuryeTests' do
     inherit! :search_paths
