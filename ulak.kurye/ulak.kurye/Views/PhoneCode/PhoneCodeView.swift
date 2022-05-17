@@ -99,6 +99,12 @@ final class PhoneCodeView: UIView {
     }
     
     @IBAction func textfieldDidChange(_ sender: Any) {
+        let textfield = sender as? KKOutlinedTextField
+        if let phoneNumberText = textfield?.text,
+            let phoneNumber = PhoneHelper.phoneNumber(phoneNumberText) {
+            textfield?.text = phoneNumber
+        }
+        
         delegate?.didChangePhoneCode(self)
     }
 }
