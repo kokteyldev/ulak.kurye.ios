@@ -143,8 +143,8 @@
 		E55D381B27F6D4A9005592DB /* NotificationTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55D381A27F6D4A9005592DB /* NotificationTVC.xib */; };
 		E55D381D27F6D4C7005592DB /* NotificationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D381C27F6D4C7005592DB /* NotificationTVC.swift */; };
 		E569910F27EDA6320099E9D5 /* UIViewController+KKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */; };
-		E56E5F0328323DF300033907 /* order_assigned_notification_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = E56E5F0128323DF300033907 /* order_assigned_notification_sound.wav */; };
-		E56E5F0428323DF300033907 /* order_pool_notification_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = E56E5F0228323DF300033907 /* order_pool_notification_sound.wav */; };
+		E56E5F0328323DF300033907 /* order_pool_notification_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = E56E5F0128323DF300033907 /* order_pool_notification_sound.wav */; };
+		E56E5F0428323DF300033907 /* order_assigned_notification_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = E56E5F0228323DF300033907 /* order_assigned_notification_sound.wav */; };
 		E57B4FC3280E9E600097BE10 /* OtpCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57B4FC2280E9E600097BE10 /* OtpCodeView.xib */; };
 		E57B4FC7280EA0E40097BE10 /* OtpCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B4FC6280EA0E40097BE10 /* OtpCodeView.swift */; };
 		E5CCEE5F28183DF50014F353 /* PreLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CCEE5E28183DF50014F353 /* PreLoginResponse.swift */; };
@@ -334,8 +334,8 @@
 		E55D381A27F6D4A9005592DB /* NotificationTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTVC.xib; sourceTree = "<group>"; };
 		E55D381C27F6D4C7005592DB /* NotificationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTVC.swift; sourceTree = "<group>"; };
 		E569910E27EDA6320099E9D5 /* UIViewController+KKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KKUtils.swift"; sourceTree = "<group>"; };
-		E56E5F0128323DF300033907 /* order_assigned_notification_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = order_assigned_notification_sound.wav; sourceTree = "<group>"; };
-		E56E5F0228323DF300033907 /* order_pool_notification_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = order_pool_notification_sound.wav; sourceTree = "<group>"; };
+		E56E5F0128323DF300033907 /* order_pool_notification_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = order_pool_notification_sound.wav; sourceTree = "<group>"; };
+		E56E5F0228323DF300033907 /* order_assigned_notification_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = order_assigned_notification_sound.wav; sourceTree = "<group>"; };
 		E57B4FC2280E9E600097BE10 /* OtpCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtpCodeView.xib; sourceTree = "<group>"; };
 		E57B4FC6280EA0E40097BE10 /* OtpCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpCodeView.swift; sourceTree = "<group>"; };
 		E5CCEE5E28183DF50014F353 /* PreLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoginResponse.swift; sourceTree = "<group>"; };
@@ -714,8 +714,8 @@
 			children = (
 				9E3D433727C4CB6E00B6D5C5 /* Fonts */,
 				9E3E2D0C27BE8F1700A17025 /* Assets.xcassets */,
-				E56E5F0128323DF300033907 /* order_assigned_notification_sound.wav */,
-				E56E5F0228323DF300033907 /* order_pool_notification_sound.wav */,
+				E56E5F0128323DF300033907 /* order_pool_notification_sound.wav */,
+				E56E5F0228323DF300033907 /* order_assigned_notification_sound.wav */,
 				9E3E2D3327BE901200A17025 /* GoogleService-Info.plist */,
 				9E3E2D1127BE8F1700A17025 /* Info.plist */,
 				9E2CAC2D27E8808F00106FD1 /* countryCode.plist */,
@@ -1039,7 +1039,7 @@
 				9E3D433D27C4DEAC00B6D5C5 /* Onboarding.storyboard in Resources */,
 				9E3304B027C7826700AAB135 /* HomeNoDataView.xib in Resources */,
 				9ECAAA8027C395F600F583C4 /* Dev.xcconfig in Resources */,
-				E56E5F0428323DF300033907 /* order_pool_notification_sound.wav in Resources */,
+				E56E5F0428323DF300033907 /* order_assigned_notification_sound.wav in Resources */,
 				9E3D436327C5365A00B6D5C5 /* Notifications.storyboard in Resources */,
 				9E33049B27C661DA00AAB135 /* HomeHeaderView.xib in Resources */,
 				9E3D435927C520B800B6D5C5 /* PolicyVC.xib in Resources */,
@@ -1051,7 +1051,7 @@
 				9ECAAA7C27C393DD00F583C4 /* Poppins-Bold.ttf in Resources */,
 				9E3E2D0D27BE8F1700A17025 /* Assets.xcassets in Resources */,
 				E531703D27FDCB2A0022D005 /* CustomAlertView.xib in Resources */,
-				E56E5F0328323DF300033907 /* order_assigned_notification_sound.wav in Resources */,
+				E56E5F0328323DF300033907 /* order_pool_notification_sound.wav in Resources */,
 				9E23ECB327E9B211002463C9 /* NoDataView.xib in Resources */,
 				9E2CAC2A27E87FFD00106FD1 /* PhoneCodeView.xib in Resources */,
 				9ECAAA7A27C393DD00F583C4 /* Poppins-SemiBold.ttf in Resources */,
@@ -1529,7 +1529,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ulak.kurye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1568,7 +1568,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ulak.kurye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1673,7 +1673,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ulak.kurye.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1699,7 +1699,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ulak.kurye.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1725,7 +1725,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ulak.kurye.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1751,7 +1751,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ulak.kurye.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1855,7 +1855,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ulak.kurye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1991,7 +1991,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ulak.kurye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
