@@ -10,6 +10,7 @@
 		26BB7F6847CD336D7C3BB6DE /* Pods_ulak_kurye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9464C032556AE790D022802A /* Pods_ulak_kurye.framework */; };
 		402068E0D9A9EC19D18F316E /* Pods_ulak_kuryeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB9DEDCECBF640EEF71AAA8 /* Pods_ulak_kuryeTests.framework */; };
 		9E1361FB2825666800ADB0CF /* UILabel+Ulak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1361FA2825666800ADB0CF /* UILabel+Ulak.swift */; };
+		9E18EE75283B7FBA00136ECE /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9E18EE74283B7FBA00136ECE /* AlamofireImage */; };
 		9E23ECB027E9AD85002463C9 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E23ECAF27E9AD85002463C9 /* NotificationsVC.swift */; };
 		9E23ECB327E9B211002463C9 /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E23ECB127E9B211002463C9 /* NoDataView.xib */; };
 		9E23ECB427E9B211002463C9 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E23ECB227E9B211002463C9 /* NoDataView.swift */; };
@@ -351,6 +352,7 @@
 			files = (
 				9E2CAC3127E880D900106FD1 /* PhoneNumberKit in Frameworks */,
 				9EA1AA5327EB4F0700BF018A /* OneSignal in Frameworks */,
+				9E18EE75283B7FBA00136ECE /* AlamofireImage in Frameworks */,
 				9ECAAA9327C3BD4E00F583C4 /* Alamofire in Frameworks */,
 				9E3E2D3727BE927200A17025 /* FirebaseAnalytics in Frameworks */,
 				9ECAAACB27C3CC9200F583C4 /* KokteylUtils in Frameworks */,
@@ -901,6 +903,7 @@
 				9ECAAACA27C3CC9200F583C4 /* KokteylUtils */,
 				9E2CAC3027E880D900106FD1 /* PhoneNumberKit */,
 				9EA1AA5227EB4F0700BF018A /* OneSignal */,
+				9E18EE74283B7FBA00136ECE /* AlamofireImage */,
 			);
 			productName = ulak.kurye;
 			productReference = 9E3E2D0027BE8F1600A17025 /* ulak.kurye.app */;
@@ -1004,6 +1007,7 @@
 				9ECAAAC927C3CC9200F583C4 /* XCRemoteSwiftPackageReference "kokteyl.utils.swift" */,
 				9E2CAC2F27E880D800106FD1 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
 				9EA1AA5127EB4F0600BF018A /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+				9E18EE73283B7FBA00136ECE /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 9E3E2D0127BE8F1600A17025 /* Products */;
 			projectDirPath = "";
@@ -2101,6 +2105,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9E18EE73283B7FBA00136ECE /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		9E2CAC2F27E880D800106FD1 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit";
@@ -2144,6 +2156,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9E18EE74283B7FBA00136ECE /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E18EE73283B7FBA00136ECE /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
 		9E2CAC3027E880D900106FD1 /* PhoneNumberKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9E2CAC2F27E880D800106FD1 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;

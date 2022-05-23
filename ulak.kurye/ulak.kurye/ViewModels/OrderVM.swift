@@ -14,6 +14,7 @@ class OrderVM {
     
     var backgroundColor = UIColor.white
     var iconImage: UIImage?
+    var iconURL: URL?
     var pickAddress: String?
     var pickAddressDetail: String?
     var deliverAddress: String?
@@ -89,10 +90,7 @@ class OrderVM {
         }
         
         if let imageURL = order.customer?.imageURL {
-            if let url =  URL(string: imageURL),
-               let data = try? Data(contentsOf: url) {
-                iconImage = UIImage(data: data)
-            }
+            iconURL = URL(string: imageURL)
         }
         
         pickAddress = "\(order.sender.hometown)/\(order.sender.district)/\(order.sender.city)"
