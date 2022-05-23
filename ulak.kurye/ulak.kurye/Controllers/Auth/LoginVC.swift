@@ -25,6 +25,7 @@ final class LoginVC: BaseVC {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         setupUI()
+        hideKeyboardWhenTappedAround()
         validateData()
     }
     
