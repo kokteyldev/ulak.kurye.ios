@@ -270,20 +270,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PhoneCodeTVC" id="I3H-X5-1mc" customClass="PhoneCodeTVC" customModule="ulak_kurye" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I3H-X5-1mc" id="zgk-Ox-ey9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeR-P8-tU8">
-                                                    <rect key="frame" x="20" y="11" width="33" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="33" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turkey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-mr-TAf">
-                                                    <rect key="frame" x="58" y="11" width="200" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turkey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-mr-TAf">
+                                                    <rect key="frame" x="58" y="11" width="200" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="oUf-lS-oP7"/>
                                                     </constraints>
@@ -292,7 +292,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+90" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DT-vu-nE3">
-                                                    <rect key="frame" x="283" y="11" width="96" height="21"/>
+                                                    <rect key="frame" x="283" y="11" width="101" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -304,8 +304,8 @@
                                                 <constraint firstItem="cxV-mr-TAf" firstAttribute="leading" secondItem="VeR-P8-tU8" secondAttribute="trailing" constant="5" id="UhT-Zg-uoG"/>
                                                 <constraint firstItem="9DT-vu-nE3" firstAttribute="bottom" secondItem="zgk-Ox-ey9" secondAttribute="bottomMargin" id="bT4-dP-taH"/>
                                                 <constraint firstItem="cxV-mr-TAf" firstAttribute="leading" secondItem="zgk-Ox-ey9" secondAttribute="leading" constant="58" id="dmr-wi-CPN"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="9DT-vu-nE3" secondAttribute="trailing" constant="15" id="mef-Ut-LAo"/>
-                                                <constraint firstItem="9DT-vu-nE3" firstAttribute="leading" secondItem="cxV-mr-TAf" secondAttribute="trailing" constant="25" id="mtJ-wL-kt6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9DT-vu-nE3" secondAttribute="trailing" constant="10" id="mef-Ut-LAo"/>
+                                                <constraint firstItem="9DT-vu-nE3" firstAttribute="leading" relation="lessThanOrEqual" secondItem="cxV-mr-TAf" secondAttribute="trailing" constant="25" id="mtJ-wL-kt6"/>
                                                 <constraint firstItem="VeR-P8-tU8" firstAttribute="top" secondItem="zgk-Ox-ey9" secondAttribute="topMargin" id="oDb-Ll-8IP"/>
                                                 <constraint firstItem="VeR-P8-tU8" firstAttribute="leading" secondItem="zgk-Ox-ey9" secondAttribute="leadingMargin" id="s4h-SZ-Wxu"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="cxV-mr-TAf" secondAttribute="bottom" id="s8L-7h-rIa"/>
