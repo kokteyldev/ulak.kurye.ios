@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sCc-ul-TlR">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -24,7 +24,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sCc-ul-TlR" customClass="BaseNC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lUa-jY-Mjb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="ulk-orange"/>
                     </navigationBar>
@@ -42,14 +42,14 @@
             <objects>
                 <viewController id="5f4-lf-SJ2" customClass="PreLoginVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BYX-Rb-qT9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-orange" translatesAutoresizingMaskIntoConstraints="NO" id="2tB-Ab-r0i">
-                                <rect key="frame" x="130" y="60" width="60" height="43"/>
+                                <rect key="frame" x="177" y="104" width="60" height="43"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefon numaran ile giriş yap" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jAS-mF-9gP">
-                                <rect key="frame" x="24" y="135" width="272" height="134.5"/>
+                                <rect key="frame" x="24" y="179" width="366" height="90"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="32"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -58,7 +58,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giriş yapmak için e-posta adresini ve şifreni girmelisin." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UDh-CD-CnJ">
-                                <rect key="frame" x="24" y="277.5" width="272" height="45"/>
+                                <rect key="frame" x="24" y="277" width="366" height="45"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                 <color key="textColor" name="ulk-subtitle"/>
                                 <nil key="highlightedColor"/>
@@ -67,10 +67,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Af5-Ez-TzM" userLabel="Aggrement">
-                                <rect key="frame" x="24" y="424.5" width="272" height="40"/>
+                                <rect key="frame" x="24" y="424" width="366" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pv0-Nt-d2X">
-                                        <rect key="frame" x="0.0" y="0.0" width="272" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="40"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="KVVK metnini okudum ve kabul ediyorum." image="ic-checkmark">
@@ -95,7 +95,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8q-Jv-E2V" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="168" y="480.5" width="128" height="49"/>
+                                <rect key="frame" x="224.5" y="480" width="165.5" height="63.5"/>
                                 <color key="backgroundColor" name="ulk-orange"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="u8q-Jv-E2V" secondAttribute="height" multiplier="157:60" id="N6H-8E-8xq"/>
@@ -111,7 +111,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0s-7z-0og" customClass="PhoneCodeView" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="24" y="338.5" width="272" height="70"/>
+                                <rect key="frame" x="24" y="338" width="366" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="4LM-OY-lHi"/>
@@ -160,14 +160,14 @@
             <objects>
                 <viewController id="6Ew-1L-Otk" customClass="LoginVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="214-QG-HO0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-orange" translatesAutoresizingMaskIntoConstraints="NO" id="Ri8-hw-tqH">
-                                <rect key="frame" x="130" y="60" width="60" height="43"/>
+                                <rect key="frame" x="177" y="104" width="60" height="43"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doğrulama kodunu gir" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xN5-1e-W9e">
-                                <rect key="frame" x="24" y="135" width="272" height="90"/>
+                                <rect key="frame" x="24" y="179" width="366" height="90"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="32"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -176,7 +176,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefonuna SMS olarak gelen 4 haneli kodu gir." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Xv-ht-2GH">
-                                <rect key="frame" x="24" y="233" width="272" height="45"/>
+                                <rect key="frame" x="24" y="277" width="366" height="45"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                 <color key="textColor" name="ulk-subtitle"/>
                                 <nil key="highlightedColor"/>
@@ -185,13 +185,13 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKL-Gx-fWC" customClass="OtpCodeView" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="56" y="302" width="208" height="60"/>
+                                <rect key="frame" x="56" y="346" width="302" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="vAy-IX-OmX"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbb-VW-e4F" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="168" y="386" width="128" height="49"/>
+                                <rect key="frame" x="224.5" y="430" width="165.5" height="63.5"/>
                                 <color key="backgroundColor" name="ulk-orange"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Gbb-VW-e4F" secondAttribute="height" multiplier="157:60" id="EI1-uz-Ueq"/>
@@ -229,7 +229,10 @@
                     <navigationItem key="navigationItem" id="vvL-ql-cqn"/>
                     <connections>
                         <outlet property="loginButton" destination="Gbb-VW-e4F" id="ulk-6a-V8D"/>
+                        <outlet property="logoTopConst" destination="kOm-Lb-yme" id="vu4-Em-rgc"/>
                         <outlet property="otpCodeView" destination="tKL-Gx-fWC" id="BYV-45-INb"/>
+                        <outlet property="titleLabel" destination="xN5-1e-W9e" id="dD7-Dy-U6G"/>
+                        <outlet property="titleLabelTopConst" destination="7Wz-pr-PQ1" id="ivi-0u-c75"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0IC-2D-BWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -241,16 +244,16 @@
             <objects>
                 <viewController storyboardIdentifier="PhoneCodeVC" modalPresentationStyle="fullScreen" id="4gy-Ya-Epu" customClass="PhoneCodeVC" customModule="ulak_kurye" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="00Y-Gy-iVF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh1-2m-edG">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Ülke Seçimi" id="9bK-8U-o8G">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="MsP-mH-zm8">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ReO-f1-1pU">
-                                                <rect key="frame" x="282" y="11" width="22" height="22"/>
+                                                <rect key="frame" x="372" y="11" width="22" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="22" id="ciZ-ph-K1X"/>
@@ -269,24 +272,24 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K6z-As-Tvi">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PhoneCodeTVC" id="I3H-X5-1mc" customClass="PhoneCodeTVC" customModule="ulak_kurye" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="320" height="43"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I3H-X5-1mc" id="zgk-Ox-ey9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeR-P8-tU8">
-                                                    <rect key="frame" x="16" y="11" width="37" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="33" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turkey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-mr-TAf">
-                                                    <rect key="frame" x="58" y="11" width="200" height="21"/>
+                                                    <rect key="frame" x="58" y="11" width="200" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="oUf-lS-oP7"/>
                                                     </constraints>
@@ -295,7 +298,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+90" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DT-vu-nE3">
-                                                    <rect key="frame" x="266" y="11" width="28" height="21"/>
+                                                    <rect key="frame" x="283" y="11" width="101" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

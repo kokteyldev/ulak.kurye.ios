@@ -141,11 +141,10 @@ final class PreLoginVC: BaseVC {
         
         let bottomOfTextField = loginButton.convert(loginButton.bounds, to: self.view).maxY;
         let topOfKeyboard = self.view.frame.height - keyboardSize.height
-        
-        self.logoTopConst.constant = -8
-        self.titleLabelTopConst.constant = 8.0
-        
+
         if bottomOfTextField > topOfKeyboard {
+            self.logoTopConst.constant = -32
+            self.titleLabelTopConst.constant = 8.0
             UIView .animate(withDuration: animateDuration) {
                 self.titleLabel.text = ""
                 self.view.layoutIfNeeded()
@@ -155,10 +154,8 @@ final class PreLoginVC: BaseVC {
     
     @objc func keyboardWillHide(notification: NSNotification) {
         let animateDuration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] ?? 0.25) as! Double
-        
         self.logoTopConst.constant = 16
         self.titleLabelTopConst.constant = 32.0
-        
         UIView .animate(withDuration: animateDuration) {
             self.titleLabel.text = "preLogin_title".localized
             self.view.layoutIfNeeded()
