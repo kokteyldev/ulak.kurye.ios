@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AlamofireImage
 
 protocol OrderTVCDelegate: AnyObject {
     func orderTVCAddTapped(_ orderTVC: OrderTVC, order: Order)
@@ -43,12 +42,11 @@ final class OrderTVC: UITableViewCell {
         self.order = orderVM.order
         
         if let url = orderVM.iconURL {
-            iconImageView.af.setImage(withURL: url, placeholderImage: orderVM.iconImage)
+            iconImageView.setImage(withURL: url, placeholderImage: orderVM.iconImage!)
         } else {
             iconImageView.image = orderVM.iconImage
         }
         
-        self.iconImageView.image = orderVM.iconImage
         self.pickAddressLabel.text = orderVM.pickAddress
         self.pickDetailLabel.text = orderVM.pickAddressDetail
         self.deliverAddressLabel.text = orderVM.deliverAddress

@@ -8,12 +8,14 @@
 import UIKit
 
 final class LoginVC: BaseVC {
+    @IBOutlet weak var logoTopConst: NSLayoutConstraint!
+    @IBOutlet weak var titleLabelTopConst: NSLayoutConstraint!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var loginButton: KKLoadingButton!
     @IBOutlet weak var otpCodeView: OtpCodeView!
 
     private var feedBackGenerator: UINotificationFeedbackGenerator?
-    private var activeTextField : UITextField?
-    
+
     var phoneNumber: String?
     var isRegistered: Bool = true
     
@@ -25,6 +27,7 @@ final class LoginVC: BaseVC {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         setupUI()
+        hideKeyboardWhenTappedAround()
         validateData()
     }
     
@@ -114,34 +117,38 @@ final class LoginVC: BaseVC {
     //MARK: - Utils
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {return }
+        let animateDuration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] ?? 0.25) as! Double
         
-        if let activeTextField = activeTextField {
-            let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
-            let topOfKeyboard = self.view.frame.height - keyboardSize.height
-            
-            if bottomOfTextField > topOfKeyboard {
-                self.view.frame.origin.y = 0 - keyboardSize.height
+        let bottomOfTextField = loginButton.convert(loginButton.bounds, to: self.view).maxY;
+        let topOfKeyboard = self.view.frame.height - keyboardSize.height
+        
+        if bottomOfTextField > topOfKeyboard {
+            self.logoTopConst.constant = -8
+            self.titleLabelTopConst.constant = 8.0
+            UIView .animate(withDuration: animateDuration) {
+                self.titleLabel.text = ""
+                self.view.layoutIfNeeded()
             }
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y = 0
+        let animateDuration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] ?? 0.25) as! Double
+        self.logoTopConst.constant = 16
+        self.titleLabelTopConst.constant = 32.0
+        UIView .animate(withDuration: animateDuration) {
+            self.titleLabel.text = "preLogin_title".localized
+            self.view.layoutIfNeeded()
+        }
     }
 }
 
 // MARK: - TextField Delegate
 extension LoginVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        activeTextField = textField
-        
         if let textfield = textField as? KKOutlinedTextField {
             textfield.validate()
         }
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        activeTextField = nil
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

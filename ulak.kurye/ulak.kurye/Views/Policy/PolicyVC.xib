@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,7 +31,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84K-yC-Au5" userLabel="Container" customClass="KKUIView" customModule="ulak_kurye" customModuleProvider="target">
-                    <rect key="frame" x="16" y="120" width="382" height="656"/>
+                    <rect key="frame" x="12" y="76" width="382" height="656"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKk-cl-CE2">
                             <rect key="frame" x="344" y="18" width="22" height="22"/>
@@ -106,10 +106,10 @@
             <viewLayoutGuide key="safeArea" id="GgT-KR-DFC"/>
             <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="84K-yC-Au5" firstAttribute="leading" secondItem="GgT-KR-DFC" secondAttribute="leading" constant="16" id="3Oc-qJ-t98"/>
-                <constraint firstItem="84K-yC-Au5" firstAttribute="top" secondItem="GgT-KR-DFC" secondAttribute="top" constant="76" id="HGX-Di-xcT"/>
-                <constraint firstItem="84K-yC-Au5" firstAttribute="centerY" secondItem="0MY-ub-7kr" secondAttribute="centerY" multiplier="0.7" constant="134.40000000000003" id="Hdm-xk-uez"/>
-                <constraint firstItem="GgT-KR-DFC" firstAttribute="trailing" secondItem="84K-yC-Au5" secondAttribute="trailing" constant="16" id="sKV-zz-QZe"/>
+                <constraint firstItem="84K-yC-Au5" firstAttribute="leading" secondItem="GgT-KR-DFC" secondAttribute="leading" constant="12" id="3Oc-qJ-t98"/>
+                <constraint firstItem="84K-yC-Au5" firstAttribute="top" secondItem="GgT-KR-DFC" secondAttribute="top" constant="32" id="HGX-Di-xcT"/>
+                <constraint firstItem="84K-yC-Au5" firstAttribute="centerY" secondItem="0MY-ub-7kr" secondAttribute="centerY" multiplier="0.7" constant="90.400000000000034" id="Hdm-xk-uez"/>
+                <constraint firstItem="GgT-KR-DFC" firstAttribute="trailing" secondItem="84K-yC-Au5" secondAttribute="trailing" constant="20" id="sKV-zz-QZe"/>
             </constraints>
             <point key="canvasLocation" x="1079.7101449275362" y="553.125"/>
         </view>
