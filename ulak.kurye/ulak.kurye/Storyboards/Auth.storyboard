@@ -58,7 +58,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giriş yapmak için e-posta adresini ve şifreni girmelisin." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UDh-CD-CnJ">
-                                <rect key="frame" x="24" y="277" width="366" height="45"/>
+                                <rect key="frame" x="24" y="285" width="366" height="45"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                 <color key="textColor" name="ulk-subtitle"/>
                                 <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Af5-Ez-TzM" userLabel="Aggrement">
-                                <rect key="frame" x="24" y="424" width="366" height="40"/>
+                                <rect key="frame" x="24" y="432" width="366" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pv0-Nt-d2X">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="40"/>
@@ -95,7 +95,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8q-Jv-E2V" customClass="KKLoadingButton" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="224.5" y="480" width="165.5" height="63.5"/>
+                                <rect key="frame" x="224.5" y="488" width="165.5" height="63.5"/>
                                 <color key="backgroundColor" name="ulk-orange"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="u8q-Jv-E2V" secondAttribute="height" multiplier="157:60" id="N6H-8E-8xq"/>
@@ -111,7 +111,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0s-7z-0og" customClass="PhoneCodeView" customModule="ulak_kurye" customModuleProvider="target">
-                                <rect key="frame" x="24" y="338" width="366" height="70"/>
+                                <rect key="frame" x="24" y="346" width="366" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="4LM-OY-lHi"/>
@@ -136,7 +136,7 @@
                             <constraint firstItem="H0s-7z-0og" firstAttribute="leading" secondItem="3cn-9J-a0s" secondAttribute="leading" constant="24" id="hox-1n-KhB"/>
                             <constraint firstItem="3cn-9J-a0s" firstAttribute="trailing" secondItem="u8q-Jv-E2V" secondAttribute="trailing" constant="24" id="r24-po-RO2"/>
                             <constraint firstItem="2tB-Ab-r0i" firstAttribute="top" secondItem="3cn-9J-a0s" secondAttribute="top" constant="16" id="s0Q-1Z-JvY"/>
-                            <constraint firstItem="UDh-CD-CnJ" firstAttribute="top" secondItem="jAS-mF-9gP" secondAttribute="bottom" constant="8" id="tpJ-Ld-fdZ"/>
+                            <constraint firstItem="UDh-CD-CnJ" firstAttribute="top" secondItem="jAS-mF-9gP" secondAttribute="bottom" constant="16" id="tpJ-Ld-fdZ"/>
                             <constraint firstItem="u8q-Jv-E2V" firstAttribute="width" secondItem="BYX-Rb-qT9" secondAttribute="width" multiplier="0.4" id="vtW-nV-nsc"/>
                         </constraints>
                     </view>
@@ -276,20 +276,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PhoneCodeTVC" id="I3H-X5-1mc" customClass="PhoneCodeTVC" customModule="ulak_kurye" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I3H-X5-1mc" id="zgk-Ox-ey9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeR-P8-tU8">
-                                                    <rect key="frame" x="20" y="11" width="33" height="21.5"/>
+                                                    <rect key="frame" x="20" y="11" width="33" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turkey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-mr-TAf">
-                                                    <rect key="frame" x="58" y="11" width="200" height="21.5"/>
+                                                    <rect key="frame" x="58" y="11" width="200" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="oUf-lS-oP7"/>
                                                     </constraints>
@@ -298,7 +298,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+90" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DT-vu-nE3">
-                                                    <rect key="frame" x="283" y="11" width="101" height="21.5"/>
+                                                    <rect key="frame" x="283" y="11" width="101" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

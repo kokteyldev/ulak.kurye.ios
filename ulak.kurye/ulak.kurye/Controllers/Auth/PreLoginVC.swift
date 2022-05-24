@@ -143,7 +143,7 @@ final class PreLoginVC: BaseVC {
         let topOfKeyboard = self.view.frame.height - keyboardSize.height
 
         if bottomOfTextField > topOfKeyboard {
-            self.logoTopConst.constant = -32
+            self.logoTopConst.constant = -8
             self.titleLabelTopConst.constant = 8.0
             UIView .animate(withDuration: animateDuration) {
                 self.titleLabel.text = ""
