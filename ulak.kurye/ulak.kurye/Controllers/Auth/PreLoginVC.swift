@@ -9,12 +9,13 @@ import UIKit
 
 final class PreLoginVC: BaseVC {
     @IBOutlet weak var phoneCodeView: PhoneCodeView!
-    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabelTopConst: NSLayoutConstraint!
+    @IBOutlet weak var logoTopConst: NSLayoutConstraint!
     @IBOutlet weak var kvvkPolicyButton: UIButton!
     @IBOutlet weak var loginButton: KKLoadingButton!
     
     private var feedBackGenerator: UINotificationFeedbackGenerator?
-    private var activeTextField : UITextField?
     private var termOfUseVC: PolicyVC?
     
     var isRegistered: Bool = true
@@ -136,19 +137,32 @@ final class PreLoginVC: BaseVC {
     //MARK: - Utils
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {return }
+        let animateDuration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] ?? 0.25) as! Double
         
-        if let activeTextField = activeTextField {
-            let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
-            let topOfKeyboard = self.view.frame.height - keyboardSize.height
-            
-            if bottomOfTextField > topOfKeyboard {
-                self.view.frame.origin.y = 0 - keyboardSize.height
+        let bottomOfTextField = loginButton.convert(loginButton.bounds, to: self.view).maxY;
+        let topOfKeyboard = self.view.frame.height - keyboardSize.height
+        
+        self.logoTopConst.constant = -8
+        self.titleLabelTopConst.constant = 8.0
+        
+        if bottomOfTextField > topOfKeyboard {
+            UIView .animate(withDuration: animateDuration) {
+                self.titleLabel.text = ""
+                self.view.layoutIfNeeded()
             }
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y = 0
+        let animateDuration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] ?? 0.25) as! Double
+        
+        self.logoTopConst.constant = 16
+        self.titleLabelTopConst.constant = 32.0
+        
+        UIView .animate(withDuration: animateDuration) {
+            self.titleLabel.text = "preLogin_title".localized
+            self.view.layoutIfNeeded()
+        }
     }
     
     // MARK: - Presentation
@@ -170,15 +184,9 @@ final class PreLoginVC: BaseVC {
 // MARK: - TextField Delegate
 extension PreLoginVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        activeTextField = textField
-        
         if let textfield = textField as? KKOutlinedTextField {
             textfield.validate()
         }
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        activeTextField = nil
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
