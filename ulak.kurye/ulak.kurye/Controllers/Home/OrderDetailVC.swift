@@ -7,7 +7,6 @@
 
 import UIKit
 import GoogleMaps
-import AlamofireImage
 
 class OrderDetailVC: BaseVC {
     @IBOutlet weak var stackView: UIStackView!
@@ -125,7 +124,7 @@ class OrderDetailVC: BaseVC {
         restaurantNameLabel.text = viewModel.order.customer?.brand
         
         if let url = viewModel.iconURL {
-            restaurantIcon.af.setImage(withURL: url, placeholderImage: viewModel.iconImage)
+            restaurantIcon.setImage(withURL: url, placeholderImage: viewModel.iconImage!)
         } else {
             restaurantIcon.image = viewModel.iconImage
         }

@@ -44,6 +44,9 @@ final class PolicyVC: BaseVC {
         guard let url = URL(string: popupURL ?? "") else { return }
         webView.load(URLRequest(url:url))
         titleLabel.text = popupTitle
+        acceptButton.titleLabel?.numberOfLines = 1
+        acceptButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        acceptButton.titleLabel?.lineBreakMode = .byWordWrapping
         acceptButton.isHidden = isButtonHidden ?? false
     }
     

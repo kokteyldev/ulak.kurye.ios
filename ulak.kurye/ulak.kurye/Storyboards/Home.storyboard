@@ -138,7 +138,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="order_task_code"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izl-kS-VvX">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="izl-kS-VvX">
                                                         <rect key="frame" x="16" y="30" width="123" height="18"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="18" id="4bP-Kf-PQ8"/>

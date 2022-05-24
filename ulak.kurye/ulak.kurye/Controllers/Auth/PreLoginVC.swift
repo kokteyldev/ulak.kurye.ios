@@ -39,6 +39,10 @@ final class PreLoginVC: BaseVC {
     // MARK: - UI
     private func setupUI() {
         kvvkPolicyButton.underline()
+        kvvkPolicyButton.titleLabel?.numberOfLines = 1
+        kvvkPolicyButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        kvvkPolicyButton.titleLabel?.lineBreakMode = .byWordWrapping
+        
         navigationController?.setNavigationBarTransparent(true)
         
         phoneCodeView.delegate = self
