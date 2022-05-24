@@ -38,7 +38,7 @@ final class OrderDetailVM: OrderVM {
     }
     
     var isRestaurantDetailHidden: Bool {
-        return order.customer?.brand == nil || order.customer?.imageURL == nil
+        return !self.isRestaurantOrder
     }
     
     var isPackagePriceHidden: Bool {

@@ -27,7 +27,8 @@ class OrderVM {
     var serviceTitle: String?
     var estimatedDistance: String
     var alpha = 1.0
-
+    var isRestaurantOrder: Bool
+    
     // MARK: Init
     init(order: Order) {
         self.order = order
@@ -68,48 +69,27 @@ class OrderVM {
         
         backgroundColor = .white
 
-        if order.customer?.brand == nil || order.customer?.imageURL == nil || order.package == nil {
-            iconImage = .init(named: "ic-package")!
-            
-            if isOrderActive && !isPackagedDelivered {
-                if isPackagePicked {
-                    if remainingDeliverMinutes ?? 0 < 0 {
-                        backgroundColor = .init(named: "ulk-red")!.withAlphaComponent(0.22)
-                        iconImage = .init(named: "ic-package-passed")!
-                    } else if remainingDeliverMinutes ?? 0 < 5 {
-                        backgroundColor = .init(named: "ulk-orange")!.withAlphaComponent(0.22)
-                        iconImage = .init(named: "ic-package-passed")!
-                    }
-                } else {
-                    if remainingPickMinutes ?? 0 < 0 {
-                        backgroundColor = .init(named: "ulk-red")!.withAlphaComponent(0.22)
-                        iconImage = .init(named: "ic-package-passed")!
-                    } else if remainingPickMinutes ?? 0 < 5 {
-                        backgroundColor = .init(named: "ulk-orange")!.withAlphaComponent(0.22)
-                        iconImage = .init(named: "ic-package-passed")!
-                    }
+        isRestaurantOrder = order.customer?.brand == nil || order.customer?.imageURL == nil || order.package == nil
+        
+        let logoName = isRestaurantOrder ? "restaurant" : "package"
+        iconImage = .init(named: "ic-\(logoName)")!
+        
+        if isOrderActive && !isPackagedDelivered {
+            if isPackagePicked {
+                if remainingDeliverMinutes ?? 0 < 0 {
+                    backgroundColor = .init(named: "ulk-red")!.withAlphaComponent(0.22)
+                    iconImage = .init(named: "ic-\(logoName)-passed")!
+                } else if remainingDeliverMinutes ?? 0 < 5 {
+                    backgroundColor = .init(named: "ulk-orange")!.withAlphaComponent(0.22)
+                    iconImage = .init(named: "ic-\(logoName)-passed")!
                 }
-            }
-        } else {
-            iconImage = .init(named: "ic-restaurant")!
-            
-            if isOrderActive && !isPackagedDelivered {
-                if isPackagePicked {
-                    if remainingDeliverMinutes ?? 0 < 0 {
-                        backgroundColor = .init(named: "ulk-red")!.withAlphaComponent(0.22)
-                        iconImage = .init(named: "ic-restaurant-passed")!
-                    } else if remainingDeliverMinutes ?? 0 < 5 {
-                        backgroundColor = .init(named: "ulk-orange")!.withAlphaComponent(0.22)
-                        iconImage = .init(named: "ic-restaurant-passed")!
-                    }
-                } else {
-                    if remainingPickMinutes ?? 0 < 0 {
-                        backgroundColor = .init(named: "ulk-red")!.withAlphaComponent(0.22)
-                        iconImage = .init(named: "ic-restaurant-passed")!
-                    } else if remainingPickMinutes ?? 0 < 5 {
-                        backgroundColor = .init(named: "ulk-orange")!.withAlphaComponent(0.22)
-                        iconImage = .init(named: "ic-restaurant-passed")!
-                    }
+            } else {
+                if remainingPickMinutes ?? 0 < 0 {
+                    backgroundColor = .init(named: "ulk-red")!.withAlphaComponent(0.22)
+                    iconImage = .init(named: "ic-\(logoName)-passed")!
+                } else if remainingPickMinutes ?? 0 < 5 {
+                    backgroundColor = .init(named: "ulk-orange")!.withAlphaComponent(0.22)
+                    iconImage = .init(named: "ic-\(logoName)-passed")!
                 }
             }
         }
