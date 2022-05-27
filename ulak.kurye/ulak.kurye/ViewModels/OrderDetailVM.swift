@@ -38,7 +38,7 @@ final class OrderDetailVM: OrderVM {
     }
     
     var isRestaurantDetailHidden: Bool {
-        return !self.isRestaurantOrder
+        return self.isNotRestaurantOrder
     }
     
     var isPackagePriceHidden: Bool {

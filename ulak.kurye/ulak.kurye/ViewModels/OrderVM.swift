@@ -27,7 +27,7 @@ class OrderVM {
     var serviceTitle: String?
     var estimatedDistance: String
     var alpha = 1.0
-    var isRestaurantOrder: Bool
+    var isNotRestaurantOrder: Bool
     
     // MARK: Init
     init(order: Order) {
@@ -69,9 +69,9 @@ class OrderVM {
         
         backgroundColor = .white
 
-        isRestaurantOrder = order.customer?.brand == nil || order.customer?.imageURL == nil || order.package == nil
+        isNotRestaurantOrder = order.customer?.brand == nil || order.customer?.imageURL == nil || order.package == nil
         
-        let logoName = isRestaurantOrder ? "restaurant" : "package"
+        let logoName = isNotRestaurantOrder ? "package" : "restaurant"
         iconImage = .init(named: "ic-\(logoName)")!
         
         if isOrderActive && !isPackagedDelivered {
