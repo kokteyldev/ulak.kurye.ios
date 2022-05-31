@@ -38,7 +38,8 @@ class OrderVM {
         let isOrderActive = (order.status != .closed)
         let isPackagedDelivered = (order.endTime != nil && order.endTime!.length > 0)
         
-        let expectedStartDate = order.createdTime.serverDate?.addMinutes(order.service.expPickingTime) ?? Date()
+        let expectedPrepareTime = Int(order.package?.prepareTime ?? "0") ?? order.service.expPickingTime
+        let expectedStartDate = order.createdTime.serverDate?.addMinutes(expectedPrepareTime) ?? Date()
         let expectedDeliverDate = order.createdTime.serverDate?.addMinutes(order.service.expDeliveryTime) ?? Date()
         
         let startDateString = expectedStartDate.shortDateString
