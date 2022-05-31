@@ -27,7 +27,7 @@ class OrderVM {
     var serviceTitle: String?
     var estimatedDistance: String
     var alpha = 1.0
-    var isRestaurantOrder: Bool
+    var isNotRestaurantOrder: Bool
     
     // MARK: Init
     init(order: Order) {
@@ -38,7 +38,8 @@ class OrderVM {
         let isOrderActive = (order.status != .closed)
         let isPackagedDelivered = (order.endTime != nil && order.endTime!.length > 0)
         
-        let expectedStartDate = order.createdTime.serverDate?.addMinutes(order.service.expPickingTime) ?? Date()
+        let expectedPrepareTime = Int(order.package?.prepareTime ?? "\(order.service.expPickingTime)") ?? order.service.expPickingTime
+        let expectedStartDate = order.createdTime.serverDate?.addMinutes(expectedPrepareTime) ?? Date()
         let expectedDeliverDate = order.createdTime.serverDate?.addMinutes(order.service.expDeliveryTime) ?? Date()
         
         let startDateString = expectedStartDate.shortDateString
@@ -69,9 +70,9 @@ class OrderVM {
         
         backgroundColor = .white
 
-        isRestaurantOrder = order.customer?.brand == nil || order.customer?.imageURL == nil || order.package == nil
+        isNotRestaurantOrder = order.customer?.brand == nil || order.customer?.imageURL == nil || order.package == nil
         
-        let logoName = isRestaurantOrder ? "restaurant" : "package"
+        let logoName = isNotRestaurantOrder ? "package" : "restaurant"
         iconImage = .init(named: "ic-\(logoName)")!
         
         if isOrderActive && !isPackagedDelivered {

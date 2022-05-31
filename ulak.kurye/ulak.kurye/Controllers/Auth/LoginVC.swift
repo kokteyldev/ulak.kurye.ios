@@ -137,7 +137,7 @@ final class LoginVC: BaseVC {
         self.logoTopConst.constant = 16
         self.titleLabelTopConst.constant = 32.0
         UIView .animate(withDuration: animateDuration) {
-            self.titleLabel.text = "preLogin_title".localized
+            self.titleLabel.text = "login_title".localized
             self.view.layoutIfNeeded()
         }
     }
