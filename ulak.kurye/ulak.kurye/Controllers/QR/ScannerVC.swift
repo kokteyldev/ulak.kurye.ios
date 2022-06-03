@@ -15,6 +15,8 @@ protocol ScannerDelegate: AnyObject {
 
 final class ScannerVC: BaseVC {
     @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var scanView: UIView!
     
     weak var delegate: ScannerDelegate?
     private var captureSession: AVCaptureSession!
@@ -44,9 +46,28 @@ final class ScannerVC: BaseVC {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.scanView.strokeBorder()
+        self.backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+
+        UIGraphicsBeginImageContext(self.backgroundView.bounds.size)
+        let cgContext = UIGraphicsGetCurrentContext()
+        cgContext?.setFillColor(UIColor.white.cgColor)
+        cgContext?.fill(self.backgroundView.bounds)
+        cgContext?.clear(CGRect(x:self.scanView.frame.origin.x, y:self.scanView.frame.origin.y, width: self.scanView.frame.width, height: self.scanView.frame.height))
+        let maskImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let maskView = UIView(frame: self.backgroundView.bounds)
+        maskView.layer.contents = maskImage?.cgImage
+        self.backgroundView.mask = maskView
+    }
+    
     // MARK: - Override
     override var prefersStatusBarHidden: Bool {
-        return true
+        return false
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

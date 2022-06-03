@@ -101,6 +101,8 @@
 "scan_qr_code" = "Scan QR Code";
 "scan_not_supported_error" = "Phone not suitable for scanning!";
 "scan_error" = "Code Not Found!";
+"scan_qr_title" = "Delivery Confirmation";
+"scan_qr_desc" = "Confirm delivery by scanning the QR code from the customer!";
 
 // Settings
 "settings_title" = "Settings";
