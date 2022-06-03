@@ -101,6 +101,8 @@
 "scan_qr_code" = "QR Kod Tarama";
 "scan_not_supported_error" = "Telefon tarama için uygun değil!";
 "scan_error" = "Kod bulunamadı!";
+"scan_qr_title" = "Teslimat Onayı";
+"scan_qr_desc" = "Müşteride bulunan QR kodu okutarak teslimatı onaylayın!";
 
 // Settings
 "settings_title" = "Ayarlar";

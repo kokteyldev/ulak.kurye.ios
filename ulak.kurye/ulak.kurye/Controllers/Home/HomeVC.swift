@@ -261,6 +261,7 @@ extension HomeVC: HeaderViewDelegate {
     func qrCodeTapped() {
         self.disableView()
         self.showLoading(isDark: false)
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
         
         let qrInputVC = QRInputCodeVC.qrInputVC(title: "order_qr_order_code_title".localized,
                                                 inputTitle: "order_qr_order_code_input_title".localized,
@@ -271,6 +272,7 @@ extension HomeVC: HeaderViewDelegate {
             guard let orderUUID = code else {
                 self.enabledView()
                 self.hideLoading()
+                self.tabBarController?.tabBar.isUserInteractionEnabled = true
                 self.view.showToast(.error, message: "error_unkown".localized)
                 return
             }
@@ -293,6 +295,7 @@ extension HomeVC: HeaderViewDelegate {
         qrInputVC.cancelCallback = {
             self.enabledView()
             self.hideLoading()
+            self.tabBarController?.tabBar.isUserInteractionEnabled = true
             return
         }
     }
