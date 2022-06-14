@@ -20,7 +20,7 @@ final class WalletsVC: BaseVC {
     
     private var userWallets: [BaseWallet] = []
     private var walletVM: WalletVM?
-    private lazy var noDataView: UIView = {
+    private lazy var noDataView: NoDataView = {
         let title = userWallets.count == 0 ? "wallet_no_wallet".localized : "wallet_no_transaction".localized
         let view = NoDataView(title: title,
                               message: "",
@@ -40,6 +40,7 @@ final class WalletsVC: BaseVC {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        getWallets()
         setupUI()
 
         tableView.registerCell(type: WalletTVC.self)
@@ -76,11 +77,6 @@ final class WalletsVC: BaseVC {
     private func setupSegmentedControl() {
         walletSegment.removeAllSegments()
         
-        userWallets.removeAll()
-        if let wallets = Session.shared.user?.wallets {
-            self.userWallets = wallets
-        }
-        
         if userWallets.count == 0 {
             segmentTopCons.constant = 0
             segmentHeightCons.constant = 0
@@ -89,6 +85,11 @@ final class WalletsVC: BaseVC {
             activityIndicator.isHidden = true
             activityIndicator.stopAnimating()
             return
+        } else {
+            segmentTopCons.constant = 8
+            segmentHeightCons.constant = 40
+            walletSegment.isHidden = false
+            balanceContainerView.alpha = transferContainerView.alpha
         }
         
         if userWallets.count == 1 {
@@ -108,12 +109,35 @@ final class WalletsVC: BaseVC {
     }
     
     private func setupData() {
+        let title = userWallets.count == 0 ? "wallet_no_wallet".localized : "wallet_no_transaction".localized
+        noDataView.titleLabel.text = title
+        
         balanceLabel.text = walletVM?.balance ?? "0"
         transferContainerView.alpha = walletVM?.transferButtonAlpha ?? 0.5
+        balanceContainerView.alpha = walletVM?.transferButtonAlpha ?? 0.5
         tableView.reloadData()
     }
     
     // MARK: - Data
+    func getWallets() {
+        API.getWallets { result in
+            self.resetAfterLoading()
+            
+            switch result {
+            case .success(let response):
+                if let walletsResponse = response {
+                    self.userWallets = walletsResponse
+                }
+                self.setupSegmentedControl()
+                self.setupData()
+                break
+            case .failure(let error):
+                self.view.showToast(.error, message: error.localizedDescription)
+                break
+            }
+        }
+    }
+    
     func getWalletDetail() {
         if userWallets.count == 0 { return }
         let userWallet = userWallets[walletSegment.selectedSegmentIndex]
