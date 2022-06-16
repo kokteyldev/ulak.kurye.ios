@@ -294,6 +294,23 @@ struct API {
     }
     
     // MARK: - Wallets
+    static func getWallets(completion:@escaping (Result<[BaseWallet]?, Error>) -> Void) {
+        performRequest(route: APIRouter.getWallets) { (result:(Result<Response<[BaseWallet]?>, Error>)) in
+            switch result {
+            case Result.success(let response):
+                if let walletsResponse = response.data {
+                    completion(.success(walletsResponse!))
+                } else {
+                    completion(.failure(CustomError.noData.error))
+                }
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
     static func getWallet(walletUUID: String, completion:@escaping (Result<WalletResponse?, Error>) -> Void) {
         performRequest(route: APIRouter.getWallet(walletUUID: walletUUID)) { (result:(Result<Response<WalletResponse?>, Error>)) in
             switch result {

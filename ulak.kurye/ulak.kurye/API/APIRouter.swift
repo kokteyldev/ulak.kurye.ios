@@ -26,6 +26,7 @@ enum APIRouter {
     case talkTo(orderUUID: String, to: String)
     case runTakeAction(orderUUID: String, agreementUUID: String)
     case runOrderAction(actionName: String, parameters: [String: String])
+    case getWallets
     case getWallet(walletUUID: String)
     case getNotifications(page: Int, notification_type: Int)
     case transferBalance(walletUUID: String, amount: Double)
@@ -48,6 +49,7 @@ enum APIRouter {
              .getPoolOrders,
              .runTakeAction,
              .runOrderAction,
+             .getWallets,
              .getWallet,
              .getNotifications:
             return .get
@@ -100,6 +102,8 @@ enum APIRouter {
             return "/actions/run"
         case .runOrderAction:
             return "/actions/run"
+        case .getWallets:
+            return "/wallet"
         case .getWallet(let walletUUID):
             return "/wallet/\(walletUUID)"
         case .getNotifications:
@@ -207,6 +211,7 @@ enum APIRouter {
              .talkTo,
              .runTakeAction,
              .runOrderAction,
+             .getWallets,
              .getWallet,
              .getNotifications,
              .transferBalance,
