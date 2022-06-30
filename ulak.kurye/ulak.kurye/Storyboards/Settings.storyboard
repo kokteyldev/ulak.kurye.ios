@@ -368,8 +368,41 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="61" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="66" id="jpC-fj-hB3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="66" id="lNa-GF-yVo">
                                         <rect key="frame" x="0.0" y="677.5" width="414" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lNa-GF-yVo" id="gvs-WK-dex">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hesabımı Sil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEO-ck-2DI">
+                                                    <rect key="frame" x="61" y="23" width="88" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="settings_delete_acc"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-close" translatesAutoresizingMaskIntoConstraints="NO" id="5Gp-zq-SYC">
+                                                    <rect key="frame" x="20" y="20.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="2wZ-ew-pza"/>
+                                                        <constraint firstAttribute="width" constant="25" id="5db-7Q-mYQ"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5Gp-zq-SYC" firstAttribute="leading" secondItem="gvs-WK-dex" secondAttribute="leadingMargin" id="AhQ-9G-AXW"/>
+                                                <constraint firstItem="JEO-ck-2DI" firstAttribute="centerY" secondItem="gvs-WK-dex" secondAttribute="centerY" id="gwv-HI-r7v"/>
+                                                <constraint firstItem="JEO-ck-2DI" firstAttribute="leading" secondItem="5Gp-zq-SYC" secondAttribute="trailing" constant="16" id="iA2-Tn-Fpd"/>
+                                                <constraint firstItem="5Gp-zq-SYC" firstAttribute="centerY" secondItem="JEO-ck-2DI" secondAttribute="centerY" id="sNC-Dx-El2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="61" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="66" id="jpC-fj-hB3">
+                                        <rect key="frame" x="0.0" y="743.5" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jpC-fj-hB3" id="XxH-qr-676">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
@@ -414,6 +447,7 @@
                         <outlet property="appNotificationActivityIndicator" destination="QuW-0n-jiW" id="D4S-7g-MZY"/>
                         <outlet property="appNotificationSwitch" destination="ifD-QA-TH5" id="6cP-Tw-fAf"/>
                         <outlet property="cardNumberLabel" destination="MSU-ea-Exk" id="0HN-s4-BXJ"/>
+                        <outlet property="deleteAccountCell" destination="lNa-GF-yVo" id="pR1-r4-Tno"/>
                         <outlet property="feedbackCell" destination="scU-bX-lC0" id="AH9-YF-6M0"/>
                         <outlet property="logoutCell" destination="jpC-fj-hB3" id="ryh-dG-BM8"/>
                         <outlet property="notificationActivityIndicator" destination="RPY-oB-fNj" id="MHQ-HX-G4g"/>

@@ -119,6 +119,8 @@
 "settings_ulak_card_popup_title" = "Ulak Kartınızın Barkod Numarasını Girin";
 "settings_no_ulak_card" = "Ulak Kart eklemek için tıkla!";
 "settings_ulak_card_popup_input_title" = "Kod";
+"settings_delete_acc" = "Hesabımı Sil";
+"settings_delete_acc_desc" = "Hesabınızı silmek istediğinize emin misiniz?";
 "settings_logout" = "Çıkış Yap";
 "settings_logout_alert_title" = "Çıkış yapmak istediğine emin misin?";
 "settings_account_settings" = "HESAP AYARLARI";

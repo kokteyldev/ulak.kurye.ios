@@ -354,6 +354,23 @@ struct API {
             }
         }
     }
+    
+    static func deleteAccount(completion:@escaping (Result<String, Error>) -> Void) {
+        performRequest(route: APIRouter.deleteAccount) { (result:(Result<Response<String>, Error>)) in
+            switch result {
+            case Result.success(let response):
+                if let message = response.meta.message {
+                    completion(.success(message))
+                } else {
+                    completion(.failure(CustomError.noData.error))
+                }
+                break
+            case Result.failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
 }
 
 extension API {
