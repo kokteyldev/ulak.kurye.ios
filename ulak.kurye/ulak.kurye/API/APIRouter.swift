@@ -31,6 +31,7 @@ enum APIRouter {
     case getNotifications(page: Int, notification_type: Int)
     case transferBalance(walletUUID: String, amount: Double)
     case sendFeedback(message: String)
+    case deleteAccount
     
     private enum Encoding {
         case json
@@ -51,7 +52,8 @@ enum APIRouter {
              .runOrderAction,
              .getWallets,
              .getWallet,
-             .getNotifications:
+             .getNotifications,
+             .deleteAccount:
             return .get
         case .preLogin,
              .login,
@@ -112,6 +114,8 @@ enum APIRouter {
             return "/courier/earn-money"
         case .sendFeedback:
             return "/feedback"
+        case .deleteAccount:
+            return "/user/delete"
         }
     }
     
@@ -215,7 +219,8 @@ enum APIRouter {
              .getWallet,
              .getNotifications,
              .transferBalance,
-             .sendFeedback:
+             .sendFeedback,
+             .deleteAccount:
             return [
                 "Authorization": "Bearer \(Session.shared.token ?? "")",
                 "Accept-Language": Constants.languageCode

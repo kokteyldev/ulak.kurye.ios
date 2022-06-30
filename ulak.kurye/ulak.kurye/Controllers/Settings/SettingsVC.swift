@@ -13,6 +13,7 @@ final class SettingsVC: BaseTBLVC {
     @IBOutlet weak var ulakCardCell: UITableViewCell!
     @IBOutlet weak var feedbackCell: UITableViewCell!
     @IBOutlet weak var rateCell: UITableViewCell!
+    @IBOutlet weak var deleteAccountCell: UITableViewCell!
     @IBOutlet weak var logoutCell: UITableViewCell!
     @IBOutlet weak var cardNumberLabel: UILabel!
     
@@ -199,6 +200,27 @@ final class SettingsVC: BaseTBLVC {
         } else if cell.isEqual(rateCell) {
             guard let url = URL(string: Constants.App.appURL) else { return }
             UIApplication.shared.open(url)
+        } else if cell.isEqual(deleteAccountCell) {
+            let alert = UIAlertController(title: "settings_delete_acc_desc".localized, message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "settings_delete_acc".localized, style: .destructive, handler: { action in
+                API.deleteAccount { result in
+                    switch result {
+                    case Result.success(let message):
+                        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "ok".localized, style: .destructive, handler: { action in
+                            Session.shared.logout()
+                            PreLoginVC.presentAsRoot()
+                        }))
+                        self.present(alert, animated: true)
+                        break
+                    case Result.failure(let error):
+                        self.view.showToast(.error, message: error.localizedDescription)
+                        break
+                    }
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "cancel".localized, style: .cancel, handler: { action in }))
+            self.present(alert, animated: true)
         } else if cell.isEqual(logoutCell) {
             let alert = UIAlertController(title: "settings_logout_alert_title".localized, message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "settings_logout".localized, style: .destructive, handler: { action in

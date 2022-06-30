@@ -119,6 +119,8 @@
 "settings_ulak_card_popup_title" = "Add ULAK Card";
 "settings_no_ulak_card" = "Click to add ULAK Card!";
 "settings_ulak_card_popup_input_title" = "Card Number";
+"settings_delete_acc" = "Delete Account";
+"settings_delete_acc_desc" = "Are you sure you want to delete your account?";
 "settings_logout" = "Log Out";
 "settings_logout_alert_title" = "Are you sure you want to log out?";
 "settings_account_settings" = "ACCOUNT SETTINGS";
